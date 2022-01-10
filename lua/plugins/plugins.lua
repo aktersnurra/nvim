@@ -19,4 +19,8 @@ return {
   -- Snippets
   { "L3MON4D3/LuaSnip" } --snippet engine
   { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+  -- LSP
+  { "neovim/nvim-lspconfig" } -- enable LSP
+  { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
 }
