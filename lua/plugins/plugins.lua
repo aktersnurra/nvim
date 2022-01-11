@@ -27,4 +27,10 @@ return {
   -- Telescope
   { "nvim-telescope/telescope.nvim" }
 
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
 }
