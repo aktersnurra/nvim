@@ -1,4 +1,5 @@
--- Loads neovim config.
+-- Loads plugins for Neovim.
+
 require("settings.options")
 require("settings.keymaps")
 require("plugins.installer")
