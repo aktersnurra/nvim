@@ -23,4 +23,8 @@ return {
   -- LSP
   { "neovim/nvim-lspconfig" } -- enable LSP
   { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
+
+  -- Telescope
+  { "nvim-telescope/telescope.nvim" }
+
 }
