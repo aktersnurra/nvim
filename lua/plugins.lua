@@ -34,4 +34,5 @@ return {
 	},
 	{ "ahmedkhalf/project.nvim" },
 	{ "lewis6991/impatient.nvim" },
+	{ "goolord/alpha-nvim" },
 }
