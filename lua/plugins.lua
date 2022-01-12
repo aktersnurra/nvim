@@ -25,6 +25,7 @@ return {
 	{ "williamboman/nvim-lsp-installer" }, -- simple to use language server installer
 
 	-- Telescope --
+	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "nvim-telescope/telescope.nvim" },
 
 	-- Treesitter --
