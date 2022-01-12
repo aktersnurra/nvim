@@ -33,4 +33,5 @@ return {
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	},
 	{ "ahmedkhalf/project.nvim" },
+	{ "lewis6991/impatient.nvim" },
 }
