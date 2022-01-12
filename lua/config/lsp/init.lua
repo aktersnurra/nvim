@@ -5,5 +5,5 @@ if not status_ok then
 	return
 end
 
-require("plugins.lsp.lsp-installer")
-require("plugins.lsp.handlers").setup()
+require("config.lsp.lsp-installer")
+require("config.lsp.handlers").setup()
