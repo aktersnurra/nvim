@@ -35,4 +35,6 @@ return {
 	{ "ahmedkhalf/project.nvim" },
 	{ "lewis6991/impatient.nvim" },
 	{ "goolord/alpha-nvim" },
+	{ "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight
+	{ "folke/which-key.nvim" },
 }
