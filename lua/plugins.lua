@@ -18,7 +18,7 @@ return {
 
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
-    	{ "tamago324/nlsp-settings.nvim" },
+	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
 	{ "nvim-telescope/telescope.nvim" },
@@ -43,16 +43,17 @@ return {
 	{ "goolord/alpha-nvim" },
 	{ "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight
 	{ "folke/which-key.nvim" },
-    { "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-    end
-    },
-    { "windwp/nvim-spectre" },
-    { "phaazon/hop.nvim" },
-    { "unblevable/quick-scope" },
+	{
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	},
+	{ "windwp/nvim-spectre" },
+	{ "phaazon/hop.nvim" },
+	{ "unblevable/quick-scope" },
 }
