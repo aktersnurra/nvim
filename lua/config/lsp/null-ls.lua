@@ -18,7 +18,6 @@ null_ls.setup({
 		diagnostics.flake8,
 		diagnostics.golangci_lint,
 		diagnostics.jsonlint,
-		diagnostics.luacheck,
 		diagnostics.shellcheck,
 		diagnostics.yamllint,
 		formatting.black.with({ extra_args = { "--fast" } }),
