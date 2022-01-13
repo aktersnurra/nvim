@@ -1,7 +1,7 @@
 -- Neovim packer installer.
 
 local fn = vim.fn
-local plugins = require("plugins.plugins")
+local plugins = require("plugins")
 
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
