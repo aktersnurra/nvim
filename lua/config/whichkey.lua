@@ -184,6 +184,46 @@ local mappings = {
 	-- 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	-- },
+	r = {
+		t = {
+			"<cmd>lua require('spectre').toggle_line()<CR>",
+			"toggle current item",
+		},
+		-- ["enter_file"] = {
+		-- 	map = "<cr>",
+		-- 	cmd = "<cmd>lua require('spectre.actions').select_entry()<CR>",
+		-- 	desc = "goto current file",
+		-- },
+		Q = {
+			"<cmd>lua require('spectre.actions').send_to_qf()<CR>",
+			"send all item to quickfix",
+		},
+		c = {
+			"<cmd>lua require('spectre.actions').replace_cmd()<CR>",
+			"input replace vim command",
+		},
+		o = {
+			"<cmd>lua require('spectre').show_options()<CR>",
+			"show option",
+		},
+		R = {
+			cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
+			desc = "replace all",
+		},
+		m = {
+			"<cmd>lua require('spectre').change_view()<CR>",
+			"change result view mode",
+		},
+		I = {
+			"<cmd>lua require('spectre').change_options('ignore-case')<CR>",
+			"toggle ignore case",
+		},
+		H = {
+			"<cmd>lua require('spectre').change_options('hidden')<CR>",
+			"toggle search hidden",
+		},
+		-- you can put your mapping here it only use normal mode
+	},
 }
 
 local vopts = {
