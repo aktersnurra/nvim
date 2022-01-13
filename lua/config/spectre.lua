@@ -1,6 +1,5 @@
 local status_ok, spectre = pcall(require, "spectre")
 if not status_ok then
-Log:get_default().error "Failed to load hop"
 return
 end
 
