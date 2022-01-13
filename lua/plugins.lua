@@ -54,4 +54,5 @@ return {
     },
     { "windwp/nvim-spectre" },
     { "phaazon/hop.nvim" },
+    { "unblevable/quick-scope" },
 }
