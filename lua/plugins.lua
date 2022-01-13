@@ -53,4 +53,5 @@ return {
     end
     },
     { "windwp/nvim-spectre" },
+    { "phaazon/hop.nvim" },
 }
