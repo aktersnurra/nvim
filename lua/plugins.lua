@@ -14,6 +14,7 @@ return {
 	{ "rafamadriz/friendly-snippets" },
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
+    { "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "nvim-telescope/telescope.nvim" },
 	{
