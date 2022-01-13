@@ -52,4 +52,5 @@ return {
         }
     end
     },
+    { "windwp/nvim-spectre" },
 }
