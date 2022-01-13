@@ -15,10 +15,12 @@ return {
 
 	{ "L3MON4D3/LuaSnip" },
 	{ "rafamadriz/friendly-snippets" },
+
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
-    { "tamago324/nlsp-settings.nvim" },
+    	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
+
 	{ "nvim-telescope/telescope.nvim" },
 	{
 		"nvim-treesitter/nvim-treesitter",
