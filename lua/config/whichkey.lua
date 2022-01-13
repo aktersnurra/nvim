@@ -96,7 +96,6 @@ local mappings = {
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
-
     ["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
     ["v"] = { "vsplit", "Vertical Split"},
     ["h"] = { "split", "Horizontal Split"},
