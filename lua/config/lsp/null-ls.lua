@@ -15,7 +15,6 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		diagnostics.cppcheck,
-		diagnostics.cspell,
 		diagnostics.flake8,
 		diagnostics.golangci_lint,
 		diagnostics.jsonlint,
