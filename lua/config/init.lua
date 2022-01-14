@@ -1,5 +1,6 @@
 -- Loads all plugin configs.
 
+require("config.alpha")
 require("config.colorscheme")
 require("config.cmp")
 require("config.lsp")
@@ -13,7 +14,6 @@ require("config.bufferline")
 require("config.lualine")
 require("config.project")
 require("config.impatient")
-require("config.alpha")
 require("config.whichkey")
 require("config.autocommands")
 require("config.hop")
