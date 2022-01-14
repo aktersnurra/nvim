@@ -182,13 +182,6 @@ local mappings = {
 		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
-
-	t = {
-		name = "Terminal",
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
 }
 
 local vopts = {
