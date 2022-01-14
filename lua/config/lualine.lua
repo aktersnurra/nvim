@@ -32,8 +32,6 @@ local branch = {
 	cond = hide_in_width,
 }
 
-local location = { "location", cond = hide_in_width }
-
 local filetype = { "filetype", cond = hide_in_width, color = {} }
 
 lualine.setup({
