@@ -55,7 +55,6 @@ return {
 	},
 	{ "windwp/nvim-spectre" },
 	{ "phaazon/hop.nvim" },
-	{ "unblevable/quick-scope" },
 	{
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
