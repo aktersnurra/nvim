@@ -59,4 +59,5 @@ return {
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
 	},
+	{ "akinsho/toggleterm.nvim" },
 }

@@ -99,6 +99,7 @@ local mappings = {
 	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 	["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
 	["h"] = { "<cmd>split<cr>", "Horizontal Split" },
+
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -162,6 +163,7 @@ local mappings = {
 			"Workspace Symbols",
 		},
 	},
+
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -173,6 +175,7 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
+
 	r = {
 		name = "Replace",
 		r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
@@ -180,16 +183,12 @@ local mappings = {
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
 
-	-- t = {
-	-- 	name = "Terminal",
-	-- 	n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-	-- 	u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-	-- 	t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-	-- 	p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-	-- 	f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-	-- 	h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-	-- 	v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	-- },
+	t = {
+		name = "Terminal",
+		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	},
 }
 
 local vopts = {
