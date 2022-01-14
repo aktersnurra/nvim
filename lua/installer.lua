@@ -1,4 +1,4 @@
--- Neovim packer installer.
+-- Plugin installer using packer..
 
 local fn = vim.fn
 local plugins = require("plugins")

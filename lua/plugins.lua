@@ -1,4 +1,4 @@
--- Neovim plugins
+-- List of plugins
 
 return {
 	{ "wbthomason/packer.nvim" }, -- Have packer manage itself
