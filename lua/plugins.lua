@@ -59,4 +59,5 @@ return {
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
 	},
+	{ "norcalli/nvim-colorizer.lua" },
 }
