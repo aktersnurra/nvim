@@ -21,7 +21,6 @@ null_ls.setup({
 		diagnostics.shellcheck,
 		diagnostics.yamllint,
 		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.clang_format,
 		formatting.erlfmt,
 		formatting.fourmolu,
 		formatting.gofmt,
