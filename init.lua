@@ -1,6 +1,5 @@
 -- Loads plugins for Neovim.
 
-require("settings.options")
-require("settings.keymaps")
+require("settings")
 require("installer")
 require("config")
