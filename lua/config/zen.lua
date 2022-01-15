@@ -8,8 +8,8 @@ end
 zen_mode.setup({
 	window = {
 		backdrop = 1,
-		height = 0.9, -- height of the Zen window
-		width = 0.65,
+		height = 1, -- height of the Zen window
+		width = 120,
 		options = {
 			signcolumn = "no", -- disable signcolumn
 			number = false, -- disable number column
@@ -25,18 +25,4 @@ zen_mode.setup({
 		tmux = { enabled = true },
 		twilight = { enabled = true },
 	},
-	-- on_open = function()
-	--   vim.lsp.diagnostic.disable()
-	--   vim.cmd [[
-	--       set foldlevel=10
-	--       IndentBlanklineDisable
-	--       ]]
-	-- end,
-	-- on_close = function()
-	--   vim.lsp.diagnostic.enable()
-	--   vim.cmd [[
-	--       set foldlevel=5
-	--       IndentBlanklineEnable
-	--       ]]
-	-- end,
 })
