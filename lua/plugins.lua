@@ -45,7 +45,6 @@ return {
 	{ "folke/which-key.nvim" },
 	{ "folke/zen-mode.nvim" },
 	{ "windwp/nvim-spectre" },
-	{ "ggandor/lightspeed.nvim" },
 	{
 		"kevinhwang91/nvim-bqf",
 		event = "BufRead",
