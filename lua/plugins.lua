@@ -21,7 +21,7 @@ return {
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
-	{ "nvim-telescope/telescope.nvim" },
+	{ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } },
 	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 	{
 		"nvim-treesitter/nvim-treesitter",
