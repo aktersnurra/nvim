@@ -22,6 +22,7 @@ return {
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
 	{ "nvim-telescope/telescope.nvim" },
+	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
