@@ -1,4 +1,4 @@
--- Plugin installer using packer..
+-- Installs plugins with packer.
 
 local fn = vim.fn
 local plugins = require("plugins")

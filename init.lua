@@ -1,5 +1,5 @@
 -- Loads plugins for Neovim.
 
 require("settings")
-require("installer")
+require("install")
 require("config")
