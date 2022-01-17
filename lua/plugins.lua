@@ -1,28 +1,36 @@
 -- List of plugins
 
 return {
+	-- Base
 	{ "wbthomason/packer.nvim" }, -- Have packer manage itself
 	{ "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
 	{ "nvim-lua/plenary.nvim" }, -- Useful lua functions used ny lots of plugins
+
+	-- Colorschemes
 	{ "aktersnurra/no-clown-fiesta.nvim" },
 
+	-- LSP
 	{ "hrsh7th/nvim-cmp" }, -- The completion plugin
 	{ "hrsh7th/cmp-buffer" }, -- buffer completions
 	{ "hrsh7th/cmp-path" }, -- path completions
 	{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
 	{ "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 	{ "hrsh7th/cmp-nvim-lsp" },
-
-	{ "L3MON4D3/LuaSnip" },
-	{ "rafamadriz/friendly-snippets" },
-
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
+	-- Snippets
+	{ "L3MON4D3/LuaSnip" },
+	{ "rafamadriz/friendly-snippets" },
+
+	-- Telescope
 	{ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } },
 	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+	{ "nvim-telescope/telescope-file-browser.nvim" },
+
+	-- Miscellaneous plugins
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
