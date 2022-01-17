@@ -9,11 +9,30 @@ local actions = require("telescope.actions")
 
 telescope.setup({
 	defaults = {
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			width = 0.75,
+			prompt_position = "top",
+			preview_cutoff = 120,
+			horizontal = { mirror = false },
+			vertical = { mirror = false },
+		},
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden",
+		},
 		mappings = {
 			i = {
 				["<C-n>"] = actions.cycle_history_next,
@@ -45,7 +64,6 @@ telescope.setup({
 				["<C-l>"] = actions.complete_tag,
 				["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
 			},
-
 			n = {
 				["<esc>"] = actions.close,
 				["<CR>"] = actions.select_default,
