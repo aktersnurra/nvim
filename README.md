@@ -8,8 +8,8 @@ Based on the neovim config by [ChristianChiarulli](https://github.com/LunarVim/N
 neovim >= 6.0.0
 neovim-web-devicons-git
 xsel
-node (for lsp)
 fzf
+fnm and node for lsp
 ```
 
 # Structure
@@ -20,7 +20,7 @@ fzf
     ├── config              # Plugin configs.
     │   └── lsp             # LSP related configs.
     │       └── settings    # Server specific settings.
-    ├── installer.lua       # Packer installer.
+    ├── install.lua         # Packer installer.
     ├── plugins.lua         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
