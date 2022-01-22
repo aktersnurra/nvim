@@ -1,12 +1,12 @@
 -- Config for pyright language server.
 
 return {
-	settings = {
+  settings = {
 
-		python = {
-			analysis = {
-				typeCheckingMode = "off",
-			},
-		},
-	},
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+      },
+    },
+  },
 }

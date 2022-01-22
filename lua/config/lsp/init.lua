@@ -2,9 +2,9 @@
 
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-	return
+  return
 end
 
-require("config.lsp.lsp-installer")
+require "config.lsp.lsp-installer"
 require("config.lsp.handlers").setup()
-require("config.lsp.null-ls")
+require "config.lsp.null-ls"
