@@ -30,14 +30,18 @@ return {
 	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 	{ "nvim-telescope/telescope-file-browser.nvim" },
 
-	-- Miscellaneous plugins
+  -- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	},
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+  { "nvim-treesitter/playground" },
+
+
+	-- Miscellaneous plugins
 	{ "windwp/nvim-autopairs" },
 	{ "numToStr/Comment.nvim" },
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "lewis6991/gitsigns.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{ "kyazdani42/nvim-tree.lua" },

@@ -181,6 +181,11 @@ local mappings = {
 		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
+
+  T = {
+    name = "Treesitter",
+    p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
+  },
 }
 
 local vopts = {
