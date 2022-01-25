@@ -36,9 +36,8 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-dashboard.section.footer.opts.hl = "LineNr"
-dashboard.section.header.opts.hl = "LineNr"
-dashboard.section.buttons.opts.hl = "LineNr"
+dashboard.section.header.opts.hl = "AlphaHeader"
+dashboard.section.buttons.opts.hl = "AlphaButtons"
 
 dashboard.opts.opts.noautocmd = true
 -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
