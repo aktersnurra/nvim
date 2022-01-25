@@ -36,8 +36,8 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Title"
+dashboard.section.footer.opts.hl = "LineNr"
+dashboard.section.header.opts.hl = "LineNr"
 dashboard.section.buttons.opts.hl = "LineNr"
 
 dashboard.opts.opts.noautocmd = true
