@@ -43,7 +43,7 @@ return {
   { "numToStr/Comment.nvim" },
   { "lewis6991/gitsigns.nvim" },
   { "kyazdani42/nvim-web-devicons" },
-  { "kyazdani42/nvim-tree.lua", commit = "8b27fd4e613167db3f04c0ef25e61d52b8c5d494" },
+  { "kyazdani42/nvim-tree.lua" },
   { "akinsho/bufferline.nvim" },
   { "moll/vim-bbye" },
   {
