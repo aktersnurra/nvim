@@ -16,7 +16,7 @@ treesitter.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "org" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = { "org" }, -- Required since TS highlighter doesn't support all syntax features (conceal)
+    additional_vim_regex_highlighting = true,
   },
   context_commentstring = {
     enable = true,
