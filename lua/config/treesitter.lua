@@ -7,7 +7,7 @@ if not status_ok then
 end
 
 treesitter.setup {
-  ensure_installed = { "maintained", "org" },
+  ensure_installed = { "maintained" },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
