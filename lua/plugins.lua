@@ -63,4 +63,5 @@ return {
     event = "BufRead",
   },
   { "norcalli/nvim-colorizer.lua" },
+  { "nvim-orgmode/orgmode" },
 }
