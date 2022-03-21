@@ -7,7 +7,7 @@ if not status_ok then
 end
 
 treesitter.setup {
-  ensure_installed = { "maintained" },
+  ensure_installed = "maintained",
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
@@ -16,7 +16,7 @@ treesitter.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "org" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = { "org" },
   },
   context_commentstring = {
     enable = true,
