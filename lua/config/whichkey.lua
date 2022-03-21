@@ -162,7 +162,6 @@ local mappings = {
       "Workspace Symbols",
     },
   },
-
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -174,7 +173,11 @@ local mappings = {
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
-
+  o = {
+    name = "Orgmode",
+    a = {"<cmd>lua require('orgmode').action('agenda.prompt')"},
+    o = {"<cmd>lua require('orgmode').action('capture.prompt')"},
+  },
   r = {
     name = "Replace",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
