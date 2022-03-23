@@ -178,7 +178,7 @@ local mappings = {
   o = {
     name = "Orgmode",
     a = {"<cmd>lua require('orgmode').action('agenda.prompt')", "Open agenda prompt"},
-    o = {"<cmd>lua require('orgmode').action('capture.prompt')", "Open capture prompt"},
+    c = {"<cmd>lua require('orgmode').action('capture.prompt')", "Open capture prompt"},
   },
 
   r = {
