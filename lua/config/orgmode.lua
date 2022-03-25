@@ -13,8 +13,8 @@ orgmode.setup {
     t = { description = "Task", template = "* TODO %?\n %u" },
     m = {
       description = "Meeting",
-      template = "* MEETING %? :MEETING:\n:LOGBOOK:\nCLOCK: %U\n:END:",
+      template = "* MEETING %? :MEETING:\n  :LOGBOOK:\n  CLOCK: %U\n  :END:",
     },
-    n = { description = "Note", template = "* NOTE %? :NOTE:%?\n %u" },
+    n = { description = "Note", template = "* NOTE %? :NOTE:\n %u" },
   },
 }
