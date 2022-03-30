@@ -1,5 +1,6 @@
 -- Loads all plugin configs.
 
+require "config.impatient"
 require "config.colorscheme"
 require "config.cmp"
 require "config.lsp"
@@ -12,7 +13,6 @@ require "config.nvim-tree"
 require "config.bufferline"
 require "config.lualine"
 require "config.project"
-require "config.impatient"
 require "config.alpha"
 require "config.whichkey"
 require "config.autocommands"
