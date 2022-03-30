@@ -44,7 +44,7 @@ nvim_tree.setup {
   open_on_setup = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
+  update_cwd = true,
   view = {
     width = 30,
     height = 30,
