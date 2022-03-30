@@ -64,4 +64,7 @@ return {
   },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-orgmode/orgmode" },
+
+  -- Fennel with clojure-like lisp
+  { "Olical/aniseed" },
 }
