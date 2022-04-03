@@ -1,3 +1,9 @@
 -- Loads plugins for Neovim.
 
-require "bootstrap"
+-- Load fennel config
+vim.g["aniseed#env"] = {
+  module = "init",
+  compile = true
+}
+
+require "init"
