@@ -3,20 +3,12 @@
   {autoload {
     a aniseed.core
     plugins plugins
-    packer packer
-    nvim aniseed.nvim}})
+    packer packer}})
 
-(defn- use [...]
-  (let [plugins [...]]
-  (packer.startup
-    (fn [use])
-)
+(defn- install-plugins [...]
+  (each [plugin opts (pairs [...])]
+    (packer.startup (
+      fn [use]
+      (use (a.assoc opts 1 plugin))))))
 
-(defn- override-use [use]
-  (fn [plugin opts]
-  (use (a.assoc (or opts {}) 1 name))
-)
-
-(packer.startup(
-  fn use
-))
+(install-plugins plugins)
