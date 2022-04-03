@@ -8,8 +8,7 @@
 (def- packer-path 
   (.. (vim.fn.stdpath :data) :site/pack))
 
-(def- git-clone-url
-  ("!git clone --depth 1 https://github.com/%s/%s %s"))
+(def- git-clone-url "!git clone --depth 1 https://github.com/%s/%s %s")
 
 (defn- execute [cmd]
   (vim.api.nvim_command cmd))
@@ -26,3 +25,6 @@
 (ensure :wbthomason :packer.nvim)
 (ensure :Olical :aniseed)
 (ensure :lewis6991 :impatient.nvim)
+
+(config.packer)
+(config.impatient)
