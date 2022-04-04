@@ -26,5 +26,5 @@
 (ensure :Olical :aniseed)
 (ensure :lewis6991 :impatient.nvim)
 
-(config.packer)
-(config.impatient)
+(require :config.packer)
+(require :config.impatient)
