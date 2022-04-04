@@ -37,10 +37,6 @@
 (map "n" "<S-l>" ":bnext<CR>" opts)
 (map "n" "<S-h>" ":bprevious<CR>" opts)
 
-;; Insert ;;
-;; Press jk fast to enter
-(map "i" "jk" "<ESC>" opts)
-
 ;; Visual ;;
 ;; Stay in indent mode
 (map "v" "<" "<gv" opts)
