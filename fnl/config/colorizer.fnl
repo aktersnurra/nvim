@@ -5,4 +5,3 @@
 (let [(ok? colorizer) util.load-plugin :colorizer]
   (when ok?
     (colorizer.setup)))
-
