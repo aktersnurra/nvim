@@ -5,8 +5,9 @@
 
 (local luasnip (let [(ok? luasnip) util.load-plugin :luasnip]
   (when ok?
-    ((require :luasnip/loaders/from_vscode).lazy_load)
-    luasnip)))
+    (do
+      (require :luasnip/loaders/from_vscode).lazy_load)
+      luasnip)))
 
 (local lspkind (let [(ok? lspkind) util.load-plugin :lspkind]
   (when ok?
