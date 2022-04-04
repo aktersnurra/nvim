@@ -5,4 +5,3 @@
 (let [(ok? impatient) util.load-plugin :impatient]
   (when ok?
     (impatient.enable_profile)))
-
