@@ -6,4 +6,5 @@
   (when ok?
     (packer.init {
       :display {
-          :open_fn (fn [] ((require :packer.util).float {:border :rounded}))}})))
+        :open_fn (fn [] 
+          ((require :packer.util).float {:border :rounded}))}})))
