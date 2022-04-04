@@ -59,4 +59,5 @@
    
    :kevinhwang91/nvim-bqf { :event "BufRead" }
    :norcalli/nvim-colorizer.lua {}
+   :max397574/better-escape.nvim {}
    :nvim-orgmode/orgmode {}})
