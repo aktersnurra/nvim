@@ -9,6 +9,6 @@
   (each [plugin opts (pairs [...])]
     (packer.startup (
       fn [use]
-      (use (a.assoc opts 1 plugin))))))
+        (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins)
