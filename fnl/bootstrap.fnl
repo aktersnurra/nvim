@@ -19,8 +19,9 @@
 (defn- ensure [user repository]
   (let [path (ensure-path packer-path repository)])
   (if (> (vim.fn.empty (vim.fn.glob path) 0))
-    (execute (fmt git-clone-url user repository path))
-    (execute (fmt "packadd %s" repository))))
+    (do
+      (execute (fmt git-clone-url user repository path))
+      (execute (fmt "packadd %s" repository)))))
 
 (ensure :wbthomason :packer.nvim)
 (ensure :Olical :aniseed)
