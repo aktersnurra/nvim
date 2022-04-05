@@ -3,8 +3,7 @@
 
 (defn load-plugin [name]
   (let [(ok? val-or-err) (pcall require name)]
-    (when ok?
-      (val-or-err))
-    (when (not ok?)
+    (if ok?
+      (val-or-err)
       (print "Could not load config: " val-or-err))))
 
