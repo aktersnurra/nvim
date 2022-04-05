@@ -3,7 +3,7 @@
 -- Load fennel config
 vim.g["aniseed#env"] = {
   module = "init",
-  compile = true
+  compile = true,
 }
 
 require "init"
