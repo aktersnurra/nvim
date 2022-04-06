@@ -1,5 +1,4 @@
 ;; LSP installer.
-
 (module config.lsp.lsp-installer
   {autoload {util util}})
 
