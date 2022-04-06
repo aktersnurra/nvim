@@ -10,7 +10,7 @@
    :nvim-lua/plenary.nvim {} ;; Useful lua functions used ny lots of plugins
 
    ;; Colorschemes
-   "aktersnurra/no-clown-fiesta.nvim" {}
+   :aktersnurra/no-clown-fiesta.nvim {}
 
    ;; LSP
    :hrsh7th/nvim-cmp {} ;; The completion plugin
