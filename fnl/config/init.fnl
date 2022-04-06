@@ -11,4 +11,13 @@
     _ config.gitsigns
     _ config.lualine
     _ config.ncomment
-    _ config.nvim-tree}})
+    _ config.nvim-tree
+    _ config.orgmode
+    _ config.project
+    _ config.spectre
+    _ config.telescope
+    _ config.treesitter
+    _ config.which-key
+    _ config.zen
+    _ config.lsp}})
+
