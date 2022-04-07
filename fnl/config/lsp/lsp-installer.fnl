@@ -21,4 +21,4 @@
 (let [lsp-installer (util.load-plugin :lsp-installer)]
   (lsp-installer.on_server_ready (fn [server]
     (let [opts (get-server-opts server)]
-      server:setup opts))))
+      (server:setup opts)))))
