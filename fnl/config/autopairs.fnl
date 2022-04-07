@@ -22,4 +22,4 @@
           :end_key :$
           :keys :qwertyuiopzxcvbnmasdfghjkl
           :highlight :PmenuSel
-          :highlight_grey :LineNr}})
+          :highlight_grey :LineNr}}))
