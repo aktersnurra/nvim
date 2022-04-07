@@ -4,7 +4,7 @@
 
 (def- opts 
   {:on_attach: (require :config.lsp.handlers).on_attach
-   :capabilities ((require :config.lsp.handlers).capabilities)})
+   :capabilities (require :config.lsp.handlers).capabilities})
 
 (defn- get-server-opts [server]
   (when (= server.name :jsonls)
