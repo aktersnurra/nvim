@@ -2,6 +2,5 @@
 (module config.colorizer
   {autoload {util util}})
 
-(let [(ok? colorizer) util.load-plugin :colorizer]
-  (when ok?
-    (colorizer.setup)))
+(let [colorizer (util.load-plugin :colorizer)]
+  (colorizer.setup))

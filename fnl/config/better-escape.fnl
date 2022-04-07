@@ -3,10 +3,9 @@
   {autoload {util util}})
 
 
-(let [(ok? better-escape) util.load-plugin :better-escape]
-  (when ok?
-    (better-escape.setup {
-      :mapping ["jk" "jj"]
-      :timeout vim.o.timeoutlen
-      :clear_empty_lines false
-      :keys "<Esc>"}})))
+(let [better-escape (util.load-plugin :better-escape)]
+  (better-escape.setup {
+    :mapping ["jk" "jj"]
+    :timeout vim.o.timeoutlen
+    :clear_empty_lines false
+    :keys "<Esc>"}}))

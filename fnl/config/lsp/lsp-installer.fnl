@@ -3,7 +3,7 @@
   {autoload {util util}})
 
 (def- opts 
-  {:on_attach: ((require :config.lsp.handlers).on_attach)
+  {:on_attach: (require :config.lsp.handlers).on_attach
    :capabilities ((require :config.lsp.handlers).capabilities)})
 
 (defn- get-server-opts [server]
@@ -18,8 +18,7 @@
       (vim.tbl_deep_extend :force pyright-opts opts))))
 
 
-(let [(ok? lsp-installer) util.load-plugin :lsp-installer]
-  (when ok?
-    (lsp-installer.on_server_ready (fn [server]
-      (let [opts (get-server-opts server)]
-        server:setup opts)))))
+(let [lsp-installer (util.load-plugin :lsp-installer)]
+  (lsp-installer.on_server_ready (fn [server]
+    (let [opts (get-server-opts server)]
+      server:setup opts)))))

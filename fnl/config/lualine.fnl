@@ -30,32 +30,31 @@
       :cond hide_in_width 
       :color {}})
 
-(let [(ok? lualine) util.load-plugin :lualine]
-  (when ok?
-    (lualine.setup {
-      :options {
-        :icons_enabled true
-        :theme "auto"
-        :component_separators { :left "" :right "" }
-        :section_separators { :left "" :right "" }
-        :disabled_filetypes [ "alpha" "dashboard" "NvimTree" "Outline" ]
-        :always_divide_middle true
-      }
-      :sections {
-        :lualine_a [ "mode" ]
-        :lualine_b { 1 branch 2 "filename" }
-        :lualine_c { 1 diff }
-        :lualine_x { 1 diagnostics 2 filetype }
-        :lualine_y {}
-        :lualine_z [ "location" "progress" "encoding" ]
-      }
-      :inactive_sections {
-        :lualine_a [ "mode" ]
-        :lualine_b [ "filename" ]
-        :lualine_c {}
-        :lualine_x {}
-        :lualine_y {}
-        :lualine_z [ "location" "progress" "encoding" ]
-      }
-      :tabline {}
-      :extensions {}})))
+(let [lualine (util.load-plugin :lualine)]
+  (lualine.setup {
+    :options {
+      :icons_enabled true
+      :theme "auto"
+      :component_separators { :left "" :right "" }
+      :section_separators { :left "" :right "" }
+      :disabled_filetypes [ "alpha" "dashboard" "NvimTree" "Outline" ]
+      :always_divide_middle true
+    }
+    :sections {
+      :lualine_a [ "mode" ]
+      :lualine_b { 1 branch 2 "filename" }
+      :lualine_c { 1 diff }
+      :lualine_x { 1 diagnostics 2 filetype }
+      :lualine_y {}
+      :lualine_z [ "location" "progress" "encoding" ]
+    }
+    :inactive_sections {
+      :lualine_a [ "mode" ]
+      :lualine_b [ "filename" ]
+      :lualine_c {}
+      :lualine_x {}
+      :lualine_y {}
+      :lualine_z [ "location" "progress" "encoding" ]
+    }
+    :tabline {}
+    :extensions {}}))

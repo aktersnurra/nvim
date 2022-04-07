@@ -3,9 +3,8 @@
   {autoload {util util
              nvim aniseed.nvim}})
 
-(let [(ok? hop) util.load-plugin :hop]
-  (when ok?
-    (hop.setup {})))
+(set nvim.set_keymap "n" "s" ":HopChar2<cr>" { :silent true })
+(set nvim.set_keymap "n" "S" ":HopWord<cr>" { :silent true })
 
-(nvim.set_keymap "n" "s" ":HopChar2<cr>" { :silent true })
-(nvim.set_keymap "n" "S" ":HopWord<cr>" { :silent true })
+(let [hop (util.load-plugin :hop)]
+  (hop.setup {}))

@@ -3,26 +3,17 @@
   {autoload {nvim aniseed.nvim
              util util}})
 
-(local luasnip (let [(ok? luasnip) util.load-plugin :luasnip]
-  (when ok?
-    (do
-      (require :luasnip/loaders/from_vscode).lazy_load)
-      luasnip)))
 
-(local lspkind (let [(ok? lspkind) util.load-plugin :lspkind]
-  (when ok?
-    lspkind)))
-
-(lspkind.init)
-
-(defn- snip [args]
-  (luasnip.lsp_expand args.body)
-
-(let [(ok? cmp) util.load-plugin :cmp]
-  (when ok?
+(let [cmp (util.load-plugin :cmp)
+      lspkind (util.load-plugin :lspkind)
+      luasnip (util.load-plugin :luasnip)]
+  (do
+    ((require :luasnip/loaders/from_vscode).lazy_load)
+    (lspkind.init)
     (cmp.setup {
       :snippet {
-          :expand snip}
+          :expand (fn [args]
+                    (luasnip.lsp_expand args.body))}
       :mapping {
           "<C-k>" (cmp.mapping.select_prev_item)
           "<C-j>" (cmp.mapping.select_next_item)}

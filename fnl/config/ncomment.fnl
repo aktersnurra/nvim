@@ -19,8 +19,7 @@
         :key (get-type ctx U)
         :location (get-location ctx U)})))
 
-(let [(ok? ncomment) util.load-plugin :Comment]
-  (when ok?
-    (ncomment.setup 
-      {:pre_hook (fn [ctx]
-                     (pre-hook ctx))})))
+(let [ncomment (util.load-plugin :Comment)]
+  (ncomment.setup 
+    {:pre_hook (fn [ctx]
+                   (pre-hook ctx))}))

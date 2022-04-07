@@ -169,9 +169,8 @@
       '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>'
       "Comment" ]})
 
-(let [(ok? which-key) util.load-plugin :nvim-which-key.config]
-  (when ok?
-    (do
-      (which-key.setup setup)
-      (when.register mappings opts)
-      (when.register vmappings vopts))))
+(let [which-key (util.load-plugin :nvim-which-key.config)]
+  (do
+    (which-key.setup setup)
+    (when.register mappings opts)
+    (when.register vmappings vopts)))

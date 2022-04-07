@@ -2,11 +2,8 @@
 (module config.lsp.init
   {autoload {util util}})
 
-(let [(ok? _) util.load-plugin :lspconfig]
-  (when ok?
-    (do
-      (require :config.lsp.lsp-installer)
-      ((require :config.lsp.handlers).setup)
-      (require :config.lsp.null-ls))))
-
-
+(let [_ (util.load-plugin :lspconfig)]
+  (do
+    (require :config.lsp.lsp-installer)
+    ((require :config.lsp.handlers).setup)
+    (require :config.lsp.null-ls)))

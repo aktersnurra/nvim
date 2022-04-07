@@ -113,6 +113,5 @@
      :guifg { :attribute "fg" :highlight "LspDiagnosticsDefaultHint" }
      :guibg default-bg-normal}})
 
-(let [(ok? bufferline) util.load-plugin :bufferline]
-  (when ok?
-    (bufferline.setup {:options options :highlights highlights})))
+(let [bufferline (util.load-plugin :bufferline)]
+  (bufferline.setup {:options options :highlights highlights}))

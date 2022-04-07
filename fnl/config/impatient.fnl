@@ -2,6 +2,5 @@
 (module config.impatient
   {autoload {util util}})
 
-(let [(ok? impatient) util.load-plugin :impatient]
-  (when ok?
-    (impatient.enable_profile)))
+(let [impatient (util.load-plugin :impatient)]
+  (impatient.enable_profile))
