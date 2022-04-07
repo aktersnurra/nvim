@@ -35,7 +35,7 @@
         (dashboard.button "t" "  Find text" ":Telescope live_grep <CR>")
         (dashboard.button "c" "  Configuration" ":e ~/.config/nvim/init.lua <CR>")
         (dashboard.button "q" "  Quit Neovim" ":qa<CR>")
-      }
+      })
       (set dashboard.section.header.opts.hl :AlphaHeader)
       (set dashboard.section.buttons.opts.hl :AlphaButtons)
       (set dashboard.opts.opts.noautocmd true)

@@ -172,5 +172,5 @@
 (let [which-key (util.load-plugin :nvim-which-key.config)]
   (do
     (which-key.setup setup)
-    (when.register mappings opts)
-    (when.register vmappings vopts)))
+    (which-key.register mappings opts)
+    (which-key.register vmappings vopts)))

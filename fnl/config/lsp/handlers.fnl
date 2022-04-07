@@ -56,4 +56,4 @@
     (set capabilities.textDocument.completion.completionItem.snippetSupport true)
     (let [cmp-nvim-lsp (util.load-plugin :cmp_nvim_lsp)]
       (cmp-nvim-lsp.update_capabilities capabilities))
-    (capabilities)))
+    capabilities))

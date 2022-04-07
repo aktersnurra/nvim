@@ -13,7 +13,7 @@
 (util.autocmd 
   :TextYankPost 
   {:pattern [ :* ] 
-  :callback (lambda [] (vim.highlight.on_yank {:timeout 200})
+  :callback (lambda [] (vim.highlight.on_yank {:timeout 200}))
   :group :_general_settings})
 
 (util.autocmd 

@@ -7,7 +7,7 @@
   (treesitter.setup 
     {:ensure_installed "maintained"
      :sync_install false
-     :ignore_install { "" }
+     :ignore_install [ "" ]
      :autopairs { :enable true }
      :highlight {
        :enable true

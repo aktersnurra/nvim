@@ -52,4 +52,4 @@
 ;; Move text up and down
 (map "v" "<A-j>" ":m .+1<CR>==" opts)
 (map "v" "<A-k>" ":m .-2<CR>==" opts)
-(map "v" "p" "\"_dP" opts)
+;; (map "v" "p" "\"_dP" opts)

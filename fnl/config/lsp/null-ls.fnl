@@ -3,8 +3,8 @@
   {autoload {util util}})
 
 (let [null-ls (util.load-plugin :null-ls)]
-  (let [formatting (null_ls.builtins.formatting) 
-        diagnostics (null_ls.builtins.diagnostics)])
+  (let [formatting null_ls.builtins.formatting 
+        diagnostics null_ls.builtins.diagnostics])
   (null-ls.setup
     {:debug false
      :sources [
