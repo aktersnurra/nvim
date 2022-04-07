@@ -17,4 +17,4 @@
        :enable true
        :enable_autocmd false}
      :indent { :enable true :disable [ "yaml" "python" "css" ] }
-     :playground { :enable true }}))
+     :playground { :enable true }))
