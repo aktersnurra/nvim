@@ -1,6 +1,9 @@
 ;; Utility functions.
 (module util)
 
+(defn autocmd [name opts]
+  (nvim.create_autocmd name opts))
+
 (defn load-plugin [name]
   (let [(ok? val-or-err) (pcall require name)]
     (if ok?
