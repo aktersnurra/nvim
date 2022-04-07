@@ -4,7 +4,7 @@
 
 (def- opts {:noremap true :silent true})
 (defn- map [mode lhs rhs opt]
-  (nvim.set_keymap mode lhs rhs opt)
+  (nvim.set_keymap mode lhs rhs opt))
 
 ;;Remap space as leader key
 (map "" "<Space>" "<Nop>" opts)
@@ -52,4 +52,4 @@
 ;; Move text up and down
 (map "v" "<A-j>" ":m .+1<CR>==" opts)
 (map "v" "<A-k>" ":m .-2<CR>==" opts)
-;; (map "v" "p" "\"_dP" opts)
+(map "v" "p" "\"_dP" opts)
