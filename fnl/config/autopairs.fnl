@@ -13,8 +13,8 @@
       :disable_filetype [ :TelescopePrompt :spectre_panel ]
       :fast_warp {
           :map "<M-e>"
-          :chars [ "{" "[" "(" '"' "'" ]
-          :pattern string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", "")
+          :chars [ "{" "[" "(" "\"" "'" ]
+          :pattern (string.gsub "[%'%\"%)%>%]%)%}%,]" "%s+" "")
           :check_comma true
           :highlight :PmenuSel
           :highlight_grey :LineNr
