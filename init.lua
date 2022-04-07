@@ -6,4 +6,4 @@ vim.g["aniseed#env"] = {
   compile = true,
 }
 
-require "init"
+-- require "init"
