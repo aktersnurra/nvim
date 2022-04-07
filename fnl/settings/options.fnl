@@ -47,5 +47,5 @@
 (set vim.cmd "set whichwrap+=<,>,[,],h,l")
 (set vim.cmd [[set iskeyword+=-]])
 (set vim.cmd [[set formatoptions-=cro]])
-(nvim.ex.set "shortmess+=c")
+(set nvim.ex.set "shortmess+=c")
 (apply-opts)
