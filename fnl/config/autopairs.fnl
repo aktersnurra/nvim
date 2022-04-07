@@ -19,7 +19,7 @@
           :highlight :PmenuSel
           :highlight_grey :LineNr
           :offset 0
-          :end_key $
-          :keys qwertyuiopzxcvbnmasdfghjkl
-          :highlight PmenuSel
-          :highlight_grey LineNr}})
+          :end_key :$
+          :keys :qwertyuiopzxcvbnmasdfghjkl
+          :highlight :PmenuSel
+          :highlight_grey :LineNr}})
