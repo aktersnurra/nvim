@@ -49,7 +49,7 @@
    :akinsho/bufferline.nvim {}
    :moll/vim-bbye {}
    
-   :nvim-lualine/lualine.nvim { :requires "kyazdani42/nvim-web-devicons" :opt true }}
+   :nvim-lualine/lualine.nvim { :requires "kyazdani42/nvim-web-devicons" :opt true }
    :ahmedkhalf/project.nvim {}
    :goolord/alpha-nvim {}
    :antoinemadec/FixCursorHold.nvim {} ;; This is needed to fix lsp doc highlight

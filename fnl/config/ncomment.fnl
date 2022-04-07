@@ -11,7 +11,7 @@
     ((require :ts_context_commentstring.utils).get_cursor_location)
     (or (= ctx.motion U.motion.v) (= ctx.motion U.cmotion.V))
     ((require :ts_context_commentstring.utils).get_visual_start_location)
-    (nil)))
+    nil))
 
 (defn- pre-hook [ctx]
   (let [U (require :Comment.utils)]

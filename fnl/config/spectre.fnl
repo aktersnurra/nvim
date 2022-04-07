@@ -91,7 +91,7 @@
      :default {
        :find {
          :cmd "rg"
-         :options { "ignore-case" }}
+         :options [ "ignore-case" ]}
        :replace {
          :cmd "sed"}}
      :replace_vim_cmd "cdo"

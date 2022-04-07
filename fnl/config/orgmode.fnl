@@ -6,7 +6,7 @@
   (do
     (orgmode.setup_ts_grammar)
     (orgmode.setup
-      {:org_agenda_files { "~/.local/share/org/**/*" }
+      {:org_agenda_files [ "~/.local/share/org/**/*" ]
        :org_default_notes_file "~/.local/share/org/refile.org"
        :org_agenda_templates {
          :t { :description "Task" :template "* TODO %?\n %u" }
