@@ -40,9 +40,9 @@
   }
 )
 
-(defn- apply-opts [opts]
-  (each [k v (pairs opts)]
-    (vim.opt[k] v)))
+(defn- apply-opts [...]
+  (each [k v (pairs ...)]
+    (tset vim.opt k v)))
 
 (set vim.cmd "set whichwrap+=<,>,[,],h,l")
 (set vim.cmd [[set iskeyword+=-]])
