@@ -39,4 +39,4 @@
       (set dashboard.section.header.opts.hl :AlphaHeader)
       (set dashboard.section.buttons.opts.hl :AlphaButtons)
       (set dashboard.opts.opts.noautocmd true)
-      (alpha.setup {dashboard.opts}))))
+      (alpha.setup dashboard.opts))))
