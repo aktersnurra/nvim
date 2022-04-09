@@ -24,7 +24,7 @@
 
 (let [nvim-tree (util.load-plugin :nvim-tree)
       nvim-tree-config (util.load-plugin :nvim-tree.config)]
-  (let [tree-cb nvim_tree_config.nvim_tree_callback]
+  (let [tree-cb nvim-tree-config.nvim_tree_callback]
     (nvim-tree.setup 
       {:auto_reload_on_write true
        :disable_netrw false
