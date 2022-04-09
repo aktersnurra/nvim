@@ -48,4 +48,4 @@
 (set vim.cmd [[set iskeyword+=-]])
 (set vim.cmd [[set formatoptions-=cro]])
 (set nvim.ex.set "shortmess+=c")
-(apply-opts)
+(apply-opts opts)
