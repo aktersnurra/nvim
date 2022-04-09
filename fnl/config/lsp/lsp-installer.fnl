@@ -19,7 +19,7 @@
       (vim.tbl_deep_extend :force pyright-opts opts))))
 
 
-(let [lsp-installer (util.load-plugin :lsp-installer)]
+(let [lsp-installer (util.load-plugin :nvim-lsp-installer)]
   (lsp-installer.on_server_ready (fn [server]
     (let [opts (get-server-opts server)]
       (server:setup opts)))))
