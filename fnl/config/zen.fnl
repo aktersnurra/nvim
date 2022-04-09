@@ -1,5 +1,5 @@
 ;; Zen mode.
-(module config.zen-mode
+(module config.zen
   {autoload {util util}})
 
 (let [zen-mode (util.load-plugin :zen-mode)]
