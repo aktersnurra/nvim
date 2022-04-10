@@ -6,5 +6,3 @@
    {:python 
     {:analysis
      {:typeCheckingMode "off"}}}})
-
-(settings)

@@ -13,10 +13,11 @@
       (vim.tbl_deep_extend :force jsonls-opts opts)))
   (when (= server.name :sumneko_lua)
     (let [sumneko-lua-opts (require :config.lsp.settings.sumneko-lua)]
-      (vim.tbl_deep_extend :force sumneko-lua-opts opts)))
+      (vim.tbl_deep_extend :force sumneko-lua-opts.settings opts)))
   (when (= server.name :pyright)
     (let [pyright-opts (require :config.lsp.settings.pyright)]
-      (vim.tbl_deep_extend :force pyright-opts opts))))
+      (vim.tbl_deep_extend :force pyright-opts.settings opts)))
+  opts)
 
 
 (let [lsp-installer (util.load-plugin :nvim-lsp-installer)]

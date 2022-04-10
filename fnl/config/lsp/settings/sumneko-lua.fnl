@@ -17,5 +17,3 @@
     :Lua {
       :diagnostics diagnostics
       :workspace workspace}}})
-
-(settings)
