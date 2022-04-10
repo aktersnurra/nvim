@@ -3,7 +3,7 @@
   {autoload {nvim aniseed.nvim}})
 
 (defn autocmd [name opts]
-  (nvim.ex.autocmd name opts))
+  (nvim.ex.create_autocmd name opts))
 
 (defn load-plugin [name]
   (let [(ok? val-or-err) (pcall require name)]
