@@ -1,5 +1,6 @@
 ;; Utility functions.
-(module util)
+(module util
+  {autoload {nvim aniseed.nvim}})
 
 (defn autocmd [name opts]
   (nvim.create_autocmd name opts))
