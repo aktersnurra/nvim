@@ -7,8 +7,7 @@
 (let [cmp (util.load-plugin :cmp)
       lspkind (util.load-plugin :lspkind)
       luasnip (util.load-plugin :luasnip)]
-  (do
-    ((require :luasnip/loaders/from_vscode).lazy_load)
+    ;;((require :luasnip/loaders/from_vscode).lazy_load)
     (lspkind.init)
     (cmp.setup {
       :snippet {
@@ -36,4 +35,4 @@
         :border [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ]}
       :experimental {
         :ghost_text false
-        :native_menu false}})))
+        :native_menu false}}))
