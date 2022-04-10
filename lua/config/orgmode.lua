@@ -1,3 +1,4 @@
+-- Orgmode for nvim
 local status_ok, orgmode = pcall(require, "orgmode")
 if not status_ok then
   return
