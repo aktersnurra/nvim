@@ -40,12 +40,12 @@
   }
 )
 
-(defn- apply-opts [...]
-  (each [k v (pairs ...)]
+(defn- apply-opts []
+  (each [k v (pairs opts)]
     (tset vim.opt k v)))
 
-(set vim.cmd "set whichwrap+=<,>,[,],h,l")
-(set vim.cmd [[set iskeyword+=-]])
-(set vim.cmd [[set formatoptions-=cro]])
-(set nvim.ex.set "shortmess+=c")
+(vim.cmd "set whichwrap+=<,>,[,],h,l")
+(vim.cmd "set iskeyword+=-")
+(vim.cmd "set formatoptions-=cro")
+(nvim.ex.set "shortmess+=c")
 (apply-opts opts)

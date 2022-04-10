@@ -5,7 +5,7 @@
 
 (let [treesitter (util.load-plugin :nvim-treesitter.configs)]
   (treesitter.setup 
-    {:ensure_installed "maintained"
+    {:ensure_installed "all"
      :sync_install false
      :ignore_install [ "" ]
      :autopairs { :enable true }
