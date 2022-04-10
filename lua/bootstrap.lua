@@ -25,4 +25,3 @@ ensure("lewis6991", "impatient.nvim")
 
 -- Enable faster loading with impatient
 require "config.impatient"
-return PACKER_BOOTSTRAP

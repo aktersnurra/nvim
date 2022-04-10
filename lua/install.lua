@@ -1,7 +1,7 @@
 -- Installs plugins with packer.
 local plugins = require "plugins"
 
-PACKER_BOOTSTRAP = require "bootstrap"
+require "bootstrap"
 
 local packer = require "config.packer"
 
