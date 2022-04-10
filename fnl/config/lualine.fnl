@@ -42,9 +42,9 @@
     }
     :sections {
       :lualine_a [ "mode" ]
-      :lualine_b { 1 branch 2 "filename" }
-      :lualine_c { 1 diff }
-      :lualine_x { 1 diagnostics 2 filetype }
+      :lualine_b [ branch "filename" ]
+      :lualine_c [ diff ]
+      :lualine_x [ diagnostics filetype ]
       :lualine_y {}
       :lualine_z [ "location" "progress" "encoding" ]
     }
