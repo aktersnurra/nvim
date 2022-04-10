@@ -3,7 +3,7 @@
   {autoload {util util}})
 
 
-(let [better-escape (util.load-plugin :better-escape)]
+(let [better-escape (util.load-plugin :better_escape)]
   (better-escape.setup {
     :mapping ["jk" "jj"]
     :timeout vim.o.timeoutlen
