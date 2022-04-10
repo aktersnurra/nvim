@@ -5,11 +5,10 @@
     plugins plugins
     packer packer}})
 
-(defn- install-plugins [...]
-  (let [plgs ...]
-    (packer.startup (
-      fn [use]
-        (each [plugin opts (pairs plgs)]
-          (use (a.assoc opts 1 plugin)))))))
+(defn- install-plugins [plgs]
+  (packer.startup (
+    fn [use]
+      (each [plugin opts (pairs plgs)]
+        (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
