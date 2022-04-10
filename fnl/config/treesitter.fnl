@@ -3,7 +3,7 @@
 (module config.treesitter
   {autoload {util util}})
 
-(let [treesitter (util.load-plugin :nvim-treesitter.config)]
+(let [treesitter (util.load-plugin :nvim-treesitter.configs)]
   (treesitter.setup 
     {:ensure_installed "maintained"
      :sync_install false
