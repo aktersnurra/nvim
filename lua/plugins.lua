@@ -20,6 +20,7 @@ return {
   { "williamboman/nvim-lsp-installer" },
   { "tamago324/nlsp-settings.nvim" },
   { "jose-elias-alvarez/null-ls.nvim" },
+  { "b0o/SchemaStore.nvim" },
 
   -- Snippets
   { "L3MON4D3/LuaSnip" },
@@ -64,7 +65,4 @@ return {
   },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-orgmode/orgmode" },
-
-  -- Fennel with clojure-like lisp
-  { "Olical/aniseed" },
 }
