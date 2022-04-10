@@ -1,6 +1,4 @@
 ;; Load nvim settings
 (module settings
-  {require {
-            _ settings.options
-            _ settings.keymaps
-            }})
+  {require {_ settings.options
+            _ settings.keymaps}})

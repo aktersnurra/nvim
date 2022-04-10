@@ -44,8 +44,8 @@
   (each [k v (pairs opts)]
     (tset vim.opt k v)))
 
+(apply-opts)
 (vim.cmd "set whichwrap+=<,>,[,],h,l")
 (vim.cmd "set iskeyword+=-")
 (vim.cmd "set formatoptions-=cro")
 (nvim.ex.set "shortmess+=c")
-(apply-opts opts)
