@@ -18,7 +18,7 @@
    :hrsh7th/cmp-path {} ;; path completions
    :hrsh7th/cmp-cmdline {} ;; cmdline completions
    :saadparwaiz1/cmp_luasnip {} ;; snippet completions
-   :onsails:lspkind-nvim {}
+   :onsails/lspkind-nvim {}
    :hrsh7th/cmp-nvim-lsp {}
    :neovim/nvim-lspconfig {}
    :williamboman/nvim-lsp-installer {}
@@ -49,7 +49,7 @@
    :akinsho/bufferline.nvim {}
    :moll/vim-bbye {}
    
-   :nvim-lualine/lualine.nvim { :requires "kyazdani42/nvim-web-devicons" :opt true }
+   :nvim-lualine/lualine.nvim { :requires { 1 "kyazdani42/nvim-web-devicons" :opt true }}
    :ahmedkhalf/project.nvim {}
    :goolord/alpha-nvim {}
    :antoinemadec/FixCursorHold.nvim {} ;; This is needed to fix lsp doc highlight
