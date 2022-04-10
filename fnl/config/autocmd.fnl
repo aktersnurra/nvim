@@ -1,8 +1,6 @@
 ;; A customizable greeter.
 (module config.autocmd
-  {autoload {util util
-             nvim aniseed.nvim
-             a aniseed.core}})
+  {autoload {util util}})
 
 (util.autocmd 
   :FileType 
