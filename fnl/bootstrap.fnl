@@ -18,8 +18,7 @@
            (do
              (execute (fmt git-clone-url user repository path))
              (execute (fmt "packadd %s" repository))
-             true)
-           false)))
+             true))))
 
 (defn run [] (let [is_bootstrapped (ensure :wbthomason :packer.nvim)]
                (ensure :Olical :aniseed)
