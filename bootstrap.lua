@@ -24,6 +24,3 @@ end
 ensure("wbthomason", "packer.nvim")
 ensure("Olical", "aniseed")
 ensure("lewis6991", "impatient.nvim")
-
--- Enable faster loading with impatient
-require "impatient"

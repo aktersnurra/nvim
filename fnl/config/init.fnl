@@ -1,5 +1,6 @@
 ;; Load all plugin configs.
-(module config.init {require {_ config.packer
+(module config.init {require {_ config.impatient
+                              _ config.packer
                               _ config.alpha
                               ;;_ config.autocmd
                               _ config.autopairs
