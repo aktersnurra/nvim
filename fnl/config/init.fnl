@@ -1,8 +1,8 @@
 ;; Load all plugin configs.
 (module config.init {require {_ config.impatient
                               _ config.packer
+                              _ config.autocmd
                               _ config.alpha
-                              ;;_ config.autocmd
                               _ config.autopairs
                               _ config.better-escape
                               _ config.bufferline
