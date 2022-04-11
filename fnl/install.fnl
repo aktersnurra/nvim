@@ -11,5 +11,3 @@
                            (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
-(if (= util.num-plugins 3)
-    (packer.sync))
