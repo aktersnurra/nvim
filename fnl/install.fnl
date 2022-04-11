@@ -10,5 +10,6 @@
                            (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
-(if (= (vim.env.BOOTSTRAPPED) true)
-  (packer.sync))
+(let [is_bootstrapped vim.env.BOOTSTRAPPED]
+  (if is_bootstrapped?
+    (packer.sync)))
