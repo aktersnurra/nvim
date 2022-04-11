@@ -10,6 +10,6 @@
                            (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
-(let [is_bootstrapped vim.env.BOOTSTRAPPED]
-  (if is_bootstrapped?
-    (packer.sync)))
+(local path (vim.fn.stdpath (.. "data" "/site/pack/packer/start")))
+(if (= (vim.fn.empty (vim.fn.glob path)) 3)
+  (packer.sync))
