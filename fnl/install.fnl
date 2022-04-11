@@ -2,7 +2,8 @@
 (module install {autoload {a aniseed.core
                            plugins plugins
                            packer packer
-                           bootstrap bootstrap}})
+                           bootstrap bootstrap
+                           util util}})
 
 (defn- install-plugins [plgs]
        (packer.startup (fn [use]
@@ -10,6 +11,5 @@
                            (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
-(local path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
-(if (= (length (vim.fn.readdir path)) 3)
+(if (= util.num-plugins 3)
     (packer.sync))

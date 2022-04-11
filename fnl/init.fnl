@@ -1,6 +1,6 @@
 ;; Install, load settings, and load plugin configs.
-(module init)
+(module init {autoload {util util}})
 (require :settings)
 (require :install)
-(if (> (length (vim.fn.readdir path)) 3)
+(if (> util.num-plugins 3)
     (require :config))

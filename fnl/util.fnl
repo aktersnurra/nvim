@@ -1,7 +1,8 @@
 ;; Utility functions.
 (module util {autoload {nvim aniseed.nvim}})
 
-(defn autocmd [name opts] (nvim.ex.create_autocmd name opts))
+(def- path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
+(def num-plugins (length (vim.fn.readdir path)))
 
 (defn load-plugin [name]
       (let [(ok? val-or-err) (pcall require name)]
