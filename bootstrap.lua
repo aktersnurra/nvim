@@ -17,6 +17,9 @@ local function ensure(user, repository)
       )
     )
     execute(fmt("packadd %s", repository))
+    if repository == "packer.nvim" then
+      vim.env.BOOTSTRAPPED = true
+    end
   end
 end
 
