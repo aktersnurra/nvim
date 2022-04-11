@@ -1,50 +1,39 @@
 ;; A customizable greeter.
-(module config.autocmd {autoload {util util}})
+(module config.autocmd {autoload {nvim aniseed.nvim util util}})
 
-(util.autocmd :FileType {:pattern [:qf :help :man :lspinfo]
-                         :command "nnoremap <silent> <buffer> q :close<CR>"
-                         :group :_general_settings})
+(defn autocmd [group cmds]
+  (nvim.command (.. "augroup " group))
+  (nvim.command "autocmd!")
+  (each [_ cmd (ipairs cmds)]
+    (nvim.command (.. "autocmd " cmd)))
+  (nvim.command "augroup end"))
 
-(util.autocmd :TextYankPost
-              {:pattern ["*"]
-               :callback (lambda []
-                           (vim.highlight.on_yank {:timeout 200}))
-               :group :_general_settings})
+(def- general-settings [
+  "FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>"
+  "TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200})"
+  "BufWinEnter * :set formatoptions-=cro"
+  "FileType qf set nobuflisted"])
 
-(util.autocmd :BufWinEnter
-              {:pattern ["*"]
-               :command ":set formatoptions-=cro"
-               :group :_general_settings})
+(def- git [
+  "FileType gitcommit setlocal wrap"
+  "FileType gitcommit setlocal spell"])
 
-(util.autocmd :FileType {:pattern [:qf]
-                         :command "set nobuflisted"
-                         :group :_general_settings})
+(def- markdown [
+  "FileType markdown setlocal wrap"
+  "FileType markdown setlocal spell"])
 
-(util.autocmd :FileType {:pattern [:gitcommit]
-                         :command "setlocal wrap"
-                         :group :_git})
+(def- auto-resize [
+  "VimResized * tabdo wincmd ="])
 
-(util.autocmd :FileType {:pattern [:gitcommit]
-                         :command "setlocal spell"
-                         :group :_git})
+(def- alpha [
+  "User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"])
 
-(util.autocmd :FileType {:pattern [:markdown]
-                         :command "setlocal wrap"
-                         :group :_markdown})
+(def- packer [
+  "BufWritePost plugins.lua source <afile> | PackerSync"])
 
-(util.autocmd :FileType {:pattern [:markdown]
-                         :command "setlocal spell"
-                         :group :_markdown})
-
-(util.autocmd :VimResized {:pattern ["*"]
-                           :command "tabdo wincmd ="
-                           :group :_auto_resize})
-
-(util.autocmd :User {:pattern [:AlphaReady]
-                     :command "set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"
-                     :group :_alpha})
-
-(util.autocmd :BufWritePost
-              {:pattern [:plugins.fnl]
-               :command "source <afile> | PackerSync"
-               :group :packer_user_config})
+(autocmd "_general_settings" general-settings)
+(autocmd "_git" git)
+(autocmd "_markdown" markdown)
+(autocmd "_auto_resize" auto-resize)
+(autocmd "_alpha" alpha)
+(autocmd "packer_user_config" packer)
