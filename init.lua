@@ -24,10 +24,6 @@ ensure("wbthomason", "packer.nvim")
 ensure("Olical", "aniseed")
 ensure("lewis6991", "impatient.nvim")
 
-if #vim.fn.readdir(packer_path) == 3 then
-  require("packer").sync()
-end
-
 -- Loads plugins for Neovim with fennel.
 vim.g["aniseed#env"] = {
   module = "init",
