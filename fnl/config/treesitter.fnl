@@ -3,7 +3,24 @@
 (module config.treesitter {autoload {util util}})
 
 (let [treesitter (util.load-plugin :nvim-treesitter.configs)]
-  (treesitter.setup {:ensure_installed :all
+  (treesitter.setup {:ensure_installed [:c
+                                        :rust
+                                        :lua
+                                        :haskell
+                                        :python
+                                        :fennel
+                                        :org
+                                        :make
+                                        :go
+                                        :ocaml
+                                        :erlang
+                                        :vim
+                                        :yaml
+                                        :html
+                                        :toml
+                                        :dockerfile
+                                        :markdown
+                                        :latex]
                      :sync_install false
                      :ignore_install [""]
                      :autopairs {:enable true}
