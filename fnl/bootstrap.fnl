@@ -12,13 +12,14 @@
 (defn- ensure-path [packer-path repository]
        (fmt "%s/packer/start/%s" packer-path repository))
 
-(defn- ensure [user repository]
-       (let [path (ensure-path packer-path repository)]
-       (if (> (vim.fn.empty (vim.fn.glob path) 0))
-           (do
-             (execute (fmt git-clone-url user repository path))
-             (execute (fmt "packadd %s" repository))
-             true))))
+(defn- install [user repository path]
+       (execute (fmt git-clone-url user repository path))
+       (execute (fmt "packadd %s" repository)))
+
+(defn- ensure [user repository] (let [path (ensure-path packer-path repository)]
+                                  (if (> (vim.fn.empty (vim.fn.glob path) 0))
+                                      (install user repository path)
+                                      true)))
 
 (defn run [] (let [is_bootstrapped (ensure :wbthomason :packer.nvim)]
                (ensure :Olical :aniseed)
