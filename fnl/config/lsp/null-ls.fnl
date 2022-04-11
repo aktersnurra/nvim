@@ -2,8 +2,8 @@
 (module config.lsp.null-ls {autoload {util util}})
 
 (let [null-ls (util.load-plugin :null-ls)]
-  (let [formatting null_ls.builtins.formatting
-        diagnostics null_ls.builtins.diagnostics]
+  (let [formatting null-ls.builtins.formatting
+        diagnostics null-ls.builtins.diagnostics]
     (null-ls.setup {:debug false
                     :sources [diagnostics.flake8
                               diagnostics.golangci_lint
