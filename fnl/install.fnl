@@ -7,9 +7,6 @@
 (defn- install-plugins [plgs]
        (packer.startup (fn [use]
                          (each [plugin opts (pairs plgs)]
-                           (use (a.assoc opts 1 plugin)))))
-       (if is_bootstrapped?
-           ((require :config.packer) .sync)))
+                           (use (a.assoc opts 1 plugin))))))
 
-(local is_bootstrapped (bootstrap.run))
 (install-plugins plugins.plugins)
