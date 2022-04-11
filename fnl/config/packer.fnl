@@ -3,4 +3,5 @@
 
 (let [packer (util.load-plugin :packer)]
   (packer.init {:display {:open_fn (fn []
-                                     (packer.util.float {:border :rounded}))}}))
+                                     ((require :packer.util).float
+                                                             {:border :rounded}))}}))
