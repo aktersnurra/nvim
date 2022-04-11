@@ -18,8 +18,8 @@
 
 (defn- ensure [user repository] (let [path (ensure-path packer-path repository)]
                                   (if (> (vim.fn.empty (vim.fn.glob path) 0))
-                                      (install user repository path)
-                                      true)))
+                                      (install user repository path))
+                                      true))
 
 (defn run [] (let [is_bootstrapped (ensure :wbthomason :packer.nvim)]
                (ensure :Olical :aniseed)
