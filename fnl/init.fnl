@@ -2,5 +2,5 @@
 (module init)
 (require :settings)
 (require :install)
-(if (> (# (vim.fn.readdir path)) 3)
-  (require :config))
+(if (> (length (vim.fn.readdir path)) 3)
+    (require :config))

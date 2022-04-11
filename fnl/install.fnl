@@ -10,6 +10,6 @@
                            (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
-(local path (.. (vim.fn.stdpath "data") "/site/pack/packer/start"))
-(if (= (# (vim.fn.readdir path)) 3)
-  (packer.sync))
+(local path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
+(if (= (length (vim.fn.readdir path)) 3)
+    (packer.sync))
