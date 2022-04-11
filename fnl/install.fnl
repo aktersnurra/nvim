@@ -7,8 +7,8 @@
 (defn- install-plugins [plgs]
        (packer.startup (fn [use]
                          (each [plugin opts (pairs plgs)]
-                           (use (a.assoc opts 1 plugin)))))
-      (if (vim.env.BOOTSTRAPPED)?
-        (packer.sync)))
+                           (use (a.assoc opts 1 plugin))))))
 
 (install-plugins plugins.plugins)
+(if (= (vim.env.BOOTSTRAPPED) true)
+  (packer.sync))
