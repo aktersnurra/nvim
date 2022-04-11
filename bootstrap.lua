@@ -3,7 +3,6 @@
 local fn = vim.fn
 local fmt = string.format
 local execute = vim.api.nvim_command
-local is_bootstrapped = false
 
 local function ensure(user, repository)
   local packer_path = fn.stdpath "data" .. "/site/pack"
@@ -18,9 +17,6 @@ local function ensure(user, repository)
       )
     )
     execute(fmt("packadd %s", repository))
-    if repository == "packer.nvim" then
-      is_bootstrapped = true
-    end
   end
 end
 
@@ -28,7 +24,3 @@ end
 ensure("wbthomason", "packer.nvim")
 ensure("Olical", "aniseed")
 ensure("lewis6991", "impatient.nvim")
-
-if is_bootstrapped then
-  require("packer").sync()
-end
