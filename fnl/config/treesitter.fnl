@@ -9,7 +9,6 @@
                                         :haskell
                                         :python
                                         :fennel
-                                        :org
                                         :make
                                         :go
                                         :ocaml
