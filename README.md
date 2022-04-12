@@ -10,9 +10,7 @@ fnm and node for lsp
 
 # Install
 
-```
-make install
-```
+`make install`
 
 # Structure
 
