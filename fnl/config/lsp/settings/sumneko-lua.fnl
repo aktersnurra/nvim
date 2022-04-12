@@ -20,4 +20,4 @@
 
 (def- runtime {:version :LuaJIT :path (vim.split package.path ";")})
 
-(def opts {:settings {:Lua {: diagnostics : workspace}}})
+(def opts {:settings {:Lua {:diagnostics  diagnostics :workspace  workspace :runtime runtime}}})
