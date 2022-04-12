@@ -10,6 +10,8 @@ fnm and node for lsp
 
 # Install
 
+Wonky non-deterministic performance currently.
+
 `make install`
 
 # Structure
