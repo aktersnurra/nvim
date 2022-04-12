@@ -12,11 +12,17 @@ fzf
 fnm and node for lsp
 ```
 
+# Install
+
+```
+make install
+```
+
 # Structure
 
 ```
 .
-└── lua
+└── fnl
     ├── config              # Plugin configs.
     │   └── lsp             # LSP related configs.
     │       └── settings    # Server specific settings.
@@ -24,7 +30,3 @@ fnm and node for lsp
     ├── plugins.lua         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
-
-## TODO
--[ ] autocmd
--[ ] cmp check if anything is missing
