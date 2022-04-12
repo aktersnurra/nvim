@@ -22,7 +22,7 @@
 (def- alpha
       ["User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"])
 
-(def- packer ["BufWritePost plugins.lua source <afile> | PackerSync"])
+(def- packer ["BufWritePost plugins.fnl source <afile> | PackerSync"])
 
 (autocmd :_general_settings general-settings)
 (autocmd :_git git)
