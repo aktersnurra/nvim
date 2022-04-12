@@ -24,3 +24,7 @@ fnm and node for lsp
     ├── plugins.lua         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
+
+## TODO
+-[ ] autocmd
+-[ ] cmp check if anything is missing
