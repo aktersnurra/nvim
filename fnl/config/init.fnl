@@ -20,4 +20,5 @@
                               _ config.treesitter
                               _ config.which-key
                               _ config.zen
+                              _ config.trim
                               _ config.lsp}})
