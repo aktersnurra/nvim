@@ -1,73 +1,76 @@
 ;; Sets options in neovim
 (module settings.options {autoload {nvim aniseed.nvim}})
 
-(def- opts {:backup false
-            ;; creates a backup file
-            :clipboard :unnamedplus
+(def- opts {;; creates a backup file
+            :backup false
             ;; allows neovim to access the system clipboard
-            :cmdheight 2
+            :clipboard :unnamedplus
             ;; more space in the neovim command line for displaying messages
-            :completeopt {:menuone :noselect}
+            :cmdheight 2
             ;; mostly just for cmp
-            :conceallevel 0
+            :completeopt {:menuone :noselect}
             ;; so that `` is visible in markdown files
-            :fileencoding :utf-8
+            :conceallevel 0
             ;; the encoding written to a file
-            :hlsearch true
+            :fileencoding :utf-8
             ;; highlight all matches on previous search pattern
-            :ignorecase true
+            :hlsearch true
             ;; ignore case in search patterns
-            :mouse ""
+            :ignorecase true
             ;; disable the mouse to be used in neovim
-            :pumheight 10
+            :mouse ""
             ;; pop up menu height
-            :showmode false
+            :pumheight 10
             ;; we don't need to see things like ;; INSERT ;; anymore
-            :showtabline 2
+            :showmode false
             ;; always show tabs
-            :smartcase true
+            :showtabline 2
             ;; smart case
-            :smartindent true
+            :smartcase true
             ;; make indenting smarter again
-            :splitbelow true
+            :smartindent true
             ;; force all horizontal splits to go below current window
-            :splitright true
+            :splitbelow true
             ;; force all vertical splits to go to the right of current window
-            :swapfile false
+            :splitright true
             ;; creates a swapfile
-            :termguicolors true
+            :swapfile false
             ;; set term gui colors (most terminals support this)
-            :timeoutlen 1000
+            :termguicolors true
             ;; time to wait for a mapped sequence to complete (in milliseconds)
-            :undofile true
+            :timeoutlen 1000
             ;; enable persistent undo
-            :updatetime 300
+            :undofile true
             ;; faster completion (4000ms default)
+            :updatetime 300
+            ;; if a file is being edited by another program (or was written
+            ;; to file while editing with another program), it is not allowed
+            ;; to be edited
             :writebackup false
-            ;; if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-            :expandtab true
             ;; convert tabs to spaces
-            :shiftwidth 2
+            :expandtab true
             ;; the number of spaces inserted for each indentation
-            :tabstop 2
+            :shiftwidth 2
             ;; insert 2 spaces for a tab
-            :cursorline true
+            :tabstop 2
             ;; highlight the current line
-            :number true
+            :cursorline true
             ;; set numbered lines
-            :relativenumber true
+            :number true
             ;; set relative numbered lines
-            :numberwidth 4
+            :relativenumber true
             ;; set number column width to 2 {default 4}
+            :numberwidth 2
+            ;; always show the sign column, otherwise it would shift the text
+            ;; each time
             :signcolumn :yes
-            ;; always show the sign column, otherwise it would shift the text each time
-            :wrap false
             ;; display lines as one long line
-            :scrolloff 8
+            :wrap false
             ;; is one of my fav
+            :scrolloff 8
             :sidescrolloff 8
-            :guifont "monospace:h17"
             ;; the font used in graphical neovim applications
+            :guifont "monospace:h17"
             })
 
 (defn- apply-opts [] (each [k v (pairs opts)]
@@ -77,4 +80,5 @@
 (vim.cmd "set whichwrap+=<,>,[,],h,l")
 (vim.cmd "set iskeyword+=-")
 (vim.cmd "set formatoptions-=cro")
+(vim.cmd "set colorcolumn=80")
 (nvim.ex.set :shortmess+=c)
