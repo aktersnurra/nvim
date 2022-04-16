@@ -1,4 +1,6 @@
-;; List of plugins
+;; List of plu
+gins
+
 (module plugins)
 
 (def plugins {:wbthomason/packer.nvim {}
@@ -61,4 +63,5 @@
               :kevinhwang91/nvim-bqf {:event :BufRead}
               :norcalli/nvim-colorizer.lua {}
               :max397574/better-escape.nvim {}
-              :nvim-orgmode/orgmode {}})
+              :nvim-orgmode/orgmode {}
+              :cappyzawa/trim.nvim {}})
