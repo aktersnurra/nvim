@@ -22,9 +22,9 @@
 (def- alpha
       ["User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"])
 
+
 (autocmd :_general_settings general-settings)
 (autocmd :_git git)
 (autocmd :_markdown markdown)
 (autocmd :_auto_resize auto-resize)
 (autocmd :_alpha alpha)
-(autocmd :packer_user_config packer)
