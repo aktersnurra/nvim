@@ -70,8 +70,7 @@
             :scrolloff 8
             :sidescrolloff 8
             ;; the font used in graphical neovim applications
-            :guifont "monospace:h17"
-            })
+            :guifont "monospace:h17"})
 
 (defn- apply-opts [] (each [k v (pairs opts)]
                        (tset vim.opt k v)))
