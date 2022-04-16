@@ -2,7 +2,6 @@
 (module install {autoload {a aniseed.core
                            plugins plugins
                            packer packer
-                           bootstrap bootstrap
                            util util}})
 
 (defn- install-plugins [plgs]
