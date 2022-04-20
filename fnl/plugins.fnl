@@ -1,5 +1,4 @@
-;; List of plu
-gins
+;; List of plugins
 
 (module plugins)
 
