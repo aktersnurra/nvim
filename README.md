@@ -26,3 +26,7 @@ Wonky non-deterministic performance currently.
     ├── plugins.lua         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
+
+# TODO
+
+- [ ] fix autocmd
