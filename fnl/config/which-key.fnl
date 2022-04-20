@@ -39,12 +39,12 @@
       {:k ["<cmd>lua require('Comment.api').toggle_current_linewise()<CR>"
            :Comment]
        :a [:<cmd>Alpha<cr> :Alpha]
-       :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer false})<cr>"
+       :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>"
            :Buffers]
        :e [:<cmd>NvimTreeToggle<cr> :Explorer]
        :c [:<cmd>Bdelete!<CR> "Close Buffer"]
        :n [:<cmd>nohlsearch<CR> "No Highlight"]
-       :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer false})<cr>"
+       :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
            "Find files"]
        :F ["<cmd>Telescope file_browser<cr>" "Browse files"]
        :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find Text"]
