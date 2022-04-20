@@ -13,7 +13,7 @@
 
 (defn- pre-hook [ctx]
        (let [U (require :Comment.utils)]
-         ((require :ts_context_commentstring.internal) .calculate_commentstring
+         ((require :ts_context_commentstring.internal).calculate_commentstring
                                                        {:key (get-type ctx U)
                                                         :location (get-location ctx
                                                                                 U)})))
