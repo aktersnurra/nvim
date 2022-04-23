@@ -2,18 +2,22 @@
 (module config.ncomment {autoload {util util}})
 
 (defn- get-type [ctx U]
-  (or (and (= ctx.ctype U.ctype.line) :__default) :__multiline))
+  (if (= ctx.ctype U.ctype.line)
+    :__default
+    :__multiline))
 
 (defn- get-location [ctx U]
-  (if (= ctx.ctype U.ctype.block)
-    ((require :ts_context_commentstring.utils).get_cursor_location)
-    (or (= ctx.cmotion U.motion.v) (= ctx.cmotion U.cmotion.V))
-    ((require :ts_context_commentstring.utils).get_visual_start_location)
-    nil))
+  (let [utils (require :ts_context_commentstring.utils)]
+    (if (= ctx.ctype U.ctype.block)
+      (utils.get_cursor_location)
+      (or (= ctx.cmotion U.cmotion.v) (= ctx.cmotion U.cmotion.V))
+      (utils.get_visual_start_location)
+      nil)))
 
 (defn- pre-hook [ctx]
-  (let [U (require :Comment.utils)]
-    ((require :ts_context_commentstring.internal).calculate_commentstring
+  (let [U (require :Comment.utils)
+        internal (require :ts_context_commentstring.internal)]
+    (internal.calculate_commentstring
       {:key (get-type ctx U)
        :location (get-location ctx U)})))
 
