@@ -3,5 +3,6 @@
 
 (let [_ (util.load-plugin :lspconfig)]
   (require :config.lsp.lsp-installer)
-  (require :config.lsp.handlers)
+  (let [handlers (require :config.lsp.handlers)]
+    (handlers.setup))
   (require :config.lsp.null-ls))
