@@ -67,4 +67,4 @@
                         :guibg default-bg-normal}})
 
 (let [bufferline (util.load-plugin :bufferline)]
-  (bufferline.setup {: options : highlights}))
+  (bufferline.setup {:options options :highlights highlights}))
