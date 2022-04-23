@@ -1,7 +1,7 @@
 # Dependencies
 
 ```
-neovim >= 6.0.0
+neovim >= 0.7
 neovim-web-devicons-git
 xsel
 fzf
@@ -26,7 +26,3 @@ Wonky non-deterministic performance currently.
     ├── plugins.lua         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
-
-# TODO
-
-- [ ] fix autocmd
