@@ -47,6 +47,9 @@
                    {:key :h
                     :cb (tree_cb :close_node)}
                    {:key :v :cb (tree_cb :vsplit)}]}}
+       :renderer
+        {:icons
+         {:webdev_colors false}}
        :hijack_directories {:enable true :auto_open true}
        :update_focused_file {:enable true
                              :update_cwd true
