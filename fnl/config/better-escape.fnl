@@ -2,7 +2,8 @@
 (module config.better-escape {autoload {util util}})
 
 (let [better-escape (util.load-plugin :better_escape)]
-  (better-escape.setup {:mapping [:jk :jj]
-                        :timeout vim.o.timeoutlen
-                        :clear_empty_lines false
-                        :keys :<Esc>}))
+  (better-escape.setup
+    {:mapping [:jk :jj]
+     :timeout vim.o.timeoutlen
+     :clear_empty_lines false
+     :keys :<Esc>}))

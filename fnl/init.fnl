@@ -3,4 +3,4 @@
 (require :settings)
 (require :install)
 (if (> util.num-plugins 3)
-    (require :config))
+  (require :config))
