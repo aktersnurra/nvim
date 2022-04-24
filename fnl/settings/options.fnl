@@ -1,5 +1,10 @@
 ;; Sets options in neovim
-(module settings.options {autoload {nvim aniseed.nvim}})
+(module settings.options
+  {autoload {nvim aniseed.nvim}})
+
+(defn- apply-opts [opts]
+  (each [k v (pairs opts)]
+    (tset vim.opt k v)))
 
 (def- opts
   {;; creates a backup file
@@ -73,11 +78,8 @@
    ;; the font used in graphical neovim applications
    :guifont "monospace:h17"})
 
-(defn- apply-opts []
-  (each [k v (pairs opts)]
-    (tset vim.opt k v)))
+(apply-opts opts)
 
-(apply-opts)
 (vim.cmd "set whichwrap+=<,>,[,],h,l")
 (vim.cmd "set iskeyword+=-")
 (vim.cmd "set formatoptions-=cro")
