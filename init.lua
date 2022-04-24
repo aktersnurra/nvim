@@ -5,14 +5,14 @@ local execute = vim.api.nvim_command
 local packer_path = fn.stdpath "data" .. "/site/pack/packer/start"
 
 local function bootstrap(user, repository)
-  local bootstrap_path = fmt("%s/%s", packer_path, repository)
-  if fn.empty(fn.glob(bootstrap_path)) > 0 then
+  local path = fmt("%s/%s", packer_path, repository)
+  if fn.empty(fn.glob(path)) > 0 then
     execute(
       fmt(
         "!git clone --depth 1 https://github.com/%s/%s %s",
         user,
         repository,
-        bootstrap_path
+        path
       )
     )
     execute(fmt("packadd %s", repository))
