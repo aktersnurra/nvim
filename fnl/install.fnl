@@ -1,15 +1,18 @@
 ;; Installs plugins with packer.
-(module install {autoload {a aniseed.core
-                           packer packer
-                           plugins plugins
-                           util util}})
+(module install
+  {autoload {a aniseed.core
+             packer packer
+             plugins plugins
+             util util}})
 
-(defn- install-plugins [plgs]
+(defn- sync []
+  (if (= util.num-plugins 3)
+      (packer.sync)))
+
+(defn- install []
   (packer.startup (fn [use]
-    (each [plugin opts (pairs plgs)]
+    (each [plugin opts (pairs plugins.plugins)]
       (use (a.assoc opts 1 plugin))))))
 
-(require :config.packer)
-(install-plugins plugins.plugins)
-(if (= util.num-plugins 3)
-    (packer.sync))
+(install)
+(sync)
