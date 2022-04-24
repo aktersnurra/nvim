@@ -46,7 +46,7 @@
    :numToStr/Comment.nvim {}
    :lewis6991/gitsigns.nvim {}
    :kyazdani42/nvim-web-devicons {}
-   :aktersnurra/nvim-tree.lua {:requires {1 :kyazdani42/nvim-web-devicons}}
+   :kyazdani42/nvim-tree.lua {:requires {1 :kyazdani42/nvim-web-devicons}}
    :akinsho/bufferline.nvim {}
    :moll/vim-bbye {}
    :nvim-lualine/lualine.nvim {:requires {1 :kyazdani42/nvim-web-devicons
