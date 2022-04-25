@@ -12,7 +12,7 @@ fnm and node for lsp
 
 Wonky non-deterministic performance currently.
 
-`make install`
+`./install`
 
 # Structure
 
