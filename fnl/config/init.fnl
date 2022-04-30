@@ -9,10 +9,10 @@
             config.cmp
             config.colorizer
             config.colorscheme
+            config.comment
             config.gitsigns
             config.hop
             config.lualine
-            config.comment
             config.nvim-tree
             config.orgmode
             config.project
