@@ -8,6 +8,8 @@
     {:ensure_installed [:c
                         :rust
                         :lua
+                        :hcl
+                        :org
                         :haskell
                         :python
                         :fennel
