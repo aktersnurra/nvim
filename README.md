@@ -16,7 +16,7 @@ fnm and node for lsp
 
 Wonky non-deterministic performance currently.
 
-`./install`
+`./install.sh`
 
 # Structure
 
