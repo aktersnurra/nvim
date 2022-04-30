@@ -1,5 +1,6 @@
 ;; Better escape without nasty delay
-(module config.better-escape {autoload {util util}})
+(module config.better-escape
+  {autoload {util util}})
 
 (let [better-escape (util.load-plugin :better_escape)]
   (better-escape.setup

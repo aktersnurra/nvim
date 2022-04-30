@@ -1,5 +1,6 @@
 ;; Statusbar.
-(module config.lualine {autoload {util util}})
+(module config.lualine
+  {autoload {util util}})
 
 (defn- hide-in-width [] (> (vim.fn.winwidth 0) 80))
 

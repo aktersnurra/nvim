@@ -1,5 +1,6 @@
 ;; LSP installer.
-(module config.lsp.lsp-installer {autoload {util util}})
+(module config.lsp.lsp-installer
+  {autoload {util util}})
 
 (def handler-opts
   (let [handlers (require :config.lsp.handlers)]

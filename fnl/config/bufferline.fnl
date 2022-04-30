@@ -1,5 +1,6 @@
 ;; Topbar that displays open buffers.
-(module config.bufferline {autoload {util util}})
+(module config.bufferline
+  {autoload {util util}})
 
 (def- options
   {:numbers :none

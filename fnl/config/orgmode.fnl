@@ -1,5 +1,6 @@
 ;; Orgmode for nvim.
-(module config.orgmode {autoload {util util}})
+(module config.orgmode
+  {autoload {util util}})
 
 (let [orgmode (util.load-plugin :orgmode)]
   (orgmode.setup_ts_grammar)

@@ -1,4 +1,6 @@
-(module config.lsp.handlers {autoload {util util nvim aniseed.nvim}})
+(module config.lsp.handlers
+  {autoload {util util
+             nvim aniseed.nvim}})
 
 (def- signs
   [{:name :DiagnosticSignError :text ""}
