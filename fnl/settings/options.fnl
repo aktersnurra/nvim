@@ -80,8 +80,8 @@
 
 (apply-opts opts)
 
-(vim.cmd "set whichwrap+=<,>,[,],h,l")
-(vim.cmd "set iskeyword+=-")
-(vim.cmd "set formatoptions-=cro")
-(vim.cmd "set colorcolumn=80")
-(nvim.ex.set :shortmess+=c)
+(nvim.ex.set "whichwrap+=<,>,[,],h,l")
+(nvim.ex.set "iskeyword+=-")
+(nvim.ex.set "formatoptions-=cro")
+(nvim.ex.set "colorcolumn=80")
+(nvim.ex.set "shortmess+=c")
