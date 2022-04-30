@@ -4,70 +4,49 @@
              a    aniseed.core
              util util}})
 
-(defn- autocmd-v1 [group cmds] (nvim.command (.. "augroup " group))
-      (nvim.command :autocmd!)
-      (each [_ cmd (ipairs cmds)]
-        (nvim.command (.. "autocmd " cmd)))
-      (nvim.command "augroup end"))
+(defn- autocmd [event opts]
+  (nvim.create_autocmd event opts))
 
-(defn- group [name]
-  (nvim.create_augroup name {:clear true}))
+(autocmd :User
+         {:pattern :AlphaReady
+          :command "set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"})
 
-(defn- autocmd-v2 [event opts name]
-  (nvim.create_autocmd event (a.merge! {:group (group name)} opts)))
+(autocmd :BufEnter
+         {:command "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"})
 
-(def- alpha
-  ["User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"])
-
-(def- nvim-tree-autoclose
-  ["BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"])
-
-(autocmd-v1 :_alpha alpha)
-(autocmd-v1 :_nvim-tree nvim-tree-autoclose)
-
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern [:qf :help :man :lspinfo]
-          :command "nnoremap <silent> <buffer> q :close<CR>"}
-         :_general_settings)
+          :command "nnoremap <silent> <buffer> q :close<CR>"})
 
-(autocmd-v2 :TextYankPost
-         {:callback (lambda [] (vim.highlight.on_yank {:timeout 200}))}
-         :_general_settings)
+(autocmd :TextYankPost
+         {:callback (lambda [] (vim.highlight.on_yank {:timeout 200}))})
 
-(autocmd-v2 :BufWinEnter
-         {:command "setlocal formatoptions-=cro"}
-         :_general_settings)
+(autocmd :BufWinEnter
+         {:command "setlocal formatoptions-=cro"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "qf"
-          :command "set nobuflisted"}
-         :_general_settings)
+          :command "set nobuflisted"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "gitcommit"
-          :command "setlocal wrap"}
-         :_git)
+          :command "setlocal wrap"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "gitcommit"
-          :command "setlocal spell"}
-         :_git)
+          :command "setlocal spell"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "markdown"
-          :command "setlocal wrap"}
-         :_markdown)
+          :command "setlocal wrap"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "markdown"
-          :command "setlocal spell"}
-         :_markdown)
+          :command "setlocal spell"})
 
-(autocmd-v2 :FileType
+(autocmd :FileType
          {:pattern "markdown"
-          :command "setlocal spell"}
-         :_markdown)
+          :command "setlocal spell"})
 
-(autocmd-v2 :VimResized
-         {:command "tabdo wincmd ="}
-         :_auto_resize)
+(autocmd :VimResized
+         {:command "tabdo wincmd ="})
