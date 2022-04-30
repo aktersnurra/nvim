@@ -27,6 +27,7 @@
          _ handler-opts))
 
 (let [lsp-installer (util.load-plugin :nvim-lsp-installer)]
-  (lsp-installer.on_server_ready (fn [server]
-                                   (let [opts (get-server-opts server)]
-                                     (server:setup opts)))))
+  (lsp-installer.on_server_ready
+    (fn [server]
+     (let [opts (get-server-opts server)]
+       (server:setup opts)))))

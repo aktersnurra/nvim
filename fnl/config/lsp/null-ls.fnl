@@ -5,23 +5,27 @@
 (let [null-ls (util.load-plugin :null-ls)]
   (let [formatting null-ls.builtins.formatting
         diagnostics null-ls.builtins.diagnostics]
-    (null-ls.setup {:debug false
-                    :sources [diagnostics.flake8
-                              diagnostics.golangci_lint
-                              diagnostics.jsonlint
-                              diagnostics.shellcheck
-                              diagnostics.yamllint
-                              (formatting.black.with {:extra_args [:--fast]})
-                              formatting.erlfmt
-                              formatting.fourmolu
-                              formatting.gofmt
-                              formatting.goimports
-                              formatting.nixfmt
-                              (formatting.prettier.with {:extra_args [:--no-semi
-                                                                      :--single-quote
-                                                                      :--jsx-single-quote]})
-                              formatting.rustfmt
-                              formatting.shfmt
-                              formatting.sqlformat
-                              formatting.stylua
-                              formatting.terraform_fmt]})))
+    (null-ls.setup
+      {:debug false
+       :sources [diagnostics.flake8
+                 diagnostics.golangci_lint
+                 diagnostics.jsonlint
+                 diagnostics.shellcheck
+                 diagnostics.yamllint
+                 (formatting.black.with
+                   {:extra_args [:--fast]})
+                 formatting.erlfmt
+                 formatting.fourmolu
+                 formatting.gofmt
+                 formatting.goimports
+                 formatting.nixfmt
+                 (formatting.prettier.with
+                   {:extra_args
+                    [:--no-semi
+                     :--single-quote
+                     :--jsx-single-quote]})
+                 formatting.rustfmt
+                 formatting.shfmt
+                 formatting.sqlformat
+                 formatting.stylua
+                 formatting.terraform_fmt]})))
