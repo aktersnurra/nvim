@@ -1,8 +1,9 @@
 ;; Install, load settings, and load plugin configs.
 (module init
-  {autoload {util util}})
+  {autoload {util util}
+   require [settings
+            config.packer]})
 
-(require :settings)
-(require :config.packer)
-(require :install)
+(util.install)
+(util.sync)
 (util.load-config)
