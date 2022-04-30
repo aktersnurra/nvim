@@ -1,5 +1,5 @@
 ;; Language aware commenting.
-(module config.ncomment
+(module config.comment
   {autoload {util util}})
 
 (defn- get-type [ctx U]
@@ -22,7 +22,7 @@
       {:key (get-type ctx U)
        :location (get-location ctx U)})))
 
-(let [ncomment (util.load-plugin :Comment)]
-  (ncomment.setup
+(let [nvim-comment (util.load-plugin :Comment)]
+  (nvim-comment.setup
     {:pre_hook (fn [ctx]
                   (pre-hook ctx))}))

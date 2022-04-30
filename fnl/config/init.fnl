@@ -13,7 +13,7 @@
     config.gitsigns
     config.hop
     config.lualine
-    config.ncomment
+    config.comment
     config.nvim-tree
     config.orgmode
     config.project
