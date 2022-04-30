@@ -29,23 +29,11 @@
           :command "set nobuflisted"})
 
 (autocmd :FileType
-         {:pattern "gitcommit"
+         {:pattern [:gitcommit :markdown]
           :command "setlocal wrap"})
 
 (autocmd :FileType
-         {:pattern "gitcommit"
-          :command "setlocal spell"})
-
-(autocmd :FileType
-         {:pattern "markdown"
-          :command "setlocal wrap"})
-
-(autocmd :FileType
-         {:pattern "markdown"
-          :command "setlocal spell"})
-
-(autocmd :FileType
-         {:pattern "markdown"
+         {:pattern [:gitcommit :markdown]
           :command "setlocal spell"})
 
 (autocmd :VimResized
