@@ -1,3 +1,7 @@
+# Neovim Config
+
+My neovim config written in fennel.
+
 # Dependencies
 
 ```
@@ -22,7 +26,7 @@ Wonky non-deterministic performance currently.
     ├── config              # Plugin configs.
     │   └── lsp             # LSP related configs.
     │       └── settings    # Server specific settings.
-    ├── install.lua         # Packer installer.
-    ├── plugins.lua         # Table of all plugins.
+    ├── util.fnl            # Packer installer and config loader.
+    ├── plugins.fnl         # Table of all plugins.
     └── settings            # Neovim settings.
 ```
