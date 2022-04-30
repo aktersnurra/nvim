@@ -9,5 +9,7 @@ luarocks list | grep "fennel" >/dev/null 2>&1 ||
 (echo "fennel is not installed" && exit 1)
 
 # Bootstrap installment
-nvim --headless +qa &&
-nvim --headless -c "autocmd User PackerComplete quitall"
+nvim --headless +qa >/dev/null 2>&1 &&
+nvim --headless -c "autocmd User PackerComplete quitall" >/dev/null 2>&1 &&
+echo "Successfully bootstrapped the config!" ||
+(echo "Bootstrapping failed..." && exit 1)
