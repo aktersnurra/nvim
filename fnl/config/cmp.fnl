@@ -1,5 +1,7 @@
 ;; Configuration for completion plugin.
-(module config.cmp {autoload {nvim aniseed.nvim util util}})
+(module config.cmp
+  {autoload {nvim aniseed.nvim
+             util util}})
 
 (let [cmp (util.load-plugin :cmp)
       lspkind (util.load-plugin :lspkind)
@@ -10,7 +12,8 @@
   (cmp.setup {
     :snippet {:expand (fn [args]
                         (luasnip.lsp_expand args.body))}
-    :mapping {:<C-k> (cmp.mapping.select_prev_item)
+    :mapping (cmp.mapping.preset.insert {
+              :<C-k> (cmp.mapping.select_prev_item)
               :<C-j> (cmp.mapping.select_next_item)
               :<C-b> (cmp.mapping (cmp.mapping.scroll_docs -1)
                                   [:i :c])
@@ -19,7 +22,7 @@
               :<C-e> (cmp.mapping {:i (cmp.mapping.abort)
                                    :c (cmp.mapping.close)})
               :<CR> (cmp.mapping.confirm {:select true})
-              :<CR> (cmp.mapping.confirm {:select true})}
+              :<CR> (cmp.mapping.confirm {:select true})})
     :sources [{:name :nvim_lsp}
               {:name :nvim_lua}
               {:name :luasnip}

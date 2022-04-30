@@ -1,7 +1,8 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {util util}})
+(module config.which-key
+  {autoload {util util}})
 
-(def- setup 
+(def- setup
   {:plugins {:marks true
     :registers true
     :spelling {:enabled true :suggestions 20}
@@ -29,7 +30,7 @@
    :triggers :auto
    :triggers_blacklist {:i [:j :k] :v [:j :k]}})
 
-(def- opts 
+(def- opts
   {:mode :n
    :prefix :<leader>
    :buffer nil
@@ -114,7 +115,7 @@
          "Replace Buffer"]}
    :T {:name :Treesitter :p [:<cmd>TSPlaygroundToggle<cr> :Playground]}})
 
-(def- vopts 
+(def- vopts
   {:mode :v
    :prefix :<leader>
    :buffer nil
@@ -122,7 +123,7 @@
    :noremap true
    :nowait true})
 
-(def- vmappings 
+(def- vmappings
   {:k ["<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>"
                      :Comment]})
 

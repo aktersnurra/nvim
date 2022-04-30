@@ -1,5 +1,6 @@
 ;; Json schema store catalog language server.
-(module config.lsp.settings.jsonls {autoload {util util}})
+(module config.lsp.settings.jsonls
+  {autoload {util util}})
 
 (let [schemastore (util.load-plugin :schemastore)]
   {:init_options {:providerFormatter false}

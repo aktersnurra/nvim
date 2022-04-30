@@ -1,5 +1,6 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
-(module config.telescope {autoload {util util}})
+(module config.telescope
+  {autoload {util util}})
 
 (let [telescope (util.load-plugin :telescope)]
   (let [actions (require :telescope.actions)]
