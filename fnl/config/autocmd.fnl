@@ -1,4 +1,4 @@
-;; A customizable greeter.
+;; Autocommands for nvim.
 (module config.autocmd
   {autoload {nvim aniseed.nvim
              a    aniseed.core

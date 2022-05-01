@@ -1,4 +1,4 @@
-;; A file explorer.
+;; A vertical sidebar file explorer.
 (module config.nvim-tree
   {autoload {util util
              nvim aniseed.nvim}})
