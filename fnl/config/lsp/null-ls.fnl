@@ -15,6 +15,7 @@
                  (formatting.black.with
                    {:extra_args [:--fast]})
                  formatting.erlfmt
+                 formatting.fnlfmt
                  formatting.fourmolu
                  formatting.gofmt
                  formatting.goimports
