@@ -29,11 +29,11 @@
               {:name :buffer :keyword_length 4}
               {:name :path :keyword_length 6}]
     :formatting {:format (lspkind.cmp_format {:with_text true
-                                              :menu {:buffer "[Buf]"
-                                                     :nvim_lsp "[LSP]"
-                                                     :nvim_lua "[api]"
-                                                     :path "[path]"
-                                                     :luasnip "[Snip]"}})}
+                                              :menu {:buffer ""
+                                                     :nvim_lsp ""
+                                                     :nvim_lua ""
+                                                     :path ""
+                                                     :luasnip ""}})}
     :window {
       :documentation {:border ["╭"
                                "─"
