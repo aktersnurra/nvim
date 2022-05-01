@@ -1,3 +1,4 @@
+;; Handlers for the requests and responses from and to the lsp server.
 (module config.lsp.handlers
   {autoload {util util
              nvim aniseed.nvim}})

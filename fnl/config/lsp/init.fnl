@@ -1,4 +1,4 @@
-;; Loads the LSP module.
+;; Loads the LSP functionality.
 (module config.lsp.init
   {autoload {util util}})
 

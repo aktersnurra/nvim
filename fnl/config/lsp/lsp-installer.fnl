@@ -1,4 +1,4 @@
-;; LSP installer.
+;; Loads default handlers and specific language settings.
 (module config.lsp.lsp-installer
   {autoload {util util}})
 
