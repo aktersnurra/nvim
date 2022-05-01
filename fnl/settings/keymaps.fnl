@@ -1,6 +1,5 @@
 ;; Custom keymappings.
-(module settings.keymaps
-  {autoload {nvim aniseed.nvim}})
+(module settings.keymaps {autoload {nvim aniseed.nvim}})
 
 (def- opts {:noremap true :silent true})
 (defn- map [mode lhs rhs opt] (nvim.set_keymap mode lhs rhs opt))
