@@ -1,6 +1,5 @@
 ;; A customizable greeter.
-(module config.alpha
-  {autoload {util util}})
+(module config.alpha {autoload {util util}})
 
 (def- ascii-art ["     ##############..... ############## "
                  "   ##############......##############   "
@@ -25,8 +24,7 @@
   (let [dashboard (require :alpha.themes.dashboard)]
     (set dashboard.section.header.val ascii-art)
     (set dashboard.section.buttons.val
-         [(dashboard.button :f "  Find file"
-                            ":Telescope file_browser <CR>")
+         [(dashboard.button :f "  Find file" ":Telescope file_browser <CR>")
           (dashboard.button :e "  New file" ":ene <BAR> startinsert <CR>")
           (dashboard.button :p "  Find project" ":Telescope projects <CR>")
           (dashboard.button :r "  Recently used files"
