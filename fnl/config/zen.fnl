@@ -6,8 +6,8 @@
   (zen-mode.setup
     {:window
      {:backdrop 1
-      :height 0.9
-      :width 0.85
+      :height 0.8
+      :width 0.5
       :options
         {:signcolumn :no
          :number false
