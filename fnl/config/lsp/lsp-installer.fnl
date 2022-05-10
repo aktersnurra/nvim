@@ -24,7 +24,9 @@
          :sumneko_lua (sumneko-lua-opts)
          _ handler-opts))
 
-(let [lsp-installer (util.load-plugin :nvim-lsp-installer)]
-  (lsp-installer.on_server_ready (fn [server]
-                                   (let [opts (get-server-opts server)]
-                                     (server:setup opts)))))
+(let [lsp-installer (util.load-plugin :nvim-lsp-installer)
+      lspconfig (util.load-plugin :lspconfig)]
+  (lsp-installer.setup)
+  (each [_ server (ipairs (lsp-installer.get_installed_servers))]
+    (let [server-config (. lspconfig server.name)]
+      (server-config.setup (get-server-opts server)))))
