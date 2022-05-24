@@ -3,10 +3,6 @@
 
 (defn- autocmd [event opts] (nvim.create_autocmd event opts))
 
-(autocmd :User
-         {:pattern :AlphaReady
-          :command "set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2"})
-
 (autocmd :BufEnter
          {:command "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"})
 
