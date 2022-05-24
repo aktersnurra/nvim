@@ -27,7 +27,7 @@
             ;; we don't need to see things like ;; INSERT ;; anymore
             :showmode false
             ;; always show tabs
-            :showtabline 2
+            :showtabline 0
             ;; smart case
             :smartcase true
             ;; make indenting smarter again

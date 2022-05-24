@@ -44,5 +44,4 @@
                                       :lualine_z [:location
                                                   :progress
                                                   :encoding]}
-                  :tabline {}
                   :extensions {}}))
