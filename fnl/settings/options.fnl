@@ -26,7 +26,7 @@
             :pumheight 10
             ;; we don't need to see things like ;; INSERT ;; anymore
             :showmode false
-            ;; always show tabs
+            ;; never show tabs
             :showtabline 0
             ;; smart case
             :smartcase true
