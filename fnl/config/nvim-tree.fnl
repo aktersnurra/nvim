@@ -1,24 +1,6 @@
 ;; A vertical sidebar file explorer.
 (module config.nvim-tree {autoload {util util nvim aniseed.nvim}})
 
-(set nvim.g.nvim_tree_show_icons {:git 1 :folders 1 :files 1 :folder_arrows 1})
-
-(set nvim.g.nvim_tree_icons
-     {:default ""
-      :symlink ""
-      :git {:unstaged ""
-            :staged :S
-            :unmerged ""
-            :renamed "➜"
-            :deleted ""
-            :untracked :U
-            :ignored "◌"}
-      :folder {:default ""
-               :open ""
-               :empty ""
-               :empty_open ""
-               :symlink ""}})
-
 (let [nvim-tree (util.load-plugin :nvim-tree)
       nvim-tree-config (util.load-plugin :nvim-tree.config)]
   (let [tree-cb nvim-tree-config.nvim_tree_callback]
