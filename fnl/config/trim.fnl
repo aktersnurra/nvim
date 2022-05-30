@@ -2,4 +2,4 @@
 (module config.trim {autoload {util util}})
 
 (let [trim (util.load-plugin :trim)]
-  (trim.setup {}))
+  (trim.setup {:disable [:python]}))
