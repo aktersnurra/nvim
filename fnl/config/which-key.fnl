@@ -1,5 +1,5 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {util util}})
+(module config.which-key {autoload {util util nvim aniseed.nvim}})
 
 (def- setup {:plugins {:marks true
                        :registers true
@@ -110,6 +110,12 @@
                "Replace Word"]
            :f ["<cmd>lua require('spectre').open_file_search()<cr>"
                "Replace Buffer"]}
+       :w [(fn switch-window []
+             (let [window-picker (require :window-picker)]
+               (let [win (window-picker.pick_window)]
+                 (if (not= win nil)
+                     (nvim.set_current_win win)))))
+           "Switch window"]
        :T {:name :Treesitter :p [:<cmd>TSPlaygroundToggle<cr> :Playground]}})
 
 (def- vopts {:mode :v

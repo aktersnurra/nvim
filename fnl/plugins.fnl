@@ -61,4 +61,5 @@
               :norcalli/nvim-colorizer.lua {}
               :max397574/better-escape.nvim {}
               :nvim-orgmode/orgmode {}
-              :cappyzawa/trim.nvim {}})
+              :cappyzawa/trim.nvim {}
+              :s1n7ax/nvim-window-picker {}})

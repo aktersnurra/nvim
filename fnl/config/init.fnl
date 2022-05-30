@@ -20,4 +20,5 @@
                               config.which-key
                               config.zen
                               config.trim
+                              config.window-picker
                               config.lsp]})
