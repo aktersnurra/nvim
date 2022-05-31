@@ -10,7 +10,6 @@
                               config.colorscheme
                               config.comment
                               config.gitsigns
-                              config.hop
                               config.lualine
                               config.nvim-tree
                               config.orgmode
