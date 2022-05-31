@@ -18,8 +18,8 @@
                               config.spectre
                               config.telescope
                               config.treesitter
+                              config.window-picker
                               config.which-key
                               config.zen
                               config.trim
-                              config.window-picker
                               config.lsp]})
