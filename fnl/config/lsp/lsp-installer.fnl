@@ -19,7 +19,7 @@
 (defn- merge [default-servers installed-servers]
        (let [servers default-servers]
          (each [_ server (ipairs installed-servers)]
-           (if (. servers server.name)
+           (if (not= (. servers server.name) true)
                (tset servers (+ (length servers) 1) server.name)))
          servers))
 
@@ -50,6 +50,6 @@
       lspconfig (util.load-plugin :lspconfig)]
   (let [servers (merge default-servers (lsp-installer.get_installed_servers))]
     (lsp-installer.setup {:ensure_installed servers})
-    (each [_ server (pairs servers)]
+    (each [_ server (ipairs servers)]
       (let [server-config (. lspconfig server)]
         (server-config.setup (get-server-opts server))))))
