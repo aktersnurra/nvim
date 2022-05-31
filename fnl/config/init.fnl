@@ -4,6 +4,7 @@
                               config.alpha
                               config.autopairs
                               config.better-escape
+                              config.bqf
                               config.cmp
                               config.colorizer
                               config.colorscheme
