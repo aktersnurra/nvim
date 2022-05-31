@@ -57,7 +57,7 @@
               :folke/zen-mode.nvim {}
               :windwp/nvim-spectre {}
               :phaazon/hop.nvim {}
-              :kevinhwang91/nvim-bqf {:event :BufRead}
+              :kevinhwang91/nvim-bqf {}
               :norcalli/nvim-colorizer.lua {}
               :max397574/better-escape.nvim {}
               :nvim-orgmode/orgmode {}
