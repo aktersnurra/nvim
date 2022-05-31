@@ -1,26 +1,26 @@
 ;; Loads default handlers and specific language settings.
 (module config.lsp.lsp-installer {autoload {util util}})
 
-(def- default-servers [:bashls
-                       :clangd
-                       :cssls
-                       :dockerls
-                       :html
-                       :hls
-                       :jsonls
-                       :pyright
-                       :rust_analyzer
-                       :terraformls
-                       :texlab
-                       :tflint
-                       :yamlls
-                       :zk])
+(def- default-servers {:bashls true
+                       :clangd true
+                       :cssls true
+                       :dockerls true
+                       :html true
+                       :hls true
+                       :jsonls true
+                       :pyright true
+                       :rust_analyzer true
+                       :terraformls true
+                       :texlab true
+                       :tflint true
+                       :yamlls true
+                       :zk true})
 
 (defn- merge [default-servers installed-servers]
        (let [servers default-servers]
          (each [_ server (ipairs installed-servers)]
            (if (not= (. servers server.name) true)
-               (tset servers (+ (length servers) 1) server.name)))
+               (tset servers server.name true)))
          servers))
 
 (def- handler-opts
@@ -50,6 +50,6 @@
       lspconfig (util.load-plugin :lspconfig)]
   (let [servers (merge default-servers (lsp-installer.get_installed_servers))]
     (lsp-installer.setup {:ensure_installed servers})
-    (each [_ server (ipairs servers)]
+    (each [server _ (pairs servers)]
       (let [server-config (. lspconfig server)]
         (server-config.setup (get-server-opts server))))))
