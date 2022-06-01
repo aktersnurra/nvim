@@ -62,4 +62,5 @@
               :max397574/better-escape.nvim {}
               :nvim-orgmode/orgmode {}
               :cappyzawa/trim.nvim {}
+              :dstein64/vim-startuptime {}
               :s1n7ax/nvim-window-picker {}})
