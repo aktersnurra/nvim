@@ -1,6 +1,5 @@
 ;; Load all plugin configs.
-(module config.init {require [config.impatient
-                              config.autocmd
+(module config.init {require [config.autocmd
                               config.alpha
                               config.autopairs
                               config.better-escape
