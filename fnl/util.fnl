@@ -8,11 +8,11 @@
 
 (def- path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
 
-(def- num-installed-plugins (length (vim.fn.readdir path)))
+(defn- num-installed-plugins [] (length (vim.fn.readdir path)))
 
-(defn sync [] (if (or (= num-installed-plugins 3)
-                      (not= num-installed-plugins num-plugins))
-                  (packer.sync)))
+(defn sync [] (let [num-installed-plugins (num-installed-plugins)]
+                (if (not= num-installed-plugins num-plugins)
+                    (packer.sync))))
 
 (defn install []
       (packer.startup (fn [use]
@@ -20,8 +20,9 @@
                           (set num-plugins (+ num-plugins 1))
                           (use (a.assoc opts 1 plugin))))))
 
-(defn load-config [] (if (= num-installed-plugins num-plugins)
-                         (require :config)))
+(defn load-config [] (let [num-installed-plugins (num-installed-plugins)]
+                       (if (= num-installed-plugins num-plugins)
+                           (require :config))))
 
 (defn load-plugin [name]
       (let [(ok? val-or-err) (pcall require name)]
