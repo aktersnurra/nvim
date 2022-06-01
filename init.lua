@@ -19,12 +19,12 @@ local function bootstrap(user, repository)
   end
 end
 
--- Bootstrap install essential modules if not present
 bootstrap("wbthomason", "packer.nvim")
 bootstrap("Olical", "aniseed")
 bootstrap("lewis6991", "impatient.nvim")
 
--- Loads plugins for Neovim with fennel.
+require("impatient")
+
 vim.g["aniseed#env"] = {
   module = "init",
   compile = true,
