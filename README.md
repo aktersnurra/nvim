@@ -1,4 +1,4 @@
-# Neovim Config
+# Config
 
 My neovim config written in fennel.
 
@@ -12,11 +12,11 @@ fzf
 fnm and node for lsp
 ```
 
-# Install
+# Sync
 
-Wonky non-deterministic performance currently.
+Sync plugins:
 
-`./install.sh`
+`./sync.sh`
 
 # Structure
 
