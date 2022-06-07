@@ -20,9 +20,8 @@
 (defn load-plugins [] (install)
       (let [num-installed-plugins (num-installed-plugins)
             num-plugins (num-plugins)]
-        (if (= num-installed-plugins num-plugins)
-            (require :config)
-            (packer.sync))))
+        (if (not= num-installed-plugins num-plugins)
+            (packer.sync))) (require :config))
 
 (defn load-plugin [name]
       (let [(ok? val-or-err) (pcall require name)]
