@@ -9,7 +9,6 @@
                               diagnostics.golangci_lint
                               diagnostics.jsonlint
                               diagnostics.shellcheck
-                              diagnostics.vale
                               diagnostics.yamllint
                               (formatting.black.with {:extra_args [:--fast]})
                               formatting.erlfmt
