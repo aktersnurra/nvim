@@ -20,6 +20,6 @@
 
 (autocmd :FileType {:pattern [:gitcommit :markdown] :command "setlocal wrap"})
 
-(autocmd :FileType {:pattern [:gitcommit :markdown :org] :command "setlocal spell"})
+(autocmd :FileType {:pattern [:gitcommit :markdown :org :plaintex] :command "setlocal spell"})
 
 (autocmd :VimResized {:command "tabdo wincmd ="})
