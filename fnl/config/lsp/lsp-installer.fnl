@@ -14,6 +14,7 @@
                        :texlab true
                        :tflint true
                        :yamlls true
+                       :taplo true
                        :zk true})
 
 (defn- merge [default-servers installed-servers]
@@ -21,7 +22,8 @@
          (each [_ server (ipairs installed-servers)]
            (if (not= (. servers server.name) true)
                (tset servers server.name true)))
-         servers))
+         (icollect [k (pairs servers)]
+           k)))
 
 (defn- handler-opts []
        (let [handlers (require :config.lsp.handlers)]
@@ -50,6 +52,6 @@
       lspconfig (util.load-plugin :lspconfig)]
   (let [servers (merge default-servers (lsp-installer.get_installed_servers))]
     (lsp-installer.setup {:ensure_installed servers})
-    (each [server _ (pairs servers)]
+    (each [_ server (ipairs servers)]
       (let [server-config (. lspconfig server)]
         (server-config.setup (get-server-opts server))))))
