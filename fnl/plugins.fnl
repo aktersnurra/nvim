@@ -64,4 +64,5 @@
               :cappyzawa/trim.nvim {}
               :dstein64/vim-startuptime {}
               :lewis6991/spellsitter.nvim {}
+              :tamago324/lir.nvim {}
               :s1n7ax/nvim-window-picker {}})
