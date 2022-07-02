@@ -22,4 +22,5 @@
                               config.which-key
                               config.zen
                               config.trim
+                              config.lir
                               config.lsp]})

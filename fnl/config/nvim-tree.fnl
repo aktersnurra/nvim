@@ -28,7 +28,7 @@
                                                 :cb (tree_cb :close_node)}
                                                {:key :v :cb (tree_cb :vsplit)}]}}
                       :renderer {:icons {:webdev_colors false}}
-                      :hijack_directories {:enable true :auto_open true}
+                      :hijack_directories {:enable false}
                       :update_focused_file {:enable true
                                             :update_cwd true
                                             :ignore_list {}}
