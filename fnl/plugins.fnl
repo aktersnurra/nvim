@@ -56,7 +56,7 @@
               :folke/which-key.nvim {}
               :folke/zen-mode.nvim {}
               :windwp/nvim-spectre {}
-              :ggandor/lightspeed.nvim {}
+              :phaazon/hop.nvim {}
               :kevinhwang91/nvim-bqf {}
               :norcalli/nvim-colorizer.lua {}
               :max397574/better-escape.nvim {}
