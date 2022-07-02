@@ -17,6 +17,7 @@
                               config.spectre
                               config.telescope
                               config.treesitter
+                              config.spellsitter
                               config.window-picker
                               config.which-key
                               config.zen
