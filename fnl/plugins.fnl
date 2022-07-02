@@ -63,4 +63,5 @@
               :nvim-orgmode/orgmode {}
               :cappyzawa/trim.nvim {}
               :dstein64/vim-startuptime {}
+              :lewis6991/spellsitter.nvim {}
               :s1n7ax/nvim-window-picker {}})
