@@ -72,7 +72,8 @@
            :o ["<cmd>Telescope git_status<cr>" "Open changed file"]
            :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
            :c ["<cmd>Telescope git_commits<cr>" "Checkout commit"]
-           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]}
+           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
+           :n ["<cmd>Neogit<cr>" :Neogit]}
        :l {:name :LSP
            :a ["<cmd>lua vim.lsp.buf.code_action()<cr>" "Code Action"]
            :d ["<cmd>Telescope lsp_document_diagnostics<cr>"
