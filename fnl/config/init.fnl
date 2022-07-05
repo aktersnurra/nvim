@@ -12,6 +12,7 @@
                               config.hop
                               config.lualine
                               config.nvim-tree
+                              config.neogit
                               config.orgmode
                               config.project
                               config.spectre

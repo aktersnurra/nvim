@@ -45,7 +45,7 @@
               :numToStr/Comment.nvim {}
               :lewis6991/gitsigns.nvim {}
               :kyazdani42/nvim-web-devicons {}
-              :kyazdani42/nvim-tree.lua {:requires {1 :kyazdani42/nvim-web-devicons}}
+              :kyazdani42/nvim-tree.lua {:requires [:kyazdani42/nvim-web-devicons]}
               :moll/vim-bbye {}
               :nvim-lualine/lualine.nvim {:requires {1 :kyazdani42/nvim-web-devicons
                                                      :opt true}}
@@ -65,4 +65,5 @@
               :dstein64/vim-startuptime {}
               :lewis6991/spellsitter.nvim {}
               :tamago324/lir.nvim {}
+              :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}
               :s1n7ax/nvim-window-picker {}})
