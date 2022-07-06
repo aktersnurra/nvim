@@ -1,5 +1,6 @@
 ;; Load all plugin configs.
-(module config.init {require [config.autocmd
+(module config.init {require [config.aerial
+config.autocmd
                               config.alpha
                               config.autopairs
                               config.better-escape

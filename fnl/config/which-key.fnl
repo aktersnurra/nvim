@@ -38,7 +38,10 @@
 (def- mappings
       {:k ["<cmd>lua require('Comment.api').toggle_current_linewise()<CR>"
            :Comment]
-       :a [:<cmd>Alpha<cr> :Alpha]
+       :A [:<cmd>Alpha<cr> :Alpha]
+       :a {:name :Aerial
+           :a [:<cmd>AerialToggle!<CR> "Toggle Aerial"]
+           :c [:<cmd>AerialClose<CR> "Close Aerial"]}
        :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>"
            :Buffers]
        :e [:<cmd>NvimTreeToggle<cr> :Explorer]
@@ -73,7 +76,7 @@
            :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
            :c ["<cmd>Telescope git_commits<cr>" "Checkout commit"]
            :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
-           :n ["<cmd>Neogit<cr>" :Neogit]}
+           :n [:<cmd>Neogit<cr> :Neogit]}
        :l {:name :LSP
            :a ["<cmd>lua vim.lsp.buf.code_action()<cr>" "Code Action"]
            :d ["<cmd>Telescope lsp_document_diagnostics<cr>"

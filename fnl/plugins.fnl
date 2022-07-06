@@ -66,5 +66,6 @@
               :lewis6991/spellsitter.nvim {}
               :tamago324/lir.nvim {}
               :j-hui/fidget.nvim {}
+              :stevearc/aerial.nvim {}
               :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}
               :s1n7ax/nvim-window-picker {}})
