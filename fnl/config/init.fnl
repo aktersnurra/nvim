@@ -1,7 +1,7 @@
 ;; Load all plugin configs.
 (module config.init {require [config.aerial
-config.autocmd
                               config.alpha
+                              config.autocmd
                               config.autopairs
                               config.better-escape
                               config.bqf
@@ -9,21 +9,21 @@ config.autocmd
                               config.colorizer
                               config.colorscheme
                               config.comment
-                              config.gitsigns
                               config.fidget
+                              config.gitsigns
                               config.hop
+                              config.lir
                               config.lualine
-                              config.nvim-tree
                               config.neogit
+                              config.nvim-tree
                               config.orgmode
                               config.project
                               config.spectre
+                              config.spellsitter
                               config.telescope
                               config.treesitter
-                              config.spellsitter
-                              config.window-picker
-                              config.which-key
-                              config.zen
                               config.trim
-                              config.lir
+                              config.which-key
+                              config.window-picker
+                              config.zen
                               config.lsp]})
