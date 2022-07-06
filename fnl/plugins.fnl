@@ -65,5 +65,6 @@
               :dstein64/vim-startuptime {}
               :lewis6991/spellsitter.nvim {}
               :tamago324/lir.nvim {}
+              :j-hui/fidget.nvim {}
               :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}
               :s1n7ax/nvim-window-picker {}})
