@@ -2,23 +2,23 @@
 (module config.gitsigns {autoload {util util}})
 
 (def- signs {:add {:hl :GitSignsAdd
-                   :text "▎"
+                   :text "|"
                    :numhl :GitSignsAddNr
                    :linehl :GitSignsAddLn}
              :change {:hl :GitSignsChange
-                      :text "▎"
+                      :text "|"
                       :numhl :GitSignsChangeNr
                       :linehl :GitSignsChangeLn}
              :delete {:hl :GitSignsDelete
-                      :text "契"
+                      :text "_"
                       :numhl :GitSignsDeleteNr
                       :linehl :GitSignsDeleteLn}
              :topdelete {:hl :GitSignsDelete
-                         :text "契"
+                         :text "‾"
                          :numhl :GitSignsDeleteNr
                          :linehl :GitSignsDeleteLn}
              :changedelete {:hl :GitSignsChange
-                            :text "▎"
+                            :text "~"
                             :numhl :GitSignsChangeNr
                             :linehl :GitSignsChangeLn}})
 
