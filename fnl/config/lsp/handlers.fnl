@@ -26,9 +26,10 @@
 
 (defn setup [] (apply-signs) (vim.diagnostic.config config)
       (set vim.lsp.handlers.textDocument/hover
-           (vim.lsp.with {:border :rounded}))
+           (vim.lsp.with {:border :rounded :width 60}))
       (set vim.lsp.handlers.textDocument/signatureHelp
-           (vim.lsp.with vim.lsp.handlers.signature_help {:border :rounded})))
+           (vim.lsp.with vim.lsp.handlers.signature_help
+                         {:border :rounded :width 60})))
 
 (defn- lsp-keymaps [bufnr]
        (let [opts {:noremap true :silent true}]
