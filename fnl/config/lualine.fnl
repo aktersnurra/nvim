@@ -10,6 +10,7 @@
               :alpha
               :Outline
               :NeogitStatus
+              :NeogitCommitMessage
               :TelescopePrompt
               ""])
 
