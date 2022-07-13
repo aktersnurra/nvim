@@ -28,6 +28,7 @@
 (def- diagnostics {1 :diagnostics
                    :sources [:nvim_diagnostic]
                    :sections [:error :warn]
+                   :symbols {:error " " :warn " "}
                    :colored false
                    :padding 0
                    :update_in_insert false
