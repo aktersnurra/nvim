@@ -28,21 +28,20 @@
 (def- diagnostics {1 :diagnostics
                    :sources [:nvim_diagnostic]
                    :sections [:error :warn]
-                   ;; :symbols {:error "x " :warn "! "}
                    :colored false
+                   :padding 0
                    :update_in_insert false
                    :always_visible true})
 
 (def- diff {1 :diff
             :colored false
-            :symbols {:added " " :modified " " :removed " "}
             :cond hide-in-width})
 
 (def- branch {1 "b:gitsigns_head" :icon " " :cond hide-in-width})
 
 (def- filetype {1 :filetype :cond hide_in_width :color {}})
 
-(def- language-server {1 active-clients :padding 0 :cond hide_in_width})
+(def- language-server {1 active-clients :cond hide_in_width})
 
 (let [lualine (util.load-plugin :lualine)]
   (lualine.setup {:options {:icons_enabled true
