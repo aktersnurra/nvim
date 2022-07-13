@@ -13,12 +13,21 @@
               :TelescopePrompt
               ""])
 
+(defn- active-clients [] (let [clients (vim.lsp.buf_get_clients)
+                              client_names []]
+                          (each [_ client (pairs clients)]
+                            (if (not= client.name :null-ls)
+                                (table.insert client_names client.name)))
+                          (if (> (length client_names) 0)
+                              (table.concat client_names ", ")
+                              "")))
+
 (defn- hide-in-width [] (> (vim.fn.winwidth 0) 80))
 
 (def- diagnostics {1 :diagnostics
                    :sources [:nvim_diagnostic]
                    :sections [:error :warn]
-                   :symbols {:error " " :warn " "}
+                   ;; :symbols {:error "x " :warn "! "}
                    :colored false
                    :update_in_insert false
                    :always_visible true})
@@ -32,6 +41,8 @@
 
 (def- filetype {1 :filetype :cond hide_in_width :color {}})
 
+(def- language-server {1 active-clients :padding 0 :cond hide_in_width})
+
 (let [lualine (util.load-plugin :lualine)]
   (lualine.setup {:options {:icons_enabled true
                             :theme :auto
@@ -42,7 +53,7 @@
                   :sections {:lualine_a [:mode]
                              :lualine_b [branch diff :filename]
                              :lualine_c {}
-                             :lualine_x [diagnostics filetype]
+                             :lualine_x [filetype language-server diagnostics]
                              :lualine_y {}
                              :lualine_z [:location :progress :encoding]}
                   :inactive_sections {:lualine_a [:mode]
