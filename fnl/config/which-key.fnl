@@ -53,8 +53,6 @@
        :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find Text"]
        :P ["<cmd>Telescope projects<cr>" :Projects]
        :z [:<cmd>ZenMode<cr> "Zen Mode"]
-       :v [:<cmd>vsplit<cr> "Vertical Split"]
-       :h [:<cmd>split<cr> "Horizontal Split"]
        :p {:name :Packer
            :c [:<cmd>PackerCompile<cr> :Compile]
            :i [:<cmd>PackerInstall<cr> :Install]
