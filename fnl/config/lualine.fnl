@@ -1,6 +1,18 @@
 ;; Statusbar.
 (module config.lualine {autoload {util util}})
 
+(def- ignore [:help
+              :packer
+              :neogitstatus
+              :NvimTree
+              :lir
+              :spectre_panel
+              :alpha
+              :Outline
+              :NeogitStatus
+              :TelescopePrompt
+              ""])
+
 (defn- hide-in-width [] (> (vim.fn.winwidth 0) 80))
 
 (def- diagnostics {1 :diagnostics
@@ -25,14 +37,11 @@
                             :theme :auto
                             :component_separators {:left "" :right ""}
                             :section_separators {:left "" :right ""}
-                            :disabled_filetypes [:alpha
-                                                 :dashboard
-                                                 :NvimTree
-                                                 :Outline]
+                            :disabled_filetypes ignore
                             :always_divide_middle true}
                   :sections {:lualine_a [:mode]
-                             :lualine_b [branch :filename]
-                             :lualine_c [diff]
+                             :lualine_b [branch diff :filename]
+                             :lualine_c {}
                              :lualine_x [diagnostics filetype]
                              :lualine_y {}
                              :lualine_z [:location :progress :encoding]}
