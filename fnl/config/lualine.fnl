@@ -53,9 +53,9 @@
                   :sections {:lualine_a [:mode]
                              :lualine_b [branch diff :filename]
                              :lualine_c {}
-                             :lualine_x [filetype language-server diagnostics]
-                             :lualine_y {}
-                             :lualine_z [:location :progress :encoding]}
+                             :lualine_x [filetype]
+                             :lualine_y [language-server diagnostics]
+                             :lualine_z [:location :progress]}
                   :inactive_sections {:lualine_a [:mode]
                                       :lualine_b [:filename]
                                       :lualine_c {}
