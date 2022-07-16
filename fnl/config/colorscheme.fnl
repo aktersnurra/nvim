@@ -3,7 +3,4 @@
 
 (local colorscheme :no-clown-fiesta)
 
-(let [(ok? _) (pcall vim.cmd (.. "colorscheme " colorscheme))]
-  (if ok?
-      nil
-      (vim.notify (.. "colorscheme " colorscheme " not found!"))))
+(pcall vim.cmd (.. "colorscheme " colorscheme))
