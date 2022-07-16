@@ -1,8 +1,8 @@
 ;; Utility functions.
 (module util {autoload {a aniseed.core
                         nvim aniseed.nvim
-                        packer packer
-                        plugins plugins}})
+                        : packer
+                        : plugins}})
 
 (def- path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
 
