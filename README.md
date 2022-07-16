@@ -1,4 +1,4 @@
-# Config
+# nvim
 
 My neovim config written in fennel.
 
