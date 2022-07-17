@@ -39,4 +39,6 @@
   (let [actions (require :lir.actions)
         mark-actions (require :lir.mark.actions)
         clipboard-actions (require :lir.clipboard.actions)]
-    (lir.setup (opts actions mark-actions clipboard-actions))))
+    (lir.setup (opts actions mark-actions clipboard-actions))
+    (nvim.set_keymap :n "-" ":lua require'lir.float'.toggle()<cr>"
+                     {:noremap true :silent true})))
