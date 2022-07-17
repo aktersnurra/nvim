@@ -1,5 +1,5 @@
 ;; A vertical sidebar file explorer.
-(module config.nvim-tree {autoload {util util nvim aniseed.nvim}})
+(module config.nvim-tree {autoload {: util nvim aniseed.nvim}})
 
 (let [nvim-tree (util.load-plugin :nvim-tree)
       nvim-tree-config (util.load-plugin :nvim-tree.config)]

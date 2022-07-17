@@ -1,5 +1,5 @@
 ;; Load packer config
-(module config.packer {autoload {util util}})
+(module config.packer {autoload {: util}})
 
 (let [packer (util.load-plugin :packer)
       packer-util (require :packer.util)]

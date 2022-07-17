@@ -1,5 +1,5 @@
 ;; Trim whitespaces on save.
-(module config.window-picker {autoload {util util}})
+(module config.window-picker {autoload {: util}})
 
 (let [window-picker (util.load-plugin :window-picker)]
   (window-picker.setup {:other_win_hl_color "#171717"

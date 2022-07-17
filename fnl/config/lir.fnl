@@ -1,5 +1,5 @@
 ;; Simple file manager.
-(module config.lir {autoload {util util nvim aniseed.nvim}})
+(module config.lir {autoload {: util nvim aniseed.nvim}})
 
 (defn- opts [actions mark-actions clipboard-actions]
        {:show_hidden_files false

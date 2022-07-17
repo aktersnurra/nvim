@@ -1,5 +1,5 @@
 ;; Autocommands for nvim.
-(module config.autocmd {autoload {nvim aniseed.nvim a aniseed.core util util}})
+(module config.autocmd {autoload {nvim aniseed.nvim a aniseed.core : util}})
 
 (defn- autocmd [event opts] (nvim.create_autocmd event opts))
 

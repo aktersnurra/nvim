@@ -1,5 +1,5 @@
 ;; Hopping in text.
-(module config.hop {autoload {util util nvim aniseed.nvim}})
+(module config.hop {autoload {: util nvim aniseed.nvim}})
 
 (let [hop (util.load-plugin :hop)]
   (hop.setup {}))

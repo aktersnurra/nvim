@@ -1,5 +1,5 @@
 ;; Find and replace.
-(module config.spectre {autoload {util util}})
+(module config.spectre {autoload {: util}})
 
 (let [spectre (util.load-plugin :spectre)]
   (spectre.setup {:color_devicons true

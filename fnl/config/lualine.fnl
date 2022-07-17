@@ -1,5 +1,5 @@
 ;; Statusbar.
-(module config.lualine {autoload {util util}})
+(module config.lualine {autoload {: util}})
 
 (def- ignore [:help
               :packer

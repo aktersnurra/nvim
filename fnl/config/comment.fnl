@@ -1,5 +1,5 @@
 ;; Language aware commenting.
-(module config.comment {autoload {util util}})
+(module config.comment {autoload {: util}})
 
 (defn- get-type [ctx U] (if (= ctx.ctype U.ctype.line) :__default :__multiline))
 

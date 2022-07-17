@@ -1,5 +1,5 @@
 ;; Zen mode.
-(module config.zen {autoload {util util}})
+(module config.zen {autoload {: util}})
 
 (let [zen-mode (util.load-plugin :zen-mode)]
   (zen-mode.setup {:window {:backdrop 1
