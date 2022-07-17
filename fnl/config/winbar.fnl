@@ -33,14 +33,15 @@
                                  icon))))))
 
 (defn- get-winbar []
-      (if (and (not= (ignore) true) (not= (is-empty (get-filename)) true))
-          (let [icon (get-icon)]
-            (if (not= icon nil)
-                (vim.api.nvim_set_option_value :winbar (.. "   " icon " " "%t%m")
-                                               {:scope :local})
-                (vim.api.nvim_set_option_value :winbar (.. "  " "%t%m")
-                                               {:scope :local})))
-          (vim.api.nvim_set_option_value :winbar "" {:scope :local})))
+       (if (and (not= (ignore) true) (not= (is-empty (get-filename)) true))
+           (let [icon (get-icon)]
+             (if (not= icon nil)
+                 (vim.api.nvim_set_option_value :winbar
+                                                (.. "   " icon " " "%t%m")
+                                                {:scope :local})
+                 (vim.api.nvim_set_option_value :winbar (.. "  " "%t%m")
+                                                {:scope :local})))
+           (vim.api.nvim_set_option_value :winbar "" {:scope :local})))
 
 (nvim.create_autocmd "BufEnter,CursorMoved,CursorHold,BufWinEnter,BufFilePost,InsertEnter,BufWritePost,TabClosed"
                      {:callback (lambda []
