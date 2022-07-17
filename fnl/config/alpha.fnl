@@ -1,5 +1,5 @@
 ;; A customizable greeter.
-(module config.alpha {autoload {util util}})
+(module config.alpha {autoload {: util}})
 
 (def- ascii-art ["     ##############..... ############## "
                  "   ##############......##############   "

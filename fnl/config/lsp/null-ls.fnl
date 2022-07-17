@@ -1,5 +1,5 @@
 ;; Adds LSP diagnostics and formatting.
-(module config.lsp.null-ls {autoload {util util}})
+(module config.lsp.null-ls {autoload {: util}})
 
 (let [null-ls (util.load-plugin :null-ls)]
   (let [formatting null-ls.builtins.formatting

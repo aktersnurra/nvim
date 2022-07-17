@@ -1,5 +1,5 @@
 ;; Provides project management.
-(module config.project {autoload {util util}})
+(module config.project {autoload {: util}})
 
 (let [project (util.load-plugin :project_nvim)]
   (project.setup {:active true

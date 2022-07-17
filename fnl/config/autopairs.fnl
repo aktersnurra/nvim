@@ -1,5 +1,5 @@
 ;; Autopairs for brackets and quote symbols.
-(module config.autopairs {autoload {util util}})
+(module config.autopairs {autoload {: util}})
 
 (let [npairs (util.load-plugin :nvim-autopairs)]
   (npairs.setup {:check_ts true

@@ -1,5 +1,5 @@
 ;; Loads default handlers and specific language settings.
-(module config.lsp.lsp-installer {autoload {util util}})
+(module config.lsp.lsp-installer {autoload {: util}})
 
 (def- default-servers {:bashls true
                        :clangd true
