@@ -63,6 +63,7 @@
                                                 :<Up> actions.move_selection_previous
                                                 :gg actions.move_to_top
                                                 :G actions.move_to_bottom
+                                                :q actions.close
                                                 :<C-u> actions.preview_scrolling_up
                                                 :<C-d> actions.preview_scrolling_down
                                                 :<PageUp> actions.results_scrolling_up
@@ -76,7 +77,7 @@
     (telescope.load_extension :file_browser)
     (telescope.load_extension :projects)
     (nvim.set_keymap :n :<C-b>
-                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, previewer = false})<cr>"
+                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      opts)
     (nvim.set_keymap :n :<C-f>
                      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
