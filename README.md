@@ -5,7 +5,7 @@ My neovim config written in fennel.
 # Dependencies
 
 ```
-neovim >= 0.7
+neovim >= 0.8
 neovim-web-devicons-git
 xsel
 fzf
