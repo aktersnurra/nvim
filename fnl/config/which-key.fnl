@@ -75,7 +75,7 @@
                "Document Diagnostics"]
            :w ["<cmd>Telescope lsp_workspace_diagnostics<cr>"
                "Workspace Diagnostics"]
-           :f ["<cmd>lua vim.lsp.buf.formatting()<cr>" :Format]
+           :f ["<cmd>lua vim.lsp.buf.format { async = true }<cr>" :Format]
            :i [:<cmd>LspInfo<cr> :Info]
            :I [:<cmd>LspInstallInfo<cr> "Installer Info"]
            :j ["<cmd>lua vim.lsp.diagnostic.goto_next()<CR>" "Next Diagnostic"]
@@ -86,15 +86,12 @@
            :s ["<cmd>Telescope lsp_document_symbols<cr>" "Document Symbols"]
            :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
                "Workspace Symbols"]}
-       :s {:name :Search
-           :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
-           :c ["<cmd>Telescope colorscheme<cr>" :Colorscheme]
-           :h ["<cmd>Telescope help_tags<cr>" "Find Help"]
-           :M ["<cmd>Telescope man_pages<cr>" "Man Pages"]
-           :r ["<cmd>Telescope oldfiles<cr>" "Open Recent File"]
-           :R ["<cmd>Telescope registers<cr>" :Registers]
-           :k ["<cmd>Telescope keymaps<cr>" :Keymaps]
-           :C ["<cmd>Telescope commands<cr>" :Commands]}
+       :s [(fn switch-window []
+             (let [window-picker (require :window-picker)]
+               (let [win (window-picker.pick_window)]
+                 (if (not= win nil)
+                     (nvim.set_current_win win)))))
+           "Switch window"]
        :o {:name :Orgmode
            :a ["<cmd>lua require('orgmode').action('agenda.prompt')"
                "Open agenda prompt"]
