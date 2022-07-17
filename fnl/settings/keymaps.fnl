@@ -52,8 +52,8 @@
 (map :v :p "\"_dP" opts)
 
 ;; Splits
-(map :n :<A-s> :<cmd>split<CR> opts)
+(map :n :<m-s> :<cmd>split<CR> opts)
 (map :n :<C-s> :<cmd>split<CR> opts)
-(map :n :<A-v> :<cmd>vsplit<CR> opts)
+(map :n :<m-v> :<cmd>vsplit<CR> opts)
 
 (map :n :- ":lua require'lir.float'.toggle()<cr>" opts)
