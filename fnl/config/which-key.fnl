@@ -106,7 +106,7 @@
                "Replace Word"]
            :f ["<cmd>lua require('spectre').open_file_search()<cr>"
                "Replace Buffer"]}
-       :w [(fn switch-window []
+       :s [(fn switch-window []
              (let [window-picker (require :window-picker)]
                (let [win (window-picker.pick_window)]
                  (if (not= win nil)
