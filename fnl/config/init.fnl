@@ -26,4 +26,5 @@
                               config.which-key
                               config.window-picker
                               config.zen
+                              config.winbar
                               config.lsp]})

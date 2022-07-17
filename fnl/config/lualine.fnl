@@ -52,13 +52,13 @@
                             :disabled_filetypes ignore
                             :always_divide_middle true}
                   :sections {:lualine_a [:mode]
-                             :lualine_b [branch diff :filename]
+                             :lualine_b [branch diff]
                              :lualine_c {}
-                             :lualine_x [filetype]
-                             :lualine_y [language-server diagnostics]
+                             :lualine_x [language-server diagnostics]
+                             :lualine_y [filetype]
                              :lualine_z [:location :progress]}
                   :inactive_sections {:lualine_a [:mode]
-                                      :lualine_b [:filename]
+                                      :lualine_b {}
                                       :lualine_c {}
                                       :lualine_x {}
                                       :lualine_y {}
