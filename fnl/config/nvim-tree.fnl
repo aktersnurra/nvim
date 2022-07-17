@@ -19,6 +19,7 @@
                              :side :left
                              :preserve_window_proportions false
                              :number false
+                             :hide_root_folder false
                              :relativenumber false
                              :signcolumn :yes
                              :mappings {:custom_only false
