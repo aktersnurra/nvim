@@ -1,5 +1,7 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
-(module config.telescope {autoload {util util}})
+(module config.telescope {autoload {util util nvim aniseed.nvim}})
+
+(def- opts {:noremap true :silent true})
 
 (let [telescope (util.load-plugin :telescope)]
   (let [actions (require :telescope.actions)]
@@ -72,4 +74,11 @@
                                          :case_mode :smart_case}}})
     (telescope.load_extension :fzf)
     (telescope.load_extension :file_browser)
-    (telescope.load_extension :projects)))
+    (telescope.load_extension :projects)
+    (nvim.set_keymap :n :<C-b>
+                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, previewer = false})<cr>"
+                     opts)
+    (nvim.set_keymap :n :<C-f>
+                     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
+                     opts)
+    (nvim.set_keymap :n :<C-t> "<cmd>Telescope live_grep theme=ivy<cr>" opts)))
