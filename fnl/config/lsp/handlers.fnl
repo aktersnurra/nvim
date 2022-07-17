@@ -47,7 +47,7 @@
                               "<cmd>lua vim.lsp.buf.signature_help()<CR>" opts)))
 
 (defn on-attach [client bufnr] (if (= client.name :html)
-                                   (set client.resolved_capabilities.document_formatting
+                                   (set client.server_capabilities.document_formatting
                                         false))
       (lsp-keymaps bufnr))
 
