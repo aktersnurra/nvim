@@ -53,4 +53,5 @@
               :j-hui/fidget.nvim {}
               :stevearc/aerial.nvim {}
               :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}
+              :aktersnurra/minibar.nvim {}
               :s1n7ax/nvim-window-picker {}})
