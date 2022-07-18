@@ -75,11 +75,4 @@
                                          :case_mode :smart_case}}})
     (telescope.load_extension :fzf)
     (telescope.load_extension :file_browser)
-    (telescope.load_extension :projects)
-    (nvim.set_keymap :n :<C-b>
-                     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
-                     opts)
-    (nvim.set_keymap :n :<C-f>
-                     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
-                     opts)
-    (nvim.set_keymap :n :<C-t> "<cmd>Telescope live_grep theme=ivy<cr>" opts)))
+    (telescope.load_extension :projects)))

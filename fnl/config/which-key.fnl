@@ -47,6 +47,9 @@
        :n [:<cmd>nohlsearch<CR> "No Highlight"]
        :P ["<cmd>Telescope projects<cr>" :Projects]
        :z [:<cmd>ZenMode<cr> "Zen Mode"]
+       :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>" "Switch buffers"]
+       :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>" "Find files"]
+       :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
        :p {:name :Packer
            :c [:<cmd>PackerCompile<cr> :Compile]
            :i [:<cmd>PackerInstall<cr> :Install]
