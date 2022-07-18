@@ -11,6 +11,9 @@
                         :alpha true
                         :lir true
                         :Outline true
+                        :NeogitStatus true
+                        :NeogitCommitMessage true
+                        :NeogitNotification true
                         :spectre_panel true})
 
 (defn- is-empty [arg] (or (= arg nil) (= arg "")))
