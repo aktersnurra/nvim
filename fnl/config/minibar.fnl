@@ -15,4 +15,11 @@
                                      :NeogitCommitMessage
                                      :NeogitNotification
                                      :NeogitCommitView
-                                     :spectre_panel]}))
+                                     :spectre_panel]
+                  :events [:CursorMoved
+                           :CursorHold
+                           :BufWinEnter
+                           :BufFilePost
+                           :InsertEnter
+                           :BufWritePost
+                           :TabClosed]}))
