@@ -1,20 +1,19 @@
 ;; Utility functions.
-(module util {autoload {a aniseed.core
-                        nvim aniseed.nvim
-                        : packer
-                        : plugins}})
+(module util {autoload {a aniseed.core nvim aniseed.nvim : packer}})
+
+(def- plugins (require :plugins))
 
 (def- path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
 
 (defn- num-plugins [] (var i 0)
-       (each [_ _ (pairs plugins.plugins)]
+       (each [_ _ (pairs plugins)]
          (set i (+ i 1))) i)
 
 (defn- num-installed-plugins [] (length (vim.fn.readdir path)))
 
 (defn- install []
        (packer.startup (fn [use]
-                         (each [plugin opts (pairs plugins.plugins)]
+                         (each [plugin opts (pairs plugins)]
                            (use (a.assoc opts 1 plugin))))))
 
 (defn load-plugins [] (install)
