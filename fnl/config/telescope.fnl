@@ -68,6 +68,7 @@
                                                 :<C-d> actions.preview_scrolling_down
                                                 :<PageUp> actions.results_scrolling_up
                                                 :<PageDown> actions.results_scrolling_down
+                                                :dd actions.delete_buffer
                                                 :? actions.which_key}}}
                       :extensions {:fzf {:fuzzy true
                                          :override_generic_sorter true
