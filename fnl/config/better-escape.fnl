@@ -1,8 +1,9 @@
-;; Better escape without nasty delay
+;; Better escape without nasty delay.
 (module config.better-escape {autoload {: util}})
 
-(let [better-escape (util.load-plugin :better_escape)]
-  (better-escape.setup {:mapping [:jk :jj]
-                        :timeout vim.o.timeoutlen
-                        :clear_empty_lines false
-                        :keys :<Esc>}))
+(def- opts {:mapping [:kk :jj]
+            :timeout vim.o.timeoutlen
+            :clear_empty_lines false
+            :keys :<Esc>})
+
+(util.use-config :better_escape opts)

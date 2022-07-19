@@ -17,6 +17,7 @@
          (internal.calculate_commentstring {:key (get-type ctx U)
                                             :location (get-location ctx U)})))
 
-(let [nvim-comment (util.load-plugin :Comment)]
-  (nvim-comment.setup {:pre_hook (fn [ctx]
-                                   (pre-hook ctx))}))
+(def- opts {:pre_hook (fn [ctx]
+                        (pre-hook ctx))})
+
+(util.use-config :Comment opts)

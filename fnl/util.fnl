@@ -28,3 +28,7 @@
             val-or-err
             (vim.notify (.. "Could not load config: " val-or-err)
                         vim.log.levels.WARN))))
+
+(defn use-config [plugin config]
+      (let [plugin (load-plugin plugin)]
+        (plugin.setup config)))
