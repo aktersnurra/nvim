@@ -1,4 +1,4 @@
-;; List of plugins
+;; List of plugins.
 
 {:wbthomason/packer.nvim {}
  :lewis6991/impatient.nvim {}
