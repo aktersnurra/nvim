@@ -8,7 +8,7 @@
                       :disable_netrw false
                       :hijack_cursor false
                       :hijack_netrw true
-                      :filesystem_watchers {:enable true :interval 100}
+                      :filesystem_watchers {:enable true :debounce_delay 100}
                       :hijack_unnamed_buffer_when_opening false
                       :ignore_buffer_on_setup false
                       :open_on_setup false
