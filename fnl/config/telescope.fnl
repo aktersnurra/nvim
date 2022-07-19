@@ -5,8 +5,8 @@
 
 (let [telescope (util.load-plugin :telescope)]
   (let [actions (require :telescope.actions)]
-    (telescope.setup {:defaults {:prompt_prefix " "
-                                 :selection_caret " "
+    (telescope.setup {:defaults {:prompt_prefix "   "
+                                 :selection_caret "> "
                                  :path_display [:smart]
                                  :vimgrep_arguments [:rg
                                                      :--color=never
