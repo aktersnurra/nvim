@@ -6,7 +6,6 @@ My neovim config written in fennel.
 
 ```
 neovim >= 0.8
-neovim-web-devicons-git
 xsel
 fzf
 fnm and node for lsp
