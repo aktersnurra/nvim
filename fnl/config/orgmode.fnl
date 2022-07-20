@@ -6,10 +6,10 @@
 
 (def- templates
       {:t {:description :Task
-           :template "* TODO %?\n %u\n DEADLINE: %T\n :TAGS:"}
+           :template "* TODO %?\n %u\n DEADLINE: %T\n"}
        :m {:description :Meeting
-           :template "* MEETING %? :MEETING: :LOGBOOK: CLOCK: %U :END:"}
-       :n {:description :Note :template "* NOTE %? :NOTE:\n %u\n :TAGS:"}})
+           :template "* Meeting %?"}
+       :n {:description :Note :template "* NOTE %? :NOTE:\n %u\n"}})
 
 (defn- create-title [task]
        (string.format "%s (%s)" task.category task.humanized_duration))
