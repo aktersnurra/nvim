@@ -38,7 +38,7 @@
 
 (def- branch {1 "b:gitsigns_head" :icon " " :cond hide-in-width})
 
-(def- filetype {1 :filetype :cond hide_in_width :color {}})
+(def- filetype {1 :filetype :colored false :cond hide_in_width :color {}})
 
 (def- language-server {1 active-clients :cond hide_in_width})
 
