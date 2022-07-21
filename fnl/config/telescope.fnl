@@ -8,6 +8,7 @@
     (telescope.setup {:defaults {:prompt_prefix "   "
                                  :selection_caret "> "
                                  :path_display [:smart]
+                                 :color_devicons false
                                  :vimgrep_arguments [:rg
                                                      :--color=never
                                                      :--no-heading
