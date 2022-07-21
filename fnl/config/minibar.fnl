@@ -9,17 +9,19 @@
                                :Trouble
                                :alpha
                                :lir
+                               :org
                                :Outline
                                :NeogitStatus
                                :NeogitCommitMessage
                                :NeogitNotification
                                :NeogitCommitView
                                :spectre_panel]
-            :events [:VimEnter
+            :events [:CursorMoved
+                     :DirChanged
                      :BufWinEnter
                      :BufFilePost
                      :InsertEnter
                      :BufWritePost
-                     :TabClosed]})
+                     ]})
 
 (util.use-config :minibar opts)
