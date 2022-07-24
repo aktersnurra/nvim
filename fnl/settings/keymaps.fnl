@@ -19,10 +19,10 @@
 
 ;; Normal ;;
 ;; Better window navigation
-(map :n :<m-h> :<C-w>h opts)
-(map :n :<m-j> :<C-w>j opts)
-(map :n :<m-k> :<C-w>k opts)
-(map :n :<m-l> :<C-w>l opts)
+(map :n :<C-h> :<C-w>h opts)
+(map :n :<C-j> :<C-w>j opts)
+(map :n :<C-k> :<C-w>k opts)
+(map :n :<C-l> :<C-w>l opts)
 
 ;; Resize with arrows
 (map :n :<C-Up> ":resize -2<CR>" opts)
@@ -56,4 +56,4 @@
 (map :n :<C-s> :<cmd>split<CR> opts)
 (map :n :<m-v> :<cmd>vsplit<CR> opts)
 
-(map :n :<c-h> :<cmd>nohlsearch<CR> opts)
+(map :n :<m-h> :<cmd>nohlsearch<CR> opts)
