@@ -44,7 +44,6 @@
            :c [:<cmd>AerialClose<CR> "Close Aerial"]}
        :e [:<cmd>NvimTreeToggle<cr> :Explorer]
        :c [:<cmd>Bdelete!<CR> "Close Buffer"]
-       :n [:<cmd>nohlsearch<CR> "No Highlight"]
        :P ["<cmd>Telescope projects<cr>" :Projects]
        :z [:<cmd>ZenMode<cr> "Zen Mode"]
        :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
