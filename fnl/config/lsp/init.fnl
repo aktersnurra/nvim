@@ -1,7 +1,8 @@
 ;; Loads the LSP functionality.
 (module config.lsp.init {autoload {: util}})
 
-(require :config.lsp.lsp-installer)
+(require :config.lsp.mason)
+(require :config.lsp.mason-lspconfig)
 (let [handlers (require :config.lsp.handlers)]
   (handlers.setup))
 
