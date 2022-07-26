@@ -14,7 +14,7 @@
  :onsails/lspkind-nvim {}
  :hrsh7th/cmp-nvim-lsp {}
  :neovim/nvim-lspconfig {}
- :williamboman/nvim-lsp-installer {}
+ ;; :williamboman/nvim-lsp-installer {}
  :tamago324/nlsp-settings.nvim {}
  :jose-elias-alvarez/null-ls.nvim {}
  :b0o/SchemaStore.nvim {}
@@ -53,4 +53,6 @@
  :stevearc/aerial.nvim {}
  :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}
  :aktersnurra/minibar.nvim {}
+ :williamboman/mason.nvim {:branch :alpha}
+ :williamboman/mason-lspconfig.nvim {}
  :s1n7ax/nvim-window-picker {}}
