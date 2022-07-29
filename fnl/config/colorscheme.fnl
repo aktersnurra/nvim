@@ -3,6 +3,6 @@
 
 (local colorscheme :no-clown-fiesta)
 
-(set vim.g.bold_type true)
+(def- opts {:type :bold})
 
-(pcall vim.cmd (.. "colorscheme " colorscheme))
+(util.use-config :no-clown-fiesta opts)
