@@ -38,7 +38,7 @@
 
 (def- branch {1 "b:gitsigns_head" :icon " " :cond hide-in-width})
 
-(def- filetype {1 :filetype :colored false :cond hide_in_width :color {}})
+(def- filetype {1 :filetype :colored false :cond hide_in_width})
 
 (def- language-server {1 active-clients :cond hide_in_width})
 
@@ -47,7 +47,8 @@
                       :component_separators {:left "" :right ""}
                       :section_separators {:left "" :right ""}
                       :disabled_filetypes ignore
-                      :always_divide_middle true}
+                      :always_divide_middle true
+                      :globalstatus true}
             :sections {:lualine_a [:mode]
                        :lualine_b [branch diff]
                        :lualine_c {}
@@ -59,7 +60,7 @@
                                 :lualine_c {}
                                 :lualine_x {}
                                 :lualine_y {}
-                                :lualine_z [:location :progress :encoding]}
-            :extensions {}})
+                                :lualine_z [:location :progress]}
+            :extensions []})
 
 (util.use-config :lualine opts)
