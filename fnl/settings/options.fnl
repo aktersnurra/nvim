@@ -9,7 +9,7 @@
             ;; allows neovim to access the system clipboard
             :clipboard :unnamedplus
             ;; more space in the neovim command line for displaying messages
-            :cmdheight 2
+            :cmdheight 1
             ;; mostly just for cmp
             :completeopt {:menuone :noselect}
             ;; so that `` is visible in markdown files
@@ -45,7 +45,7 @@
             ;; enable persistent undo
             :undofile true
             ;; faster completion (4000ms default)
-            :updatetime 300
+            :updatetime 100
             ;; if a file is being edited by another program (or was written
             ;; to file while editing with another program), it is not allowed
             ;; to be edited
