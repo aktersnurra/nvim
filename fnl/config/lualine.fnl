@@ -4,15 +4,14 @@
 (def- ignore [:help
               :packer
               :neogitstatus
-              :NvimTree
+              ;; :NvimTree
               :lir
               :spectre_panel
               :alpha
               :Outline
               :NeogitStatus
               :NeogitCommitMessage
-              :TelescopePrompt
-              ""])
+              :TelescopePrompt])
 
 (defn- active-clients [] (let [clients (vim.lsp.buf_get_clients)
                                client_names []]
@@ -30,25 +29,27 @@
                    :sections [:error :warn]
                    :symbols {:error " " :warn " "}
                    :colored false
+                   :disabled_buftypes [:nvim-tree]
                    :padding 0
                    :update_in_insert false
                    :always_visible true})
 
-(def- diff {1 :diff :colored false :cond hide-in-width})
+(def- diff {1 :diff :colored false :disabled_buftypes [:nvim-tree] :cond hide-in-width})
 
-(def- branch {1 "b:gitsigns_head" :icon " " :cond hide-in-width})
+(def- branch {1 "b:gitsigns_head" :icon " " :disabled_buftypes [:nvim-tree] :cond hide-in-width})
 
-(def- filetype {1 :filetype :colored false :cond hide_in_width})
+(def- filetype {1 :filetype :disabled_buftypes [:nvim-tree] :colored false :cond hide_in_width})
 
-(def- language-server {1 active-clients :cond hide_in_width})
+(def- language-server {1 active-clients :disabled_buftypes [:nvim-tree] :cond hide_in_width})
 
 (def- opts {:options {:icons_enabled true
                       :theme :auto
-                      :component_separators {:left "" :right ""}
+                      :component_separators ""
                       :section_separators {:left "" :right ""}
                       :disabled_filetypes ignore
                       :always_divide_middle true
-                      :globalstatus true}
+                      :globalstatus true
+                      :refresh {:statusline 50}}
             :sections {:lualine_a [:mode]
                        :lualine_b [branch diff]
                        :lualine_c {}
