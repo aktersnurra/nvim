@@ -5,8 +5,8 @@
 
 (def- opts {:noremap true :silent true})
 
-(nvim.set_keymap :n :s ":HopChar2<cr>" {:silent true})
-(nvim.set_keymap :n :S ":HopWord<cr>" {:silent true})
+(nvim.set_keymap :n :m ":HopChar2<cr>" {:silent true})
+(nvim.set_keymap :n :M ":HopWord<cr>" {:silent true})
 (nvim.set_keymap :o :f
                  ":lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>"
                  opts)

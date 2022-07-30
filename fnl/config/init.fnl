@@ -27,4 +27,5 @@
                               config.window-picker
                               config.zen
                               config.minibar
+                              config.surround
                               config.lsp]})
