@@ -10,10 +10,11 @@
                :jsonls
                :pyright
                :rust_analyzer
+               :sumneko_lua
+               :sqls
                :taplo
                :terraformls
                :texlab
-               :sumneko_lua
                :tflint
                :yamlls
                :zk])
