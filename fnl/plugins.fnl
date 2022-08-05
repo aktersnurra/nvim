@@ -56,4 +56,5 @@
  :williamboman/mason-lspconfig.nvim {}
  :s1n7ax/nvim-window-picker {}
  :gbprod/stay-in-place.nvim {}
+ :junegunn/vim-slash {}
  :kylechui/nvim-surround {}}

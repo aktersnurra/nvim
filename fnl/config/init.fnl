@@ -29,4 +29,5 @@
                               config.minibar
                               config.surround
                               config.stay-in-place
+                              config.vim-slash
                               config.lsp]})
