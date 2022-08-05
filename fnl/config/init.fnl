@@ -28,4 +28,5 @@
                               config.zen
                               config.minibar
                               config.surround
+                              config.stay-in-place
                               config.lsp]})
