@@ -17,6 +17,7 @@
                                :NeogitCommitView
                                :spectre_panel]
             :events [:CursorMoved
+                     :TermOpen
                      :DirChanged
                      :BufWinEnter
                      :BufFilePost
