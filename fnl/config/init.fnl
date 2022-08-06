@@ -13,21 +13,21 @@
                               config.gitsigns
                               config.hop
                               config.lir
+                              config.lsp
                               config.lualine
+                              config.minibar
                               config.neogit
                               config.nvim-tree
                               config.orgmode
                               config.project
                               config.spectre
                               config.spellsitter
+                              config.stay-in-place
+                              config.surround
                               config.telescope
                               config.treesitter
                               config.trim
+                              config.vim-slash
                               config.which-key
                               config.window-picker
-                              config.zen
-                              config.minibar
-                              config.surround
-                              config.stay-in-place
-                              config.vim-slash
-                              config.lsp]})
+                              config.zen]})
