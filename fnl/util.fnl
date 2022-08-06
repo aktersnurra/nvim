@@ -1,6 +1,8 @@
 ;; Utility functions.
 (module util {autoload {a aniseed.core nvim aniseed.nvim : packer}})
 
+(defn autocmd [event opts] (nvim.create_autocmd event opts))
+
 (def- path (.. (vim.fn.stdpath :data) :/site/pack/packer/start))
 
 (def- installed-plugins (vim.fn.readdir path))
