@@ -1,30 +1,33 @@
 ;; Autocommands for nvim.
 (module config.autocmd {autoload {nvim aniseed.nvim a aniseed.core : util}})
 
-(util.autocmd :BufEnter
-         {:command "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"})
+(defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
-(util.autocmd :FileType
-         {:pattern [:qf :help :man :lspinfo]
-          :command "nnoremap <silent> <buffer> q :close<CR>"})
+(create-autocmd :BufEnter
+                {:command "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"})
 
-(util.autocmd :TextYankPost
-         {:callback (lambda []
-                      (vim.highlight.on_yank {:timeout 200}))})
+(create-autocmd :FileType
+                {:pattern [:qf :help :man :lspinfo]
+                 :command "nnoremap <silent> <buffer> q :close<CR>"})
 
-(util.autocmd :BufWinEnter {:command "setlocal formatoptions-=cro"})
+(create-autocmd :TextYankPost
+                {:callback (lambda []
+                             (vim.highlight.on_yank {:timeout 200}))})
 
-(util.autocmd :FileType {:pattern :qf :command "set nobuflisted"})
+(create-autocmd :BufWinEnter {:command "setlocal formatoptions-=cro"})
 
-(util.autocmd :FileType
-         {:pattern :lir
-          :callback (fn []
-                      (tset vim.opt_local :number false)
-                      (tset vim.opt_local :relativenumber false))})
+(create-autocmd :FileType {:pattern :qf :command "set nobuflisted"})
 
-(util.autocmd :FileType {:pattern [:gitcommit :markdown] :command "setlocal wrap"})
+(create-autocmd :FileType {:pattern :lir
+                           :callback (fn []
+                                       (tset vim.opt_local :number false)
+                                       (tset vim.opt_local :relativenumber
+                                             false))})
 
-(util.autocmd :FileType {:pattern [:gitcommit :markdown :org :plaintex]
-                    :command "setlocal spell"})
+(create-autocmd :FileType {:pattern [:gitcommit :markdown]
+                           :command "setlocal wrap"})
 
-(util.autocmd :VimResized {:command "tabdo wincmd ="})
+(create-autocmd :FileType {:pattern [:gitcommit :markdown :org :plaintex]
+                           :command "setlocal spell"})
+
+(create-autocmd :VimResized {:command "tabdo wincmd ="})
