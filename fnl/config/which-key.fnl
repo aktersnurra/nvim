@@ -42,10 +42,6 @@
              :noremap true
              :nowait true})
 
-(def- aerial {:name :Aerial
-              :a [:<cmd>AerialToggle!<CR> "Toggle Aerial"]
-              :c [:<cmd>AerialClose<CR> "Close Aerial"]})
-
 (def- find {:name :Find
             :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
             :c ["<cmd>Telescope colorscheme<cr>" :Colorscheme]
@@ -127,7 +123,7 @@
            (if (not= win nil)
                (nvim.set_current_win win)))))
 
-(def- nmappings {:a aerial
+(def- nmappings {:a [:<cmd>AerialToggle!<CR> "Toggle Aerial"]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
