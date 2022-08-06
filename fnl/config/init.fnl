@@ -25,6 +25,7 @@
                               config.stay-in-place
                               config.surround
                               config.telescope
+                              config.toggleterm
                               config.treesitter
                               config.trim
                               config.vim-slash

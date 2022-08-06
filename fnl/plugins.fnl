@@ -52,6 +52,7 @@
  :nvim-telescope/telescope-file-browser.nvim {}
  :nvim-telescope/telescope-fzf-native.nvim {:run :make}
  :nvim-telescope/telescope.nvim {:requires :nvim-lua/plenary.nvim}
+ :akinsho/toggleterm.nvim {}
  :cappyzawa/trim.nvim {}
  :moll/vim-bbye {}
  :junegunn/vim-slash {}
