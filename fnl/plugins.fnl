@@ -58,4 +58,4 @@
  :dstein64/vim-startuptime {}
  :folke/which-key.nvim {}
  :folke/zen-mode.nvim {}
- }
+}
