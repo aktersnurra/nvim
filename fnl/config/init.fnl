@@ -12,6 +12,7 @@
                               config.comment
                               config.fidget
                               config.gitsigns
+                              config.harpoon
                               config.hop
                               config.lir
                               config.lsp

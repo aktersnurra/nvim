@@ -28,14 +28,20 @@
              :triggers :auto
              :triggers_blacklist {:i [:j :k] :v [:j :k]}})
 
-(def- nopts {:mode :n
-             :prefix :<leader>
+(def- mopts {:mode :n
+             :prefix :m
              :buffer nil
              :silent true
              :noremap true
              :nowait true})
 
-(def- vopts {:mode :v
+(def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>" "Harpoon"]
+                 :l ["<cmd>lua require('harpoon.ui').nav_next()<cr>" "Harpoon Next"]
+                 :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>" "Harpoon Prev"]
+                 :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
+                 :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>" "Harpoon UI"]})
+
+(def- nopts {:mode :n
              :prefix :<leader>
              :buffer nil
              :silent true
@@ -142,10 +148,18 @@
                  :T treesitter
                  :z [:<cmd>ZenMode<cr> "Zen Mode"]})
 
+(def- vopts {:mode :v
+             :prefix :<leader>
+             :buffer nil
+             :silent true
+             :noremap true
+             :nowait true})
+
 (def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>"
                      :Comment]})
 
 (let [which-key (util.load-plugin :which-key)]
   (which-key.setup setup)
+  (which-key.register mmappings mopts)
   (which-key.register nmappings nopts)
   (which-key.register vmappings vopts))

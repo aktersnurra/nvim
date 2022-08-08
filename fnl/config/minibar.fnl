@@ -2,6 +2,7 @@
 
 (def- opts {:ignore-filetypes [:help
                                :startify
+                               :harpoon
                                :dashboard
                                :packer
                                :neogitstatus
