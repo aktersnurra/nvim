@@ -4,6 +4,7 @@
  :stevearc/aerial.nvim {}
  :goolord/alpha-nvim {}
  :Olical/aniseed {}
+ :rmagatti/auto-session {}
  :max397574/better-escape.nvim {}
  :hrsh7th/cmp-buffer {}
  :hrsh7th/cmp-cmdline {}
@@ -47,6 +48,7 @@
  :nvim-lua/popup.nvim {}
  :ahmedkhalf/project.nvim {}
  :b0o/SchemaStore.nvim {}
+ :rmagatti/session-lens {}
  :lewis6991/spellsitter.nvim {}
  :gbprod/stay-in-place.nvim {}
  :nvim-telescope/telescope-file-browser.nvim {}
