@@ -24,7 +24,6 @@
                      :BufWinEnter
                      :BufFilePost
                      :InsertEnter
-                     :BufWritePost
-                     ]})
+                     :BufWritePost]})
 
 (util.use-config :minibar opts)
