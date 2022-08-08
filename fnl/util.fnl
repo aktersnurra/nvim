@@ -34,9 +34,9 @@
           (require :config)))
 
 (defn load-plugin [name]
-      (let [(ok? val-or-err) (pcall require name)]
+      (let [(ok? plugin) (pcall require name)]
         (if ok?
-            val-or-err
+            plugin
             (vim.notify (.. "Could not load config: " val-or-err)
                         vim.log.levels.WARN))))
 
