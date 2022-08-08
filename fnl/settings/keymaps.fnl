@@ -31,8 +31,8 @@
 (map :n :<C-Right> ":vertical resize +2<CR>" opts)
 
 ;; Navigate buffers
-(map :n :<S-l> ":bnext<CR>" opts)
-(map :n :<S-h> ":bprevious<CR>" opts)
+;; (map :n :<tab> ":bnext<CR>" opts)
+;; (map :n :<S-tab> ":bprevious<CR>" opts)
 
 ;; Visual ;;
 ;; Stay in indent mode
@@ -43,12 +43,12 @@
 ;; Move text up and down
 (map :x :J ":move '>+1<CR>gv-gv" opts)
 (map :x :K ":move '<-2<CR>gv-gv" opts)
-(map :x :<A-j> ":move '>+1<CR>gv-gv" opts)
-(map :x :<A-k> ":move '<-2<CR>gv-gv" opts)
+(map :x :<m-j> ":move '>+1<CR>gv-gv" opts)
+(map :x :<m-k> ":move '<-2<CR>gv-gv" opts)
 
 ;; Move text up and down
-(map :v :<A-j> ":m .+1<CR>==" opts)
-(map :v :<A-k> ":m .-2<CR>==" opts)
+(map :v :<m-j> ":m .+1<CR>==" opts)
+(map :v :<m-k> ":m .-2<CR>==" opts)
 (map :v :p "\"_dP" opts)
 
 ;; Splits
