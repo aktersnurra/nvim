@@ -16,6 +16,7 @@
  :antoinemadec/FixCursorHold.nvim {}
  :rafamadriz/friendly-snippets {}
  :lewis6991/gitsigns.nvim {}
+ :ThePrimeagen/harpoon {}
  :phaazon/hop.nvim {}
  :lewis6991/impatient.nvim {}
  :tamago324/lir.nvim {}
