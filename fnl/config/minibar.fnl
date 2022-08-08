@@ -16,7 +16,8 @@
                                :NeogitCommitMessage
                                :NeogitNotification
                                :NeogitCommitView
-                               :spectre_panel]
+                               :spectre_panel
+                               ""]
             :events [:CursorMoved
                      :TermOpen
                      :DirChanged
