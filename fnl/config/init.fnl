@@ -1,7 +1,7 @@
 ;; Load all plugin configs.
 (module config.init {require [config.aerial
                               config.alpha
-                              ;;config.auto-session
+                              config.auto-session
                               config.autocmd
                               config.autopairs
                               config.better-escape
