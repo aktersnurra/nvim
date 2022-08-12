@@ -129,13 +129,13 @@
                (nvim.set_current_win win)))))
 
 (def- nmappings {:a [:<cmd>AerialToggle!<CR> "Toggle Aerial"]
-                 :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
-                     "Switch buffers"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
                  :e [:<cmd>NvimTreeToggle<cr> :Explorer]
                  :f find
                  :g git
                  :h [:<cmd>Alpha<cr> :Alpha]
+                 :i ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
+                     "Switch buffers"]
                  :l lsp
                  :n ["<cmd>lua require('Comment.api').toggle_current_linewise()<CR>"
                      :Comment]
