@@ -1,17 +1,14 @@
 ;; Statusbar.
 (module config.lualine {autoload {: util}})
 
-(def- ignore [:help
-              :packer
-              :neogitstatus
-              ;; :NvimTree
-              :lir
-              :spectre_panel
-              :alpha
-              :Outline
-              :NeogitStatus
-              :NeogitCommitMessage
-              :TelescopePrompt])
+(def- disable [:neogitstatus
+               :lir
+               :alpha
+               :Outline
+               :NeogitStatus
+               :NeogitCommitMessage])
+
+(def- ignore [:help :NvimTree :packer :spectre_panel :TelescopePrompt])
 
 (defn- active-clients [] (let [clients (vim.lsp.buf_get_clients)
                                client_names []]
@@ -34,19 +31,31 @@
                    :update_in_insert false
                    :always_visible true})
 
-(def- diff {1 :diff :colored false :disabled_buftypes [:nvim-tree] :cond hide-in-width})
+(def- diff {1 :diff
+            :colored false
+            :disabled_buftypes [:nvim-tree]
+            :cond hide-in-width})
 
-(def- branch {1 "b:gitsigns_head" :icon " " :disabled_buftypes [:nvim-tree] :cond hide-in-width})
+(def- branch {1 "b:gitsigns_head"
+              :icon " "
+              :disabled_buftypes [:nvim-tree]
+              :cond hide-in-width})
 
-(def- filetype {1 :filetype :disabled_buftypes [:nvim-tree] :colored false :cond hide_in_width})
+(def- filetype {1 :filetype
+                :disabled_buftypes [:nvim-tree]
+                :colored false
+                :cond hide_in_width})
 
-(def- language-server {1 active-clients :disabled_buftypes [:nvim-tree] :cond hide_in_width})
+(def- language-server {1 active-clients
+                       :disabled_buftypes [:nvim-tree]
+                       :cond hide_in_width})
 
 (def- opts {:options {:icons_enabled true
                       :theme :auto
                       :component_separators ""
                       :section_separators {:left "" :right ""}
-                      :disabled_filetypes ignore
+                      :disabled_filetypes disable
+                      :ignore_focus ignore
                       :always_divide_middle true
                       :globalstatus true
                       :refresh {:statusline 50}}
