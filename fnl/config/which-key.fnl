@@ -137,7 +137,7 @@
                  :i ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
                  :l lsp
-                 :n ["<cmd>lua require('Comment.api').toggle_current_linewise()<CR>"
+                 :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
                      :Comment]
                  :o org
                  :p packer
@@ -154,7 +154,7 @@
              :noremap true
              :nowait true})
 
-(def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>"
+(def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
                      :Comment]})
 
 (let [which-key (util.load-plugin :which-key)]
