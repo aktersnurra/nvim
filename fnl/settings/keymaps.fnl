@@ -56,4 +56,4 @@
 (map :n :<C-s> :<cmd>split<CR> opts)
 (map :n :<m-v> :<cmd>vsplit<CR> opts)
 
-(map :n :<m-h> :<cmd>nohlsearch<CR> opts)
+(map :n :<m-n> :<cmd>nohlsearch<CR> opts)
