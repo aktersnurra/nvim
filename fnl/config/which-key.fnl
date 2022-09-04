@@ -36,6 +36,8 @@
              :nowait true})
 
 (def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>" "Harpoon"]
+                 :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
+                     "Switch buffers"]
                  :l ["<cmd>lua require('harpoon.ui').nav_next()<cr>" "Harpoon Next"]
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>" "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
@@ -134,8 +136,6 @@
                  :f find
                  :g git
                  :h [:<cmd>Alpha<cr> :Alpha]
-                 :i ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
-                     "Switch buffers"]
                  :l lsp
                  :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
                      :Comment]
