@@ -3,6 +3,7 @@
 
 (require :config.lsp.mason)
 (require :config.lsp.mason-lspconfig)
+(require :config.lsp.mason-null-lsp)
 (let [handlers (require :config.lsp.handlers)]
   (handlers.setup))
 
