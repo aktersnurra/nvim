@@ -24,6 +24,7 @@
  :nvim-lualine/lualine.nvim {:requires {1 :kyazdani42/nvim-web-devicons :opt true}}
  :L3MON4D3/LuaSnip {}
  :williamboman/mason-lspconfig.nvim {}
+ :jayp0521/mason-null-ls.nvim {}
  :williamboman/mason.nvim {}
  :aktersnurra/minibar.nvim {}
  :TimUntersberger/neogit {:requires :nvim-lua/plenary.nvim}

@@ -11,12 +11,10 @@
                               diagnostics.shellcheck
                               diagnostics.yamllint
                               (formatting.black.with {:extra_args [:--fast]})
-                              formatting.erlfmt
                               formatting.fnlfmt
                               formatting.fourmolu
                               formatting.gofmt
                               formatting.goimports
-                              formatting.nixfmt
                               (formatting.prettier.with {:extra_args [:--no-semi
                                                                       :--single-quote
                                                                       :--jsx-single-quote]})
