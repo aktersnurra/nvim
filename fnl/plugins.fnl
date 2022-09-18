@@ -51,6 +51,7 @@
  :b0o/SchemaStore.nvim {}
  :rmagatti/session-lens {}
  :lewis6991/spellsitter.nvim {}
+ :luukvbaal/stabilize.nvim {}
  :gbprod/stay-in-place.nvim {}
  :nvim-telescope/telescope-file-browser.nvim {}
  :nvim-telescope/telescope-fzf-native.nvim {:run :make}
