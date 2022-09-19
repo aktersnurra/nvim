@@ -13,7 +13,6 @@
  :saadparwaiz1/cmp_luasnip {}
  :numToStr/Comment.nvim {}
  :j-hui/fidget.nvim {}
- :antoinemadec/FixCursorHold.nvim {}
  :rafamadriz/friendly-snippets {}
  :lewis6991/gitsigns.nvim {}
  :ThePrimeagen/harpoon {}
