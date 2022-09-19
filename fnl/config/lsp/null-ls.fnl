@@ -9,6 +9,10 @@
                               diagnostics.golangci_lint
                               diagnostics.jsonlint
                               diagnostics.shellcheck
+                              diagnostics.sqlfluff
+                              diagnostics.gitlint
+                              diagnostics.hadolint
+                              diagnostics.cpplint
                               diagnostics.yamllint
                               (formatting.black.with {:extra_args [:--fast]})
                               formatting.fnlfmt
@@ -20,6 +24,6 @@
                                                                       :--jsx-single-quote]})
                               formatting.rustfmt
                               formatting.shfmt
-                              formatting.sqlformat
+                              formatting.sqlfluff
                               formatting.stylua
                               formatting.terraform_fmt]})))
