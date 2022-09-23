@@ -42,6 +42,7 @@
               :cond hide-in-width})
 
 (def- filetype {1 :filetype
+                :icon_only true
                 :disabled_buftypes [:nvim-tree]
                 :colored false
                 :cond hide_in_width})
