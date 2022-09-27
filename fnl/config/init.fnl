@@ -31,6 +31,7 @@
                               config.toggleterm
                               config.treesitter
                               config.trim
+                              config.trouble
                               config.vim-slash
                               config.which-key
                               config.window-picker
