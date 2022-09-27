@@ -58,6 +58,7 @@
  :nvim-telescope/telescope.nvim {:requires :nvim-lua/plenary.nvim}
  :akinsho/toggleterm.nvim {}
  :cappyzawa/trim.nvim {}
+ :folke/trouble.nvim {}
  :moll/vim-bbye {}
  :junegunn/vim-slash {}
  :dstein64/vim-startuptime {}

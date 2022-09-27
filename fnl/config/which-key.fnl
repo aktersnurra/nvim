@@ -39,6 +39,7 @@
                      :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
+                 :d [:<cmd>TroubleToggle<cr> :Trouble]
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
