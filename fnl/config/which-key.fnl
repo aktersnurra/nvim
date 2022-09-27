@@ -130,7 +130,8 @@
            (if (not= win nil)
                (nvim.set_current_win win)))))
 
-(def- nmappings {:a [:<cmd>AerialToggle!<CR> "Toggle Aerial"]
+(def- nmappings {:a ["<cmd>Telescope lsp_document_symbols<cr>"
+                     "Document Symbols"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
                  :e [:<cmd>NvimTreeToggle<cr> :Explorer]
                  :f find
