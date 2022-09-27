@@ -48,6 +48,7 @@
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
                      "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
+                 :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
                      "Harpoon UI"]})
 
@@ -92,18 +93,9 @@
 
 (def- lsp {:name :LSP
            :a ["<cmd>lua vim.lsp.buf.code_action()<cr>" "Code Action"]
-           :d ["<cmd>Telescope lsp_document_diagnostics<cr>"
-               "Document Diagnostics"]
-           :w ["<cmd>Telescope lsp_workspace_diagnostics<cr>"
-               "Workspace Diagnostics"]
            :f ["<cmd>lua vim.lsp.buf.format { async = true }<cr>" :Format]
            :i [:<cmd>LspInfo<cr> :Info]
-           :j ["<cmd>lua vim.lsp.diagnostic.goto_next({buffer=0})<CR>"
-               "Next Diagnostic"]
-           :k ["<cmd>lua vim.lsp.diagnostic.goto_prev({buffer=0})<cr>"
-               "Prev Diagnostic"]
            :l ["<cmd>lua vim.lsp.codelens.run()<cr>" "CodeLens Action"]
-           :q ["<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>" :Quickfix]
            :r ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
            :s ["<cmd>Telescope lsp_document_symbols<cr>" "Document Symbols"]
            :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
