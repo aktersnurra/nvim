@@ -1,6 +1,5 @@
 ;; Load all plugin configs.
-(module config.init {require [config.aerial
-                              config.alpha
+(module config.init {require [config.alpha
                               config.auto-session
                               config.autocmd
                               config.autopairs

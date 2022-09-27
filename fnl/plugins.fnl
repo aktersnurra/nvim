@@ -1,7 +1,6 @@
 ;; List of plugins.
 
 {
- :stevearc/aerial.nvim {}
  :goolord/alpha-nvim {}
  :Olical/aniseed {}
  :rmagatti/auto-session {}
