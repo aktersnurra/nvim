@@ -35,13 +35,20 @@
              :noremap true
              :nowait true})
 
-(def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>" "Harpoon"]
+(def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>"
+                     :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
-                 :l ["<cmd>lua require('harpoon.ui').nav_next()<cr>" "Harpoon Next"]
-                 :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>" "Harpoon Prev"]
+                 :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
+                     "Find files"]
+                 :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
+                 :l ["<cmd>lua require('harpoon.ui').nav_next()<cr>"
+                     "Harpoon Next"]
+                 :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
+                     "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
-                 :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>" "Harpoon UI"]})
+                 :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
+                     "Harpoon UI"]})
 
 (def- nopts {:mode :n
              :prefix :<leader>
