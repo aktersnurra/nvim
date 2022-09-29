@@ -2,7 +2,7 @@
 (module config.toggleterm
         {autoload {: util nvim aniseed.nvim autocmd config.autocmd}})
 
-(def- opts {:shade_terminals false})
+(def- opts {:size 20 :shade_terminals false})
 
 (defn- set-terminal-keymaps []
        (nvim.set_keymap :t :<C-h> "<Cmd>wincmd h<CR>" {})
