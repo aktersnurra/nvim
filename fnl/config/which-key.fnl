@@ -50,6 +50,7 @@
                      "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
+                 :p ["<cmd>SaveSession<cr>" "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
                      "Harpoon UI"]})
 
