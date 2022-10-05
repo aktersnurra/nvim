@@ -9,6 +9,7 @@
                               config.colorizer
                               config.colorscheme
                               config.comment
+                              config.diffview
                               config.fidget
                               config.gitsigns
                               config.harpoon

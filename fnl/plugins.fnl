@@ -11,6 +11,7 @@
  :hrsh7th/cmp-path {}
  :saadparwaiz1/cmp_luasnip {}
  :numToStr/Comment.nvim {}
+ :sindrets/diffview.nvim {}
  :j-hui/fidget.nvim {}
  :rafamadriz/friendly-snippets {}
  :lewis6991/gitsigns.nvim {}
