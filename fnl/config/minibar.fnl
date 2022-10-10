@@ -6,7 +6,6 @@
                                :dashboard
                                :packer
                                :neogitstatus
-                               :NvimTree
                                :Trouble
                                :alpha
                                :lir
