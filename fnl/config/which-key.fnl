@@ -40,7 +40,7 @@
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
                  :d [:<cmd>TroubleToggle<cr> :Trouble]
-                 :D ["<cmd>Telescope diagnostics<cr>" "Telescope diagnostics"]
+                 :D ["<cmd>Telescope diagnostics theme=dropdown<cr>" "Telescope diagnostics"]
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
@@ -48,7 +48,7 @@
                      "Harpoon Next"]
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
                      "Harpoon Prev"]
-                 :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
+                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>" "Search Files"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :p [:<cmd>SaveSession<cr> "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
@@ -63,17 +63,17 @@
              :nowait true})
 
 (def- find {:name :Find
-            :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
-            :c ["<cmd>Telescope colorscheme<cr>" :Colorscheme]
+            :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
+            :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
             :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                 "Find files"]
             :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
-            :s ["<cmd>Telescope grep_string<cr>" "Find String"]
+            :s ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
             :h ["<cmd>Telescope help_tags<cr>" :Help]
             :H ["<cmd>Telescope highlights<cr>" :Highlights]
             :l ["<cmd>Telescope resume<cr>" "Last Search"]
             :M ["<cmd>Telescope man_pages<cr>" "Man Pages"]
-            :r ["<cmd>Telescope oldfiles<cr>" "Recent File"]
+            :r ["<cmd>Telescope oldfiles theme=dropdown<cr>" "Recent File"]
             :R ["<cmd>Telescope registers<cr>" :Registers]
             :k ["<cmd>Telescope keymaps<cr>" :Keymaps]
             :C ["<cmd>Telescope commands<cr>" :Commands]})
@@ -90,9 +90,9 @@
            :s ["<cmd>lua require 'gitsigns'.stage_hunk()<cr>" "Stage Hunk"]
            :u ["<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>"
                "Undo Stage Hunk"]
-           :o ["<cmd>Telescope git_status<cr>" "Open changed file"]
-           :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
-           :c ["<cmd>Telescope git_commits<cr>" "Checkout commit"]
+           :o ["<cmd>Telescope git_status theme=dropdown<cr>" "Open changed file"]
+           :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
+           :c ["<cmd>Telescope git_commits theme=dropdown<cr>" "Checkout commit"]
            :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]})
 
 (def- lsp {:name :LSP
@@ -134,7 +134,7 @@
            (if (not= win nil)
                (nvim.set_current_win win)))))
 
-(def- nmappings {:a ["<cmd>Telescope lsp_document_symbols<cr>"
+(def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
                  :f find
