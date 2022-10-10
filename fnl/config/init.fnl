@@ -20,7 +20,6 @@
                               config.lualine
                               config.minibar
                               config.neogit
-                              config.nvim-tree
                               config.orgmode
                               config.project
                               config.spectre

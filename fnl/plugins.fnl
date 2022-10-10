@@ -38,7 +38,6 @@
  :neovim/nvim-lspconfig {}
  :windwp/nvim-spectre {}
  :kylechui/nvim-surround {}
- :kyazdani42/nvim-tree.lua {:requires [:kyazdani42/nvim-web-devicons]}
  :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"}
  :JoosepAlviste/nvim-ts-context-commentstring {}
  :kyazdani42/nvim-web-devicons {}
