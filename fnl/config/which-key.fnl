@@ -137,7 +137,6 @@
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols<cr>"
                      "Document Symbols"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
-                 :e [:<cmd>NvimTreeToggle<cr> :Explorer]
                  :f find
                  :g git
                  :h [:<cmd>Alpha<cr> :Alpha]
