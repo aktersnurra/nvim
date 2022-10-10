@@ -50,6 +50,7 @@
                      "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
+                 :p ["<cmd>SaveSession<cr>" "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
                      "Harpoon UI"]})
 
@@ -77,6 +78,8 @@
             :C ["<cmd>Telescope commands<cr>" :Commands]})
 
 (def- git {:name :Git
+           :d ["<cmd>DiffviewOpen<cr>" "Diffview"]
+           :D ["<cmd>DiffviewFileHistory<cr>" "DiffviewFileHistory"]
            :j ["<cmd>lua require 'gitsigns'.next_hunk()<cr>" "Next Hunk"]
            :k ["<cmd>lua require 'gitsigns'.prev_hunk()<cr>" "Prev Hunk"]
            :l ["<cmd>lua require 'gitsigns'.blame_line()<cr>" :Blame]
