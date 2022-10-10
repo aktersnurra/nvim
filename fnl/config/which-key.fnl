@@ -50,9 +50,10 @@
                      "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks<cr>" "Search Files"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
-                 :p ["<cmd>SaveSession<cr>" "Save Session"]
+                 :p [:<cmd>SaveSession<cr> "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
-                     "Harpoon UI"]})
+                     "Harpoon UI"]
+                 :n [:<cmd>Neogit<cr> :Neogit]})
 
 (def- nopts {:mode :n
              :prefix :<leader>
@@ -78,8 +79,8 @@
             :C ["<cmd>Telescope commands<cr>" :Commands]})
 
 (def- git {:name :Git
-           :d ["<cmd>DiffviewOpen<cr>" "Diffview"]
-           :D ["<cmd>DiffviewFileHistory<cr>" "DiffviewFileHistory"]
+           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
+           :D [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
            :j ["<cmd>lua require 'gitsigns'.next_hunk()<cr>" "Next Hunk"]
            :k ["<cmd>lua require 'gitsigns'.prev_hunk()<cr>" "Prev Hunk"]
            :l ["<cmd>lua require 'gitsigns'.blame_line()<cr>" :Blame]
@@ -92,8 +93,7 @@
            :o ["<cmd>Telescope git_status<cr>" "Open changed file"]
            :b ["<cmd>Telescope git_branches<cr>" "Checkout branch"]
            :c ["<cmd>Telescope git_commits<cr>" "Checkout commit"]
-           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
-           :n [:<cmd>Neogit<cr> :Neogit]})
+           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]})
 
 (def- lsp {:name :LSP
            :a ["<cmd>lua vim.lsp.buf.code_action()<cr>" "Code Action"]
