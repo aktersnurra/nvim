@@ -11,9 +11,10 @@
                               config.comment
                               config.diffview
                               config.fidget
+                              config.flit
                               config.gitsigns
                               config.harpoon
-                              config.hop
+                              config.leap
                               config.lir
                               config.lsp
                               config.lualine
