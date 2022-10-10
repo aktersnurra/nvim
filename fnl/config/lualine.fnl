@@ -58,8 +58,7 @@
                       :disabled_filetypes disable
                       :ignore_focus ignore
                       :always_divide_middle true
-                      :globalstatus true
-                      :refresh {:statusline 50}}
+                      :globalstatus true}
             :sections {:lualine_a [:mode]
                        :lualine_b [branch diff]
                        :lualine_c {}
