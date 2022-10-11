@@ -8,7 +8,7 @@
                :NeogitStatus
                :NeogitCommitMessage])
 
-(def- ignore [:help :NvimTree :packer :spectre_panel :TelescopePrompt])
+(def- ignore [:help :packer :spectre_panel :TelescopePrompt])
 
 (defn- active-clients [] (let [clients (vim.lsp.buf_get_clients)
                                client_names []]
@@ -58,8 +58,7 @@
                       :disabled_filetypes disable
                       :ignore_focus ignore
                       :always_divide_middle true
-                      :globalstatus true
-                      :refresh {:statusline 50}}
+                      :globalstatus true}
             :sections {:lualine_a [:mode]
                        :lualine_b [branch diff]
                        :lualine_c {}

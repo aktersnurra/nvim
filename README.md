@@ -5,12 +5,12 @@ My neovim config written in fennel.
 # Dependencies
 
 ```
-neovim >= 0.8
+neovim = nightly
 ```
 
 # Sync
 
-Sync plugins:
+Sync plugins (experimental):
 
 `./sync.sh`
 
