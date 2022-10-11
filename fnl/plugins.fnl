@@ -13,11 +13,12 @@
  :numToStr/Comment.nvim {}
  :sindrets/diffview.nvim {}
  :j-hui/fidget.nvim {}
+ :ggandor/flit.nvim {}
  :rafamadriz/friendly-snippets {}
  :lewis6991/gitsigns.nvim {}
  :ThePrimeagen/harpoon {}
- :phaazon/hop.nvim {}
  :lewis6991/impatient.nvim {}
+ :ggandor/leap.nvim {}
  :tamago324/lir.nvim {}
  :onsails/lspkind-nvim {}
  :nvim-lualine/lualine.nvim {:requires {1 :kyazdani42/nvim-web-devicons :opt true}}
@@ -37,7 +38,6 @@
  :neovim/nvim-lspconfig {}
  :windwp/nvim-spectre {}
  :kylechui/nvim-surround {}
- :kyazdani42/nvim-tree.lua {:requires [:kyazdani42/nvim-web-devicons]}
  :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"}
  :JoosepAlviste/nvim-ts-context-commentstring {}
  :kyazdani42/nvim-web-devicons {}

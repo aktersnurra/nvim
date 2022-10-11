@@ -3,9 +3,6 @@
 
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
-(create-autocmd :BufEnter
-                {:command "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"})
-
 (create-autocmd :FileType
                 {:pattern [:qf :help :man :lspinfo]
                  :command "nnoremap <silent> <buffer> q :close<CR>"})

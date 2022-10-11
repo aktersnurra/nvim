@@ -18,9 +18,7 @@
 
 (defn- deep-equal [xs ys] (and (contains xs ys) (contains ys xs)))
 
-(defn- synchronized [configured installed]
-       (and (= (vim.tbl_count configured) (vim.tbl_count installed))
-            (deep-equal configured installed)))
+(defn- synchronized [configured installed] (deep-equal configured installed))
 
 (defn- install []
        (packer.startup (fn [use]
