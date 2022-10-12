@@ -23,7 +23,6 @@
                               config.orgmode
                               config.project
                               config.spectre
-                              config.spellsitter
                               config.stay-in-place
                               config.stabilize
                               config.surround
