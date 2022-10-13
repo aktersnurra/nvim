@@ -35,12 +35,17 @@
              :noremap true
              :nowait true})
 
+(def- diff {:name :Diff
+            :m ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
+            :n [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
+            :e ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
+            :i [:<cmd>DiffviewClose<cr> :DiffviewClose]})
+
 (def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>"
                      :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
-                 :d [:<cmd>TroubleToggle<cr> :Trouble]
-                 :D ["<cmd>Telescope diagnostics theme=dropdown<cr>" "Telescope diagnostics"]
+                 :d diff
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
@@ -48,7 +53,8 @@
                      "Harpoon Next"]
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
                      "Harpoon Prev"]
-                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>" "Search Files"]
+                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>"
+                     "Search Files"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :p [:<cmd>SaveSession<cr> "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
@@ -63,7 +69,8 @@
              :nowait true})
 
 (def- find {:name :Find
-            :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
+            :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
+                "Checkout branch"]
             :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
             :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                 "Find files"]
@@ -78,9 +85,12 @@
             :k ["<cmd>Telescope keymaps<cr>" :Keymaps]
             :C ["<cmd>Telescope commands<cr>" :Commands]})
 
+(def- diagnostics {:name :Diagnostics
+                   :d [:<cmd>TroubleToggle<cr> :Trouble]
+                   :D ["<cmd>Telescope diagnostics theme=dropdown<cr>"
+                       "Telescope diagnostics"]})
+
 (def- git {:name :Git
-           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
-           :D [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
            :j ["<cmd>lua require 'gitsigns'.next_hunk()<cr>" "Next Hunk"]
            :k ["<cmd>lua require 'gitsigns'.prev_hunk()<cr>" "Prev Hunk"]
            :l ["<cmd>lua require 'gitsigns'.blame_line()<cr>" :Blame]
@@ -90,9 +100,12 @@
            :s ["<cmd>lua require 'gitsigns'.stage_hunk()<cr>" "Stage Hunk"]
            :u ["<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>"
                "Undo Stage Hunk"]
-           :o ["<cmd>Telescope git_status theme=dropdown<cr>" "Open changed file"]
-           :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
-           :c ["<cmd>Telescope git_commits theme=dropdown<cr>" "Checkout commit"]
+           :o ["<cmd>Telescope git_status theme=dropdown<cr>"
+               "Open changed file"]
+           :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
+               "Checkout branch"]
+           :c ["<cmd>Telescope git_commits theme=dropdown<cr>"
+               "Checkout commit"]
            :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]})
 
 (def- lsp {:name :LSP
@@ -137,6 +150,7 @@
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
+                 :d diagnostics
                  :f find
                  :g git
                  :h [:<cmd>Alpha<cr> :Alpha]
