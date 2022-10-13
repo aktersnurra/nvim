@@ -1,6 +1,8 @@
 ;; Sets options in neovim
 (module settings.options {autoload {nvim aniseed.nvim}})
 
+(def- spellfile (.. (os.getenv :XDG_CONFIG_HOME) :/nvim/spell/en.utf-8.add))
+
 (defn- apply-opts [opts] (each [k v (pairs opts)]
                            (tset vim.opt k v)))
 
@@ -73,6 +75,9 @@
             ;; is one of my fav
             :scrolloff 8
             :sidescrolloff 8
+            :spell true
+            : spellfile
+            :spelllang [:en_us]
             ;; the font used in graphical neovim applications
             :guifont "monospace:h17"})
 

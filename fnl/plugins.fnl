@@ -10,6 +10,7 @@
  :hrsh7th/cmp-nvim-lsp {}
  :hrsh7th/cmp-path {}
  :saadparwaiz1/cmp_luasnip {}
+ :f3fora/cmp-spell {}
  :numToStr/Comment.nvim {}
  :sindrets/diffview.nvim {}
  :j-hui/fidget.nvim {}
@@ -50,7 +51,6 @@
  :ahmedkhalf/project.nvim {}
  :b0o/SchemaStore.nvim {}
  :rmagatti/session-lens {}
- :lewis6991/spellsitter.nvim {}
  :luukvbaal/stabilize.nvim {}
  :gbprod/stay-in-place.nvim {}
  :nvim-telescope/telescope-file-browser.nvim {}
