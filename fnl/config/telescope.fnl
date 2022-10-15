@@ -1,9 +1,9 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
-(module config.telescope {autoload {: util nvim aniseed.nvim}})
+(module config.telescope {autoload {:util :config.util nvim aniseed.nvim}})
 
 (def- opts {:noremap true :silent true})
 
-(let [telescope (util.load-plugin :telescope)]
+(let [telescope (util.prequire :telescope)]
   (let [actions (require :telescope.actions)]
     (telescope.setup {:defaults {:prompt_prefix "   "
                                  :selection_caret "> "

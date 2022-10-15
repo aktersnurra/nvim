@@ -1,9 +1,9 @@
 ;; Harpoon files for navigation.
-(module config.harpoon {autoload {: util nvim aniseed.nvim}})
+(module config.harpoon {autoload {:util :config.util nvim aniseed.nvim}})
 
 (def- opts {})
 
-(util.use-config :harpoon opts)
+(util.setup :harpoon opts)
 (nvim.set_keymap
   "n"
   "<tab>"

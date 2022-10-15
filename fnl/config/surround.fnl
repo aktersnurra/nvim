@@ -1,6 +1,6 @@
 ;; Surround selections.
-(module config.surround {autoload {: util}})
+(module config.surround {autoload {:util :config.util}})
 
 (def- opts {})
 
-(util.use-config :nvim-surround opts)
+(util.setup :nvim-surround opts)

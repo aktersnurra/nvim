@@ -1,5 +1,5 @@
 ;; Simple file manager.
-(module config.lir {autoload {: util nvim aniseed.nvim}})
+(module config.lir {autoload {:util :config.util nvim aniseed.nvim}})
 
 (defn- opts [actions mark-actions clipboard-actions]
        {:show_hidden_files false
@@ -35,7 +35,7 @@
                                         ":<C-u>lua require(\"lir.mark.actions\").toggle_mark(\"v\")<CR>"
                                         {:noremap true :silent true}))})
 
-(let [lir (util.load-plugin :lir)]
+(let [lir (util.prequire :lir)]
   (let [actions (require :lir.actions)
         mark-actions (require :lir.mark.actions)
         clipboard-actions (require :lir.clipboard.actions)]

@@ -1,5 +1,8 @@
 ;; Autocommands for nvim.
-(module config.autocmd {autoload {nvim aniseed.nvim a aniseed.core : util}})
+(module config.autocmd {autoload {nvim aniseed.nvim
+                                  env aniseed.env
+                                  a aniseed.core
+                                  :util :config.util}})
 
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
@@ -28,3 +31,8 @@
                            :command "setlocal spell"})
 
 (create-autocmd :VimResized {:command "tabdo wincmd ="})
+
+(create-autocmd :BufWritePost
+                {:pattern :*.fnl
+                 :callback (lambda []
+                             (env.init nvim.g.aniseed#env))})

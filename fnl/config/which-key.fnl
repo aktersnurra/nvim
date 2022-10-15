@@ -1,5 +1,5 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {: util nvim aniseed.nvim}})
+(module config.which-key {autoload {:util :config.util nvim aniseed.nvim}})
 
 (def- setup {:plugins {:marks true
                        :registers true
@@ -75,11 +75,12 @@
             :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                 "Find files"]
             :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
-            :s ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
+            :s ["<cmd>SearchSession<cr>" "Find Session"]
+            :S ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
             :h ["<cmd>Telescope help_tags<cr>" :Help]
             :H ["<cmd>Telescope highlights<cr>" :Highlights]
             :l ["<cmd>Telescope resume<cr>" "Last Search"]
-            :M ["<cmd>Telescope man_pages<cr>" "Man Pages"]
+            :p ["<cmd>Telescope projects<cr>" "Find project"]
             :r ["<cmd>Telescope oldfiles theme=dropdown<cr>" "Recent File"]
             :R ["<cmd>Telescope registers<cr>" :Registers]
             :k ["<cmd>Telescope keymaps<cr>" :Keymaps]
@@ -175,7 +176,7 @@
 (def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
                      :Comment]})
 
-(let [which-key (util.load-plugin :which-key)]
+(let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
   (which-key.register mmappings mopts)
   (which-key.register nmappings nopts)

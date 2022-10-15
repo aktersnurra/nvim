@@ -1,4 +1,4 @@
 ;; Prevent the cursor from moving when using shift and filter actions.
-(module config.stay-in-place {autoload {: util}})
+(module config.stay-in-place {autoload {:util :config.util}})
 
-(util.use-config :stay-in-place {})
+(util.setup :stay-in-place {})

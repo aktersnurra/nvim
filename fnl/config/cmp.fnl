@@ -1,9 +1,9 @@
 ;; Configuration for completion plugin.
-(module config.cmp {autoload {nvim aniseed.nvim : util}})
+(module config.cmp {autoload {nvim aniseed.nvim :util :config.util}})
 
-(let [cmp (util.load-plugin :cmp)
-      lspkind (util.load-plugin :lspkind)
-      luasnip (util.load-plugin :luasnip)
+(let [cmp (util.prequire :cmp)
+      lspkind (util.prequire :lspkind)
+      luasnip (util.prequire :luasnip)
       luasnip-vscode (require :luasnip/loaders/from_vscode)]
   (luasnip-vscode.lazy_load)
   (lspkind.init)
