@@ -35,17 +35,14 @@
              :noremap true
              :nowait true})
 
-(def- diff {:name :Diff
-            :m ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
-            :n [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
-            :e ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
-            :i [:<cmd>DiffviewClose<cr> :DiffviewClose]})
-
 (def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>"
                      :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
-                 :d diff
+                 :c [:<cmd>DiffviewClose<cr> :DiffviewClose]
+                 :d [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
+                 :x ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
+                 :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
