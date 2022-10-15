@@ -1,9 +1,17 @@
 ;; List of plugins.
 (module plugins)
 
-(def core [{1 :Olical/aniseed}
-           {1 :lewis6991/impatient.nvim}
-           {1 :wbthomason/packer.nvim}])
+(def color [{1 :aktersnurra/no-clown-fiesta.nvim
+             :config (fn []
+                       (require :config.colorscheme))}
+            {1 :norcalli/nvim-colorizer.lua
+             :config (fn []
+                       (require :config.colorizer))
+             :event :BufRead}
+            {1 :nvim-treesitter/nvim-treesitter
+             :config (fn []
+                       (require :config.treesitter))
+             :run ":TSUpdate"}])
 
 (def completions {1 :hrsh7th/nvim-cmp
                   :requires [{1 :hrsh7th/cmp-buffer}
@@ -19,6 +27,10 @@
                   :config (fn []
                             (require :config.cmp))})
 
+(def core [{1 :Olical/aniseed}
+           {1 :lewis6991/impatient.nvim}
+           {1 :wbthomason/packer.nvim}])
+
 (def git [{1 :sindrets/diffview.nvim
            :config (fn []
                      (require :config.diffview))
@@ -32,41 +44,6 @@
            :config (fn []
                      (require :config.gitsigns))
            :event :BufRead}])
-
-(def search [{1 :nvim-telescope/telescope-file-browser.nvim}
-             {1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
-             {1 :nvim-telescope/telescope.nvim
-              :config (fn []
-                        (require :config.telescope))
-              :requires [:nvim-lua/popup.nvim
-                         :nvim-lua/plenary
-                         :telescope-fzf-native.nvim
-                         :telescope-file-browser.nvim]
-              :wants [:popup.nvim
-                      :plenary.nvim
-                      :telescope-fzf-native.nvim
-                      :telescope-file-browser.nvim]}
-             {1 :ggandor/leap.nvim
-              :config (fn []
-                        (require :config.leap))
-              :event :BufRead}
-             {1 :ggandor/flit.nvim
-              :config (fn []
-                        (require :config.flit))
-              :after :leap.nvim
-              :event :BufRead}
-             {1 :ahmedkhalf/project.nvim
-              :config (fn []
-                        (require :config.project))}
-             {1 :tamago324/lir.nvim
-              :config (fn []
-                        (require :config.lir))
-              :requires [:kyazdani42/nvim-web-devicons]}
-             {1 :ThePrimeagen/harpoon
-              :config (fn []
-                        (require :config.harpoon))}])
-
-(def snippets [:rafamadriz/friendly-snippets])
 
 (def lsp [{1 :j-hui/fidget.nvim
            :event :BufWinEnter
@@ -101,53 +78,55 @@
                      (require :config.trouble))
            :event :BufWinEnter}])
 
-(def color [{1 :aktersnurra/no-clown-fiesta.nvim
-             :config (fn []
-                       (require :config.colorscheme))}
-            {1 :norcalli/nvim-colorizer.lua
-             :config (fn []
-                       (require :config.colorizer))
-             :event :BufRead}
-            {1 :nvim-treesitter/nvim-treesitter
-             :config (fn []
-                       (require :config.treesitter))
-             :run ":TSUpdate"}])
+(def misc [{1 :nvim-orgmode/orgmode
+            :config (fn []
+                      (require :config.window-picker))
+            :event :BufWinEnter}
+           {1 :akinsho/toggleterm.nvim
+            :config (fn []
+                      (require :config.toggleterm))
+            :event :BufWinEnter}
+           {1 :dstein64/vim-startuptime}])
 
-(def ui [{1 :nvim-lualine/lualine.nvim
-          :event :BufWinEnter
-          :config (fn []
-                    (require :config.lualine))
-          :requires [:kyazdani42/nvim-web-devicons]}
-         {1 :aktersnurra/minibar.nvim
-          :config (fn []
-                    (require :config.minibar))
-          :event :BufRead}
-         {1 :folke/zen-mode.nvim
-          :config (fn []
-                    (require :config.zen))
-          :event :BufWinEnter}
-         {1 :kevinhwang91/nvim-bqf
-          :config (fn []
-                    (require :config.bqf))
-          :event :BufRead}
-         {1 :s1n7ax/nvim-window-picker
-          :config (fn []
-                    (require :config.window-picker))
-          :event :BufWinEnter}
-         {1 :luukvbaal/stabilize.nvim
-          :config (fn []
-                    (require :config.stabilize))
-          :event :BufWinEnter}
-         {1 :moll/vim-bbye :event :BufWinEnter}
-         {1 :folke/which-key.nvim
-          :config (fn []
-                    (require :config.which-key))
-          :event :BufWinEnter}])
+(def search [{1 :nvim-telescope/telescope-file-browser.nvim}
+             {1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
+             {1 :nvim-telescope/telescope.nvim
+              :config (fn []
+                        (require :config.telescope))
+              :requires [:nvim-lua/popup.nvim
+                         :nvim-lua/plenary
+                         :telescope-fzf-native.nvim
+                         :telescope-file-browser.nvim]
+              :wants [:popup.nvim
+                      :plenary.nvim
+                      :telescope-fzf-native.nvim
+                      :telescope-file-browser.nvim]}
+             {1 :ggandor/leap.nvim
+              :config (fn []
+                        (require :config.leap))
+              :event :BufRead}
+             {1 :ggandor/flit.nvim
+              :config (fn []
+                        (require :config.flit))
+              :after :leap.nvim
+              :event :BufRead}
+             {1 :ahmedkhalf/project.nvim
+              :config (fn []
+                        (require :config.project))}
+             {1 :tamago324/lir.nvim
+              :config (fn []
+                        (require :config.lir))
+              :requires [:kyazdani42/nvim-web-devicons]}
+             {1 :ThePrimeagen/harpoon
+              :config (fn []
+                        (require :config.harpoon))}])
 
 (def session {1 :rmagatti/auto-session
               :config (fn []
                         (require :config.auto-session))
               :requires [:rmagatti/session-lens]})
+
+(def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
             :config (fn []
@@ -183,24 +162,45 @@
                       (require :config.spectre))
             :event :BufWinEnter}])
 
-(def misc [{1 :nvim-orgmode/orgmode
-            :config (fn []
-                      (require :config.window-picker))
-            :event :BufWinEnter}
-           {1 :akinsho/toggleterm.nvim
-            :config (fn []
-                      (require :config.toggleterm))
-            :event :BufWinEnter}
-           {1 :dstein64/vim-startuptime}])
+(def ui [{1 :nvim-lualine/lualine.nvim
+          :event :BufWinEnter
+          :config (fn []
+                    (require :config.lualine))
+          :requires [:kyazdani42/nvim-web-devicons]}
+         {1 :aktersnurra/minibar.nvim
+          :config (fn []
+                    (require :config.minibar))
+          :event :BufRead}
+         {1 :folke/zen-mode.nvim
+          :config (fn []
+                    (require :config.zen))
+          :event :BufWinEnter}
+         {1 :kevinhwang91/nvim-bqf
+          :config (fn []
+                    (require :config.bqf))
+          :event :BufRead}
+         {1 :s1n7ax/nvim-window-picker
+          :config (fn []
+                    (require :config.window-picker))
+          :event :BufWinEnter}
+         {1 :luukvbaal/stabilize.nvim
+          :config (fn []
+                    (require :config.stabilize))
+          :event :BufWinEnter}
+         {1 :moll/vim-bbye :event :BufWinEnter}
+         {1 :folke/which-key.nvim
+          :config (fn []
+                    (require :config.which-key))
+          :event :BufWinEnter}])
 
-(def all {: core
+(def all {: color
           : completions
+          : core
           : git
-          : search
-          : snippets
           : lsp
-          : color
-          : ui
+          : misc
+          : search
           : session
+          : snippets
           : text
-          : misc})
+          : ui})
