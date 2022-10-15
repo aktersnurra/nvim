@@ -1,6 +1,6 @@
 ;; Terminal inside nvim.
 (module config.toggleterm
-        {autoload {: util nvim aniseed.nvim autocmd config.autocmd}})
+        {autoload {:util :config.util nvim aniseed.nvim autocmd config.autocmd}})
 
 (def- opts {:size 16 :shade_terminals false})
 
@@ -10,7 +10,7 @@
        (nvim.set_keymap :t :<C-k> "<Cmd>wincmd k<CR>" {})
        (nvim.set_keymap :t :<C-l> "<Cmd>wincmd l<CR>" {}))
 
-(util.use-config :toggleterm opts)
+(util.setup :toggleterm opts)
 (autocmd.create-autocmd :TermOpen
                         {:pattern "term://*toggleterm#*"
                          :callback set-terminal-keymaps})

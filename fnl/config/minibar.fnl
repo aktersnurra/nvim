@@ -1,4 +1,4 @@
-(module config.minibar {autoload {: util}})
+(module config.minibar {autoload {:util :config.util}})
 
 (def- opts {:ignore-filetypes [:help
                                :startify
@@ -10,6 +10,7 @@
                                :alpha
                                :lir
                                :org
+                               :netrw
                                :Outline
                                :NeogitStatus
                                :NeogitCommitMessage
@@ -25,4 +26,4 @@
                      :InsertEnter
                      :BufWritePost]})
 
-(util.use-config :minibar opts)
+(util.setup :minibar opts)

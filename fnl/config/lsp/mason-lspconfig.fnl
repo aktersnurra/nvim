@@ -1,5 +1,5 @@
 ;; TBD
-(module config.lsp.mason-lspconfig {autoload {: util}})
+(module config.lsp.mason-lspconfig {autoload {:util :config.util}})
 
 (def- servers [:bashls
                :clangd
@@ -49,9 +49,9 @@
 
 (def- opts {:ensure_installed servers :automatic_installation true})
 
-(util.use-config :mason-lspconfig opts)
+(util.setup :mason-lspconfig opts)
 
-(let [lspconfig (util.load-plugin :lspconfig)]
+(let [lspconfig (util.prequire :lspconfig)]
   (each [_ server (ipairs servers)]
     (let [server-config (. lspconfig server)]
       (server-config.setup (get-server-opts server)))))

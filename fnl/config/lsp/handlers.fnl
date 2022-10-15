@@ -1,5 +1,5 @@
 ;; Handlers for the requests and responses from and to the lsp server.
-(module config.lsp.handlers {autoload {: util nvim aniseed.nvim}})
+(module config.lsp.handlers {autoload {:util :config.util nvim aniseed.nvim}})
 
 (def- signs [{:name :DiagnosticSignError :text ""}
              {:name :DiagnosticSignWarn :text ""}
@@ -55,5 +55,5 @@
       (let [capabilities (vim.lsp.protocol.make_client_capabilities)]
         (set capabilities.textDocument.completion.completionItem.snippetSupport
              true)
-        (let [cmp-nvim-lsp (util.load-plugin :cmp_nvim_lsp)]
-          (cmp-nvim-lsp.update_capabilities capabilities))))
+        (let [cmp-nvim-lsp (util.prequire :cmp_nvim_lsp)]
+          (cmp-nvim-lsp.default_capabilities capabilities))))

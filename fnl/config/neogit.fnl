@@ -1,4 +1,4 @@
 ;; UI for git.
-(module config.neogit {autoload {: util}})
+(module config.neogit {autoload {:util :config.util}})
 
-(util.use-config :neogit {})
+(util.setup :neogit {})

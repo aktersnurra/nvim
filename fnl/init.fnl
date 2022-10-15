@@ -1,4 +1,6 @@
-;; Install, load settings, and load plugin configs.
-(module init {autoload {: util} require [settings config.packer]})
+;; Load plugins with packer.
+(module init {autoload {: plugins : packer} require [settings config.packer]})
 
-(util.load-plugins)
+(packer.startup (fn [use]
+                  (each [_ plugin (pairs plugins.all)]
+                    (use plugin))))
