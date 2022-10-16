@@ -5,9 +5,9 @@
              :config (fn []
                        (require :config.colorscheme))}
             {1 :norcalli/nvim-colorizer.lua
+             :cmd :ColorizerToggle
              :config (fn []
-                       (require :config.colorizer))
-             :event :BufRead}
+                       (require :config.colorizer))}
             {1 :nvim-treesitter/nvim-treesitter
              :config (fn []
                        (require :config.treesitter))
@@ -23,7 +23,6 @@
                              {1 :saadparwaiz1/cmp_luasnip}
                              {1 :f3fora/cmp-spell}]
                   :event :InsertEnter
-                  :want :Luasnip
                   :config (fn []
                             (require :config.cmp))})
 
@@ -32,39 +31,39 @@
            {1 :wbthomason/packer.nvim}])
 
 (def git [{1 :sindrets/diffview.nvim
+           :cmd [:DiffviewFileHistory :DiffviewOpen]
            :config (fn []
-                     (require :config.diffview))
-           :event :BufRead}
+                     (require :config.diffview))}
           {1 :TimUntersberger/neogit
+           :cmd :Neogit
+           :requires [:nvim-lua/plenary.nvim]
            :config (fn []
-                     (require :config.neogit))
-           :event :BufRead
-           :requires [:nvim-lua/plenary.nvim]}
+                     (require :config.neogit))}
           {1 :lewis6991/gitsigns.nvim
+           :event :BufRead
            :config (fn []
-                     (require :config.gitsigns))
-           :event :BufRead}])
+                     (require :config.gitsigns))}])
 
 (def lsp [{1 :j-hui/fidget.nvim
-           :event :BufWinEnter
+           :event :BufReadPre
            :config (fn []
                      (require :config.fidget))}
           {1 :williamboman/mason.nvim
-           :event :BufWinEnter
+           :event :BufReadPre
            :config (fn []
                      (require :config.lsp.mason))}
           {1 :tamago324/nlsp-settings.nvim}
           {1 :jayp0521/mason-null-ls.nvim
-           :event :BufWinEnter
-           :config (fn []
-                     (require :config.lsp.null-ls)
-                     (require :config.lsp.mason-null-ls))
+           :after :mason.nvim
+           :event :BufReadPre
            :requires [:jose-elias-alvarez/null-ls.nvim
                       :williamboman/mason.nvim]
-           :after :mason.nvim}
+           :config (fn []
+                     (require :config.lsp.null-ls)
+                     (require :config.lsp.mason-null-ls))}
           {1 :b0o/SchemaStore.nvim}
           {1 :williamboman/mason-lspconfig.nvim
-           :event :BufWinEnter
+           :event :BufReadPre
            :config (fn []
                      (require :config.lsp.mason-lspconfig)
                      (let [handlers (require :config.lsp.handlers)]
@@ -72,20 +71,20 @@
            :requires [:neovim/nvim-lspconfig :williamboman/mason.nvim]
            :after :mason.nvim}
           {1 :folke/trouble.nvim
+           :cmd :TroubleToggle
            :config (fn []
-                     (require :config.trouble))
-           :event :BufWinEnter}])
+                     (require :config.trouble))}])
 
 (def misc [{1 :nvim-orgmode/orgmode
+            :event :BufReadPre
             :config (fn []
-                      (require :config.orgmode))
-            :requires :nvim-treesitter/nvim-treesitter
-            :event :BufWinEnter}
+                      (require :config.orgmode))}
+           {1 :moll/vim-bbye :event :BufRead}
            {1 :akinsho/toggleterm.nvim
+            :cmd :ToggleTerm
             :config (fn []
-                      (require :config.toggleterm))
-            :event :BufWinEnter}
-           {1 :dstein64/vim-startuptime}])
+                      (require :config.toggleterm))}
+           {1 :dstein64/vim-startuptime :cmd :StartupTime}])
 
 (def search [{1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
              {1 :nvim-telescope/telescope-frecency.nvim
@@ -98,65 +97,66 @@
                          :nvim-telescope/telescope-fzf-native.nvim
                          :nvim-telescope/telescope-frecency.nvim]}
              {1 :ggandor/leap.nvim
+              :event :BufRead
               :config (fn []
-                        (require :config.leap))
-              :event :BufRead}
+                        (require :config.leap))}
              {1 :ggandor/flit.nvim
+              :event :BufRead
               :config (fn []
-                        (require :config.flit))
-              :after :leap.nvim
-              :event :BufRead}
+                        (require :config.flit))}
              {1 :ahmedkhalf/project.nvim
+              :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.project))}
+             {1 :windwp/nvim-spectre
+              :event :BufRead
+              :config (fn []
+                        (require :config.spectre))}
+             {1 :junegunn/vim-slash
+              :event :BufRead
+              :config (fn []
+                        (require :config.vim-slash))}
              {1 :ThePrimeagen/harpoon
+              :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.harpoon))}])
 
 (def session {1 :rmagatti/auto-session
+              :requires [:rmagatti/session-lens :nvim-telescope/telescope.nvim]
               :config (fn []
-                        (require :config.auto-session))
-              :requires [:rmagatti/session-lens]})
+                        (require :config.auto-session))})
 
 (def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
             :config (fn []
                       (require :config.comment))
-            :event :BufWinEnter}
+            :event :BufRead}
            {1 :JoosepAlviste/nvim-ts-context-commentstring :event :BufReadPost}
            {1 :kylechui/nvim-surround
             :config (fn []
                       (require :config.surround))
             :event :BufRead}
            {1 :gbprod/stay-in-place.nvim
-            :event :BufWinEnter
+            :event :BufReadPre
             :config (fn []
                       (require :config.stay-in-place))}
-           {1 :junegunn/vim-slash
-            :config (fn []
-                      (require :config.vim-slash))
-            :event :BufWinEnter}
            {1 :cappyzawa/trim.nvim
+            :event :BufFilePre
             :config (fn []
-                      (require :config.trim))
-            :event :BufWinEnter}
+                      (require :config.trim))}
            {1 :max397574/better-escape.nvim
-            :event :BufWinEnter
+            :event :BufRead
             :config (fn []
                       (require :config.better-escape))}
            {1 :windwp/nvim-autopairs
+            :event :BufRead
             :config (fn []
-                      (require :config.autopairs))
-            :event :BufWinEnter}
-           {1 :windwp/nvim-spectre
-            :config (fn []
-                      (require :config.spectre))
-            :event :BufWinEnter}
-           {1 :mbbill/undotree :event :BufWinEnter}])
+                      (require :config.autopairs))}
+           {1 :mbbill/undotree :cmd :UndotreeToggle}])
 
 (def ui [{1 :nvim-lualine/lualine.nvim
-          :event :BufWinEnter
+          :event :BufReadPre
           :config (fn []
                     (require :config.lualine))
           :requires [:kyazdani42/nvim-web-devicons]}
@@ -165,26 +165,25 @@
                     (require :config.minibar))
           :event :BufRead}
          {1 :folke/zen-mode.nvim
+          :cmd :ZenMode
           :config (fn []
-                    (require :config.zen))
-          :event :BufWinEnter}
+                    (require :config.zen))}
          {1 :kevinhwang91/nvim-bqf
+          :event :BufRead
           :config (fn []
-                    (require :config.bqf))
-          :event :BufRead}
+                    (require :config.bqf))}
          {1 :s1n7ax/nvim-window-picker
+          :event :BufRead
           :config (fn []
-                    (require :config.window-picker))
-          :event :BufWinEnter}
+                    (require :config.window-picker))}
          {1 :luukvbaal/stabilize.nvim
+          :event :BufReadPre
           :config (fn []
-                    (require :config.stabilize))
-          :event :BufWinEnter}
-         {1 :moll/vim-bbye :event :BufWinEnter}
+                    (require :config.stabilize))}
          {1 :folke/which-key.nvim
+          :event :VimEnter
           :config (fn []
-                    (require :config.which-key))
-          :event :BufWinEnter}])
+                    (require :config.which-key))}])
 
 (def all {: color
           : completions
