@@ -21,6 +21,14 @@
 (create-autocmd :FileType {:pattern [:gitcommit :markdown]
                            :command "setlocal wrap"})
 
+(create-autocmd :FileType
+                {:pattern [:NeogitStatus
+                           :NeogitCommitMessage
+                           :NeogitNotification
+                           :NeogitCommitView
+                           :toggleterm]
+                 :command "setlocal spell!"})
+
 (create-autocmd :VimResized {:command "tabdo wincmd ="})
 
 (create-autocmd :BufWritePost
