@@ -51,7 +51,7 @@
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
                      "Harpoon Prev"]
                  :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>"
-                     "Search Files"]
+                     "Search Harpoon"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :p [:<cmd>SaveSession<cr> "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
@@ -72,7 +72,7 @@
             :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                 "Find files"]
             :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
-            :s ["<cmd>SearchSession<cr>" "Find Session"]
+            :s [:<cmd>SearchSession<cr> "Find Session"]
             :S ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
             :h ["<cmd>Telescope help_tags<cr>" :Help]
             :H ["<cmd>Telescope highlights<cr>" :Highlights]
@@ -116,12 +116,6 @@
            :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
                "Workspace Symbols"]})
 
-(def- org {:name :Orgmode
-           :a ["<cmd>lua require('orgmode').action('agenda.prompt')<cr>"
-               "Open agenda prompt"]
-           :c ["<cmd>lua require('orgmode').action('capture.prompt')<cr>"
-               "Open capture prompt"]})
-
 (def- packer {:name :Packer
               :c [:<cmd>PackerCompile<cr> :Compile]
               :i [:<cmd>PackerInstall<cr> :Install]
@@ -155,10 +149,9 @@
                  :l lsp
                  :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
                      :Comment]
-                 :o org
                  :p packer
                  :r replace
-                 :u [:<cmd>UndotreeToggle<cr> "Undotree"]
+                 :u [:<cmd>UndotreeToggle<cr> :Undotree]
                  :s [switch-window "Switch window"]
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :T treesitter
@@ -174,8 +167,21 @@
 (def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
                      :Comment]})
 
+(def- gopts {:mode :n
+             :prefix :g
+             :buffer nil
+             :silent true
+             :noremap true
+             :nowait true})
+
+(def- gmappings {:a ["<cmd>lua require('orgmode').action('agenda.prompt')<cr>"
+                     "Open agenda prompt"]
+                 :c ["<cmd>lua require('orgmode').action('capture.prompt')<cr>"
+                     "Open capture prompt"]})
+
 (let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
   (which-key.register mmappings mopts)
   (which-key.register nmappings nopts)
-  (which-key.register vmappings vopts))
+  (which-key.register vmappings vopts)
+  (which-key.register gmappings gopts))
