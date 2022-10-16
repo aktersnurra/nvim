@@ -1,5 +1,5 @@
 ;; Statusbar.
-(module config.lualine {autoload {:util :config.util}})
+(module config.lualine {autoload {util config.util}})
 
 (def- disable [:neogitstatus
                :lir

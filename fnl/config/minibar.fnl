@@ -1,4 +1,4 @@
-(module config.minibar {autoload {:util :config.util}})
+(module config.minibar {autoload {util config.util}})
 
 (def- opts {:ignore-filetypes [:help
                                :startify

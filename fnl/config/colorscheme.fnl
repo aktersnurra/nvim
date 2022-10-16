@@ -1,5 +1,5 @@
 ;; Load neovim colorscheme.
-(module config.colorscheme {autoload {:util :config.util}})
+(module config.colorscheme {autoload {util config.util}})
 
 (local colorscheme :no-clown-fiesta)
 

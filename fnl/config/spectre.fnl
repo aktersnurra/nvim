@@ -1,5 +1,5 @@
 ;; Find and replace.
-(module config.spectre {autoload {:util :config.util}})
+(module config.spectre {autoload {util config.util}})
 
 (def- opts {:color_devicons true
             :highlight {:ui :String :search :DiffChange :replace :DiffDelete}

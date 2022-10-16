@@ -1,5 +1,5 @@
 ;; Provides project management.
-(module config.project {autoload {:util :config.util}})
+(module config.project {autoload {util config.util}})
 
 (def- opts {:active true
             :on_config_done nil

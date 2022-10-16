@@ -1,5 +1,5 @@
 ;; Autopairs for brackets and quote symbols.
-(module config.autopairs {autoload {:util :config.util}})
+(module config.autopairs {autoload {util config.util}})
 
 (def- opts {:check_ts true
             :ts_config {:lua [:string :source]

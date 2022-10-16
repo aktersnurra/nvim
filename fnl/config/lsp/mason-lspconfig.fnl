@@ -1,5 +1,5 @@
 ;; TBD
-(module config.lsp.mason-lspconfig {autoload {:util :config.util}})
+(module config.lsp.mason-lspconfig {autoload {util config.util}})
 
 (def- servers [:bashls
                :clangd

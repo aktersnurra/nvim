@@ -1,6 +1,6 @@
 ;; Terminal inside nvim.
 (module config.toggleterm
-        {autoload {:util :config.util nvim aniseed.nvim autocmd config.autocmd}})
+        {autoload {util config.util nvim aniseed.nvim autocmd config.autocmd}})
 
 (def- opts {:size 16 :shade_terminals false})
 

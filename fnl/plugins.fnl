@@ -49,8 +49,6 @@
            :event :BufWinEnter
            :config (fn []
                      (require :config.fidget))}
-          {1 :jose-elias-alvarez/null-ls.nvim}
-          {1 :neovim/nvim-lspconfig}
           {1 :williamboman/mason.nvim
            :event :BufWinEnter
            :config (fn []

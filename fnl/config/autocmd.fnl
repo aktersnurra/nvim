@@ -2,7 +2,8 @@
 (module config.autocmd {autoload {nvim aniseed.nvim
                                   env aniseed.env
                                   a aniseed.core
-                                  :util :config.util}})
+                                  : packer
+                                  util config.util}})
 
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
@@ -36,3 +37,9 @@
                 {:pattern :*.fnl
                  :callback (lambda []
                              (env.init nvim.g.aniseed#env))})
+
+(create-autocmd :BufWritePost
+                {:pattern :plugins.fnl
+                 :callback (lambda []
+                             (env.init nvim.g.aniseed#env)
+                             (packer.sync))})

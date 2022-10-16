@@ -1,5 +1,5 @@
 ;; Configuration for completion plugin.
-(module config.cmp {autoload {nvim aniseed.nvim :util :config.util}})
+(module config.cmp {autoload {nvim aniseed.nvim util config.util}})
 
 (let [cmp (util.prequire :cmp)
       lspkind (util.prequire :lspkind)

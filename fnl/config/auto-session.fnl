@@ -1,5 +1,5 @@
 ;; Session manager.
-(module config.auto-session {autoload {:util :config.util}})
+(module config.auto-session {autoload {util config.util}})
 
 (def- auto-opts {:log_level :info
                  :auto_session_enable_last_session false

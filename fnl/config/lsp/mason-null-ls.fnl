@@ -1,5 +1,5 @@
 ;; Ensure that tools needed for null-ls are installed.
-(module config.mason-null-ls {autoload {:util :config.util}})
+(module config.mason-null-ls {autoload {util config.util}})
 
 (def- opts {:ensure_installed [:flake8
                                :golangci-lint
