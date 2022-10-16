@@ -80,7 +80,8 @@
 
 (def misc [{1 :nvim-orgmode/orgmode
             :config (fn []
-                      (require :config.window-picker))
+                      (require :config.orgmode))
+            :requires :nvim-treesitter/nvim-treesitter
             :event :BufWinEnter}
            {1 :akinsho/toggleterm.nvim
             :config (fn []

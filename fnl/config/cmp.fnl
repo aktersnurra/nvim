@@ -26,6 +26,7 @@
                         {:name :nvim_lua}
                         {:name :luasnip}
                         {:name :spell}
+                        {:name :orgmode}
                         {:name :buffer :keyword_length 4}
                         {:name :path :keyword_length 6}]
               :formatting {:format (lspkind.cmp_format {:with_text true
