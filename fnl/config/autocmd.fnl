@@ -2,8 +2,7 @@
 (module config.autocmd {autoload {nvim aniseed.nvim
                                   env aniseed.env
                                   a aniseed.core
-                                  : packer
-                                  util config.util}})
+                                  : packer}})
 
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
