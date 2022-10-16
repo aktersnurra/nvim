@@ -151,7 +151,7 @@
                  :d diagnostics
                  :f find
                  :g git
-                 :h [:<cmd>Alpha<cr> :Alpha]
+                 :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
                  :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
                      :Comment]
