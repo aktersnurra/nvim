@@ -47,3 +47,4 @@
 (map :n :<m-n> :<cmd>nohlsearch<CR> opts)
 
 (map :n :Q "<cmd>:q<CR>" opts)
+(map :n "-" "<cmd>:Explore<cr>" opts)

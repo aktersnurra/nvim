@@ -18,17 +18,8 @@
 
 (create-autocmd :FileType {:pattern :qf :command "set nobuflisted"})
 
-(create-autocmd :FileType {:pattern :lir
-                           :callback (fn []
-                                       (tset vim.opt_local :number false)
-                                       (tset vim.opt_local :relativenumber
-                                             false))})
-
 (create-autocmd :FileType {:pattern [:gitcommit :markdown]
                            :command "setlocal wrap"})
-
-(create-autocmd :FileType {:pattern [:gitcommit :markdown :org :plaintex]
-                           :command "setlocal spell"})
 
 (create-autocmd :VimResized {:command "tabdo wincmd ="})
 
