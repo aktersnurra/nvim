@@ -1,5 +1,5 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
-(module config.telescope {autoload {:util :config.util nvim aniseed.nvim}})
+(module config.telescope {autoload {util config.util nvim aniseed.nvim}})
 
 (def- opts {:noremap true :silent true})
 

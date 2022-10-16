@@ -1,5 +1,5 @@
 ;; Leap through text.
-(module config.leap {autoload {:util :config.util nvim aniseed.nvim}})
+(module config.leap {autoload {util config.util nvim aniseed.nvim}})
 
 (def- opts {})
 

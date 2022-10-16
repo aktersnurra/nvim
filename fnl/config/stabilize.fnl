@@ -1,5 +1,5 @@
 ;; Stabilize window open/close events.
-(module config.stabilize {autoload {:util :config.util}})
+(module config.stabilize {autoload {util config.util}})
 
 (def- opts {:force true
             ;; stabilize window even when current cursor position will be hidden behind new window

@@ -1,5 +1,5 @@
 ;; Mason manages external tooling, e.g. lsp, formatters, and linters.
-(module config.lsp.mason {autoload {:util :config.util}})
+(module config.lsp.mason {autoload {util config.util}})
 
 (def- opts {:ui {:icons {:package_installed "✓"
                          :package_pending "➜"

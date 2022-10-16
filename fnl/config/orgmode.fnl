@@ -1,5 +1,5 @@
 ;; Orgmode for nvim.
-(module config.orgmode {autoload {nvim aniseed.nvim :util :config.util}})
+(module config.orgmode {autoload {nvim aniseed.nvim util config.util}})
 
 (nvim.ex.set :conceallevel=2)
 (nvim.ex.set :concealcursor=nc)

@@ -1,5 +1,5 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {:util :config.util nvim aniseed.nvim}})
+(module config.which-key {autoload {util config.util nvim aniseed.nvim}})
 
 (def- setup {:plugins {:marks true
                        :registers true

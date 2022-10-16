@@ -1,5 +1,5 @@
 ;; Add git signs to source files.
-(module config.gitsigns {autoload {:util :config.util}})
+(module config.gitsigns {autoload {util config.util}})
 
 (def- signs {:add {:hl :GitSignsAdd
                    :text "|"

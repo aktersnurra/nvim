@@ -1,5 +1,5 @@
 ;; Surround selections.
-(module config.surround {autoload {:util :config.util}})
+(module config.surround {autoload {util config.util}})
 
 (def- opts {})
 
