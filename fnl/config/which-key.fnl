@@ -117,9 +117,9 @@
                "Workspace Symbols"]})
 
 (def- org {:name :Orgmode
-           :a ["<cmd>lua require('orgmode').action('agenda.prompt')"
+           :a ["<cmd>lua require('orgmode').action('agenda.prompt')<cr>"
                "Open agenda prompt"]
-           :c ["<cmd>lua require('orgmode').action('capture.prompt')"
+           :c ["<cmd>lua require('orgmode').action('capture.prompt')<cr>"
                "Open capture prompt"]})
 
 (def- packer {:name :Packer
