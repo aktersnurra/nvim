@@ -15,6 +15,9 @@
                  :previewer false
                  :prompt_title :Sessions})
 
-(set vim.o.sessionoptions "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal")
+(set vim.o.sessionoptions
+     "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal")
 (util.setup :session-lens lens-opts)
 (util.setup :auto-session auto-opts)
+(let [telescope (require :telescope)]
+  (telescope.load_extension :session-lens))
