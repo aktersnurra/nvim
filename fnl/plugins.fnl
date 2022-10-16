@@ -90,6 +90,7 @@
              {1 :nvim-telescope/telescope-frecency.nvim
               :requires :tami5/sqlite.lua}
              {1 :nvim-telescope/telescope.nvim
+              :event :VimEnter
               :config (fn []
                         (require :config.telescope))
               :requires [:nvim-lua/popup.nvim
@@ -97,11 +98,11 @@
                          :nvim-telescope/telescope-fzf-native.nvim
                          :nvim-telescope/telescope-frecency.nvim]}
              {1 :ggandor/leap.nvim
-              :event :BufRead
+              :event :InsertEnter
               :config (fn []
                         (require :config.leap))}
              {1 :ggandor/flit.nvim
-              :event :BufRead
+              :event :InsertEnter
               :config (fn []
                         (require :config.flit))}
              {1 :ahmedkhalf/project.nvim
@@ -109,19 +110,22 @@
               :config (fn []
                         (require :config.project))}
              {1 :windwp/nvim-spectre
-              :event :BufRead
+              :event :InsertEnter
               :config (fn []
                         (require :config.spectre))}
              {1 :junegunn/vim-slash
-              :event :BufRead
+              :event :InsertEnter
               :config (fn []
                         (require :config.vim-slash))}
              {1 :ThePrimeagen/harpoon
+              :event :InsertEnter
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.harpoon))}])
 
 (def session {1 :rmagatti/auto-session
+              :event :VimEnter
+              :after :telescope.nvim
               :requires [:rmagatti/session-lens :nvim-telescope/telescope.nvim]
               :config (fn []
                         (require :config.auto-session))})
@@ -129,16 +133,16 @@
 (def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
+            :event :InsertEnter
             :config (fn []
-                      (require :config.comment))
-            :event :BufRead}
+                      (require :config.comment))}
            {1 :JoosepAlviste/nvim-ts-context-commentstring :event :BufReadPost}
            {1 :kylechui/nvim-surround
+            :event :InsertEnter
             :config (fn []
-                      (require :config.surround))
-            :event :BufRead}
+                      (require :config.surround))}
            {1 :gbprod/stay-in-place.nvim
-            :event :BufReadPre
+            :event :InsertEnter
             :config (fn []
                       (require :config.stay-in-place))}
            {1 :cappyzawa/trim.nvim
@@ -146,11 +150,11 @@
             :config (fn []
                       (require :config.trim))}
            {1 :max397574/better-escape.nvim
-            :event :BufRead
+            :event :InsertEnter
             :config (fn []
                       (require :config.better-escape))}
            {1 :windwp/nvim-autopairs
-            :event :BufRead
+            :event :InsertEnter
             :config (fn []
                       (require :config.autopairs))}
            {1 :mbbill/undotree :cmd :UndotreeToggle}])
@@ -161,9 +165,9 @@
                     (require :config.lualine))
           :requires [:kyazdani42/nvim-web-devicons]}
          {1 :aktersnurra/minibar.nvim
+          :event :BufRead
           :config (fn []
-                    (require :config.minibar))
-          :event :BufRead}
+                    (require :config.minibar))}
          {1 :folke/zen-mode.nvim
           :cmd :ZenMode
           :config (fn []
@@ -173,7 +177,7 @@
           :config (fn []
                     (require :config.bqf))}
          {1 :s1n7ax/nvim-window-picker
-          :event :BufRead
+          :event :InsertEnter
           :config (fn []
                     (require :config.window-picker))}
          {1 :luukvbaal/stabilize.nvim
