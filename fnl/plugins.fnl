@@ -91,17 +91,21 @@
 
 (def search [{1 :nvim-telescope/telescope-file-browser.nvim}
              {1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
+             {1 :nvim-telescope/telescope-frecency.nvim
+              :requires :tami5/sqlite.lua}
              {1 :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.telescope))
               :requires [:nvim-lua/popup.nvim
-                         :nvim-lua/plenary
+                         :nvim-lua/plenary.nvim
                          :telescope-fzf-native.nvim
-                         :telescope-file-browser.nvim]
+                         :telescope-file-browser.nvim
+                         :telescope-frecency.nvim]
               :wants [:popup.nvim
                       :plenary.nvim
                       :telescope-fzf-native.nvim
-                      :telescope-file-browser.nvim]}
+                      :telescope-file-browser.nvim
+                      :telescope-frecency.nvim]}
              {1 :ggandor/leap.nvim
               :config (fn []
                         (require :config.leap))
