@@ -26,7 +26,7 @@
                            :NeogitCommitMessage
                            :NeogitNotification
                            :NeogitCommitView
-                           :toggleterm]
+                           :ToggleTerm]
                  :command "setlocal spell!"})
 
 (create-autocmd :VimResized {:command "tabdo wincmd ="})
