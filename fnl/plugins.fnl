@@ -109,10 +109,6 @@
              {1 :ahmedkhalf/project.nvim
               :config (fn []
                         (require :config.project))}
-             {1 :tamago324/lir.nvim
-              :config (fn []
-                        (require :config.lir))
-              :requires [:kyazdani42/nvim-web-devicons]}
              {1 :ThePrimeagen/harpoon
               :config (fn []
                         (require :config.harpoon))}])
@@ -156,7 +152,8 @@
            {1 :windwp/nvim-spectre
             :config (fn []
                       (require :config.spectre))
-            :event :BufWinEnter}])
+            :event :BufWinEnter}
+           {1 :mbbill/undotree :event :BufWinEnter}])
 
 (def ui [{1 :nvim-lualine/lualine.nvim
           :event :BufWinEnter

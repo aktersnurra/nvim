@@ -158,6 +158,7 @@
                  :o org
                  :p packer
                  :r replace
+                 :u [:<cmd>UndotreeToggle<cr> "Undotree"]
                  :s [switch-window "Switch window"]
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :T treesitter
