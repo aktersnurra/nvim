@@ -35,8 +35,7 @@
              :noremap true
              :nowait true})
 
-(def- mmappings {:a ["<cmd>lua require('harpoon.mark').add_file()<cr>"
-                     :Harpoon]
+(def- mmappings {:a [:<cmd>HarpoonAdd<cr> :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
                  :c [:<cmd>DiffviewClose<cr> :DiffviewClose]
@@ -46,16 +45,11 @@
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
-                 :l ["<cmd>lua require('harpoon.ui').nav_next()<cr>"
-                     "Harpoon Next"]
-                 :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
-                     "Harpoon Prev"]
-                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>"
-                     "Search Harpoon"]
+                 :l [:<cmd>HarpoonNext<cr> "Harpoon Next"]
+                 :h [:<cmd>HarpoonPrev<cr> "Harpoon Prev"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :p [:<cmd>SaveSession<cr> "Save Session"]
-                 :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
-                     "Harpoon UI"]
+                 :r [:<cmd>HarpoonUI<cr> "Harpoon UI"]
                  :n [:<cmd>Neogit<cr> :Neogit]})
 
 (def- nopts {:mode :n
@@ -124,11 +118,9 @@
               :u [:<cmd>PackerUpdate<cr> :Update]})
 
 (def- replace {:name :Replace
-               :r ["<cmd>lua require('spectre').open()<cr>" :Replace]
-               :w ["<cmd>lua require('spectre').open_visual({select_word=true})<cr>"
-                   "Replace Word"]
-               :f ["<cmd>lua require('spectre').open_file_search()<cr>"
-                   "Replace Buffer"]})
+               :r [:<cmd>Replace<cr> :Replace]
+               :w [:<cmd>ReplaceWord<cr> "Replace Word"]
+               :f [:<cmd>ReplaceInBuf<cr> "Replace Buffer"]})
 
 (def- treesitter
       {:name :Treesitter :p [:<cmd>TSPlaygroundToggle<cr> :Playground]})
@@ -147,8 +139,7 @@
                  :g git
                  :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
-                 :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
-                     :Comment]
+                 :n [:<cmd>CommentNormal<CR> :Comment]
                  :p packer
                  :r replace
                  :u [:<cmd>UndotreeToggle<cr> :Undotree]
@@ -164,8 +155,7 @@
              :noremap true
              :nowait true})
 
-(def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
-                     :Comment]})
+(def- vmappings {:n [:<esc><cmd>CommentVisual<cr> :Comment]})
 
 (def- gopts {:mode :n
              :prefix :g
@@ -174,10 +164,9 @@
              :noremap true
              :nowait true})
 
-(def- gmappings {:a ["<cmd>lua require('orgmode').action('agenda.prompt')<cr>"
-                     "Open agenda prompt"]
-                 :c ["<cmd>lua require('orgmode').action('capture.prompt')<cr>"
-                     "Open capture prompt"]})
+(def- gmappings
+      {:a [:<cmd>OrgAgendaPrompt<cr> "Open agenda prompt"]
+       :c [:<cmd>OrgCapturePrompt<cr> "Open capture prompt"]})
 
 (let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
