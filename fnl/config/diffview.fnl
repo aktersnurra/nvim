@@ -1,6 +1,6 @@
 ;; Trim whitespaces on save.
-(module config.diffview {autoload {: util}})
+(module config.diffview {autoload {util config.util}})
 
 (def- opts {})
 
-(util.use-config :diffview opts)
+(util.setup :diffview opts)

@@ -1,5 +1,5 @@
 ;; Session manager.
-(module config.auto-session {autoload {: util}})
+(module config.auto-session {autoload {util config.util}})
 
 (def- auto-opts {:log_level :info
                  :auto_session_enable_last_session false
@@ -15,6 +15,9 @@
                  :previewer false
                  :prompt_title :Sessions})
 
-(set vim.o.sessionoptions "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal")
-(util.use-config :session-lens lens-opts)
-(util.use-config :auto-session auto-opts)
+(set vim.o.sessionoptions
+     "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal")
+(util.setup :session-lens lens-opts)
+(util.setup :auto-session auto-opts)
+(let [telescope (require :telescope)]
+  (telescope.load_extension :session-lens))

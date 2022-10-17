@@ -1,5 +1,5 @@
 ;; Zen mode.
-(module config.zen {autoload {: util}})
+(module config.zen {autoload {util config.util}})
 
 (def- opts {:window {:backdrop 1
                      :height 0.8
@@ -11,4 +11,4 @@
                       :tmux {:enabled true}
                       :twilight {:enabled true}}})
 
-(util.use-config :zen-mode opts)
+(util.setup :zen-mode opts)

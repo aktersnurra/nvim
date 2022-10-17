@@ -1,5 +1,5 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {: util nvim aniseed.nvim}})
+(module config.which-key {autoload {util config.util nvim aniseed.nvim}})
 
 (def- setup {:plugins {:marks true
                        :registers true
@@ -39,8 +39,10 @@
                      :Harpoon]
                  :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
                      "Switch buffers"]
-                 :d [:<cmd>TroubleToggle<cr> :Trouble]
-                 :D ["<cmd>Telescope diagnostics theme=dropdown<cr>" "Telescope diagnostics"]
+                 :c [:<cmd>DiffviewClose<cr> :DiffviewClose]
+                 :d [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
+                 :x ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
+                 :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
                  :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
@@ -48,7 +50,8 @@
                      "Harpoon Next"]
                  :h ["<cmd>lua require('harpoon.ui').nav_prev()<cr>"
                      "Harpoon Prev"]
-                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>" "Search Files"]
+                 :t ["<cmd>Telescope harpoon marks theme=dropdown<cr>"
+                     "Search Harpoon"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
                  :p [:<cmd>SaveSession<cr> "Save Session"]
                  :r ["<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"
@@ -63,24 +66,29 @@
              :nowait true})
 
 (def- find {:name :Find
-            :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
+            :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
+                "Checkout branch"]
             :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
             :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                 "Find files"]
             :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
-            :s ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
+            :s [:<cmd>SearchSession<cr> "Find Session"]
+            :S ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
             :h ["<cmd>Telescope help_tags<cr>" :Help]
             :H ["<cmd>Telescope highlights<cr>" :Highlights]
             :l ["<cmd>Telescope resume<cr>" "Last Search"]
-            :M ["<cmd>Telescope man_pages<cr>" "Man Pages"]
+            :p ["<cmd>Telescope projects<cr>" "Find project"]
             :r ["<cmd>Telescope oldfiles theme=dropdown<cr>" "Recent File"]
             :R ["<cmd>Telescope registers<cr>" :Registers]
             :k ["<cmd>Telescope keymaps<cr>" :Keymaps]
             :C ["<cmd>Telescope commands<cr>" :Commands]})
 
+(def- diagnostics {:name :Diagnostics
+                   :d [:<cmd>TroubleToggle<cr> :Trouble]
+                   :D ["<cmd>Telescope diagnostics theme=dropdown<cr>"
+                       "Telescope diagnostics"]})
+
 (def- git {:name :Git
-           :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]
-           :D [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
            :j ["<cmd>lua require 'gitsigns'.next_hunk()<cr>" "Next Hunk"]
            :k ["<cmd>lua require 'gitsigns'.prev_hunk()<cr>" "Prev Hunk"]
            :l ["<cmd>lua require 'gitsigns'.blame_line()<cr>" :Blame]
@@ -90,9 +98,12 @@
            :s ["<cmd>lua require 'gitsigns'.stage_hunk()<cr>" "Stage Hunk"]
            :u ["<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>"
                "Undo Stage Hunk"]
-           :o ["<cmd>Telescope git_status theme=dropdown<cr>" "Open changed file"]
-           :b ["<cmd>Telescope git_branches theme=dropdown<cr>" "Checkout branch"]
-           :c ["<cmd>Telescope git_commits theme=dropdown<cr>" "Checkout commit"]
+           :o ["<cmd>Telescope git_status theme=dropdown<cr>"
+               "Open changed file"]
+           :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
+               "Checkout branch"]
+           :c ["<cmd>Telescope git_commits theme=dropdown<cr>"
+               "Checkout commit"]
            :d ["<cmd>Gitsigns diffthis HEAD<cr>" :Diff]})
 
 (def- lsp {:name :LSP
@@ -104,12 +115,6 @@
            :s ["<cmd>Telescope lsp_document_symbols<cr>" "Document Symbols"]
            :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
                "Workspace Symbols"]})
-
-(def- org {:name :Orgmode
-           :a ["<cmd>lua require('orgmode').action('agenda.prompt')"
-               "Open agenda prompt"]
-           :c ["<cmd>lua require('orgmode').action('capture.prompt')"
-               "Open capture prompt"]})
 
 (def- packer {:name :Packer
               :c [:<cmd>PackerCompile<cr> :Compile]
@@ -137,15 +142,16 @@
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
+                 :d diagnostics
                  :f find
                  :g git
-                 :h [:<cmd>Alpha<cr> :Alpha]
+                 :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
                  :n ["<cmd>lua require('Comment.api').toggle.linewise.current()<CR>"
                      :Comment]
-                 :o org
                  :p packer
                  :r replace
+                 :u [:<cmd>UndotreeToggle<cr> :Undotree]
                  :s [switch-window "Switch window"]
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :T treesitter
@@ -161,8 +167,21 @@
 (def- vmappings {:n ["<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
                      :Comment]})
 
-(let [which-key (util.load-plugin :which-key)]
+(def- gopts {:mode :n
+             :prefix :g
+             :buffer nil
+             :silent true
+             :noremap true
+             :nowait true})
+
+(def- gmappings {:a ["<cmd>lua require('orgmode').action('agenda.prompt')<cr>"
+                     "Open agenda prompt"]
+                 :c ["<cmd>lua require('orgmode').action('capture.prompt')<cr>"
+                     "Open capture prompt"]})
+
+(let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
   (which-key.register mmappings mopts)
   (which-key.register nmappings nopts)
-  (which-key.register vmappings vopts))
+  (which-key.register vmappings vopts)
+  (which-key.register gmappings gopts))

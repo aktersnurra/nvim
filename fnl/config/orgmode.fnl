@@ -1,5 +1,5 @@
 ;; Orgmode for nvim.
-(module config.orgmode {autoload {nvim aniseed.nvim : util}})
+(module config.orgmode {autoload {nvim aniseed.nvim util config.util}})
 
 (nvim.ex.set :conceallevel=2)
 (nvim.ex.set :concealcursor=nc)
@@ -44,6 +44,6 @@
             :org_agenda_templates templates
             : notifications})
 
-(let [orgmode (util.load-plugin :orgmode)]
+(let [orgmode (util.prequire :orgmode)]
   (orgmode.setup_ts_grammar)
   (orgmode.setup opts))
