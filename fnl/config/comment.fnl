@@ -1,6 +1,6 @@
 ;; Language aware commenting.
-(module config.comment {autoload {: util}})
+(module config.comment {autoload {util config.util}})
 
 (def- opts {})
 
-(util.use-config :Comment opts)
+(util.setup :Comment opts)

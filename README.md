@@ -22,7 +22,6 @@ Sync plugins (experimental):
     ├── config              # Plugin configs.
     │   └── lsp             # LSP related configs.
     │       └── settings    # Server specific settings.
-    ├── util.fnl            # Packer installer and config loader.
     ├── plugins.fnl         # Table of all plugins.
     └── settings            # Neovim settings.
 ```

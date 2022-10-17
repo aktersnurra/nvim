@@ -1,6 +1,6 @@
 ;; Trim whitespaces on save.
-(module config.trim {autoload {: util}})
+(module config.trim {autoload {util config.util}})
 
 (def- opts {:disable [:python]})
 
-(util.use-config :trim opts)
+(util.setup :trim opts)

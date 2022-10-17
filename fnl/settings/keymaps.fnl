@@ -9,14 +9,6 @@
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader " ")
 
-;; Modes
-;;   normal_mode = "n"
-;;   insert_mode = "i"
-;;   visual_mode = "v"
-;;   visual_block_mode = "x"
-;;   term_mode = "t"
-;;   command_mode = "c"
-
 ;; Normal ;;
 ;; Better window navigation
 (map :n :<C-h> :<C-w>h opts)
@@ -29,10 +21,6 @@
 (map :n :<C-Down> ":resize +2<CR>" opts)
 (map :n :<C-Left> ":vertical resize -2<CR>" opts)
 (map :n :<C-Right> ":vertical resize +2<CR>" opts)
-
-;; Navigate buffers
-;; (map :n :<tab> ":bnext<CR>" opts)
-;; (map :n :<S-tab> ":bprevious<CR>" opts)
 
 ;; Visual ;;
 ;; Stay in indent mode
@@ -59,3 +47,4 @@
 (map :n :<m-n> :<cmd>nohlsearch<CR> opts)
 
 (map :n :Q "<cmd>:q<CR>" opts)
+(map :n "-" "<cmd>:Explore<cr>" opts)

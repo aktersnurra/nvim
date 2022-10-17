@@ -1,5 +1,5 @@
 ;; Provides project management.
-(module config.project {autoload {: util}})
+(module config.project {autoload {util config.util}})
 
 (def- opts {:active true
             :on_config_done nil
@@ -11,4 +11,4 @@
             :ignore_lsp {}
             :datapath (vim.fn.stdpath :data)})
 
-(util.use-config :project_nvim opts)
+(util.setup :project_nvim opts)

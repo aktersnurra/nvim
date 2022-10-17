@@ -1,8 +1,9 @@
 ;; Statusbar.
-(module config.lualine {autoload {: util}})
+(module config.lualine {autoload {util config.util}})
 
 (def- disable [:neogitstatus
                :lir
+               :netrw
                :alpha
                :Outline
                :NeogitStatus
@@ -73,4 +74,4 @@
                                 :lualine_z [:location :progress]}
             :extensions []})
 
-(util.use-config :lualine opts)
+(util.setup :lualine opts)

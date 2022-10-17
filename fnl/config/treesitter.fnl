@@ -1,6 +1,6 @@
 ;; Treesitter is a tool for building syntax trees for source files.
 ;; In the neovim context it helps with better coloring.
-(module config.treesitter {autoload {: util}})
+(module config.treesitter {autoload {util config.util}})
 
 (def- opts {:ensure_installed [:c
                                :rust
@@ -29,4 +29,4 @@
             :indent {:enable true :disable [:yaml :python :css]}
             :playground {:enable true}})
 
-(util.use-config :nvim-treesitter.configs opts)
+(util.setup :nvim-treesitter.configs opts)

@@ -1,5 +1,5 @@
 ;; Pretty diagnostics.
-(module config.trouble {autoload {: util}})
+(module config.trouble {autoload {util config.util}})
 
 (def- opts {:position :bottom
             ;; position of the list can be: bottom, top, left, right
@@ -79,4 +79,4 @@
             ;; enabling this will use the signs defined in your lsp client
             })
 
-(util.use-config :trouble opts)
+(util.setup :trouble opts)

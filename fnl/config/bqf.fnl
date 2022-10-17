@@ -1,4 +1,4 @@
 ;; Make Neovim's quickfix window better.
-(module config.bqf {autoload {: util}})
+(module config.bqf {autoload {util config.util}})
 
-(util.use-config :bqf {})
+(util.setup :bqf {})
