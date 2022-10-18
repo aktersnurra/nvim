@@ -4,7 +4,6 @@ local fmt = string.format
 local execute = vim.api.nvim_command
 local packer_path = fn.stdpath "data" .. "/site/pack/packer/start"
 local sync = false
-vim.g.did_load_filetypes = 1
 
 local function ensure(user, repository)
   local path = fmt("%s/%s", packer_path, repository)
