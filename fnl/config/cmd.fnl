@@ -58,7 +58,7 @@
 (nvim.create_user_command :ReplaceWord
                           (lambda []
                             (let [spectre (util.prequire :spectre)]
-                              (spectre.open.open_visual {:select_word true})))
+                              (spectre.open_visual {:select_word true})))
                           {:nargs 0})
 
 (nvim.create_user_command :ReplaceInBuf
