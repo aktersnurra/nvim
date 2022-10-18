@@ -5,10 +5,8 @@
 (nvim.ex.set :concealcursor=nc)
 
 (def- templates
-      {:t {:description :Task
-           :template "* TODO %?\n %u\n DEADLINE: %T\n"}
-       :m {:description :Meeting
-           :template "* Meeting %?"}
+      {:t {:description :Task :template "* TODO %?\n %u\n DEADLINE: %T\n"}
+       :m {:description :Meeting :template "* Meeting %?"}
        :n {:description :Note :template "* NOTE %? :NOTE:\n %u\n"}})
 
 (defn- create-title [task]
