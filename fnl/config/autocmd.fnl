@@ -25,9 +25,11 @@
                 {:pattern [:NeogitStatus
                            :NeogitCommitMessage
                            :NeogitNotification
-                           :NeogitCommitView
-                           :ToggleTerm]
+                           :NeogitCommitView]
                  :command "setlocal spell!"})
+
+(create-autocmd :TermOpen
+                {:pattern ["term://*toggleterm#*"] :command "setlocal spell!"})
 
 (create-autocmd :VimResized {:command "tabdo wincmd ="})
 
