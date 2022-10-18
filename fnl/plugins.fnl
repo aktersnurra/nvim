@@ -76,7 +76,7 @@
                      (require :config.trouble))}])
 
 (def misc [{1 :nvim-orgmode/orgmode
-            :event :BufRead
+            :event :BufWinEnter
             :config (fn []
                       (require :config.orgmode))}
            {1 :moll/vim-bbye :event :BufRead}
@@ -98,29 +98,29 @@
                          :nvim-telescope/telescope-fzf-native.nvim
                          :nvim-telescope/telescope-frecency.nvim]}
              {1 :ggandor/leap.nvim
-              :event :InsertEnter
+              :event :BufWinEnter
               :config (fn []
                         (require :config.leap))}
              {1 :ggandor/flit.nvim
-              :event :InsertEnter
+              :event :BufWinEnter
               :config (fn []
                         (require :config.flit))}
              {1 :ahmedkhalf/project.nvim
-              :event :VimEnter
+              :event :BufWinEnter
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.project))}
              {1 :windwp/nvim-spectre
               ;; :cmd [:Replace :ReplaceWord :ReplaceInBuf]
-              :event :InsertEnter
+              :event :BufWinEnter
               :config (fn []
                         (require :config.spectre))}
              {1 :junegunn/vim-slash
-              :event :InsertEnter
+              :event :BufWinEnter
               :config (fn []
                         (require :config.vim-slash))}
              {1 :ThePrimeagen/harpoon
-              :event :InsertEnter
+              :event :BufWinEnter
               ;; :cmd [:HapoonAdd :HapoonNext :HapoonPrev :HarpoonUI]
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
@@ -136,7 +136,7 @@
 (def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
-            :event :InsertEnter
+            :event :BufWinEnter
             ;; :cmd [:CommentNormal :CommentVisual]
             :config (fn []
                       (require :config.comment))}
@@ -154,7 +154,7 @@
             :config (fn []
                       (require :config.trim))}
            {1 :max397574/better-escape.nvim
-            :event :InsertEnter
+            :event :BufWinEnter
             :config (fn []
                       (require :config.better-escape))}
            {1 :windwp/nvim-autopairs
@@ -177,19 +177,19 @@
           :config (fn []
                     (require :config.zen))}
          {1 :kevinhwang91/nvim-bqf
-          :event :InsertEnter
+          :event :BufWinEnter
           :config (fn []
                     (require :config.bqf))}
          {1 :s1n7ax/nvim-window-picker
-          :event :InsertEnter
+          :event :WinNew
           :config (fn []
                     (require :config.window-picker))}
          {1 :luukvbaal/stabilize.nvim
-          :event :InsertEnter
+          :event :BufWinEnter
           :config (fn []
                     (require :config.stabilize))}
          {1 :folke/which-key.nvim
-          :event :BufReadPre
+          :event :BufWinEnter
           :config (fn []
                     (require :config.which-key))}])
 
