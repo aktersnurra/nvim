@@ -84,6 +84,7 @@
             :cmd :ToggleTerm
             :config (fn []
                       (require :config.toggleterm))}
+           {1 :nathom/filetype.nvim}
            {1 :dstein64/vim-startuptime :cmd :StartupTime}])
 
 (def search [{1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
