@@ -84,7 +84,6 @@
             :cmd :ToggleTerm
             :config (fn []
                       (require :config.toggleterm))}
-           {1 :nathom/filetype.nvim}
            {1 :dstein64/vim-startuptime :cmd :StartupTime}])
 
 (def search [{1 :nvim-telescope/telescope-fzf-native.nvim :run :make}
@@ -112,7 +111,8 @@
               :config (fn []
                         (require :config.project))}
              {1 :windwp/nvim-spectre
-              :cmd [:Replace :ReplaceWord :ReplaceInBuf]
+              ;; :cmd [:Replace :ReplaceWord :ReplaceInBuf]
+              :event :InsertEnter
               :config (fn []
                         (require :config.spectre))}
              {1 :junegunn/vim-slash
@@ -120,7 +120,8 @@
               :config (fn []
                         (require :config.vim-slash))}
              {1 :ThePrimeagen/harpoon
-              :cmd [:HapoonAdd :HapoonNext :HapoonPrev :HarpoonUI]
+              :event :InsertEnter
+              ;; :cmd [:HapoonAdd :HapoonNext :HapoonPrev :HarpoonUI]
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.harpoon))}])
@@ -135,7 +136,8 @@
 (def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
-            :cmd [:CommentNormal :CommentVisual]
+            :event :InsertEnter
+            ;; :cmd [:CommentNormal :CommentVisual]
             :config (fn []
                       (require :config.comment))}
            {1 :JoosepAlviste/nvim-ts-context-commentstring :event :BufReadPost}
@@ -175,7 +177,7 @@
           :config (fn []
                     (require :config.zen))}
          {1 :kevinhwang91/nvim-bqf
-          :event :BufRead
+          :event :InsertEnter
           :config (fn []
                     (require :config.bqf))}
          {1 :s1n7ax/nvim-window-picker
@@ -183,11 +185,11 @@
           :config (fn []
                     (require :config.window-picker))}
          {1 :luukvbaal/stabilize.nvim
-          :event :BufReadPre
+          :event :InsertEnter
           :config (fn []
                     (require :config.stabilize))}
          {1 :folke/which-key.nvim
-          :event :VimEnter
+          :event :BufReadPre
           :config (fn []
                     (require :config.which-key))}])
 
