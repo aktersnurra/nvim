@@ -76,7 +76,7 @@
                      (require :config.trouble))}])
 
 (def misc [{1 :nvim-orgmode/orgmode
-            :event :BufReadPre
+            :event :BufRead
             :config (fn []
                       (require :config.orgmode))}
            {1 :moll/vim-bbye :event :BufRead}
@@ -106,11 +106,12 @@
               :config (fn []
                         (require :config.flit))}
              {1 :ahmedkhalf/project.nvim
+              :event :VimEnter
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.project))}
              {1 :windwp/nvim-spectre
-              :event :InsertEnter
+              :cmd [:Replace :ReplaceWord :ReplaceInBuf]
               :config (fn []
                         (require :config.spectre))}
              {1 :junegunn/vim-slash
@@ -118,7 +119,7 @@
               :config (fn []
                         (require :config.vim-slash))}
              {1 :ThePrimeagen/harpoon
-              :event :InsertEnter
+              :cmd [:HapoonAdd :HapoonNext :HapoonPrev :HarpoonUI]
               :requires :nvim-telescope/telescope.nvim
               :config (fn []
                         (require :config.harpoon))}])
@@ -133,7 +134,7 @@
 (def snippets [:rafamadriz/friendly-snippets])
 
 (def text [{1 :numToStr/Comment.nvim
-            :event :InsertEnter
+            :cmd [:CommentNormal :CommentVisual]
             :config (fn []
                       (require :config.comment))}
            {1 :JoosepAlviste/nvim-ts-context-commentstring :event :BufReadPost}
