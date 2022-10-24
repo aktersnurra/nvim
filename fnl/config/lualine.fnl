@@ -52,6 +52,11 @@
                        :disabled_buftypes [:nvim-tree]
                        :cond hide_in_width})
 
+(def- lsp-progress {1 :lsp_progress
+                    :display_components [[:title :percentage :message]]
+                    :timer {:progress_enddelay 500
+                            :lsp_client_name_enddelay 500}})
+
 (def- opts {:options {:icons_enabled true
                       :theme :auto
                       :component_separators ""
@@ -63,7 +68,7 @@
             :sections {:lualine_a [:mode]
                        :lualine_b [branch diff]
                        :lualine_c {}
-                       :lualine_x [language-server diagnostics]
+                       :lualine_x [lsp_progress language-server diagnostics]
                        :lualine_y [filetype]
                        :lualine_z [:location :progress]}
             :inactive_sections {:lualine_a [:mode]

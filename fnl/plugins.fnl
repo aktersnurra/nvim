@@ -44,11 +44,7 @@
            :config (fn []
                      (require :config.gitsigns))}])
 
-(def lsp [{1 :j-hui/fidget.nvim
-           :event :BufReadPre
-           :config (fn []
-                     (require :config.fidget))}
-          {1 :williamboman/mason.nvim
+(def lsp [{1 :williamboman/mason.nvim
            :event :BufReadPre
            :config (fn []
                      (require :config.lsp.mason))}
@@ -168,6 +164,7 @@
           :config (fn []
                     (require :config.lualine))
           :requires [:kyazdani42/nvim-web-devicons]}
+         {1 :arkav/lualine-lsp-progress}
          {1 :aktersnurra/minibar.nvim
           :event :BufRead
           :config (fn []
