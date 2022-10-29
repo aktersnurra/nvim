@@ -2,7 +2,6 @@
 (module config.lualine {autoload {util config.util}})
 
 (def- disable [:neogitstatus
-               :lir
                :netrw
                :alpha
                :Outline
