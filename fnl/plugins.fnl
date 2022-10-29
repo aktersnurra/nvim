@@ -163,8 +163,7 @@
           :event :BufReadPre
           :config (fn []
                     (require :config.lualine))
-          :requires [:kyazdani42/nvim-web-devicons]}
-         {1 :arkav/lualine-lsp-progress}
+          :requires [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}
          {1 :aktersnurra/minibar.nvim
           :event :BufRead
           :config (fn []
