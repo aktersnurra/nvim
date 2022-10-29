@@ -185,6 +185,9 @@
           :event :BufWinEnter
           :config (fn []
                     (require :config.stabilize))}
+         {1 :goolord/alpha-nvim
+          :config (fn []
+                    (require :config.alpha))}
          {1 :folke/which-key.nvim
           :event :BufWinEnter
           :config (fn []
