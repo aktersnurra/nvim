@@ -27,3 +27,11 @@ guifg
 guisp
 gui
 undercurl
+neogit
+cmp
+statusline
+treesitter
+whichkey
+lir
+lsp
+util
