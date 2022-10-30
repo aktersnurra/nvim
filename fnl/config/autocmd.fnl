@@ -43,3 +43,7 @@
                  :callback (lambda []
                              (env.init nvim.g.aniseed#env)
                              (packer.sync))})
+
+(create-autocmd :FileType
+                {:pattern :netrw
+                 :command "nmap <silent> <buffer> h -^ | nmap <silent> <buffer> l <cr>"})
