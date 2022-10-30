@@ -64,7 +64,7 @@
             :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
                 "Checkout branch"]
             :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
-            :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
+            :f ["<cmd>Telescope find_files theme=dropdown<cr>"
                 "Find files"]
             :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
             :s [:<cmd>SearchSession<cr> "Find Session"]
