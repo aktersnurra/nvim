@@ -26,6 +26,7 @@
              :hidden [:<silent> :<cmd> :<Cmd> :<CR> :call :lua "^:" "^ "]
              :show_help true
              :triggers :auto
+             :disable {:filetypes [:netrw]}
              :triggers_blacklist {:i [:j :k] :v [:j :k]}})
 
 (def- mopts {:mode :n
