@@ -72,6 +72,7 @@
             ;; display lines as one long line
             :wrap false
             :laststatus 3
+            :autoread true
             ;; is one of my fav
             :scrolloff 8
             :sidescrolloff 8

@@ -5,13 +5,15 @@
                :clangd
                :cssls
                :dockerls
-               :html
+               ;; :erlangls ;; must install rebar3 first
+               ;; :fennel_language_server
                :hls
+               :html
                :jsonls
                :pyright
                :rust_analyzer
-               :sumneko_lua
                :sqls
+               :sumneko_lua
                :taplo
                :terraformls
                :texlab
