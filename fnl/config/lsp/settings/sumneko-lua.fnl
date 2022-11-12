@@ -1,4 +1,4 @@
-;; Config for a Lua language server.
+;; Config for the sumneko-lua language server.
 (module config.lsp.settings.sumneko-lua)
 
 (def- workspace
