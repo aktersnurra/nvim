@@ -5,8 +5,6 @@
                :clangd
                :cssls
                :dockerls
-               ;; :erlangls ;; must install rebar3 first
-               ;; :fennel_language_server
                :hls
                :html
                :jsonls

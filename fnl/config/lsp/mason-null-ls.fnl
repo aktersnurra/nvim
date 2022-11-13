@@ -1,25 +1,23 @@
 ;; Ensure that tools needed for null-ls are installed.
 (module config.mason-null-ls {autoload {util config.util}})
 
-(def- opts {:ensure_installed [:flake8
-                               :golangci-lint
+(def- opts {:ensure_installed [:black
                                :cpplint
-                               :gitlint
-                               :jsonlint
-                               :yamllint
-                               :black
+                               :flake8
                                :fnlfmt
                                :fourmolu
-                               :gofmt
-                               :goimports
+                               :gitlint
+                               :hadolint
+                               :jsonlint
                                :prettier
                                :rustfmt
-                               :stylua
                                :shellcheck
+                               :shfmt
                                :sqlfluff
-                               :hadolint
+                               :stylua
                                :terraform-fmt
-                               :shfmt]
+                               :yamllint]
+
             :auto_update true
             :automatic_installation true})
 
