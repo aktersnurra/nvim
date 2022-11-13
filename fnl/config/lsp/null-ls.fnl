@@ -6,7 +6,6 @@
         diagnostics null-ls.builtins.diagnostics]
     (null-ls.setup {:debug false
                     :sources [diagnostics.flake8
-                              diagnostics.golangci_lint
                               diagnostics.jsonlint
                               diagnostics.shellcheck
                               diagnostics.sqlfluff
@@ -17,8 +16,6 @@
                               (formatting.black.with {:extra_args [:--fast]})
                               formatting.fnlfmt
                               formatting.fourmolu
-                              formatting.gofmt
-                              formatting.goimports
                               (formatting.prettier.with {:extra_args [:--no-semi
                                                                       :--single-quote
                                                                       :--jsx-single-quote]})
