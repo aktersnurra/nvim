@@ -12,7 +12,8 @@
 
 (create-autocmd :TextYankPost
                 {:callback (lambda []
-                             (vim.highlight.on_yank {:timeout 200}))})
+                             (vim.highlight.on_yank {:higroup :Visual
+                                                     :timeout 200}))})
 
 (create-autocmd :BufWinEnter {:command "setlocal formatoptions-=cro"})
 
