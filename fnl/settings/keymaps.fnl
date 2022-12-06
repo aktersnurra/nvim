@@ -48,6 +48,9 @@
 (map :n :<m-m> :<cmd>bprev<CR> opts)
 (map :n :<m-i> :<cmd>bnext<CR> opts)
 
+(map :n :<c-d> :<c-d>zz opts)
+(map :n :<c-u> :<c-u>zz opts)
+
 (map :n :<m-n> :<cmd>nohlsearch<CR> opts)
 
 (map :n :Q "<cmd>:q<CR>" opts)
