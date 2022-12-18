@@ -45,7 +45,7 @@
                  :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
                  :f ["<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>"
                      "Find files"]
-                 :g ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
+                 :g ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]
                  :l [:<cmd>HarpoonNext<cr> "Harpoon Next"]
                  :h [:<cmd>HarpoonPrev<cr> "Harpoon Prev"]
                  :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
@@ -66,7 +66,7 @@
             :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
             :f ["<cmd>Telescope find_files theme=dropdown<cr>"
                 "Find files"]
-            :t ["<cmd>Telescope live_grep theme=ivy<cr>" "Find text"]
+            :t ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]
             :s [:<cmd>SearchSession<cr> "Find Session"]
             :S ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
             :h ["<cmd>Telescope help_tags<cr>" :Help]
