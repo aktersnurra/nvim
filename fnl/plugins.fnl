@@ -93,6 +93,10 @@
                          :nvim-lua/plenary.nvim
                          :nvim-telescope/telescope-fzf-native.nvim
                          :nvim-telescope/telescope-frecency.nvim]}
+             {1 :tamago324/lir.nvim
+              :config (fn []
+                        (require :config.lir))
+              :requires [:kyazdani42/nvim-web-devicons]}
              {1 :ggandor/leap.nvim
               :event :BufWinEnter
               :config (fn []

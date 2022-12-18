@@ -4,6 +4,7 @@
                                :harpoon
                                :startify
                                :dashboard
+                               :lir
                                :alpha
                                :packer
                                :neogitstatus

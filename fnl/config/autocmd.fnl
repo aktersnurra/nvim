@@ -15,6 +15,12 @@
                              (vim.highlight.on_yank {:higroup :Visual
                                                      :timeout 200}))})
 
+(create-autocmd :FileType {:pattern :lir
+                           :callback (fn []
+                                       (tset vim.opt_local :number false)
+                                       (tset vim.opt_local :relativenumber
+                                             false))})
+
 (create-autocmd :BufWinEnter {:command "setlocal formatoptions-=cro"})
 
 (create-autocmd :FileType {:pattern :qf :command "set nobuflisted"})
