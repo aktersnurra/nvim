@@ -54,3 +54,4 @@
 (map :n :<m-n> :<cmd>nohlsearch<CR> opts)
 
 (map :n :Q "<cmd>:q<CR>" opts)
+(map :n :mj "<cmd>:e<CR>" opts)
