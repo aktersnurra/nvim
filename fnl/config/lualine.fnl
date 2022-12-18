@@ -3,6 +3,7 @@
 
 (def- disable [:neogitstatus
                :netrw
+               :lir
                :alpha
                :Outline
                :NeogitStatus
