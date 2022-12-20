@@ -2,7 +2,7 @@
 (module config.autocmd {autoload {nvim aniseed.nvim
                                   env aniseed.env
                                   a aniseed.core
-                                  : packer}})
+                                  : lazy}})
 
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
@@ -49,7 +49,7 @@
                 {:pattern :plugins.fnl
                  :callback (lambda []
                              (env.init nvim.g.aniseed#env)
-                             (packer.sync))})
+                             (lazy.sync))})
 
 (create-autocmd :FileType
                 {:pattern :netrw
