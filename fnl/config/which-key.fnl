@@ -64,8 +64,7 @@
             :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
                 "Checkout branch"]
             :c ["<cmd>Telescope colorscheme theme=dropdown<cr>" :Colorscheme]
-            :f ["<cmd>Telescope find_files theme=dropdown<cr>"
-                "Find files"]
+            :f ["<cmd>Telescope find_files theme=dropdown<cr>" "Find files"]
             :t ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]
             :s [:<cmd>SearchSession<cr> "Find Session"]
             :S ["<cmd>Telescope grep_string theme=dropdown<cr>" "Find String"]
@@ -112,12 +111,16 @@
            :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
                "Workspace Symbols"]})
 
-(def- packer {:name :Packer
-              :c [:<cmd>PackerCompile<cr> :Compile]
-              :i [:<cmd>PackerInstall<cr> :Install]
-              :s [:<cmd>PackerSync<cr> :Sync]
-              :S [:<cmd>PackerStatus<cr> :Status]
-              :u [:<cmd>PackerUpdate<cr> :Update]})
+(def- lazy {:name :Lazy
+            :C ["<cmd>Lazy check<cr>" :Check]
+            :c ["<cmd>Lazy clean<cr>" :Clean]
+            :d ["<cmd>Lazy debug<cr>" :Debug]
+            :h ["<cmd>Lazy home<cr>" :Home]
+            :i ["<cmd>Lazy install<cr>" :Install]
+            :l ["<cmd>Lazy log<cr>" :Log]
+            :p ["<cmd>Lazy profile<cr>" :Profile]
+            :s ["<cmd>Lazy sync<cr>" :Sync]
+            :u ["<cmd>Lazy update<cr>" :Update]})
 
 (def- replace {:name :Replace
                :r [:<cmd>Replace<cr> :Replace]
@@ -135,6 +138,7 @@
 
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
+                 :T treesitter
                  :c [:<cmd>Bdelete!<CR> "Close Buffer"]
                  :d diagnostics
                  :f find
@@ -142,12 +146,11 @@
                  :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
                  :n [:<cmd>CommentNormal<CR> :Comment]
-                 :p packer
                  :r replace
-                 :u [:<cmd>UndotreeToggle<cr> :Undotree]
                  :s [switch-window "Switch window"]
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
-                 :T treesitter
+                 :u [:<cmd>UndotreeToggle<cr> :Undotree]
+                 :y lazy
                  :z [:<cmd>ZenMode<cr> "Zen Mode"]})
 
 (def- vopts {:mode :v

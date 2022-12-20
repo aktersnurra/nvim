@@ -1,8 +1,7 @@
 ;; Load plugins with packer.
 (module init
-        {autoload {: plugins : packer}
-         require [settings config.autocmd config.cmd config.packer]})
+        {autoload {: plugins }
+         require [settings config.autocmd config.cmd]})
 
-(packer.startup (fn [use]
-                  (each [_ plugin (pairs plugins.all)]
-                    (use plugin))))
+(let [lazy (require :lazy)]
+  (lazy.setup plugins.all))
