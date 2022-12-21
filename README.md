@@ -8,12 +8,6 @@ My neovim config written in fennel.
 neovim = nightly
 ```
 
-# Sync
-
-Sync plugins (experimental):
-
-`./sync.sh`
-
 # Structure
 
 ```
