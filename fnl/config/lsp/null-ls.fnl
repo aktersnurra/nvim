@@ -15,7 +15,6 @@
                               diagnostics.yamllint
                               (formatting.black.with {:extra_args [:--fast]})
                               formatting.fnlfmt
-                              formatting.fourmolu
                               (formatting.prettier.with {:extra_args [:--no-semi
                                                                       :--single-quote
                                                                       :--jsx-single-quote]})
