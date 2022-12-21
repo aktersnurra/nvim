@@ -26,7 +26,7 @@
   :config (fn []
             (require :config.cmp))}
  {1 :rafamadriz/friendly-snippets :event :InsertEnter}
- ;; ;; Core plugins
+ ;; Core plugins
  {1 :Olical/aniseed}
  {1 :folke/lazy.nvim}
  ;; Git plugins
@@ -40,31 +40,26 @@
   :config (fn []
             (require :config.neogit))}
  {1 :lewis6991/gitsigns.nvim
-  :event :BufRead
+  :event :VeryLazy
   :config (fn []
             (require :config.gitsigns))}
  ;; LSP
  {1 :williamboman/mason.nvim
-  :event :BufReadPre
+  :event :VeryLazy
+  :dependencies [:jose-elias-alvarez/null-ls.nvim
+                 :jayp0521/mason-null-ls.nvim
+                 :tamago324/nlsp-settings.nvim
+                 :b0o/SchemaStore.nvim
+                 :williamboman/mason-lspconfig.nvim
+                 :neovim/nvim-lspconfig
+                 :williamboman/mason.nvim]
   :config (fn []
-            (require :config.lsp.mason))}
- {1 :tamago324/nlsp-settings.nvim}
- {1 :jayp0521/mason-null-ls.nvim
-  :after :mason.nvim
-  :event :BufReadPre
-  :dependencies [:jose-elias-alvarez/null-ls.nvim :williamboman/mason.nvim]
-  :config (fn []
+            (require :config.lsp.mason)
             (require :config.lsp.null-ls)
-            (require :config.lsp.mason-null-ls))}
- {1 :b0o/SchemaStore.nvim}
- {1 :williamboman/mason-lspconfig.nvim
-  :event :BufReadPre
-  :config (fn []
+            (require :config.lsp.mason-null-ls)
             (require :config.lsp.mason-lspconfig)
             (let [handlers (require :config.lsp.handlers)]
-              (handlers.setup)))
-  :dependencies [:neovim/nvim-lspconfig :williamboman/mason.nvim]
-  :after :mason.nvim}
+              (handlers.setup)))}
  {1 :folke/trouble.nvim
   :cmd :TroubleToggle
   :config (fn []
@@ -113,7 +108,7 @@
   :config (fn []
             (require :config.spectre))}
  {1 :junegunn/vim-slash
-  :event :BufWinEnter
+  :event :VeryLazy
   :config (fn []
             (require :config.vim-slash))}
  {1 :ThePrimeagen/harpoon
@@ -128,10 +123,10 @@
             (require :config.auto-session))}
  ;; Text manipulation
  {1 :numToStr/Comment.nvim
-  :cmd [:CommentNormal :CommentVisual]
+  :event :VeryLazy
   :config (fn []
             (require :config.comment))}
- {1 :JoosepAlviste/nvim-ts-context-commentstring :event :BufReadPost}
+ {1 :JoosepAlviste/nvim-ts-context-commentstring :event :VeryLazy}
  {1 :kylechui/nvim-surround
   :event :InsertEnter
   :config (fn []
