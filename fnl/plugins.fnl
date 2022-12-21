@@ -73,7 +73,6 @@
   :cmd :ToggleTerm
   :config (fn []
             (require :config.toggleterm))}
- {1 :dstein64/vim-startuptime :cmd :StartupTime}
  ;; Search plugins
  {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
  {1 :nvim-telescope/telescope-frecency.nvim :dependencies :tami5/sqlite.lua}
