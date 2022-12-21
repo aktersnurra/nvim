@@ -45,7 +45,6 @@
             (require :config.gitsigns))}
  ;; LSP
  {1 :williamboman/mason.nvim
-  :event :VeryLazy
   :dependencies [:jose-elias-alvarez/null-ls.nvim
                  :jayp0521/mason-null-ls.nvim
                  :tamago324/nlsp-settings.nvim
