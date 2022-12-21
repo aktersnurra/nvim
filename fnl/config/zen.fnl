@@ -2,8 +2,8 @@
 (module config.zen {autoload {util config.util}})
 
 (def- opts {:window {:backdrop 1
-                     :height 0.8
-                     :width 0.5
+                     :height 1
+                     :width 120
                      :options {:signcolumn :no
                                :number false
                                :relativenumber false}}
