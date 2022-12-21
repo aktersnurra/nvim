@@ -1,4 +1,3 @@
--- ensure nvim with essential plugins.
 local data_path = vim.fn.stdpath "data"
 local aniseed_path = data_path .. "/aniseed/aniseed.nvim"
 local lazy_path = data_path .. "/lazy/lazy.nvim"
