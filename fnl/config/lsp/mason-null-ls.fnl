@@ -5,7 +5,6 @@
                                :cpplint
                                :flake8
                                :fnlfmt
-                               :fourmolu
                                :gitlint
                                :hadolint
                                :jsonlint
