@@ -8,7 +8,6 @@
                :hls
                :html
                :jsonls
-               :pyright
                :rust_analyzer
                :sqls
                :sumneko_lua
@@ -31,10 +30,6 @@
        (let [sumneko-lua (require :config.lsp.settings.sumneko-lua)]
          (vim.tbl_deep_extend :force sumneko-lua.opts (handler-opts))))
 
-(defn- pyright-opts []
-       (let [pyright (require :config.lsp.settings.pyright)]
-         (vim.tbl_deep_extend :force pyright.opts (handler-opts))))
-
 (defn- rust-opts []
        (let [rust (require :config.lsp.settings.rust)]
          (vim.tbl_deep_extend :force rust.opts (handler-opts))))
@@ -42,7 +37,6 @@
 (defn- get-server-opts [server]
        (match server
          :jsonls (jsonls-opts)
-         :pyright (pyright-opts)
          :sumneko_lua (sumneko-lua-opts)
          :rust_analyzer (rust-opts)
          _ (handler-opts)))

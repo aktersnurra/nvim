@@ -5,7 +5,7 @@
   (let [formatting null-ls.builtins.formatting
         diagnostics null-ls.builtins.diagnostics]
     (null-ls.setup {:debug false
-                    :sources [diagnostics.flake8
+                    :sources [diagnostics.ruff
                               diagnostics.jsonlint
                               diagnostics.shellcheck
                               diagnostics.sqlfluff
@@ -13,7 +13,7 @@
                               diagnostics.hadolint
                               diagnostics.cpplint
                               diagnostics.yamllint
-                              (formatting.black.with {:extra_args [:--fast]})
+                              formatting.ruff
                               formatting.fnlfmt
                               (formatting.prettier.with {:extra_args [:--no-semi
                                                                       :--single-quote
