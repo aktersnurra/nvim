@@ -1,6 +1,5 @@
-local data_path = vim.fn.stdpath "data"
-local aniseed_path = data_path .. "/aniseed/aniseed.nvim"
-local lazy_path = data_path .. "/lazy/lazy.nvim"
+local aniseed_path = vim.fn.stdpath "data" .. "/aniseed/aniseed.nvim"
+local lazy_path = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 local function ensure(user, plugin, path)
   if not vim.loop.fs_stat(path) then
