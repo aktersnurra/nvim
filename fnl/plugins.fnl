@@ -76,12 +76,12 @@
  {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
  {1 :nvim-telescope/telescope-frecency.nvim :dependencies :tami5/sqlite.lua}
  {1 :nvim-telescope/telescope.nvim
-  :config (fn []
-            (require :config.telescope))
   :dependencies [:nvim-lua/popup.nvim
                  :nvim-lua/plenary.nvim
                  :nvim-telescope/telescope-fzf-native.nvim
-                 :nvim-telescope/telescope-frecency.nvim]}
+                 :nvim-telescope/telescope-frecency.nvim]
+  :config (fn []
+            (require :config.telescope))}
  {1 :tamago324/lir.nvim
   :event :VeryLazy
   :config (fn []
