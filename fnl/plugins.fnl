@@ -67,7 +67,7 @@
   :event :VeryLazy
   :config (fn []
             (require :config.orgmode))}
- {1 :moll/vim-bbye :event :VeryLazy}
+ {1 :ojroques/nvim-bufdel :cmd :BufDel}
  {1 :akinsho/toggleterm.nvim
   :cmd :ToggleTerm
   :config (fn []

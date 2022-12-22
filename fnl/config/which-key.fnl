@@ -139,7 +139,7 @@
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
                  :T treesitter
-                 :c [:<cmd>Bdelete!<CR> "Close Buffer"]
+                 :<BS> [:<cmd>BufDel<CR> "Close Buffer"]
                  :d diagnostics
                  :f find
                  :g git
