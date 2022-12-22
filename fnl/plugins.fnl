@@ -28,7 +28,6 @@
  {1 :rafamadriz/friendly-snippets :event :InsertEnter}
  ;; Core plugins
  {1 :Olical/aniseed}
- {1 :folke/lazy.nvim}
  ;; Git plugins
  {1 :sindrets/diffview.nvim
   :cmd [:DiffviewFileHistory :DiffviewOpen]
