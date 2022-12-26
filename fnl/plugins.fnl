@@ -63,10 +63,10 @@
   :config (fn []
             (require :config.trouble))}
  ;; Misc plugins
- {1 :nvim-orgmode/orgmode
+ {1 :nvim-neorg/neorg
   :event :VeryLazy
   :config (fn []
-            (require :config.orgmode))}
+            (require :config.neorg))}
  {1 :ojroques/nvim-bufdel :cmd :BufDel}
  {1 :akinsho/toggleterm.nvim
   :cmd :ToggleTerm
