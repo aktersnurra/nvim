@@ -6,7 +6,7 @@
                                :rust
                                :lua
                                :hcl
-                               :norg
+                               :org
                                :haskell
                                :python
                                :fennel
