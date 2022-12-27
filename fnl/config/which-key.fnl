@@ -171,7 +171,8 @@
 
 (def- gmappings
       {:a [:<cmd>OrgAgendaPrompt<cr> "Open agenda prompt"]
-       :c [:<cmd>OrgCapturePrompt<cr> "Open capture prompt"]})
+       :c [:<cmd>OrgCapturePrompt<cr> "Open capture prompt"]
+       :m ["<cmd>Telescope orgmode search_headings theme=dropdown<cr>" "Search Headings"]})
 
 (let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
