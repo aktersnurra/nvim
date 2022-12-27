@@ -79,7 +79,8 @@
   :dependencies [:nvim-lua/popup.nvim
                  :nvim-lua/plenary.nvim
                  :nvim-telescope/telescope-fzf-native.nvim
-                 :nvim-telescope/telescope-frecency.nvim]
+                 :nvim-telescope/telescope-frecency.nvim
+                 :joaomsa/telescope-orgmode.nvim]
   :config (fn []
             (require :config.telescope))}
  {1 :tamago324/lir.nvim
