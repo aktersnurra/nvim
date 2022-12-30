@@ -1,4 +1,4 @@
-;; Setup for
+;; Lazy opts.
 (module config.lazy {autoload {util config.util}})
 
 (def- opts {:defaults {:lazy true :version "*"}
