@@ -2,6 +2,8 @@
 
 [;; Color related plugins
  {1 :aktersnurra/no-clown-fiesta.nvim
+  :lazy false
+  :priority 1000
   :config (fn []
             (require :config.colorscheme))}
  {1 :norcalli/nvim-colorizer.lua
@@ -74,9 +76,11 @@
             (require :config.toggleterm))}
  ;; Search plugins
  {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
- {1 :nvim-telescope/telescope-frecency.nvim :dependencies :tami5/sqlite.lua}
  {1 :nvim-telescope/telescope.nvim
+  :cmd :Telescope
   :dependencies [:nvim-lua/popup.nvim
+                 :nvim-telescope/telescope-frecency.nvim
+                 :tami5/sqlite.lua
                  :nvim-lua/plenary.nvim
                  :nvim-telescope/telescope-fzf-native.nvim
                  :nvim-telescope/telescope-frecency.nvim
