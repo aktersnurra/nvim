@@ -37,8 +37,6 @@
              :nowait true})
 
 (def- mmappings {:a [:<cmd>HarpoonAdd<cr> :Harpoon]
-                 :b ["<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{sort_lastused = true, initial_mode = 'normal', previewer = false})<cr>"
-                     "Switch buffers"]
                  :c [:<cmd>DiffviewClose<cr> :DiffviewClose]
                  :d [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
                  :x ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
