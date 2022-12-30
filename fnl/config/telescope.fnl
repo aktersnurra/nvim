@@ -3,6 +3,10 @@
 
 (def- opts {:noremap true :silent true})
 
+(def- lens-opts {:path_display [:shorten]
+                 :previewer false
+                 :prompt_title :Sessions})
+
 (let [telescope (util.prequire :telescope)]
   (let [actions (require :telescope.actions)]
     (telescope.setup {:defaults {:prompt_prefix "   "
@@ -77,4 +81,7 @@
                                          :case_mode :smart_case}}})
     (telescope.load_extension :fzf)
     (telescope.load_extension :frecency)
-    (telescope.load_extension :orgmode)))
+    (telescope.load_extension :orgmode)
+    (telescope.load_extension :harpoon)
+    (util.setup :session-lens lens-opts)
+    (telescope.load_extension :session-lens)))

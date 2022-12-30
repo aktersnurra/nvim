@@ -11,13 +11,7 @@
                  :auto_session_use_git_branch nil
                  :bypass_session_save_file_types [:alpha]})
 
-(def- lens-opts {:path_display [:shorten]
-                 :previewer false
-                 :prompt_title :Sessions})
-
 (set vim.o.sessionoptions
      "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal")
-(util.setup :session-lens lens-opts)
+
 (util.setup :auto-session auto-opts)
-(let [telescope (require :telescope)]
-  (telescope.load_extension :session-lens))
