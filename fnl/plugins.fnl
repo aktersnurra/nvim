@@ -11,9 +11,10 @@
   :config (fn []
             (require :config.colorizer))}
  {1 :nvim-treesitter/nvim-treesitter
+  :build ":TSUpdate"
+  :event :BufReadPost
   :config (fn []
-            (require :config.treesitter))
-  :build ":TSUpdate"}
+            (require :config.treesitter))}
  ;; Completions
  {1 :hrsh7th/nvim-cmp
   :dependencies [{1 :hrsh7th/cmp-buffer}
@@ -41,7 +42,7 @@
   :config (fn []
             (require :config.neogit))}
  {1 :lewis6991/gitsigns.nvim
-  :event :VeryLazy
+  :event :BufReadPre
   :config (fn []
             (require :config.gitsigns))}
  ;; LSP
@@ -82,6 +83,7 @@
                  :nvim-telescope/telescope-frecency.nvim
                  :tami5/sqlite.lua
                  :nvim-lua/plenary.nvim
+                 :rmagatti/session-lens
                  :nvim-telescope/telescope-fzf-native.nvim
                  :nvim-telescope/telescope-frecency.nvim
                  :joaomsa/telescope-orgmode.nvim]
@@ -101,7 +103,7 @@
   :config (fn []
             (require :config.flit))}
  {1 :ahmedkhalf/project.nvim
-  :event :VeryLazy
+  :cmd :Telescope
   :dependencies :nvim-telescope/telescope.nvim
   :config (fn []
             (require :config.project))}
@@ -115,12 +117,10 @@
             (require :config.vim-slash))}
  {1 :ThePrimeagen/harpoon
   :event :VeryLazy
-  :dependencies :nvim-telescope/telescope.nvim
   :config (fn []
             (require :config.harpoon))}
  ;; Session plugins
  {1 :rmagatti/auto-session
-  :dependencies [:rmagatti/session-lens :nvim-telescope/telescope.nvim]
   :config (fn []
             (require :config.auto-session))}
  ;; Text manipulation
@@ -151,10 +151,12 @@
             (require :config.autopairs))}
  {1 :mbbill/undotree :cmd :UndotreeToggle}
  {1 :nvim-lualine/lualine.nvim
+  :event :BufReadPre
   :config (fn []
             (require :config.lualine))
   :dependencies [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}
  {1 :aktersnurra/minibar.nvim
+  :event :BufReadPre
   :config (fn []
             (require :config.minibar))}
  {1 :folke/zen-mode.nvim
