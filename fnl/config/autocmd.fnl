@@ -51,6 +51,4 @@
                              (env.init nvim.g.aniseed#env)
                              (lazy.sync))})
 
-(create-autocmd :FileType
-                {:pattern :netrw
-                 :command "nmap <silent> <buffer> h -^ | nmap <silent> <buffer> l <cr>"})
+(create-autocmd :FocusGained {:command :checktime})
