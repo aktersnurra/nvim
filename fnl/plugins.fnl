@@ -47,6 +47,7 @@
             (require :config.gitsigns))}
  ;; LSP
  {1 :williamboman/mason.nvim
+  :event :BufReadPre
   :dependencies [:jose-elias-alvarez/null-ls.nvim
                  :jayp0521/mason-null-ls.nvim
                  :tamago324/nlsp-settings.nvim
@@ -121,6 +122,7 @@
             (require :config.harpoon))}
  ;; Session plugins
  {1 :rmagatti/auto-session
+  :lazy false
   :config (fn []
             (require :config.auto-session))}
  ;; Text manipulation
@@ -151,7 +153,7 @@
             (require :config.autopairs))}
  {1 :mbbill/undotree :cmd :UndotreeToggle}
  {1 :nvim-lualine/lualine.nvim
-  :event :BufReadPre
+  :event :VeryLazy
   :config (fn []
             (require :config.lualine))
   :dependencies [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}
@@ -172,8 +174,10 @@
   :config (fn []
             (require :config.window-picker))}
  {1 :goolord/alpha-nvim
+  :lazy false
   :config (fn []
             (require :config.alpha))}
  {1 :folke/which-key.nvim
+  :event :VeryLazy
   :config (fn []
             (require :config.which-key))}]
