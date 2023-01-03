@@ -4,6 +4,7 @@
 (def- disable [:neogitstatus
                :netrw
                :lir
+               :lazy
                :alpha
                :Outline
                :NeogitStatus
