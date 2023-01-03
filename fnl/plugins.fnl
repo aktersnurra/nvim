@@ -171,7 +171,7 @@
   :config (fn []
             (require :config.window-picker))}
  {1 :goolord/alpha-nvim
-  :lazy false
+  :event :VimEnter
   :config (fn []
             (require :config.alpha))}
  {1 :folke/which-key.nvim
