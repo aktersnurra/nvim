@@ -4,7 +4,7 @@
 (let [cmp (util.prequire :cmp)
       lspkind (util.prequire :lspkind)
       luasnip (util.prequire :luasnip)
-      luasnip-vscode (require :luasnip/loaders/from_vscode)]
+      luasnip-vscode (require :luasnip.loaders.from_vscode)]
   (luasnip-vscode.lazy_load)
   (lspkind.init)
   (cmp.setup {:snippet {:expand (fn [args]
