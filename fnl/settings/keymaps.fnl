@@ -31,8 +31,6 @@
 ;; Move text up and down
 (map :x :J ":move '>+1<CR>gv-gv" opts)
 (map :x :K ":move '<-2<CR>gv-gv" opts)
-(map :x :<m-j> ":move '>+1<CR>gv-gv" opts)
-(map :x :<m-k> ":move '<-2<CR>gv-gv" opts)
 
 ;; Move text up and down
 (map :v :<m-j> ":m .+1<CR>==" opts)
