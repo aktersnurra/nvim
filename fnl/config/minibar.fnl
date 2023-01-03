@@ -10,6 +10,7 @@
                                :neogitstatus
                                :Trouble
                                :org
+                               :lazy
                                :netrw
                                :Outline
                                :NeogitStatus
