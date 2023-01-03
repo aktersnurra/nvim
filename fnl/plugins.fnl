@@ -83,12 +83,14 @@
   :dependencies [:nvim-lua/popup.nvim
                  :nvim-telescope/telescope-frecency.nvim
                  :tami5/sqlite.lua
+                 :ahmedkhalf/project.nvim
                  :nvim-lua/plenary.nvim
                  :rmagatti/session-lens
                  :nvim-telescope/telescope-fzf-native.nvim
                  :nvim-telescope/telescope-frecency.nvim
                  :joaomsa/telescope-orgmode.nvim]
   :config (fn []
+            (require :config.project)
             (require :config.telescope))}
  {1 :tamago324/lir.nvim
   :event :VeryLazy
@@ -103,11 +105,6 @@
   :event :VeryLazy
   :config (fn []
             (require :config.flit))}
- {1 :ahmedkhalf/project.nvim
-  :cmd :Telescope
-  :dependencies :nvim-telescope/telescope.nvim
-  :config (fn []
-            (require :config.project))}
  {1 :windwp/nvim-spectre
   :event :VeryLazy
   :config (fn []
