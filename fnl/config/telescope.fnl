@@ -82,6 +82,7 @@
     (telescope.load_extension :fzf)
     (telescope.load_extension :frecency)
     (telescope.load_extension :orgmode)
+    (telescope.load_extension :projects)
     (telescope.load_extension :harpoon)
     (util.setup :session-lens lens-opts)
     (telescope.load_extension :session-lens)))
