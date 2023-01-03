@@ -11,3 +11,15 @@
 (defn setup [plugin config]
       (let [plugin (prequire plugin)]
         (plugin.setup config)))
+
+(defn telescope-ext [ext fun opts]
+      (let [telescope (prequire :telescope)
+            themes (prequire :telescope.themes)
+            theme (. opts :theme)]
+        ((. (. (. telescope :extensions) ext) fun) ((. themes theme) opts))))
+
+(defn telescope-builtin [builtin opts]
+      (let [telescope (prequire :telescope.builtin)
+            themes (prequire :telescope.themes)
+            theme (. opts :theme)]
+        ((. telescope builtin) ((. themes theme) opts))))

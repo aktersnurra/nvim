@@ -5,10 +5,15 @@
 
 (util.setup :harpoon opts)
 
-(nvim.set_keymap :n :<tab>
-                 "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>"
-                 opts)
+(vim.keymap.set :n :<tab>
+                (fn []
+                  (util.telescope-ext :harpoon :marks
+                                      {:theme :get_dropdown
+                                       :previewer false
+                                       :initial_mode :normal
+                                       :prompt_title :Harpoon}))
+                {})
 
 (nvim.set_keymap :n :<s-tab>
-                 "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>"
-                 opts)
+                 "<cmd>Telescope buffers theme=dropdown previewer=false initial_mode=normal<cr>"
+                 {})
