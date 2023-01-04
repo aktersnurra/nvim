@@ -40,7 +40,6 @@
 ;; Splits
 (map :n :<m-s> :<cmd>split<CR> opts)
 (map :n :<m-t> :<cmd>vsplit<CR> opts)
-(map :n :<C-s> :<cmd>split<CR> opts)
 
 ;; Nav
 (map :n :<m-m> :<cmd>bprev<CR> opts)

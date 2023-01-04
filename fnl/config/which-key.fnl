@@ -1,5 +1,5 @@
 ;; Which-key provides a pop-up meny for some key mappings.
-(module config.which-key {autoload {util config.util nvim aniseed.nvim}})
+(module config.which-key {autoload {util config.util}})
 
 (def- setup {:plugins {:marks true
                        :registers true
@@ -135,12 +135,6 @@
 (def- treesitter
       {:name :Treesitter :p [:<cmd>TSPlaygroundToggle<cr> :Playground]})
 
-(defn- switch-window []
-       (let [window-picker (require :window-picker)]
-         (let [win (window-picker.pick_window)]
-           (if (not= win nil)
-               (nvim.set_current_win win)))))
-
 (def- nmappings {:a ["<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
                      "Document Symbols"]
                  :T treesitter
@@ -152,9 +146,6 @@
                  :l lsp
                  :n [:<cmd>CommentNormal<CR> :Comment]
                  :r replace
-                 :s [(fn []
-                       (switch-window))
-                     "Switch window"]
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :u [:<cmd>UndotreeToggle<cr> :Undotree]
                  :y lazy
