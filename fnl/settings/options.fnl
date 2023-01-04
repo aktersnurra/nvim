@@ -80,15 +80,16 @@
             : spellfile
             :spelllang [:en_us]
             ;; the font used in graphical neovim applications
-            :guifont "monospace:h17"})
+            :guifont "monospace:h17"
+            :splitkeep :screen})
 
 (apply-opts opts)
 
 (nvim.ex.set "whichwrap+=<,>,[,],h,l")
 (nvim.ex.set :iskeyword+=-)
 (nvim.ex.set :formatoptions-=cro)
-(nvim.ex.set :colorcolumn=80)
-(nvim.ex.set :shortmess+=c)
+(nvim.ex.set :colorcolumn=88)
+(nvim.ex.set :shortmess=filnxtToOFWIcC)
 
 ;; Netrw settings
 (set vim.g.netrw_browse_split 0)
