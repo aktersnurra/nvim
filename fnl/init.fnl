@@ -1,4 +1,4 @@
-;; Load plugins with packer.
+;; Load plugins with lazy.
 (module init {require [settings config.autocmd config.cmd]})
 
 (let [lazy (require :lazy)
