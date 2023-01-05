@@ -92,7 +92,4 @@
 (nvim.ex.set :shortmess=filnxtToOFWIcC)
 
 ;; Netrw settings
-(set vim.g.netrw_browse_split 0)
 (set vim.g.netrw_banner 0)
-(set vim.g.netrw_winsize 25)
-(set vim.g.netrw_preview 1)
