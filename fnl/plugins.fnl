@@ -54,9 +54,11 @@
             (require :config.lsp.mason)
             (require :config.lsp.mason-lspconfig))}
  {1 :jose-elias-alvarez/null-ls.nvim
+  :dependencies [:mason.nvim :jayp0521/mason-null-ls.nvim]
   :event :BufReadPre
   :config (fn []
-            (require :config.lsp.null-ls))}
+            (require :config.lsp.null-ls)
+            (require :config.lsp.mason-null-ls))}
  {1 :neovim/nvim-lspconfig
   :event :BufReadPre
   :dependencies [:mason.nvim :b0o/SchemaStore.nvim :hrsh7th/cmp-nvim-lsp]
