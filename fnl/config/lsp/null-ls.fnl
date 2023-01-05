@@ -5,20 +5,24 @@
   (let [formatting null-ls.builtins.formatting
         diagnostics null-ls.builtins.diagnostics]
     (null-ls.setup {:debug false
-                    :sources [diagnostics.ruff
-                              diagnostics.jsonlint
-                              diagnostics.shellcheck
-                              diagnostics.sqlfluff
+                    :sources [diagnostics.codespell
+                              diagnostics.cpplint
                               diagnostics.gitlint
                               diagnostics.hadolint
-                              diagnostics.cpplint
+                              diagnostics.jsonlint
+                              diagnostics.misspell
+                              diagnostics.ruff
+                              diagnostics.selene
+                              diagnostics.shellcheck
+                              diagnostics.sqlfluff
+                              diagnostics.write_good
                               diagnostics.yamllint
-                              formatting.ruff
                               formatting.fnlfmt
-                              (formatting.prettier.with {:extra_args [:--no-semi
-                                                                      :--single-quote
-                                                                      :--jsx-single-quote]})
+                              formatting.markdownlint
+                              formatting.prettierd
+                              formatting.ruff
                               formatting.rustfmt
+                              formatting.shellharden
                               formatting.shfmt
                               formatting.sqlfluff
                               formatting.stylua
