@@ -7,6 +7,7 @@
  :hls
  :html
  :jsonls
+ :pyright
  :rust_analyzer
  :sqls
  :sumneko_lua
