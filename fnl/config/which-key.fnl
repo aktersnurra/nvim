@@ -15,8 +15,6 @@
              :popup_mappings {:scroll_down :<c-d> :scroll_up :<c-u>}
              :window {:border :rounded
                       :position :bottom
-                      :margin [1 0 1 0]
-                      :padding [2 2 2 2]
                       :winblend 0}
              :layout {:height {:min 4 :max 25}
                       :width {:min 20 :max 50}
@@ -62,7 +60,7 @@
              :nowait true})
 
 (def- find
-      {:name :Find
+      {:name :find
        :C ["<cmd>Telescope commands theme=dropdown<cr>" :Commands]
        :H ["<cmd>Telescope highlights<cr>" :Highlights]
        :R ["<cmd>Telescope registers theme=dropdown<cr>" :Registers]
@@ -81,12 +79,12 @@
        :s [:<cmd>SearchSession<cr> "Find Session"]
        :t ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]})
 
-(def- diagnostics {:name :Diagnostics
-                   :d [:<cmd>TroubleToggle<cr> :Trouble]
-                   :D ["<cmd>Telescope diagnostics theme=dropdown<cr>"
+(def- diagnostics {:name :diagnostics
+                   :t [:<cmd>TroubleToggle<cr> :Trouble]
+                   :g ["<cmd>Telescope diagnostics theme=dropdown<cr>"
                        "Telescope diagnostics"]})
 
-(def- git {:name :Git
+(def- git {:name :git
            :R ["<cmd>lua require 'gitsigns'.reset_buffer()<cr>" "Reset Buffer"]
            :b ["<cmd>Telescope git_branches theme=dropdown<cr>"
                "Checkout branch"]
@@ -105,30 +103,18 @@
                "Undo Stage Hunk"]})
 
 (def- lsp
-      {:name :LSP
+      {:name :lsp
        :S ["<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
            "Workspace Symbols"]
        :a ["<cmd>lua vim.lsp.buf.code_action()<cr>" "Code Action"]
        :f ["<cmd>lua vim.lsp.buf.format { async = true }<cr>" :Format]
        :i [:<cmd>LspInfo<cr> :Info]
        :l ["<cmd>lua vim.lsp.codelens.run()<cr>" "CodeLens Action"]
-       :m [:<cmd>Mason<cr> :Mason]
        :r ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
        :s ["<cmd>Telescope lsp_document_symbols<cr>" "Document Symbols"]})
 
-(def- lazy {:name :Lazy
-            :C ["<cmd>Lazy check<cr>" :Check]
-            :c ["<cmd>Lazy clean<cr>" :Clean]
-            :d ["<cmd>Lazy debug<cr>" :Debug]
-            :h ["<cmd>Lazy home<cr>" :Home]
-            :i ["<cmd>Lazy install<cr>" :Install]
-            :l ["<cmd>Lazy log<cr>" :Log]
-            :p ["<cmd>Lazy profile<cr>" :Profile]
-            :s ["<cmd>Lazy sync<cr>" :Sync]
-            :u ["<cmd>Lazy update<cr>" :Update]})
-
-(def- replace {:name :Replace
-               :f [:<cmd>ReplaceInBuf<cr> "Replace Buffer"]
+(def- replace {:name :replace
+               :f [:<cmd>ReplaceInBuf<cr> "Replace in Buffer"]
                :r [:<cmd>Replace<cr> :Replace]
                :w [:<cmd>ReplaceWord<cr> "Replace Word"]})
 
@@ -139,16 +125,17 @@
                      "Document Symbols"]
                  :T treesitter
                  :<BS> [:<cmd>BufDel<CR> "Close Buffer"]
-                 :d diagnostics
+                 :j diagnostics
                  :f find
                  :g git
                  :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
                  :n [:<cmd>CommentNormal<CR> :Comment]
+                 :m [:<cmd>Mason<cr> :Mason]
                  :r replace
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :u [:<cmd>UndotreeToggle<cr> :Undotree]
-                 :y lazy
+                 :y ["<cmd>Lazy home<cr>" :Home]
                  :z [:<cmd>ZenMode<cr> "Zen Mode"]})
 
 (def- vopts {:mode :v
