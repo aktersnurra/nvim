@@ -107,7 +107,9 @@
   :config (fn []
             (require :config.flit))}
  {1 :windwp/nvim-spectre
-  :event :VeryLazy
+  :keys [{1 :<leader>rw 2 :ReplaceWord :desc "Replace Word"}
+         {1 :<leader>rr 2 :Replace :desc :Replace}
+         {1 :<leader>rf 2 :ReplaceInBuf :desc "Replace in Buffer"}]
   :config (fn []
             (require :config.spectre))}
  {1 :junegunn/vim-slash
