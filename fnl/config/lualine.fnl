@@ -26,7 +26,8 @@
 (def- diagnostics {1 :diagnostics
                    :sources [:nvim_diagnostic]
                    :sections [:error :warn]
-                   :symbols {:error " " :warn " "}
+                   :symbols {:error " " :warn " "}
+                   ;; :symbols {:error "E " :warn "W "}
                    :colored false
                    :disabled_buftypes [:nvim-tree]
                    :padding 0
