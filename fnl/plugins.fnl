@@ -12,7 +12,7 @@
             (require :config.colorizer))}
  {1 :nvim-treesitter/nvim-treesitter
   :build ":TSUpdate"
-  :event :BufReadPost
+  :event :BufReadPre
   :config (fn []
             (require :config.treesitter))}
  ;; Completions
