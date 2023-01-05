@@ -47,21 +47,22 @@
             (require :config.gitsigns))}
  ;; LSP
  {1 :williamboman/mason.nvim
-  :event :BufReadPre
-  :dependencies [:jose-elias-alvarez/null-ls.nvim
-                 :jayp0521/mason-null-ls.nvim
-                 :tamago324/nlsp-settings.nvim
-                 :b0o/SchemaStore.nvim
-                 :williamboman/mason-lspconfig.nvim
-                 :neovim/nvim-lspconfig
-                 :williamboman/mason.nvim]
+  :cmd :Mason
+  :keys [{1 :<leader>m 2 :<cmd>Mason<cr> :desc :Mason}]
+  :dependencies [:williamboman/mason-lspconfig.nvim]
   :config (fn []
             (require :config.lsp.mason)
-            (require :config.lsp.null-ls)
-            (require :config.lsp.mason-null-ls)
-            (require :config.lsp.mason-lspconfig)
-            (let [handlers (require :config.lsp.handlers)]
-              (handlers.setup)))}
+            (require :config.lsp.mason-lspconfig))}
+ {1 :jose-elias-alvarez/null-ls.nvim
+  :event :BufReadPre
+  :config (fn []
+            (require :config.lsp.null-ls))}
+ {1 :neovim/nvim-lspconfig
+  :event :BufReadPre
+  :dependencies [:mason.nvim :b0o/SchemaStore.nvim :hrsh7th/cmp-nvim-lsp]
+  :config (fn []
+            (require :config.lsp.diagnostics)
+            (require :config.lsp.lspconfig))}
  {1 :folke/trouble.nvim
   :cmd :TroubleToggle
   :config (fn []
