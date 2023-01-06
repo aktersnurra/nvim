@@ -96,7 +96,7 @@
             (require :config.project)
             (require :config.telescope))}
  {1 :tamago324/lir.nvim
-  :event :VeryLazy
+  :keys :-
   :config (fn []
             (require :config.lir))
   :dependencies [:kyazdani42/nvim-web-devicons]}
@@ -109,9 +109,7 @@
   :config (fn []
             (require :config.flit))}
  {1 :windwp/nvim-spectre
-  :keys [{1 :<leader>rw 2 :ReplaceWord :desc "Replace Word"}
-         {1 :<leader>rr 2 :Replace :desc :Replace}
-         {1 :<leader>rf 2 :ReplaceInBuf :desc "Replace in Buffer"}]
+  :event :VeryLazy
   :config (fn []
             (require :config.spectre))}
  {1 :junegunn/vim-slash
@@ -132,7 +130,6 @@
   :event :VeryLazy
   :config (fn []
             (require :config.comment))}
- {1 :JoosepAlviste/nvim-ts-context-commentstring :event :VeryLazy}
  {1 :kylechui/nvim-surround
   :event :InsertEnter
   :config (fn []
