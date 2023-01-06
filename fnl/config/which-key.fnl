@@ -1,4 +1,4 @@
-;; Which-key provides a pop-up meny for some key mappings.
+;; Which-key provides a pop-up menu for some key mappings.
 (module config.which-key {autoload {util config.util}})
 
 (def- setup {:plugins {:marks true
@@ -13,9 +13,7 @@
                                  :g true}}
              :icons {:breadcrumb "»" :separator "" :group "+"}
              :popup_mappings {:scroll_down :<c-d> :scroll_up :<c-u>}
-             :window {:border :rounded
-                      :position :bottom
-                      :winblend 0}
+             :window {:border :rounded :position :bottom :winblend 0}
              :layout {:height {:min 4 :max 25}
                       :width {:min 20 :max 50}
                       :spacing 3
@@ -34,23 +32,23 @@
              :noremap true
              :nowait true})
 
-(def- mmappings
-      {:a [:<cmd>HarpoonAdd<cr> :Harpoon]
-       :c [:<cmd>DiffviewClose<cr> :DiffviewClose]
-       :d [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
-       :f [(fn []
-             (util.telescope-builtin :find_files
-                                     {:theme :get_dropdown :previewer false}))
-           "Find files"]
-       :g ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]
-       :n [:<cmd>Neogit<cr> :Neogit]
-       :p [:<cmd>SaveSession<cr> "Save Session"]
-       :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
-       :r [:<cmd>HarpoonUI<cr> "Harpoon UI"]
-       :s [:<cmd>HarpoonPrev<cr> "Harpoon Prev"]
-       :t [:<cmd>HarpoonNext<cr> "Harpoon Next"]
-       :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
-       :x ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]})
+(def- mmappings {:a [:<cmd>HarpoonAdd<cr> :Harpoon]
+                 :d [:<cmd>DiffviewFileHistory<cr> :DiffviewFileHistory]
+                 :f [(fn []
+                       (util.telescope-builtin :find_files
+                                               {:theme :get_dropdown
+                                                :previewer false}))
+                     "Find files"]
+                 :g ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]
+                 :n [:<cmd>Neogit<cr> :Neogit]
+                 :p [:<cmd>SaveSession<cr> "Save Session"]
+                 :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
+                 :r [:<cmd>HarpoonUI<cr> "Harpoon UI"]
+                 :s [:<cmd>HarpoonPrev<cr> "Harpoon Prev"]
+                 :t [:<cmd>HarpoonNext<cr> "Harpoon Next"]
+                 :v ["<cmd>lua vim.lsp.buf.rename()<cr>" :Rename]
+                 :x ["<cmd>DiffviewOpen -uno<cr>" :DiffviewOpen]
+                 :z [:<cmd>DiffviewClose<cr> :DiffviewClose]})
 
 (def- nopts {:mode :n
              :prefix :<leader>
@@ -130,7 +128,6 @@
                  :g git
                  :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
-                 :n [:<cmd>CommentNormal<CR> :Comment]
                  :m [:<cmd>Mason<cr> :Mason]
                  :r replace
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
@@ -157,7 +154,7 @@
 (def- gmappings {:a [:<cmd>OrgAgendaPrompt<cr> "Open agenda prompt"]
                  :c [:<cmd>OrgCapturePrompt<cr> "Open capture prompt"]
                  :m ["<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
-                     "Search Headings"]})
+                     "Search headings"]})
 
 (let [which-key (util.prequire :which-key)]
   (which-key.setup setup)
