@@ -45,10 +45,4 @@
                  :callback (lambda []
                              (env.init nvim.g.aniseed#env))})
 
-(create-autocmd :BufWritePost
-                {:pattern :plugins.fnl
-                 :callback (lambda []
-                             (env.init nvim.g.aniseed#env)
-                             (lazy.sync))})
-
 (create-autocmd :FocusGained {:command :checktime})
