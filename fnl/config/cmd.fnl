@@ -66,3 +66,21 @@
                             (let [spectre (util.prequire :spectre)]
                               (spectre.open_file_search)))
                           {:nargs 0})
+
+(nvim.create_user_command :RestoreSession
+                          (lambda []
+                            (let [persistence (util.prequire :persistence)]
+                              (persistence.load)))
+                          {:nargs 0})
+
+(nvim.create_user_command :RestoreLastSession
+                          (lambda []
+                            (let [persistence (util.prequire :persistence)]
+                              (persistence.load {:last true})))
+                          {:nargs 0})
+
+(nvim.create_user_command :IgnoreSession
+                          (lambda []
+                            (let [persistence (util.prequire :persistence)]
+                              (persistence.stop)))
+                          {:nargs 0})

@@ -112,9 +112,14 @@
        :s ["<cmd>Telescope lsp_document_symbols<cr>" "Document Symbols"]})
 
 (def- replace {:name :replace
-               :f [:<cmd>ReplaceInBuf<cr> "Replace in Buffer"]
-               :r [:<cmd>Replace<cr> :Replace]
-               :w [:<cmd>ReplaceWord<cr> "Replace Word"]})
+               :m [:<cmd>ReplaceInBuf<cr> "Replace in Buffer"]
+               :n [:<cmd>Replace<cr> :Replace]
+               :e [:<cmd>ReplaceWord<cr> "Replace Word"]})
+
+(def- session {:name :session
+               :m [:<cmd>RestoreSession<cr> "Restore session"]
+               :n [:<cmd>RestoreLastSession<cr> "Restore last session"]
+               :e [:<cmd>IgnoreSession<cr> "Ignore current session"]})
 
 (def- treesitter
       {:name :Treesitter :p [:<cmd>TSPlaygroundToggle<cr> :Playground]})
@@ -129,7 +134,9 @@
                  :h [:<cmd>ColorizerToggle<cr> :Colorizer]
                  :l lsp
                  :m [:<cmd>Mason<cr> :Mason]
+                 :n [:<cmd>SymbolsOutline<cr> "Symbols outline"]
                  :r replace
+                 :s session
                  :t [:<cmd>ToggleTerm<cr> :Terminal]
                  :u [:<cmd>UndotreeToggle<cr> :Undotree]
                  :y ["<cmd>Lazy home<cr>" :Home]

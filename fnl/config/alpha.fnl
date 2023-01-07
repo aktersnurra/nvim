@@ -29,7 +29,6 @@
                             ":Telescope find_files theme=dropdown<CR>")
           (dashboard.button :t "  Find text"
                             ":Telescope live_grep theme=dropdown<CR>")
-          (dashboard.button :s " Find Session" ":SearchSession<CR>")
           (dashboard.button :p "  Find project"
                             ":Telescope projects theme=dropdown<CR>")
           (dashboard.button :r "  Recently used files"
