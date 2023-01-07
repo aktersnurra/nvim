@@ -26,8 +26,7 @@
 (def- diagnostics {1 :diagnostics
                    :sources [:nvim_diagnostic]
                    :sections [:error :warn]
-                   :symbols {:error " " :warn " "}
-                   ;; :symbols {:error "E " :warn "W "}
+                   :symbols {:error " " :warn " "}
                    :colored false
                    :disabled_buftypes [:nvim-tree]
                    :padding 0
@@ -40,7 +39,7 @@
             :cond hide-in-width})
 
 (def- branch {1 "b:gitsigns_head"
-              :icon " "
+              :icon " "
               :disabled_buftypes [:nvim-tree]
               :cond hide-in-width})
 
