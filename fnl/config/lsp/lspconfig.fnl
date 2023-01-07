@@ -1,40 +1,30 @@
 ;; Setup of lsps.
-(module config.lsp.lspconfig {autoload {util config.util lsp config.lsp.keymaps}})
+(module config.lsp.lspconfig
+        {autoload {nvim aniseed.nvim
+                   util config.util
+                   keymaps config.lsp.keymaps}})
 
-(defn on-attach [client bufnr] (if (= client.name :html)
-                                   (set client.server_capabilities.document_formatting
-                                        false))
-      (lsp.keymaps bufnr))
+(defn- on-attach []
+       (nvim.create_autocmd :LspAttach
+                            {:callback (fn [args]
+                                         (let [bufnr (. args :buf)]
+                                           (keymaps.on-attach bufnr)))}))
 
-(defn capabilities []
-      (let [capabilities (vim.lsp.protocol.make_client_capabilities)]
-        (set capabilities.textDocument.completion.completionItem.snippetSupport
-             true)
-        (let [cmp-nvim-lsp (util.prequire :cmp_nvim_lsp)]
-          (cmp-nvim-lsp.default_capabilities capabilities))))
+(defn- capabilities []
+       (let [cmp-lsp (util.prequire :cmp_nvim_lsp)]
+         (cmp-lsp.default_capabilities (vim.lsp.protocol.make_client_capabilities))))
 
-(defn- handler-opts [] {:on_attach on-attach :capabilities (capabilities)})
+(defn- mason-opts [servers]
+       {:ensure_installed (vim.tbl_keys servers) :automatic_installation true})
 
-(defn- jsonls-opts []
-       (let [jsonls-opts (require :config.lsp.settings.jsonls)]
-         (vim.tbl_deep_extend :force jsonls-opts (handler-opts))))
-
-(defn- sumneko-lua-opts []
-       (let [sumneko-lua (require :config.lsp.settings.sumneko-lua)]
-         (vim.tbl_deep_extend :force sumneko-lua.opts (handler-opts))))
-
-(defn- rust-opts []
-       (let [rust (require :config.lsp.settings.rust)]
-         (vim.tbl_deep_extend :force rust.opts (handler-opts))))
-
-(defn- get-server-opts [server]
-       (match server
-         :jsonls (jsonls-opts)
-         :sumneko_lua (sumneko-lua-opts)
-         :rust_analyzer (rust-opts)
-         _ (handler-opts)))
-
-(let [lspconfig (util.prequire :lspconfig) servers (require :config.lsp.servers)]
-  (each [_ server (ipairs servers)]
-    (let [server-config (. lspconfig server)]
-      (server-config.setup (get-server-opts server)))))
+(let [lspconfig (util.prequire :lspconfig)
+      mason-lspconfig (util.prequire :mason-lspconfig)
+      servers (require :config.lsp.servers)]
+  (on-attach)
+  (mason-lspconfig.setup (mason-opts servers))
+  (mason-lspconfig.setup_handlers [(fn [server-name]
+                                     (let [server-config (. lspconfig
+                                                            server-name)
+                                           opts (or (. servers server-name) {})]
+                                       (tset opts :capabilities (capabilities))
+                                       (server-config.setup opts)))]))

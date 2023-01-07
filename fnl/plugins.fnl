@@ -42,26 +42,26 @@
   :config (fn []
             (require :config.neogit))}
  {1 :lewis6991/gitsigns.nvim
-  :event :BufReadPre
+  :event :BufReadPost
   :config (fn []
             (require :config.gitsigns))}
  ;; LSP
  {1 :williamboman/mason.nvim
   :cmd :Mason
   :keys [{1 :<leader>m 2 :<cmd>Mason<cr> :desc :Mason}]
-  :dependencies [:williamboman/mason-lspconfig.nvim]
   :config (fn []
-            (require :config.lsp.mason)
-            (require :config.lsp.mason-lspconfig))}
+            (require :config.lsp.mason))}
  {1 :jose-elias-alvarez/null-ls.nvim
   :dependencies [:mason.nvim :jayp0521/mason-null-ls.nvim]
   :event :BufReadPre
   :config (fn []
-            (require :config.lsp.null-ls)
-            (require :config.lsp.mason-null-ls))}
+            (require :config.lsp.null-ls))}
  {1 :neovim/nvim-lspconfig
   :event :BufReadPre
-  :dependencies [:mason.nvim :b0o/SchemaStore.nvim :hrsh7th/cmp-nvim-lsp]
+  :dependencies [:mason.nvim
+                 :williamboman/mason-lspconfig.nvim
+                 :b0o/SchemaStore.nvim
+                 :hrsh7th/cmp-nvim-lsp]
   :config (fn []
             (require :config.lsp.diagnostics)
             (require :config.lsp.lspconfig))}
@@ -71,7 +71,7 @@
             (require :config.trouble))}
  ;; Misc plugins
  {1 :nvim-orgmode/orgmode
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.orgmode))}
  {1 :ojroques/nvim-bufdel :cmd :BufDel}
@@ -100,23 +100,23 @@
             (require :config.lir))
   :dependencies [:kyazdani42/nvim-web-devicons]}
  {1 :ggandor/leap.nvim
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.leap))}
  {1 :ggandor/flit.nvim
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.flit))}
  {1 :windwp/nvim-spectre
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.spectre))}
  {1 :junegunn/vim-slash
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.vim-slash))}
  {1 :ThePrimeagen/harpoon
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.harpoon))}
  ;; Session plugins
@@ -126,7 +126,7 @@
             (require :config.persistence))}
  ;; Text manipulation
  {1 :numToStr/Comment.nvim
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.comment))}
  {1 :kylechui/nvim-surround
@@ -134,7 +134,7 @@
   :config (fn []
             (require :config.surround))}
  {1 :gbprod/stay-in-place.nvim
-  :event :InsertEnter
+  :event :BufReadPost
   :config (fn []
             (require :config.stay-in-place))}
  {1 :cappyzawa/trim.nvim
@@ -142,7 +142,7 @@
   :config (fn []
             (require :config.trim))}
  {1 :max397574/better-escape.nvim
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.better-escape))}
  {1 :windwp/nvim-autopairs
@@ -164,11 +164,11 @@
   :config (fn []
             (require :config.zen))}
  {1 :kevinhwang91/nvim-bqf
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.bqf))}
  {1 :s1n7ax/nvim-window-picker
-  :event :VeryLazy
+  :event :BufReadPost
   :config (fn []
             (require :config.window-picker))}
  {1 :goolord/alpha-nvim
