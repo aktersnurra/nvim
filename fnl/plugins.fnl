@@ -88,7 +88,6 @@
                  :tami5/sqlite.lua
                  :ahmedkhalf/project.nvim
                  :nvim-lua/plenary.nvim
-                 :rmagatti/session-lens
                  :nvim-telescope/telescope-fzf-native.nvim
                  :nvim-telescope/telescope-frecency.nvim
                  :joaomsa/telescope-orgmode.nvim]
@@ -96,7 +95,7 @@
             (require :config.project)
             (require :config.telescope))}
  {1 :tamago324/lir.nvim
-  :keys :-
+  :keys "-"
   :config (fn []
             (require :config.lir))
   :dependencies [:kyazdani42/nvim-web-devicons]}
@@ -121,10 +120,10 @@
   :config (fn []
             (require :config.harpoon))}
  ;; Session plugins
- {1 :rmagatti/auto-session
-  :lazy false
+ {1 :folke/persistence.nvim
+  :event :VeryLazy
   :config (fn []
-            (require :config.auto-session))}
+            (require :config.persistence))}
  ;; Text manipulation
  {1 :numToStr/Comment.nvim
   :event :VeryLazy
@@ -176,6 +175,7 @@
   :event :VimEnter
   :config (fn []
             (require :config.alpha))}
+ {1 :simrat39/symbols-outline.nvim :cmd :SymbolsOutline :config true}
  {1 :folke/which-key.nvim
   :event :VeryLazy
   :config (fn []
