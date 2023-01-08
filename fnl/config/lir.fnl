@@ -30,18 +30,18 @@
                          {:border :rounded : width : height}))}
    :hide_cursor false
    :on_init (fn []
-              (nvim.buf_set_keymap 0 :x :J
-                                   ":<C-u>lua require(\"lir.mark.actions\").toggle_mark(\"v\")<CR>"
-                                   {:noremap true :silent true}))})
+              (vim.api.nvim_buf_set_keymap 0 :x :J
+                                           ":<C-u>lua require(\"lir.mark.actions\").toggle_mark(\"v\")<CR>"
+                                           {:noremap true :silent true}))})
 
 (fn setup []
-  (let [lir (require :lir)]
-    (let [actions (require :lir.actions)
-          mark-actions (require :lir.mark.actions)
-          clipboard-actions (require :lir.clipboard.actions)]
-      (lir.setup (opts actions mark-actions clipboard-actions))
-      (nvim.set_keymap :n "-" ":lua require'lir.float'.toggle()<cr>"
-                       {:noremap true :silent true}))))
+  (let [actions (require :lir.actions)
+        clipboard-actions (require :lir.clipboard.actions)
+        mark-actions (require :lir.mark.actions)
+        lir (require :lir)]
+    (lir.setup (opts actions mark-actions clipboard-actions))
+    (vim.keymap.set :n "-" ":lua require'lir.float'.toggle()<cr>"
+                    {:noremap true :silent true})))
 
 {1 :tamago324/lir.nvim
  :keys "-"

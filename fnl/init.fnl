@@ -3,5 +3,5 @@
 
 (let [lazy (require :lazy)
       opts (require :config.lazy)
-      plugins (require :plugins)]
+      plugins (require :config)]
   (lazy.setup plugins opts))

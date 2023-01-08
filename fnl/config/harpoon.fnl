@@ -1,5 +1,7 @@
 ;; Harpoon files for navigation.
 
+(local util (require :config.util))
+
 (fn setup []
   (vim.keymap.set :n :<tab>
                   (fn []

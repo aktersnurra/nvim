@@ -28,7 +28,12 @@
              :indent {:enable true :disable [:yaml :python :css]}
              :playground {:enable true}})
 
+(fn setup []
+  (let [treesitter (require :nvim-treesitter.configs)]
+    (treesitter.setup opts)))
+
 {1 :nvim-treesitter/nvim-treesitter
  :build ":TSUpdate"
- :event :BufReadPre
- :config opts}
+ :event :BufReadPost
+ :config (fn []
+           (setup))}

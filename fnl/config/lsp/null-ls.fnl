@@ -35,7 +35,9 @@
     (mason-null-ls.setup mason-opts)))
 
 {1 :jose-elias-alvarez/null-ls.nvim
- :dependencies [:mason.nvim :jayp0521/mason-null-ls.nvim]
+ :dependencies [:mason.nvim
+                :jayp0521/mason-null-ls.nvim
+                :nvim-lua/plenary.nvim]
  :event :BufReadPre
  :config (fn []
            (setup))}
