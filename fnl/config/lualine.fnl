@@ -83,5 +83,5 @@
 
 {1 :nvim-lualine/lualine.nvim
  :event :VeryLazy
- :config opts
+ :opts opts
  :dependencies [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}

@@ -5,4 +5,4 @@
              :clear_empty_lines false
              :keys :<Esc>})
 
-{1 :max397574/better-escape.nvim :event :BufReadPost :config opts}
+{1 :max397574/better-escape.nvim :event :BufReadPost :opts opts}

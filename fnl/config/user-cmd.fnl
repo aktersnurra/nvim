@@ -1,5 +1,5 @@
 ;; Commands for plugins.
-(module config.cmd {autoload {nvim aniseed.nvim util config.util}})
+(module config.user-cmd {autoload {nvim aniseed.nvim util config.util}})
 
 (nvim.create_user_command :OrgAgendaPrompt
                           (lambda []

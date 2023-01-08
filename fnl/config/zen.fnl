@@ -10,4 +10,4 @@
                       :tmux {:enabled true}
                       :twilight {:enabled true}}})
 
-{1 :folke/zen-mode.nvim :cmd :ZenMode :config opts}
+{1 :folke/zen-mode.nvim :cmd :ZenMode :opts opts}

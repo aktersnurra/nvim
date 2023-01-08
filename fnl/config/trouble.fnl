@@ -78,4 +78,4 @@
              ;; enabling this will use the signs defined in your lsp client
              })
 
-{1 :folke/trouble.nvim :cmd :TroubleToggle :config opts}
+{1 :folke/trouble.nvim :cmd :TroubleToggle :opts opts}

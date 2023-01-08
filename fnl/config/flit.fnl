@@ -5,4 +5,4 @@
              :multiline true
              :opts {}})
 
-{1 :ggandor/flit.nvim :event :BufReadPost :config opts}
+{1 :ggandor/flit.nvim :event :BufReadPost :opts opts}
