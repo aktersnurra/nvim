@@ -8,7 +8,7 @@
   (let [window-picker (require :window-picker)]
     (let [win (window-picker.pick_window)]
       (if (not= win nil)
-          (nvim.set_current_win win)))))
+          (vim.api.nvim_set_current_win win)))))
 
 {1 :s1n7ax/nvim-window-picker
  :event :BufReadPost
