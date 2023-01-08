@@ -16,9 +16,7 @@
                 :config.harpoon
                 :config.leap
                 :config.lir
-                :config.lsp.lspconfig
-                :config.lsp.mason
-                :config.lsp.null-ls
+                :config.lsp
                 :config.lualine
                 :config.minibar
                 :config.neogit
@@ -40,7 +38,5 @@
                 :config.window-picker
                 :config.zen])
 
-(let [configs []]
-  (each [_ plugin (pairs plugins)]
-    (table.insert configs (require plugin)))
-  configs)
+(let [util (require :config.util)]
+  (util.load plugins))
