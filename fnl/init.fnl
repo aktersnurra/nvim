@@ -1,5 +1,5 @@
 ;; Load plugins with lazy.
-(module init {require [settings config.autocmd config.cmd]})
+(module init {require [settings config.autocmd config.user-cmd]})
 
 (let [lazy (require :lazy)
       opts (require :config.lazy)

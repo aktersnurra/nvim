@@ -29,4 +29,4 @@
 
  {1 :aktersnurra/minibar.nvim
   :event :BufReadPre
-  :config opts}
+  :opts opts}
