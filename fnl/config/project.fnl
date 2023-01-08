@@ -1,7 +1,6 @@
 ;; Provides project management.
-(module config.project {autoload {util config.util}})
 
-(def- opts {:active true
+(local opts {:active true
             :on_config_done nil
             :manual_mode false
             :detection_methods [:patterns]
@@ -11,4 +10,6 @@
             :ignore_lsp {}
             :datapath (vim.fn.stdpath :data)})
 
-(util.setup :project_nvim opts)
+ {1 :ahmedkhalf/project.nvim
+  :event :BufReadPre
+  :config opts}

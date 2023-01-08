@@ -1,30 +1,40 @@
 ;; Setup of lsps.
-(module config.lsp.lspconfig
-        {autoload {nvim aniseed.nvim
-                   util config.util
-                   keymaps config.lsp.keymaps}})
 
-(defn- on-attach []
-       (nvim.create_autocmd :LspAttach
-                            {:callback (fn [args]
-                                         (let [bufnr (. args :buf)]
-                                           (keymaps.on-attach bufnr)))}))
+(fn on-attach []
+       (vim.api.nvim_create_autocmd :LspAttach
+                                    {:callback (fn [args]
+                                                 (let [keymaps (require :config.lsp.keymaps)
+                                                       bufnr (. args :buf)]
+                                                   (keymaps.on-attach bufnr)))}))
 
-(defn- capabilities []
-       (let [cmp-lsp (util.prequire :cmp_nvim_lsp)]
+(fn capabilities []
+       (let [cmp-lsp (require :cmp_nvim_lsp)]
          (cmp-lsp.default_capabilities (vim.lsp.protocol.make_client_capabilities))))
 
-(defn- mason-opts [servers]
+(fn mason-opts [servers]
        {:ensure_installed (vim.tbl_keys servers) :automatic_installation true})
 
-(let [lspconfig (util.prequire :lspconfig)
-      mason-lspconfig (util.prequire :mason-lspconfig)
-      servers (require :config.lsp.servers)]
-  (on-attach)
-  (mason-lspconfig.setup (mason-opts servers))
-  (mason-lspconfig.setup_handlers [(fn [server-name]
-                                     (let [server-config (. lspconfig
-                                                            server-name)
-                                           opts (or (. servers server-name) {})]
-                                       (tset opts :capabilities (capabilities))
-                                       (server-config.setup opts)))]))
+(fn setup []
+  (require :config.lsp.diagnostics)
+  (let [lspconfig (require :lspconfig)
+        mason-lspconfig (require :mason-lspconfig)
+        servers (require :config.lsp.servers)]
+    (on-attach)
+    (mason-lspconfig.setup (mason-opts servers))
+    (mason-lspconfig.setup_handlers [(fn [server-name]
+                                       (let [server-config (. lspconfig
+                                                              server-name)
+                                             opts (or (. servers server-name)
+                                                      {})]
+                                         (tset opts :capabilities
+                                               (capabilities))
+                                         (server-config.setup opts)))])))
+
+{1 :neovim/nvim-lspconfig
+ :event :BufReadPre
+ :dependencies [:mason.nvim
+                :williamboman/mason-lspconfig.nvim
+                :b0o/SchemaStore.nvim
+                :hrsh7th/cmp-nvim-lsp]
+ :config (fn []
+           (setup))}

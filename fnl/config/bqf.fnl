@@ -1,4 +1,3 @@
 ;; Make Neovim's quickfix window better.
-(module config.bqf {autoload {util config.util}})
 
-(util.setup :bqf {})
+{1 :kevinhwang91/nvim-bqf :event :BufReadPost :config true}

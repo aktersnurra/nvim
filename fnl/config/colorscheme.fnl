@@ -1,9 +1,16 @@
 ;; Load neovim colorscheme.
-(module config.colorscheme {autoload {util config.util}})
 
 (local colorscheme :no-clown-fiesta)
 
-(def- opts {:styles {:type {:bold true}}})
+(local opts {:styles {:type {:bold true}}})
 
-(util.setup :no-clown-fiesta opts)
-(vim.cmd (.. "colorscheme " colorscheme))
+(fn setup []
+  (let [plugin (require colorscheme)]
+    (plugin.setup opts)
+    (vim.cmd (.. "colorscheme " colorscheme))))
+
+{1 :aktersnurra/no-clown-fiesta.nvim
+ :lazy false
+ :priority 1000
+ :config (fn []
+           (setup))}

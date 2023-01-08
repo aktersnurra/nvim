@@ -84,3 +84,10 @@
                             (let [persistence (util.prequire :persistence)]
                               (persistence.stop)))
                           {:nargs 0})
+
+(nvim.create_user_command :FindFiles
+                          (lambda []
+                            (util.telescope-builtin :find_files
+                                                    {:theme :get_dropdown
+                                                     :previewer false}))
+                          {:nargs 0})
