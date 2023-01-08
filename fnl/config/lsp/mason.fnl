@@ -8,4 +8,4 @@
 {1 :williamboman/mason.nvim
  :cmd :Mason
  :keys [{1 :<leader>m 2 :<cmd>Mason<cr> :desc :Mason}]
- :config opts}
+ : opts}

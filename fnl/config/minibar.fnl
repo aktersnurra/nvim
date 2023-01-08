@@ -27,6 +27,4 @@
                       :InsertEnter
                       :BufWritePost]})
 
- {1 :aktersnurra/minibar.nvim
-  :event :BufReadPre
-  :opts opts}
+{1 :aktersnurra/minibar.nvim :event :BufReadPre : opts}
