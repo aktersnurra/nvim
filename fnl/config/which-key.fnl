@@ -167,4 +167,7 @@
     (which-key.register vmappings vopts)
     (which-key.register gmappings gopts)))
 
-{1 :folke/which-key.nvim :event :VeryLazy :config (fn [] (setup))}
+{1 :folke/which-key.nvim
+ :event :VeryLazy
+ :config (fn []
+           (setup))}

@@ -59,4 +59,4 @@
              :is_open_target_win true
              :is_insert_mode false})
 
-{1 :windwp/nvim-spectre :event :BufReadPost :opts opts}
+{1 :windwp/nvim-spectre :event :BufReadPost : opts}

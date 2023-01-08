@@ -82,6 +82,6 @@
              :extensions []})
 
 {1 :nvim-lualine/lualine.nvim
- :event :VeryLazy
- :opts opts
+ :event :BufReadPost
+ : opts
  :dependencies [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}

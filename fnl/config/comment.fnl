@@ -17,4 +17,4 @@
                      ;; Add comment at the end of line
                      :eol :mcA}})
 
-{1 :numToStr/Comment.nvim :event :BufReadPost :opts opts}
+{1 :numToStr/Comment.nvim :event :BufReadPost : opts}
