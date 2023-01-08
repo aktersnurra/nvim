@@ -1,6 +1,5 @@
 ;; Session manager.
-(module config.persistence {autoload {util config.util}})
 
-(def- opts {:options [:buffers :curdir :tabpages :winsize :help]})
+(local opts {:options [:buffers :curdir :tabpages :winsize :help]})
 
-(util.setup :persistence opts)
+{1 :folke/persistence.nvim :event :VeryLazy :config opts}

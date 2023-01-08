@@ -7,7 +7,7 @@
 (defn create-autocmd [event opts] (nvim.create_autocmd event opts))
 
 (create-autocmd :FileType
-                {:pattern [:qf :help :man :lspinfo]
+                {:pattern [:qf :help :man :lspinfo :spectre_panel]
                  :command "nnoremap <silent> <buffer> q :close<CR>"})
 
 (create-autocmd :TextYankPost
@@ -46,3 +46,11 @@
                              (env.init nvim.g.aniseed#env))})
 
 (create-autocmd :FocusGained {:command :checktime})
+
+(create-autocmd :TermOpen
+                {:pattern "term://*toggleterm#*"
+                 :callback (fn []
+                             (vim.keymap.set :t :<C-h> "<Cmd>wincmd h<CR>" {})
+                             (vim.keymap.set :t :<C-j> "<Cmd>wincmd j<CR>" {})
+                             (vim.keymap.set :t :<C-k> "<Cmd>wincmd k<CR>" {})
+                             (vim.keymap.set :t :<C-l> "<Cmd>wincmd l<CR>" {}))})

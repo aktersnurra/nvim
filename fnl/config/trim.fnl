@@ -1,6 +1,5 @@
 ;; Trim whitespaces on save.
-(module config.trim {autoload {util config.util}})
 
-(def- opts {:disable [:python]})
+(local opts {:disable [:python]})
 
-(util.setup :trim opts)
+{1 :cappyzawa/trim.nvim :event :BufFilePre :config opts}

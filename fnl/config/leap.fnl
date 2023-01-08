@@ -1,8 +1,11 @@
 ;; Leap through text.
-(module config.leap {autoload {util config.util nvim aniseed.nvim}})
 
-(def- opts {})
+(fn setup []
+  (let [leap (require :leap)]
+    (leap.setup {})
+    (leap.set_default_keymaps)))
 
-(let [leap (util.prequire :leap)]
-      (leap.setup opts)
-      (leap.set_default_keymaps))
+{1 :ggandor/leap.nvim
+ :event :BufReadPost
+ :config (fn []
+           (setup))}
