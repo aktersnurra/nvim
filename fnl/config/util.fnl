@@ -12,3 +12,9 @@
             themes (require :telescope.themes)
             theme (. opts :theme)]
         ((. telescope builtin) ((. themes theme) opts))))
+
+(defn load [plugins]
+  (let [configs []]
+    (each [_ plugin (pairs plugins)]
+      (table.insert configs (require plugin)))
+    configs))
