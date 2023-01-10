@@ -1,8 +1,7 @@
-local lazy_path = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-local aniseed_path = vim.fn.stdpath "data" .. "/lazy/aniseed"
-
-local function ensure(user, plugin, path)
+local function ensure(user, plugin)
+  local path = vim.fn.stdpath "data" .. "/lazy/" .. plugin
   if not vim.loop.fs_stat(path) then
+    vim.notify("Downloading " .. plugin .. "...", vim.log.levels.INFO)
     vim.fn.system {
       "git",
       "clone",
@@ -12,15 +11,23 @@ local function ensure(user, plugin, path)
       path,
     }
   end
+  vim.opt.runtimepath:prepend(path)
 end
 
-ensure("folke", "lazy.nvim", lazy_path)
-ensure("Olical", "aniseed", aniseed_path)
+ensure("folke", "lazy.nvim")
+ensure("rktjmp", "hotpot.nvim")
 
-vim.opt.runtimepath:prepend(lazy_path)
-vim.opt.runtimepath:prepend(aniseed_path)
-
-vim.g["aniseed#env"] = {
-  module = "init",
-  compile = true,
+require("hotpot").setup {
+  provide_require_fennel = true,
+  compiler = {
+    modules = {
+      correlate = true,
+    },
+  },
 }
+
+require "settings"
+
+local plugins = require "plugins"
+local lazy_opts = require "plugins.lazy"
+require("lazy").setup(plugins, lazy_opts)

@@ -13,9 +13,7 @@ neovim = nightly
 ```
 .
 └── fnl
-    ├── config              # Plugin configs.
+    ├── plugins             # Plugin configs.
     │   └── lsp             # LSP related configs.
-    │       └── settings    # Server specific settings.
-    ├── plugins.fnl         # Table of all plugins.
     └── settings            # Neovim settings.
 ```

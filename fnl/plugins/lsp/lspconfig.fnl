@@ -3,7 +3,7 @@
 (fn on-attach []
        (vim.api.nvim_create_autocmd :LspAttach
                                     {:callback (fn [args]
-                                                 (let [keymaps (require :config.lsp.keymaps)
+                                                 (let [keymaps (require :plugins.lsp.keymaps)
                                                        bufnr (. args :buf)]
                                                    (keymaps.on-attach bufnr)))}))
 
@@ -15,10 +15,12 @@
        {:ensure_installed (vim.tbl_keys servers) :automatic_installation true})
 
 (fn setup []
-  (require :config.lsp.diagnostics)
-  (let [lspconfig (require :lspconfig)
+  
+  (let [diagnostics (require :plugins.lsp.diagnostics)
+        lspconfig (require :lspconfig)
         mason-lspconfig (require :mason-lspconfig)
-        servers (require :config.lsp.servers)]
+        servers (require :plugins.lsp.servers)]
+    (diagnostics.setup)
     (on-attach)
     (mason-lspconfig.setup (mason-opts servers))
     (mason-lspconfig.setup_handlers [(fn [server-name]

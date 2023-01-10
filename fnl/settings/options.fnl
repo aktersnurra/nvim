@@ -1,12 +1,11 @@
 ;; Sets options in neovim
-(module settings.options {autoload {nvim aniseed.nvim}})
 
-(def- spellfile (.. (os.getenv :XDG_CONFIG_HOME) :/nvim/spell/en.utf-8.add))
-
-(defn- apply-opts [opts] (each [k v (pairs opts)]
+(fn apply-opts [opts] (each [k v (pairs opts)]
                            (tset vim.opt k v)))
 
-(def- opts {;; creates a backup file
+(local spellfile (.. (os.getenv :XDG_CONFIG_HOME) :/nvim/spell/en.utf-8.add))
+
+(local opts {;; creates a backup file
             :backup false
             ;; allows neovim to access the system clipboard
             :clipboard :unnamedplus
@@ -76,6 +75,8 @@
             ;; is one of my fav
             :scrolloff 8
             :sidescrolloff 8
+            :colorcolumn :88
+            :shortmess :filnxtToOFWIcC
             :spell true
             : spellfile
             :spelllang [:en_us]
@@ -84,12 +85,8 @@
             :splitkeep :screen})
 
 (apply-opts opts)
-
-(nvim.ex.set "whichwrap+=<,>,[,],h,l")
-(nvim.ex.set :iskeyword+=-)
-(nvim.ex.set :formatoptions-=cro)
-(nvim.ex.set :colorcolumn=88)
-(nvim.ex.set :shortmess=filnxtToOFWIcC)
+(set vim.g.mapleader " ")
+(set vim.g.maplocalleader " ")
 
 ;; Netrw settings
 (set vim.g.netrw_banner 0)

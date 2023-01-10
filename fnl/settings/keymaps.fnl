@@ -1,13 +1,10 @@
 ;; Custom keymappings.
-(module settings.keymaps {autoload {nvim aniseed.nvim}})
 
-(def- opts {:noremap true :silent true})
-(defn- map [mode lhs rhs opt] (nvim.set_keymap mode lhs rhs opt))
+(local opts {:noremap true :silent true})
+(fn map [mode lhs rhs opt] (vim.api.nvim_set_keymap mode lhs rhs opt))
 
 ;;Remap space as leader key
 (map "" :<Space> :<Nop> opts)
-(set nvim.g.mapleader " ")
-(set nvim.g.maplocalleader " ")
 
 ;; Normal ;;
 ;; Better window navigation

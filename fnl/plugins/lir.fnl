@@ -39,6 +39,8 @@
         clipboard-actions (require :lir.clipboard.actions)
         mark-actions (require :lir.mark.actions)
         lir (require :lir)]
+    (tset vim.g :loaded_netrw 1)
+    (tset vim.g :loaded_netrwPlugin 1)
     (lir.setup (opts actions mark-actions clipboard-actions))
     (vim.keymap.set :n "-" ":lua require'lir.float'.toggle()<cr>"
                     {:noremap true :silent true})))
