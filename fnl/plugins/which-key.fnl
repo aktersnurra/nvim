@@ -37,7 +37,6 @@
                   :g ["<cmd>Telescope live_grep theme=dropdown<cr>"
                       "Find text"]
                   :n [:<cmd>Neogit<cr> :Neogit]
-                  :p [:<cmd>SaveSession<cr> "Save Session"]
                   :q ["<cmd>Gitsigns diffthis HEAD<cr>" "Gitsigns diff"]
                   :r [:<cmd>HarpoonUI<cr> "Harpoon UI"]
                   :s [:<cmd>HarpoonPrev<cr> "Harpoon Prev"]
@@ -67,7 +66,6 @@
         :l ["<cmd>Telescope resume theme=dropdown<cr>" "Last Search"]
         :p ["<cmd>Telescope projects theme=dropdown<cr>" "Find project"]
         :r ["<cmd>Telescope oldfiles theme=dropdown<cr>" "Recent File"]
-        :s [:<cmd>SearchSession<cr> "Find Session"]
         :t ["<cmd>Telescope live_grep theme=dropdown<cr>" "Find text"]})
 
 (local diagnostics {:name :diagnostics
