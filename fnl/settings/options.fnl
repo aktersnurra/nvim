@@ -87,6 +87,3 @@
 (apply-opts opts)
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader " ")
-
-;; Netrw settings
-(set vim.g.netrw_banner 0)
