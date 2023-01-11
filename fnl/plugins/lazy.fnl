@@ -1,7 +1,8 @@
 ;; Lazy opts.
 
 {:install {:colorscheme [:no-clown-fiesta]}
- :performance {:rtp {:disabled_plugins [:gzip
+ :performance {:cache {:enabled true}
+               :rtp {:disabled_plugins [:gzip
                                         :matchit
                                         :matchparen
                                         :netrwPlugin
