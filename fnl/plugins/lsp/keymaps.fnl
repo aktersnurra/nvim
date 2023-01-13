@@ -10,12 +10,9 @@
         [:n :gl "<cmd>lua vim.diagnostic.open_float()<CR>"]
         [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>"]])
 
-(fn buf-set-keymap [bufnr mode key cmd opts]
-  (vim.api.nvim_buf_set_keymap bufnr mode key cmd opts))
-
 (fn on-attach [bufnr]
   (each [_ mapping (ipairs mappings)]
     (match mapping
-      [mode key cmd] (buf-set-keymap bufnr mode key cmd opts))))
+      [mode key cmd] (vim.api.nvim_buf_set_keymap bufnr mode key cmd opts))))
 
 {: on-attach}

@@ -1,8 +1,5 @@
 ;; Custom keymappings.
 
-(fn map [mode lhs rhs opt]
-  (vim.api.nvim_set_keymap mode lhs rhs opt))
-
 (local opts {:noremap true :silent true})
 
 (local mappings [;;Remap space as leader key
@@ -48,4 +45,4 @@
 
 (each [_ mapping (ipairs mappings)]
   (match mapping
-    [mode key cmd] (map mode key cmd opts)))
+    [mode key cmd] (vim.api.nvim_set_keymap mode key cmd opts)))

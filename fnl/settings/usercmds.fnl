@@ -6,9 +6,6 @@
         theme (. opts :theme)]
     ((. telescope builtin) ((. themes theme) opts))))
 
-(fn create-usercmd [event cmd opts]
-  (vim.api.nvim_create_user_command event cmd opts))
-
 (local usercmds [[:OrgAgendaPrompt
                   (lambda []
                     (let [orgmode (require :orgmode)]
@@ -87,4 +84,4 @@
 
 (each [_ usercmd (ipairs usercmds)]
   (match usercmd
-    [event cmd opts] (create-usercmd event cmd opts)))
+    [event cmd opts] (vim.api.nvim_create_user_command event cmd opts)))

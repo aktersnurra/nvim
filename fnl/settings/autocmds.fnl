@@ -1,8 +1,5 @@
 ;; Autocommands for nvim.
 
-(fn create-autocmd [event opts]
-  (vim.api.nvim_create_autocmd event opts))
-
 (local autocmds
        [[:FileType
          {:pattern [:qf :help :man :lspinfo :spectre_panel]
@@ -38,4 +35,4 @@
 
 (each [_ autocmd (ipairs autocmds)]
   (match autocmd
-    [event opts] (create-autocmd event opts)))
+    [event opts] (vim.api.nvim_create_autocmd event opts)))
