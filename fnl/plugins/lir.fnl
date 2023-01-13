@@ -2,7 +2,7 @@
 
 (fn opts [actions mark-actions clipboard-actions]
   {:show_hidden_files false
-   :devicons_enable true
+   :devicons {:enable true :highlight_dirname false}
    :mappings {:l actions.edit
               :<C-s> actions.split
               :v actions.vsplit
