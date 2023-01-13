@@ -25,6 +25,5 @@ require("hotpot").setup {
     },
   },
 }
-
 require "settings"
 require "plugins"
