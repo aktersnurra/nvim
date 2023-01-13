@@ -1,51 +1,51 @@
 ;; Custom keymappings.
 
+(fn map [mode lhs rhs opt]
+  (vim.api.nvim_set_keymap mode lhs rhs opt))
+
 (local opts {:noremap true :silent true})
-(fn map [mode lhs rhs opt] (vim.api.nvim_set_keymap mode lhs rhs opt))
 
-;;Remap space as leader key
-(map "" :<Space> :<Nop> opts)
+(local mappings [;;Remap space as leader key
+                 ["" :<Space> :<Nop>]
+                 ;; Normal ;;
+                 ;; Better window navigation
+                 [:n :<C-h> :<C-w>h]
+                 [:n :<C-j> :<C-w>j]
+                 [:n :<C-k> :<C-w>k]
+                 [:n :<C-l> :<C-w>l]
+                 ;; Resize with arrows
+                 [:n :<C-Up> ":resize -2<CR>"]
+                 [:n :<C-Down> ":resize +2<CR>"]
+                 [:n :<C-Left> ":vertical resize -2<CR>"]
+                 [:n :<C-Right> ":vertical resize +2<CR>"]
+                 ;; Visual ;;
+                 ;; Stay in indent mode
+                 [:v "<" :<gv]
+                 [:v ">" :>gv]
+                 ;; Visual Block ;;
+                 ;; Move text up and down
+                 [:x :J ":move '>+1<CR>gv-gv"]
+                 [:x :K ":move '<-2<CR>gv-gv"]
+                 ;; Move text up and down
+                 [:v :<m-j> ":m .+1<CR>=="]
+                 [:v :<m-k> ":m .-2<CR>=="]
+                 [:v :p "\"_dP"]
+                 ;; Splits
+                 [:n :<m-s> :<cmd>split<CR>]
+                 [:n :<m-t> :<cmd>vsplit<CR>]
+                 ;; Buf navigation
+                 [:n :<m-m> :<cmd>bprev<CR>]
+                 [:n :<m-i> :<cmd>bnext<CR>]
+                 ;; Jump half a page and centralize the view 
+                 [:n :<c-d> :<c-d>zz]
+                 [:n :<c-u> :<c-u>zz]
+                 ;; Remove highlighted search
+                 [:n :<m-n> :<cmd>nohlsearch<CR>]
+                 ;; Close window
+                 [:n :Q "<cmd>:q<CR>"]
+                 ;; Force refresh
+                 [:n :mj "<cmd>:e<CR>"]])
 
-;; Normal ;;
-;; Better window navigation
-(map :n :<C-h> :<C-w>h opts)
-(map :n :<C-j> :<C-w>j opts)
-(map :n :<C-k> :<C-w>k opts)
-(map :n :<C-l> :<C-w>l opts)
-
-;; Resize with arrows
-(map :n :<C-Up> ":resize -2<CR>" opts)
-(map :n :<C-Down> ":resize +2<CR>" opts)
-(map :n :<C-Left> ":vertical resize -2<CR>" opts)
-(map :n :<C-Right> ":vertical resize +2<CR>" opts)
-
-;; Visual ;;
-;; Stay in indent mode
-(map :v "<" :<gv opts)
-(map :v ">" :>gv opts)
-
-;; Visual Block ;;
-;; Move text up and down
-(map :x :J ":move '>+1<CR>gv-gv" opts)
-(map :x :K ":move '<-2<CR>gv-gv" opts)
-
-;; Move text up and down
-(map :v :<m-j> ":m .+1<CR>==" opts)
-(map :v :<m-k> ":m .-2<CR>==" opts)
-(map :v :p "\"_dP" opts)
-
-;; Splits
-(map :n :<m-s> :<cmd>split<CR> opts)
-(map :n :<m-t> :<cmd>vsplit<CR> opts)
-
-;; Nav
-(map :n :<m-m> :<cmd>bprev<CR> opts)
-(map :n :<m-i> :<cmd>bnext<CR> opts)
-
-(map :n :<c-d> :<c-d>zz opts)
-(map :n :<c-u> :<c-u>zz opts)
-
-(map :n :<m-n> :<cmd>nohlsearch<CR> opts)
-
-(map :n :Q "<cmd>:q<CR>" opts)
-(map :n :mj "<cmd>:e<CR>" opts)
+(each [_ mapping (ipairs mappings)]
+  (match mapping
+    [mode key cmd] (map mode key cmd opts)))

@@ -27,7 +27,4 @@ require("hotpot").setup {
 }
 
 require "settings"
-
-local plugins = require "plugins"
-local lazy_opts = require "plugins.lazy"
-require("lazy").setup(plugins, lazy_opts)
+require "plugins"
