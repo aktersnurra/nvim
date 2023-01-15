@@ -143,8 +143,6 @@
               :noremap true
               :nowait true})
 
-(local vmappings {:n [:<esc><cmd>CommentVisual<cr> :Comment]})
-
 (local gopts {:mode :n
               :prefix :g
               :buffer nil
@@ -162,7 +160,6 @@
     (which-key.setup opts)
     (which-key.register mmappings mopts)
     (which-key.register nmappings nopts)
-    (which-key.register vmappings vopts)
     (which-key.register gmappings gopts)))
 
 {1 :folke/which-key.nvim
