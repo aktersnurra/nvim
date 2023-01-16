@@ -34,6 +34,6 @@
 
 {1 :nvim-treesitter/nvim-treesitter
  :build ":TSUpdate"
- :event :BufReadPost
+ :event :VeryLazy
  :config (fn []
            (setup))}
