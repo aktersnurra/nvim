@@ -21,5 +21,9 @@
 
 {1 :ThePrimeagen/harpoon
  :event :BufReadPost
+ :keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
+        {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
+        {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
+        {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}]
  :config (fn []
            (setup))}

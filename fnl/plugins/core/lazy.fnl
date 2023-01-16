@@ -28,6 +28,7 @@
 
 (fn setup [plugins]
   (let [lazy (require :lazy)]
+    (vim.keymap.set :n :<leader>y "Lazy home" {:desc :Home})
     (lazy.setup plugins opts)))
 
 {: setup}
