@@ -19,6 +19,11 @@
     (orgmode.setup opts)))
 
 {1 :nvim-orgmode/orgmode
- :event :BufReadPost
  :config (fn []
-           (setup))}
+           (setup))
+ :event :BufReadPost
+ :keys [{1 :ga 2 :<cmd>OrgAgendaPrompt<cr> :desc "Open agenda prompt"}
+        {1 :gc 2 :<cmd>OrgCapturePrompt<cr> :desc "Open capture prompt"}
+        {1 :gm
+         2 "<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
+         :desc "Search headings"}]}
