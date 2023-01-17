@@ -72,4 +72,4 @@
                               :col 1}
              :yadm {:enable false}})
 
-{1 :lewis6991/gitsigns.nvim :event :BufReadPost : opts}
+{1 :lewis6991/gitsigns.nvim :event :BufReadPost : keys : opts}
