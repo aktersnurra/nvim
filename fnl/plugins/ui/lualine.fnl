@@ -70,7 +70,7 @@
              :sections {:lualine_a [:mode]
                         :lualine_b [branch diff]
                         :lualine_c {}
-                        :lualine_x [lsp_progress language-server diagnostics]
+                        :lualine_x [lsp-progress language-server diagnostics]
                         :lualine_y [filetype]
                         :lualine_z [:location :progress]}
              :inactive_sections {:lualine_a [:mode]
