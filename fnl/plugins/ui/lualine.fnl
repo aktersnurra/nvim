@@ -48,11 +48,11 @@
                  :icon_only true
                  :disabled_buftypes [:nvim-tree]
                  :colored false
-                 :cond hide_in_width})
+                 :cond hide-in-width})
 
 (local language-server {1 active-clients
                         :disabled_buftypes [:nvim-tree]
-                        :cond hide_in_width})
+                        :cond hide-in-width})
 
 (local lsp-progress
        {1 :lsp_progress
