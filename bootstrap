@@ -1,0 +1,16 @@
+#!/bin/sh
+
+datadir="$HOME/.local/share/nvim"
+pluginsdir="$datadir/lazy"
+
+clone() {
+	user="$1"
+	plugin="$2"
+	plugindir="$pluginsdir/$plugin"
+	[ ! -d "$plugindir" ] && git clone --filter=blob:none --single-branch "https://github.com/$user/$plugin.git" "$plugindir"
+}
+
+[ ! -d "$datadir" ] && echo "Neovim does not seem to be installed!" && exit 1
+clone "folke" "lazy.nvim"
+clone "rktjmp" "hotpot.nvim"
+exit 0
