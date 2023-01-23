@@ -61,6 +61,7 @@
                                  :selection_caret "> "
                                  :path_display [:smart]
                                  :color_devicons false
+                                 :pickers {:find_files {:theme :dropdown}}
                                  :vimgrep_arguments [:rg
                                                      :--color=never
                                                      :--no-heading
