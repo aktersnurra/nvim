@@ -1,13 +1,11 @@
 local hotpot_path = vim.fn.stdpath "data" .. "/lazy/" .. "hotpot.nvim"
-vim.opt.runtimepath:prepend(hotpot_path)
-
-local ok, hotpot = pcall(require, "hotpot")
-if not ok then
+if not vim.loop.fs_stat(hotpot_path) then
   vim.notify "You need to run the bootstrap!"
   return
 end
+vim.opt.runtimepath:prepend(hotpot_path)
 
-hotpot.setup {
+require("hotpot").setup {
   provide_require_fennel = true,
   compiler = {
     modules = {
