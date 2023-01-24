@@ -13,8 +13,6 @@
 
 (fn setup []
   (let [orgmode (require :orgmode)]
-    (tset vim.opt :conceallevel 2)
-    (tset vim.opt :concealcursor :nc)
     (orgmode.setup_ts_grammar)
     (orgmode.setup opts)))
 
