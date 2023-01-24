@@ -1,6 +1,6 @@
 ;; Handlers for the requests and responses from and to the lsp server.
 
-(local signs [{:name :DiagnosticSignError :text ""}
+(local signs [{:name :DiagnosticSignError :text ""}
               {:name :DiagnosticSignWarn :text ""}
               {:name :DiagnosticSignHint :text ""}
               {:name :DiagnosticSignInfo :text ""}])
