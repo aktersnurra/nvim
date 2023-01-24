@@ -13,6 +13,11 @@
                       (tset vim.opt_local :number false)
                       (tset vim.opt_local :relativenumber false))}]
         [:BufWinEnter {:command "setlocal formatoptions-=cro"}]
+        [:FileType
+         {:pattern :org
+          :callback (fn []
+                      (tset vim.opt_local :conceallevel 2)
+                      (tset vim.opt_local :concealcursor :nc))}]
         [:FileType {:pattern :qf :command "set nobuflisted"}]
         [:FileType {:pattern [:gitcommit :markdown] :command "setlocal wrap"}]
         [:FileType
