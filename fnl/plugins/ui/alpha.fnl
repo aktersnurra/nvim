@@ -35,6 +35,8 @@
                               ":Telescope oldfiles theme=dropdown<CR>")
             (dashboard.button :c "  Configuration"
                               ":e ~/.config/nvim/init.lua <CR>")
+            (dashboard.button :o "  Org"
+                              ":Telescope find_files theme=dropdown cwd=~/.local/share/org<CR>")
             (dashboard.button :q "  Quit Neovim" ":qa<CR>")])
       (set dashboard.section.header.opts.hl :AlphaHeader)
       (set dashboard.section.buttons.opts.hl :AlphaButtons)
