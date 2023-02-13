@@ -1,9 +1,21 @@
-local hotpot_path = vim.fn.stdpath "data" .. "/lazy/" .. "hotpot.nvim"
-if not vim.loop.fs_stat(hotpot_path) then
-  vim.notify "You need to run the bootstrapping script!"
-  return
+local function ensure(user, plugin)
+  local path = vim.fn.stdpath "data" .. "/lazy/" .. plugin
+  if not vim.loop.fs_stat(path) then
+    vim.notify("Downloading " .. plugin .. "...", vim.log.levels.INFO)
+    vim.fn.system {
+      "git",
+      "clone",
+      "--filter=blob:none",
+      "--single-branch",
+      string.format("https://github.com/%s/%s.git", user, plugin),
+      path,
+    }
+  end
+  vim.opt.runtimepath:prepend(path)
 end
-vim.opt.runtimepath:prepend(hotpot_path)
+
+ensure("folke", "lazy.nvim")
+ensure("rktjmp", "hotpot.nvim")
 
 require("hotpot").setup {
   provide_require_fennel = true,
