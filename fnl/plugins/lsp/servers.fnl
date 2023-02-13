@@ -17,7 +17,7 @@
  :rust_analyzer {:settings {:rust-analyzer {:lens {:enable true}
                                             :checkOnSave {:command :clippy}}}}
  :sqls {}
- :sumneko_lua {:settings {:Lua {:completion {:callSnippet :Replace}
+ :lua_ls {:settings {:Lua {:completion {:callSnippet :Replace}
                                 :workspace {:checkThirdParty false}
                                 :runtime {:version :LuaJIT
                                           :path (vim.split package.path ";")}}}}
