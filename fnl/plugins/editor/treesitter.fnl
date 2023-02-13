@@ -23,7 +23,8 @@
              :sync_install false
              :ignore_install [""]
              :autopairs {:enable true}
-             :highlight {:enable true :disable [:org]}
+             :highlight {:enable true
+                         :additional_vim_regex_highlighting [:org]}
              :context_commentstring {:enable true :enable_autocmd false}
              :indent {:enable true :disable [:yaml :python :css]}
              :playground {:enable true}})
