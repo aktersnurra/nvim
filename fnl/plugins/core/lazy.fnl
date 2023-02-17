@@ -9,7 +9,8 @@
                                                     :tohtml
                                                     :tutor
                                                     :zipPlugin]}}
-             :ui {:icons {:cmd "  "
+             :ui {:border :single
+                  :icons {:cmd "  "
                           :config " "
                           :event " "
                           :ft " "
