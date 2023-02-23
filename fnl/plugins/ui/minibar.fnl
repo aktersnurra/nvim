@@ -11,7 +11,6 @@
                            :packer
                            :neogitstatus
                            :Trouble
-                           :org
                            :lazy
                            :netrw
                            :Outline
