@@ -38,6 +38,6 @@
  :dependencies [:mason.nvim
                 :jayp0521/mason-null-ls.nvim
                 :nvim-lua/plenary.nvim]
- :event :BufReadPre
+ :event :BufReadPost
  :config (fn []
            (setup))}
