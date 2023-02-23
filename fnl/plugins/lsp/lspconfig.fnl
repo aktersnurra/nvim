@@ -34,7 +34,7 @@
                                          (server-config.setup opts)))])))
 
 {1 :neovim/nvim-lspconfig
- :event :BufReadPre
+ :event :BufReadPost
  :dependencies [:mason.nvim
                 :williamboman/mason-lspconfig.nvim
                 :b0o/SchemaStore.nvim
