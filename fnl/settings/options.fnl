@@ -87,6 +87,7 @@
 
 ;; Move to new line when reaching the beginning or end.
 (vim.opt.whichwrap:append "<,>,[,],h,l")
+(vim.opt.shortmess:append {:C true})
 
 (apply-opts opts)
 (set vim.g.mapleader " ")
