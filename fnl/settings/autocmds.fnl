@@ -1,5 +1,4 @@
 ;; Autocommands for nvim.
-
 (local autocmds
        [[:FileType
          {:pattern [:qf :help :man :lspinfo :spectre_panel]
@@ -24,7 +23,8 @@
          {:pattern [:NeogitStatus
                     :NeogitCommitMessage
                     :NeogitNotification
-                    :NeogitCommitView]
+                    :NeogitCommitView
+                    :spectre_panel]
           :command "setlocal spell!"}]
         [:TermOpen
          {:pattern ["term://*toggleterm#*"] :command "setlocal spell!"}]
