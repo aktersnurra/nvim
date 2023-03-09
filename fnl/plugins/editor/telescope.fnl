@@ -4,6 +4,9 @@
              {1 :mg
               2 "<cmd>Telescope live_grep theme=dropdown<cr>"
               :desc "Find Text"}
+             {1 :mp
+              2 "<cmd>Telescope buffers theme=dropdown previewer=false initial_mode=normal<cr>"
+              :desc "Switch Buffer"}
              {1 :<leader>fc
               2 "<cmd>Telescope commands theme=dropdown<cr>"
               :desc :Commands}
