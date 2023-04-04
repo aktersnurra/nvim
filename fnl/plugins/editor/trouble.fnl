@@ -79,7 +79,6 @@
              })
 
 {1 :folke/trouble.nvim
- :cmd [:Trouble :TroubleToggle]
  :keys [{1 :<leader>jt 2 :<cmd>TroubleToggle<cr> :desc :Trouble}]
  : opts
 }
