@@ -80,5 +80,4 @@
 
 {1 :folke/trouble.nvim
  :keys [{1 :<leader>jt 2 :<cmd>TroubleToggle<cr> :desc :Trouble}]
- : opts
-}
+ : opts}
