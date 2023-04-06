@@ -33,6 +33,8 @@
 (fn on-attach [bufnr]
   (each [_ mapping (ipairs mappings)]
     (match mapping
-      [mode key cmd desc] (vim.api.nvim_buf_set_keymap bufnr mode key cmd (vim.tbl_extend :force opts desc)))))
+      [mode key cmd desc] (vim.api.nvim_buf_set_keymap bufnr mode key cmd
+                                                       (vim.tbl_extend :force
+                                                                       opts desc)))))
 
 {: on-attach}

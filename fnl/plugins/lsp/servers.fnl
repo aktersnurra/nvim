@@ -16,11 +16,10 @@
  :pyright {}
  :rust_analyzer {:settings {:rust-analyzer {:lens {:enable true}
                                             :checkOnSave {:command :clippy}}}}
- :sqls {}
  :lua_ls {:settings {:Lua {:completion {:callSnippet :Replace}
-                                :workspace {:checkThirdParty false}
-                                :runtime {:version :LuaJIT
-                                          :path (vim.split package.path ";")}}}}
+                           :workspace {:checkThirdParty false}
+                           :runtime {:version :LuaJIT
+                                     :path (vim.split package.path ";")}}}}
  :taplo {}
  :terraformls {}
  :texlab {}
