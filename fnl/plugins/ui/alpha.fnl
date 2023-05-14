@@ -27,13 +27,13 @@
            [(dashboard.button :e "  New file" ":ene <BAR> startinsert <CR>")
             (dashboard.button :f "  Find file"
                               ":Telescope find_files theme=dropdown<CR>")
-            (dashboard.button :t "  Find text"
+            (dashboard.button :g "  Find text"
                               ":Telescope live_grep theme=dropdown<CR>")
             (dashboard.button :p "  Find project"
                               ":Telescope projects theme=dropdown<CR>")
             (dashboard.button :r "  Recently used files"
                               ":Telescope oldfiles theme=dropdown<CR>")
-            (dashboard.button :c "  Configuration"
+            (dashboard.button :t "  Configuration"
                               ":e ~/.config/nvim/init.lua <CR>")
             (dashboard.button :o "  Org"
                               ":Telescope find_files theme=dropdown cwd=~/.local/share/org<CR>")
