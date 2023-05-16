@@ -17,7 +17,8 @@
                   {})
   (vim.keymap.set :n :<s-tab>
                   "<cmd>Telescope buffers theme=dropdown previewer=false initial_mode=normal<cr>"
-                  {}))
+                  {})
+  {:menu {:width (- (vim.api.nvim_win_get_width 0) 4)}})
 
 {1 :ThePrimeagen/harpoon
  :event :BufReadPost
