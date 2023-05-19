@@ -1,5 +1,7 @@
 ;; Which-key provides a pop-up menu for some key mappings.
 
+(local icons (require :plugins.icons))
+
 (local opts {:plugins {:marks true
                        :registers true
                        :spelling {:enabled true :suggestions 20}
@@ -10,7 +12,9 @@
                                  :nav true
                                  :z true
                                  :g true}}
-             :icons {:breadcrumb "»" :separator " " :group "+"}
+             :icons {:breadcrumb (. icons :guillemet)
+                     :separator (.. (. icons :small-right-arrow) " ")
+                     :group "+"}
              :popup_mappings {:scroll_down :<c-d> :scroll_up :<c-u>}
              :window {:border :rounded :position :bottom :winblend 0}
              :layout {:height {:min 4 :max 25}

@@ -59,9 +59,11 @@
 
 (fn setup []
   (let [telescope (require :telescope)
-        actions (require :telescope.actions)]
-    (telescope.setup {:defaults {:prompt_prefix "   "
-                                 :selection_caret "> "
+        actions (require :telescope.actions)
+        icons (require :plugins.icons)]
+    (telescope.setup {:defaults {:prompt_prefix (.. " " (. icons :telescope)
+                                                    " ")
+                                 :selection_caret (.. (. icons :caret) " ")
                                  :path_display [:smart]
                                  :color_devicons false
                                  :pickers {:find_files {:theme :dropdown}}

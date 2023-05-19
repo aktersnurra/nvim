@@ -1,5 +1,7 @@
 ;; Pretty diagnostics.
 
+(local icons (require :plugins.icons))
+
 (local opts {:position :bottom
              ;; position of the list can be: bottom, top, left, right
              :height 10
@@ -69,15 +71,18 @@
              :auto_jump [:lsp_definitions]
              ;; for the given modes, automatically jump if there is only a single result
              :signs {;; icons / text used for a diagnostic
-                     :error ""
-                     :warning ""
-                     :hint ""
-                     :information ""
-                     :other "﫠"}
+                     :error (. icons :error)
+                     :warning (. icons :warn)
+                     :hint (. icons :hint)
+                     :information (. icons :info)
+                     :other (. icons :other)}
              :use_diagnostic_signs false
              ;; enabling this will use the signs defined in your lsp client
              })
 
 {1 :folke/trouble.nvim
- :keys [{1 :<leader>jt 2 :<cmd>TroubleToggle<cr> :desc :Trouble}]
+ :cmd [:Trouble :TroubleToggle]
+ :keys [{1 :<leader>jt
+         2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
+         :desc :Trouble}]
  : opts}

@@ -1,5 +1,7 @@
 ;; A customizable greeter.
 
+(local icons (require :plugins.icons))
+
 (local ascii-art ["     ##############..... ############## "
                   "   ##############......##############   "
                   "     ##########..........##########     "
@@ -24,20 +26,18 @@
     (let [dashboard (require :alpha.themes.dashboard)]
       (set dashboard.section.header.val ascii-art)
       (set dashboard.section.buttons.val
-           [(dashboard.button :e "  New file" ":ene <BAR> startinsert <CR>")
-            (dashboard.button :f "  Find file"
+           [(dashboard.button :f (.. (. icons :search) " Find file")
                               ":Telescope find_files theme=dropdown<CR>")
-            (dashboard.button :g "  Find text"
+            (dashboard.button :g (.. (. icons :text) "  Find text")
                               ":Telescope live_grep theme=dropdown<CR>")
-            (dashboard.button :p "  Find project"
+            (dashboard.button :p (.. (. icons :notebook) "  Find project")
                               ":Telescope projects theme=dropdown<CR>")
-            (dashboard.button :r "  Recently used files"
+            (dashboard.button :r (.. (. icons :clock) "  Recently used files")
                               ":Telescope oldfiles theme=dropdown<CR>")
-            (dashboard.button :t "  Configuration"
+            (dashboard.button :t (.. (. icons :cog) "  Configuration")
                               ":e ~/.config/nvim/init.lua <CR>")
-            (dashboard.button :o "  Org"
-                              ":Telescope find_files theme=dropdown cwd=~/.local/share/org<CR>")
-            (dashboard.button :q "  Quit Neovim" ":qa<CR>")])
+            (dashboard.button :o (.. (. icons :org) "  Org")
+                              ":Telescope find_files theme=dropdown cwd=~/.local/share/org<CR>")])
       (set dashboard.section.header.opts.hl :AlphaHeader)
       (set dashboard.section.buttons.opts.hl :AlphaButtons)
       (set dashboard.opts.opts.noautocmd true)

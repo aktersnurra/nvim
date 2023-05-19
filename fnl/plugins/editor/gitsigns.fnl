@@ -51,24 +51,26 @@
       [mode key cmd desc]
       (vim.keymap.set mode key cmd (vim.tbl_extend :force {:buffer bufnr} desc)))))
 
+(local icons (require :plugins.icons))
+
 (local signs {:add {:hl :GitSignsAdd
-                    :text "|"
+                    :text (. icons :git-add)
                     :numhl :GitSignsAddNr
                     :linehl :GitSignsAddLn}
               :change {:hl :GitSignsChange
-                       :text "|"
+                       :text (. icons :git-add)
                        :numhl :GitSignsChangeNr
                        :linehl :GitSignsChangeLn}
               :delete {:hl :GitSignsDelete
-                       :text "_"
+                       :text (. icons :git-delete)
                        :numhl :GitSignsDeleteNr
                        :linehl :GitSignsDeleteLn}
               :topdelete {:hl :GitSignsDelete
-                          :text "‾"
+                          :text (. icons :git-top-delete)
                           :numhl :GitSignsDeleteNr
                           :linehl :GitSignsDeleteLn}
               :changedelete {:hl :GitSignsChange
-                             :text "~"
+                             :text (. icons :git-change-delete)
                              :numhl :GitSignsChangeNr
                              :linehl :GitSignsChangeLn}})
 
