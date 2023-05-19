@@ -30,7 +30,7 @@
                               ":Telescope find_files theme=dropdown<CR>")
             (dashboard.button :g (.. (. icons :text) "  Find text")
                               ":Telescope live_grep theme=dropdown<CR>")
-            (dashboard.button :p (.. (. icons :notebook) "  Find project")
+            (dashboard.button :p (.. (. icons :cabinet) "  Find project")
                               ":Telescope projects theme=dropdown<CR>")
             (dashboard.button :r (.. (. icons :clock) "  Recently used files")
                               ":Telescope oldfiles theme=dropdown<CR>")
