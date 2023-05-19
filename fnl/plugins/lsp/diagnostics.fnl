@@ -1,9 +1,11 @@
 ;; Handlers for the requests and responses from and to the lsp server.
 
-(local signs [{:name :DiagnosticSignError :text ""}
-              {:name :DiagnosticSignWarn :text ""}
-              {:name :DiagnosticSignHint :text ""}
-              {:name :DiagnosticSignInfo :text ""}])
+(local icons (require :plugins.icons))
+
+(local signs [{:name :DiagnosticSignError :text (. icons :error)}
+              {:name :DiagnosticSignWarn :text (. icons :warn)}
+              {:name :DiagnosticSignHint :text (. icons :hint)}
+              {:name :DiagnosticSignInfo :text (. icons :info)}])
 
 (fn apply-signs []
   (each [_ sign (ipairs signs)]

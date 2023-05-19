@@ -1,5 +1,7 @@
 ;; Statusbar.
 
+(local icons (require :plugins.icons))
+
 (local disable [:neogitstatus
                 :netrw
                 :lir
@@ -27,7 +29,8 @@
 (local diagnostics {1 :diagnostics
                     :sources [:nvim_diagnostic]
                     :sections [:error :warn]
-                    :symbols {:error " " :warn " "}
+                    :symbols {:error (.. (. icons :error) " ")
+                              :warn (.. (. icons :warn) " ")}
                     :colored false
                     :disabled_buftypes [:nvim-tree]
                     :padding 0
@@ -40,7 +43,7 @@
              :cond hide-in-width})
 
 (local branch {1 "b:gitsigns_head"
-               :icon " "
+               :icon (. icons :git)
                :disabled_buftypes [:nvim-tree]
                :cond hide-in-width})
 
