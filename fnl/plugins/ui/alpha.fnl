@@ -26,7 +26,7 @@
     (let [dashboard (require :alpha.themes.dashboard)]
       (set dashboard.section.header.val ascii-art)
       (set dashboard.section.buttons.val
-           [(dashboard.button :f (.. (. icons :search) " Find file")
+           [(dashboard.button :f (.. (. icons :search) "  Find file")
                               ":Telescope find_files theme=dropdown<CR>")
             (dashboard.button :g (.. (. icons :text) "  Find text")
                               ":Telescope live_grep theme=dropdown<CR>")
