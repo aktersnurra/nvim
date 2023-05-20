@@ -29,7 +29,8 @@
         [:TermOpen
          {:pattern ["term://*toggleterm#*"] :command "setlocal spell!"}]
         [:VimResized {:command "tabdo wincmd ="}]
-        [:FocusGained {:command :checktime}]
+        [[:FocusGained :BufEnter :CursorHold :CursorHoldI]
+         {:command :checktime}]
         [:TermOpen
          {:pattern "term://*toggleterm#*"
           :callback (fn []
