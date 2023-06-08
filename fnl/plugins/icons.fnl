@@ -38,4 +38,8 @@
  :play ""
  :star ""
  :line "‒"
+ :ignored ""
+ :unstaged ""
+ :staged ""
+ :conflict ""
 }
