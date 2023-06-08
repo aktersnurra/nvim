@@ -14,6 +14,8 @@
                            :lazy
                            :netrw
                            :Outline
+                           :neo-tree
+                           :neo-tree-popup
                            :NeogitStatus
                            :NeogitCommitMessage
                            :NeogitNotification

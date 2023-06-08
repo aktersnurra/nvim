@@ -7,6 +7,7 @@
                 :lir
                 :lazy
                 :alpha
+                :neo-tree
                 :Outline
                 :NeogitStatus
                 :NeogitCommitMessage])
@@ -87,4 +88,4 @@
 {1 :nvim-lualine/lualine.nvim
  :event :BufReadPost
  : opts
- :dependencies [:kyazdani42/nvim-web-devicons :arkav/lualine-lsp-progress]}
+ :dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress]}
