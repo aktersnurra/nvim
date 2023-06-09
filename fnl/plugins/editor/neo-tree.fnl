@@ -1,7 +1,5 @@
 ;; File manager.
 
-(local icons (require :plugins.icons))
-
 (fn init []
   (set vim.g.neo_tree_remove_legacy_commands 1)
   (if (= (vim.fn.argc) 1)
