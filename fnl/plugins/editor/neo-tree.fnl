@@ -28,8 +28,8 @@
                             :. :toggle_hidden
                             :e :focus_preview}}
         :default_component_configs {:indent {:with_expanders true
-                                             :expander_collapsed ""
-                                             :expander_expanded ""
+                                             :expander_collapsed ""
+                                             :expander_expanded ""
                                              :expander_highlight :NeoTreeExpander}}})
 
 {1 :nvim-neo-tree/neo-tree.nvim
