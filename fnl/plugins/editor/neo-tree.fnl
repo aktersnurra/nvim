@@ -41,7 +41,7 @@
                                :handler cursorline.show}]})
 
 {1 :nvim-neo-tree/neo-tree.nvim
- :keys [{1 "-" 2 :<cmd>Neotree<cr> :desc "Open Neotree"}]
+ :keys [{1 "-" 2 "<cmd>Neotree filesystem reveal<cr>" :desc "Open Neotree"}]
  :event :VeryLazy
  :cmd :Neotree
  : init
