@@ -30,7 +30,7 @@
   "neo-tree.nvim": { "branch": "v2.x", "commit": "d883632bf8f92f1d5abea4a9c28fb2f90aa795aa" },
   "neogit": { "branch": "master", "commit": "68a3e90e9d1ed9e362317817851d0f34b19e426b" },
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "f8e2b3fe8ecefaddf9ded87db03daa891a6975e2" },
-  "nui.nvim": { "branch": "main", "commit": "643e9afb9411f5ebd95efb43437692e74238a4a3" },
+  "nui.nvim": { "branch": "main", "commit": "f2841533540eb60d6878964a3cd3f8196e1f200c" },
   "null-ls.nvim": { "branch": "main", "commit": "a138b14099e9623832027ea12b4631ddd2a49256" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
   "nvim-bqf": { "branch": "main", "commit": "5895e26e34d032f48d0b9a843da1eb24e25680ea" },
