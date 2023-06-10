@@ -81,7 +81,7 @@
              })
 
 {1 :folke/trouble.nvim
- :cmd [:Trouble :TroubleToggle]
+ ; :cmd [:Trouble :TroubleToggle]
  :keys [{1 :<leader>jt
          2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
          :desc :Trouble}]
