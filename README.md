@@ -1,6 +1,6 @@
 # nvim
 
-My neovim config written in fennel.
+My neovim rice in fennel.
 
 # Dependencies
 
