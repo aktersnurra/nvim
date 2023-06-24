@@ -53,40 +53,26 @@
 
 (local icons (require :plugins.icons))
 
-(local signs {:add {:hl :GitSignsAdd
-                    :text (. icons :git-add)
-                    :numhl :GitSignsAddNr
-                    :linehl :GitSignsAddLn}
-              :change {:hl :GitSignsChange
-                       :text (. icons :git-add)
-                       :numhl :GitSignsChangeNr
-                       :linehl :GitSignsChangeLn}
-              :delete {:hl :GitSignsDelete
-                       :text (. icons :git-delete)
-                       :numhl :GitSignsDeleteNr
-                       :linehl :GitSignsDeleteLn}
-              :topdelete {:hl :GitSignsDelete
-                          :text (. icons :git-top-delete)
-                          :numhl :GitSignsDeleteNr
-                          :linehl :GitSignsDeleteLn}
-              :changedelete {:hl :GitSignsChange
-                             :text (. icons :git-change-delete)
-                             :numhl :GitSignsChangeNr
-                             :linehl :GitSignsChangeLn}})
+(local signs {:add {:text (. icons :git-add)}
+              :change {:text (. icons :git-add)}
+              :delete {:text (. icons :git-delete)}
+              :topdelete {:text (. icons :git-top-delete)}
+              :changedelete {:text (. icons :git-change-delete)}
+              :untracked {:text (. icons :git-untracked)}})
 
 (local opts {: signs
              :signcolumn true
              :numhl false
              :linehl false
              :word_diff false
-             :watch_gitdir {:interval 1000 :follow_files true}
+             :watch_gitdir {:follow_files true}
              :attach_to_untracked true
              :current_line_blame false
              :current_line_blame_opts {:virt_text true
                                        :virt_text_pos :eol
                                        :delay 1000
                                        :ignore_whitespace false}
-             :current_line_blame_formatter_opts {:relative_time false}
+             :current_line_blame_formatter "<author>, <author_time:%Y-%m-%d> - <summary>"
              :sign_priority 6
              :update_debounce 100
              :status_formatter nil
@@ -96,8 +82,10 @@
                               :relative :cursor
                               :row 0
                               :col 1}
-             :yadm {:enable false}
-             :on_attach (fn [bufnr]
-                          (on-attach bufnr))})
+             :yadm {:enable false}})
 
-{1 :lewis6991/gitsigns.nvim :event [:BufReadPost :BufNewFile] : opts}
+{1 :lewis6991/gitsigns.nvim
+ :event [:BufReadPost :BufNewFile]
+ : opts
+ :on_attach (fn [bufnr]
+              (on-attach bufnr))}
