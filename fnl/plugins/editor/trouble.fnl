@@ -1,9 +1,7 @@
 ;; Pretty diagnostics.
 
-(local icons (require :plugins.icons))
-
 (local opts {:position :bottom
-             ;; position of the list can be: bottom, top, left, right
+             ; position of the list can be: bottom, top, left, right
              :height 10
              ;; height of the trouble list when position is top or bottom
              :width 50
@@ -70,19 +68,11 @@
              ;; automatically fold a file trouble list at creation
              :auto_jump [:lsp_definitions]
              ;; for the given modes, automatically jump if there is only a single result
-             :signs {;; icons / text used for a diagnostic
-                     :error (. icons :error)
-                     :warning (. icons :warn)
-                     :hint (. icons :hint)
-                     :information (. icons :info)
-                     :other (. icons :other)}
-             :use_diagnostic_signs false
-             ;; enabling this will use the signs defined in your lsp client
-             })
+             :use_diagnostic_signs true})
 
 {1 :folke/trouble.nvim
- ; :cmd [:Trouble :TroubleToggle]
+ :cmd [:TroubleToggle :Trouble]
+ : opts
  :keys [{1 :<leader>jt
          2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
-         :desc :Trouble}]
- : opts}
+         :desc :Trouble}]}

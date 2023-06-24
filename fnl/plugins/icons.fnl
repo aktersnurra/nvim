@@ -22,6 +22,7 @@
  :git-delete "_"
  :git-top-delete "‾"
  :git-change-delete "~"
+ :git-untracked "┆"
  :telescope ""
  :caret ">"
  :cmd ""
