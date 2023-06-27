@@ -13,6 +13,7 @@
                                         (vim.lsp.buf.range_formatting [] [0 0]
                                                                       [(vim.fn.line "$"
                                                                                     0)]))]}}}
+ :ocamllsp {}
  :pyright {}
  :rust_analyzer {:settings {:rust-analyzer {:lens {:enable true}
                                             :checkOnSave {:command :clippy}}}}
