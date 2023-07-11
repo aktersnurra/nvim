@@ -2,7 +2,7 @@
 
 {:error ""
  :warn ""
- :hint ""
+ :hint ""
  :info ""
  :git " "
  :search ""
