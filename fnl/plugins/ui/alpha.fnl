@@ -32,7 +32,7 @@
                               ":Telescope live_grep theme=dropdown<CR>")
             (dashboard.button :p (.. (. icons :cabinet) "  Find project")
                               ":Telescope projects theme=dropdown<CR>")
-            (dashboard.button :r (.. (. icons :clock) "  Recently used files")
+            (dashboard.button :r (.. (. icons :recent-files) "  Recently used files")
                               ":Telescope oldfiles theme=dropdown<CR>")
             (dashboard.button :t (.. (. icons :cog) "  Configuration")
                               ":e ~/.config/nvim/init.lua <CR>")
