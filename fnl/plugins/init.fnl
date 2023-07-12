@@ -7,8 +7,8 @@
       (let [fname (fname:match "^(.*)%.fnl$")]
         (table.insert plugins (require (.. :plugins.editor. fname)))))
     (table.insert plugins (require :plugins.lsp))
+    (table.insert plugins (require :plugins.core.hotpot))
     plugins))
 
-(let [_ (require :plugins.core.hotpot)
-      lazy (require :plugins.core.lazy)]
+(let [lazy (require :plugins.core.lazy)]
   (lazy.setup (get-plugins)))
