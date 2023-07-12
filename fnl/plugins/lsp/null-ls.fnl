@@ -24,6 +24,7 @@
                                 diagnostics.yamllint
                                 formatting.fnlfmt
                                 formatting.markdownlint
+                                formatting.ocamlformat
                                 formatting.prettierd
                                 formatting.ruff
                                 formatting.rustfmt
