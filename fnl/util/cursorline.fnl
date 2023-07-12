@@ -1,12 +1,12 @@
-;; Functions for showing and hiding the cursorline.
+;; Shows (hides) the cursorline in the (un)focused window.
 
-(local ignore-filetypes [:neo-tree])
+(local ignored [:neo-tree])
 
 (fn filetype []
   vim.bo.filetype)
 
 (fn ignore []
-  (vim.tbl_contains ignore-filetypes (filetype)))
+  (vim.tbl_contains ignored (filetype)))
 
 (fn show []
   (let [(ok cl) (pcall vim.api.nvim_win_get_var 0 :auto-cursorline)]
