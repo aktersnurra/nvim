@@ -15,7 +15,7 @@
          "<cmd>lua vim.diagnostic.open_float()<CR>"
          {:desc :Diagnostics}]
         [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
-        [:n :gv "<cmd>lua vim.lsp.buf.rename()<cr>" {:desc :Rename}]
+        [:n :ge "<cmd>lua vim.lsp.buf.rename()<cr>" {:desc :Rename}]
         [:n
          :<leader>a
          "<cmd>lua vim.lsp.buf.code_action()<cr>"
