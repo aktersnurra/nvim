@@ -1,26 +1,12 @@
 ;; Setup of lsps.
 
-(fn get-client-by-id [args]
-  (let [client-id (. (. args :data) :client_id)]
-    (vim.lsp.get_client_by_id client-id)))
-
-(fn format-modifications [client buffer]
-  (let [lsp-format-modifications (require :lsp-format-modifications)]
-    (vim.api.nvim_buf_create_user_command buffer :FormatModifications
-                                          (fn []
-                                            (lsp-format-modifications.format_modifications client
-                                                                                           buffer))
-                                          {})))
-
 (fn on-attach []
   (vim.api.nvim_create_autocmd :LspAttach
                                {:callback (fn [args]
                                             (let [keymaps (require :plugins.lsp.keymaps)
                                                   buffer (. args :buf)
-                                                  client (get-client-by-id args)]
-                                              (keymaps.on-attach buffer)
-                                              (format-modifications client
-                                                                    buffer)))}))
+                                                  ]
+                                              (keymaps.on-attach buffer)))}))
 
 (fn capabilities []
   (let [cmp-lsp (require :cmp_nvim_lsp)]
@@ -53,7 +39,6 @@
  :dependencies [:mason.nvim
                 :williamboman/mason-lspconfig.nvim
                 :b0o/SchemaStore.nvim
-                :joechrisellis/lsp-format-modifications.nvim
                 :hrsh7th/cmp-nvim-lsp]
  :config (fn []
            (setup))}
