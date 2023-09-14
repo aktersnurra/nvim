@@ -1,55 +1,49 @@
 ;; Add git signs to source files.
 
-(local mappings [[:n
-                  :mq
-                  "<cmd>Gitsigns diffthis HEAD<cr>"
-                  {:desc "Gitsigns diff"}]
-                 [:n
-                  :<leader>gR
-                  "<cmd>lua require 'gitsigns'.reset_buffer()<cr>"
-                  {:desc "Reset Buffer"}]
-                 [:n
-                  :<leader>gd
-                  "<cmd>Gitsigns diffthis HEAD<cr>"
-                  {:desc :Diff}]
-                 [:n
-                  :<leader>gj
-                  "<cmd>lua require 'gitsigns'.next_hunk()<cr>"
-                  {:desc "Next Hunk"}]
-                 [:n
-                  :<leader>gk
-                  "<cmd>lua require 'gitsigns'.prev_hunk()<cr>"
-                  {:desc "Prev Hunk"}]
-                 [:n
-                  :<leader>gl
-                  "<cmd>lua require 'gitsigns'.blame_line()<cr>"
-                  {:desc :Blame}]
-                 [:n
-                  :<leader>gp
-                  "<cmd>lua require 'gitsigns'.preview_hunk()<cr>"
-                  {:desc "Preview Hunk"}]
-                 [:n
-                  :<leader>gr
-                  "<cmd>lua require 'gitsigns'.reset_hunk()<cr>"
-                  {:desc "Reset Hunk"}]
-                 [:n
-                  :<leader>gs
-                  "<cmd>lua require 'gitsigns'.stage_hunk()<cr>"
-                  {:desc "Stage Hunk"}]
-                 [:n
-                  :<leader>gu
-                  "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>"
-                  {:desc "Undo Stage Hunk"}]
-                 [[:o :x]
-                  :<leader>gn
-                  ":<C-U>Gitsigns select_hunk<CR>"
-                  {:desc "GitSigns Select Hunk"}]])
-
-(fn on-attach [bufnr]
-  (each [_ mapping (ipairs mappings)]
-    (match mapping
-      [mode key cmd desc]
-      (vim.keymap.set mode key cmd (vim.tbl_extend :force {:buffer bufnr} desc)))))
+(local keys [{1 :mq
+              2 "<cmd>Gitsigns diffthis HEAD<cr>"
+              :mode :n
+              :desc "Gitsigns diff"}
+             {1 :<leader>gR
+              2 "<cmd>lua require 'gitsigns'.reset_buffer()<cr>"
+              :mode :n
+              :desc "Reset Buffer"}
+             {1 :<leader>gd
+              2 "<cmd>Gitsigns diffthis HEAD<cr>"
+              :mode :n
+              :desc :Diff}
+             {1 :<leader>gj
+              2 "<cmd>lua require 'gitsigns'.next_hunk()<cr>"
+              :mode :n
+              :desc "Next Hunk"}
+             {1 :<leader>gk
+              2 "<cmd>lua require 'gitsigns'.prev_hunk()<cr>"
+              :mode :n
+              :desc "Prev Hunk"}
+             {1 :<leader>gl
+              2 "<cmd>lua require 'gitsigns'.blame_line()<cr>"
+              :mode :n
+              :desc :Blame}
+             {1 :<leader>gp
+              2 "<cmd>lua require 'gitsigns'.preview_hunk()<cr>"
+              :mode :n
+              :desc "Preview Hunk"}
+             {1 :<leader>gr
+              2 "<cmd>lua require 'gitsigns'.reset_hunk()<cr>"
+              :mode :n
+              :desc "Reset Hunk"}
+             {1 :<leader>gs
+              2 "<cmd>lua require 'gitsigns'.stage_hunk()<cr>"
+              :mode :n
+              :desc "Stage Hunk"}
+             {1 :<leader>gu
+              2 "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>"
+              :mode :n
+              :desc "Undo Stage Hunk"}
+             {1 :<leader>gn
+              2 ":<C-U>Gitsigns select_hunk<CR>"
+              :mode [:o :x]
+              :desc "GitSigns Select Hunk"}])
 
 (local icons (require :plugins.icons))
 
@@ -84,8 +78,4 @@
                               :col 1}
              :yadm {:enable false}})
 
-{1 :lewis6991/gitsigns.nvim
- :event [:BufReadPost :BufNewFile]
- : opts
- :on_attach (fn [bufnr]
-              (on-attach bufnr))}
+{1 :lewis6991/gitsigns.nvim :event [:BufReadPre :BufNewFile] : opts : keys}
