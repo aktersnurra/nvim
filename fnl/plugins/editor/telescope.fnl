@@ -7,7 +7,7 @@
              {1 :mp
               2 "<cmd>Telescope buffers theme=dropdown previewer=false initial_mode=normal<cr>"
               :desc "Switch Buffer"}
-             {1 :<leader>fc
+             {1 :<leader>fC
               2 "<cmd>Telescope commands theme=dropdown<cr>"
               :desc :Commands}
              {1 :<leader>fH
@@ -44,10 +44,7 @@
              {1 :<leader>js
               2 "<cmd>Telescope diagnostics theme=dropdown<cr>"
               :desc "Telescope Diagnostics"}
-             {1 :<leader>gb
-              2 "<cmd>Telescope git_branches theme=dropdown<cr>"
-              :desc "Checkout Branch"}
-             {1 :<leader>gc
+             {1 :<leader>fc
               2 "<cmd>Telescope git_commits theme=dropdown<cr>"
               :desc "Checkout Commit"}
              {1 :<leader>lS
