@@ -30,10 +30,10 @@
          {:desc "Code Lens"}]
         [:n :<leader>li :<cmd>LspInfo<cr> {:desc "Lsp Info"}]])
 
-(fn on-attach [bufnr]
+(fn on-attach [buffer]
   (each [_ mapping (ipairs mappings)]
     (match mapping
-      [mode key cmd desc] (vim.api.nvim_buf_set_keymap bufnr mode key cmd
+      [mode key cmd desc] (vim.api.nvim_buf_set_keymap buffer mode key cmd
                                                        (vim.tbl_extend :force
                                                                        opts desc)))))
 
