@@ -24,6 +24,10 @@
          :<leader>e
          "<cmd>lua vim.lsp.buf.format { async = true }<cr>"
          {:desc :Format}]
+        [:v
+         :<leader>e
+         "<cmd>lua vim.lsp.buf.format { async = true }<cr>"
+         {:desc :Format}]
         [:n
          :<leader>i
          "<cmd>lua vim.lsp.codelens.run()<cr>"
