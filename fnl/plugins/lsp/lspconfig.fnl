@@ -4,8 +4,8 @@
   (vim.api.nvim_create_autocmd :LspAttach
                                {:callback (fn [args]
                                             (let [keymaps (require :plugins.lsp.keymaps)
-                                                  bufnr (. args :buf)]
-                                              (keymaps.on-attach bufnr)))}))
+                                                  buffer (. args :buf)]
+                                              (keymaps.on-attach buffer)))}))
 
 (fn capabilities []
   (let [cmp-lsp (require :cmp_nvim_lsp)]
