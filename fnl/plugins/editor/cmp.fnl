@@ -31,7 +31,9 @@
                           {:name :spell}
                           {:name :orgmode}
                           {:name :buffer :keyword_length 4}
-                          {:name :path :keyword_length 6}]
+                          {:name :path :keyword_length 6}
+                          {:name :vim-dadbod-completion}
+                          {:name :git}]
                 :formatting {:format (lspkind.cmp_format {:with_text true
                                                           :menu {:buffer ""
                                                                  :nvim_lsp ""
@@ -55,6 +57,7 @@
                 :onsails/lspkind-nvim
                 :hrsh7th/cmp-nvim-lsp
                 :hrsh7th/cmp-cmdline
+                :petertriho/cmp-git
                 :L3MON4D3/LuaSnip
                 :rafamadriz/friendly-snippets
                 :hrsh7th/cmp-path
