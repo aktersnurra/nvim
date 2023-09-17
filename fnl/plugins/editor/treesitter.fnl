@@ -2,24 +2,25 @@
 ;; In the neovim context it helps with better coloring.
 
 (local opts {:ensure_installed [:c
-                                :rust
-                                :lua
-                                :hcl
-                                :org
-                                :haskell
-                                :python
-                                :fennel
-                                :make
-                                :go
-                                :ocaml
-                                :erlang
-                                :vim
-                                :yaml
-                                :html
-                                :toml
                                 :dockerfile
+                                :erlang
+                                :fennel
+                                :go
+                                :haskell
+                                :hcl
+                                :html
+                                :latex
+                                :lua
+                                :make
                                 :markdown
-                                :latex]
+                                :ocaml
+                                :org
+                                :python
+                                :rust
+                                :sql
+                                :toml
+                                :vim
+                                :yaml]
              :sync_install false
              :ignore_install [""]
              :autopairs {:enable true}
