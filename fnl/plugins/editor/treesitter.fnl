@@ -35,7 +35,12 @@
                                          :ia "@parameter.inner"
                                          :af "@function.outer"
                                          :if "@function.inner"
+                                         :ii "@conditional.outer"
+                                         :ai "@conditional.inner"
+                                         :il "@loop.outer"
+                                         :al "@loop.inner"
                                          :ac "@class.outer"
+                                         :at "@comment.outer"
                                          :ic {:query "@class.inner"
                                               :desc "Select inner part of a class region"}
                                          :as {:query "@scope"
@@ -44,7 +49,30 @@
                                :selection_modes {"@parameter.outer" :v
                                                  "@function.outer" :V
                                                  "@class.outer" :<c-v>}
-                               :include_surrounding_whitespace true}}})
+                               :include_surrounding_whitespace true}
+                      :swap {:enable true
+                             :swap_next {:<leader>a "@parameter.inner"}
+                             :swap_previous {:<leader>A "@parameter.inner"}}
+                      :move {:enable true
+                             :set_jumps true
+                             :goto_next_start {"]m" "@function.outer"
+                                               "]]" {:query "@class.outer"
+                                                     :desc "Next class start"}
+                                               "]o" "@loop.*"
+                                               "]s" {:query "@scope"
+                                                     :query_group :locals
+                                                     :desc "Next scope"}
+                                               "]z" {:query "@fold"
+                                                     :query_group :folds
+                                                     :desc "Next fold"}}
+                             :goto_next_end {"]M" "@function.outer"
+                                             "][" "@class.outer"}
+                             :goto_previous_start {"[m" "@function.outer"
+                                                   "[[" "@class.outer"}
+                             :goto_previous_end {"[M" "@function.outer"
+                                                 "[]" "@class.outer"}
+                             :goto_next {"]i" "@conditional.outer"}
+                             :goto_previous {"[i" "@conditional.outer"}}}})
 
 (fn setup []
   (let [treesitter (require :nvim-treesitter.configs)]
