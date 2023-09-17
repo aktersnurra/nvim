@@ -31,7 +31,9 @@
         :playground {:enable true}
         :textobjects {:select {:enable true
                                :lookahead true
-                               :keymaps {:af "@function.outer"
+                               :keymaps {:aa "@parameter.outer"
+                                         :ia "@parameter.inner"
+                                         :af "@function.outer"
                                          :if "@function.inner"
                                          :ac "@class.outer"
                                          :ic {:query "@class.inner"
