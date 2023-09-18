@@ -16,6 +16,7 @@
                  :ft [:sql :plsql]
                  :lazy true}]
  : keys
+ :event :VeryLazy
  :init (fn []
          (set vim.g.db_ui_use_nerd_fonts 1)
          (set vim.g.db_ui_winwidth 40)
