@@ -1,10 +1,6 @@
 ;; Add git signs to source files.
 
-(local keys [{1 :mq
-              2 "<cmd>Gitsigns diffthis HEAD<cr>"
-              :mode :n
-              :desc "Gitsigns diff"}
-             {1 :<leader>gR
+(local keys [{1 :<leader>gR
               2 "<cmd>lua require 'gitsigns'.reset_buffer()<cr>"
               :mode :n
               :desc "Reset Buffer"}
