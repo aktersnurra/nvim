@@ -19,7 +19,7 @@
              {1 :<leader>fS
               2 "<cmd>Telescope grep_string theme=dropdown<cr>"
               :desc "Find String"}
-             {1 :<leader>fb
+             {1 :<leader>gb
               2 "<cmd>Telescope git_branches theme=dropdown<cr>"
               :desc "Checkout Branch"}
              {1 :<leader>ff 2 :<cmd>FindFiles<cr> :desc "Find files"}
@@ -44,7 +44,7 @@
              {1 :<leader>js
               2 "<cmd>Telescope diagnostics theme=dropdown<cr>"
               :desc "Telescope Diagnostics"}
-             {1 :<leader>fc
+             {1 :<leader>gc
               2 "<cmd>Telescope git_commits theme=dropdown<cr>"
               :desc "Checkout Commit"}
              {1 :<leader>lS
