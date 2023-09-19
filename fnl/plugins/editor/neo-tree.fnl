@@ -42,7 +42,7 @@
 
 {1 :nvim-neo-tree/neo-tree.nvim
  :keys [{1 "-" 2 "<cmd>Neotree filesystem reveal<cr>" :desc "Open Neotree"}]
- :event :VeryLazy
+ ; :event :VeryLazy
  :cmd :Neotree
  : init
  : deactivate
