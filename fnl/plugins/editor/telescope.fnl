@@ -1,5 +1,11 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
 
+(local extensions [:fzf :frecency :orgmode :projects :git_worktree :harpoon])
+
+(fn load-extensions [telescope]
+  (each [_ extension (ipairs extensions)]
+    (telescope.load_extension extension)))
+
 (local keys [{1 :mf 2 :<cmd>FindFiles<cr> :desc "Find Files"}
              {1 :mg
               2 "<cmd>Telescope live_grep theme=dropdown<cr>"
@@ -130,11 +136,7 @@
                                          :override_generic_sorter true
                                          :override_file_sorter true
                                          :case_mode :smart_case}}})
-    (telescope.load_extension :fzf)
-    (telescope.load_extension :frecency)
-    (telescope.load_extension :orgmode)
-    (telescope.load_extension :projects)
-    (telescope.load_extension :harpoon)))
+    (load-extensions telescope)))
 
 {1 :nvim-telescope/telescope.nvim
  :cmd :Telescope

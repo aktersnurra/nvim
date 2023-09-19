@@ -9,9 +9,4 @@
               :mode :n
               :desc "Create a worktree"}])
 
-{1 :ThePrimeagen/git-worktree.nvim
- :event :VeryLazy
- : keys
- :init (fn []
-         (let [telescope (require :telescope)]
-           (telescope.load_extension :git_worktree)))}
+{1 :ThePrimeagen/git-worktree.nvim : keys}
