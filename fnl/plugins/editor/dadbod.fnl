@@ -1,10 +1,10 @@
 ;; Plugins for interacting with databases.
 
-(local keys [{1 :<leader>wn
+(local keys [{1 :<leader>dn
               2 :<cmd>DBUIToggle<cr>
               :mode :n
               :desc "Toggle Dadbod UI"}
-             {1 :<leader>we
+             {1 :<leader>de
               2 :<cmd>DBUIAddConnection<cr>
               :mode :n
               :desc "Add DB connection"}])

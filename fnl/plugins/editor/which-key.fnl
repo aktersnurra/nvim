@@ -28,14 +28,17 @@
              :triggers_blacklist {:i [:j :k] :v [:j :k]}})
 
 (local groups {:mode [:n :v]
+               :<leader>d {:name :+db}
                :<leader>f {:name :+find}
                :<leader>g {:name :+git}
+               :<leader>i {:name :+diffview}
                :<leader>j {:name :+diagnostics}
                :<leader>l {:name :+lsp}
                :<leader>o {:name :+orgmode}
                :<leader>r {:name :+replace}
                :<leader>s {:name :+session}
-               :<leader>w {:name :+db}})
+               :<leader>w {:name :+worktree}
+               })
 
 (fn setup []
   (let [which-key (require :which-key)]
