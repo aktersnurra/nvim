@@ -2,7 +2,8 @@
 ;; In the neovim context it helps with better coloring.
 
 (local opts
-       {:ensure_installed [:c
+       {:ensure_installed [:bash
+                           :c
                            :dockerfile
                            :erlang
                            :fennel
