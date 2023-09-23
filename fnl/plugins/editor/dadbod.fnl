@@ -1,5 +1,11 @@
 ;; Plugins for interacting with databases.
 
+(local dependencies [{1 :tpope/vim-dadbod :lazy true}
+                     {1 :tpope/vim-dotenv :lazy true}
+                     {1 :kristijanhusak/vim-dadbod-completion
+                      :ft [:sql :plsql]
+                      :lazy true}])
+
 (local keys [{1 :<leader>dn
               2 :<cmd>DBUIToggle<cr>
               :mode :n
@@ -14,11 +20,4 @@
   (set vim.g.db_ui_winwidth 40)
   (set vim.g.db_ui_notification_width 39))
 
-{1 :kristijanhusak/vim-dadbod-ui
- :dependencies [{1 :tpope/vim-dadbod :lazy true}
-                {1 :tpope/vim-dotenv :lazy true}
-                {1 :kristijanhusak/vim-dadbod-completion
-                 :ft [:sql :plsql]
-                 :lazy true}]
- : keys
- : init}
+{1 :kristijanhusak/vim-dadbod-ui : dependencies : keys : init}

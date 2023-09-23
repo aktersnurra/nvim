@@ -1,5 +1,9 @@
 ;; Terminal inside nvim.
 
+(local keys [{1 :<leader>t 2 :<cmd>ToggleTerm<cr> :desc :Terminal}])
+
+(local opts {:size 24 :shade_terminals false})
+
 (local auto-cmds [[:TermOpen
                    {:pattern "term://*toggleterm#*"
                     :callback (fn []
@@ -19,8 +23,4 @@
   (let [cmds (require :util.cmds)]
     (cmds.create-auto-cmds auto-cmds)))
 
-{1 :akinsho/toggleterm.nvim
- :cmd :ToggleTerm
- : init
- :keys [{1 :<leader>t 2 :<cmd>ToggleTerm<cr> :desc :Terminal}]
- :opts {:size 24 :shade_terminals false}}
+{1 :akinsho/toggleterm.nvim :cmd :ToggleTerm : init : keys : opts}

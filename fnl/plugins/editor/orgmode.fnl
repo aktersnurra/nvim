@@ -1,5 +1,11 @@
 ;; Orgmode for nvim.
 
+(local keys [{1 :ga 2 :<cmd>OrgAgendaPrompt<cr> :desc "Open agenda prompt"}
+             {1 :gc 2 :<cmd>OrgCapturePrompt<cr> :desc "Open capture prompt"}
+             {1 :gm
+              2 "<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
+              :desc "Search headings"}])
+
 (local user-cmds [[:OrgAgendaPrompt
                    (lambda []
                      (let [orgmode (require :orgmode)]
@@ -40,12 +46,4 @@
     (orgmode.setup_ts_grammar)
     (orgmode.setup opts)))
 
-{1 :nvim-orgmode/orgmode
- : config
- : init
- :event :BufReadPost
- :keys [{1 :ga 2 :<cmd>OrgAgendaPrompt<cr> :desc "Open agenda prompt"}
-        {1 :gc 2 :<cmd>OrgCapturePrompt<cr> :desc "Open capture prompt"}
-        {1 :gm
-         2 "<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
-         :desc "Search headings"}]}
+{1 :nvim-orgmode/orgmode : config : init :event :BufReadPost : keys}

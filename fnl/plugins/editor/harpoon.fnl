@@ -45,11 +45,9 @@
                   {})
   {:menu {:width (- (vim.api.nvim_win_get_width 0) 4)}})
 
-{1 :ThePrimeagen/harpoon
- :event :BufReadPost
- : init
- :keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
-        {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
-        {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
-        {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}]
- : config}
+(local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
+             {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
+             {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
+             {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}])
+
+{1 :ThePrimeagen/harpoon :event :BufReadPost : init : keys : config}
