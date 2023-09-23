@@ -1,5 +1,9 @@
 ;; Git ui.
 
+(local dependencies [:nvim-lua/plenary.nvim])
+
+(local keys [{1 :<leader>gm 2 :<cmd>Neogit<cr> :desc :Neogit}])
+
 (local auto-cmds [[:FileType
                    {:pattern [:NeogitStatus
                               :NeogitCommitMessage
@@ -13,9 +17,4 @@
 
 (local opts {:integrations {:diffview true :telescope true}})
 
-{1 :TimUntersberger/neogit
- :cmd :Neogit
- : opts
- : init
- :dependencies [:nvim-lua/plenary.nvim]
- :keys [{1 :<leader>gm 2 :<cmd>Neogit<cr> :desc :Neogit}]}
+{1 :TimUntersberger/neogit :cmd :Neogit : opts : init : dependencies : keys}

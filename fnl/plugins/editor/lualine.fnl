@@ -85,7 +85,6 @@
                                  :lualine_z [:location :progress]}
              :extensions []})
 
-{1 :nvim-lualine/lualine.nvim
- :event :BufReadPost
- : opts
- :dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress]}
+(local dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress])
+
+{1 :nvim-lualine/lualine.nvim :event :BufReadPost : opts : dependencies}

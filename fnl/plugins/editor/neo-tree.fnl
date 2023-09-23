@@ -1,5 +1,9 @@
 ;; File manager.
 
+(local dependencies [:nvim-lua/plenary.nvim
+                     :nvim-tree/nvim-web-devicons
+                     :MunifTanjim/nui.nvim])
+
 (local cursorline (require :util.cursorline))
 
 (fn init []
@@ -42,11 +46,8 @@
 
 {1 :nvim-neo-tree/neo-tree.nvim
  :keys [{1 "-" 2 "<cmd>Neotree filesystem reveal<cr>" :desc "Open Neotree"}]
- ; :event :VeryLazy
  :cmd :Neotree
  : init
  : deactivate
  : opts
- :dependencies [:nvim-lua/plenary.nvim
-                :nvim-tree/nvim-web-devicons
-                :MunifTanjim/nui.nvim]}
+ : dependencies}

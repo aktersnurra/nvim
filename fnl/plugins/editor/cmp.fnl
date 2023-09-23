@@ -1,5 +1,16 @@
 ;; Configuration for completion plugin.
 
+(local dependencies [:hrsh7th/cmp-buffer
+                     :onsails/lspkind-nvim
+                     :hrsh7th/cmp-nvim-lsp
+                     :hrsh7th/cmp-cmdline
+                     :petertriho/cmp-git
+                     :L3MON4D3/LuaSnip
+                     :rafamadriz/friendly-snippets
+                     :hrsh7th/cmp-path
+                     :saadparwaiz1/cmp_luasnip
+                     :f3fora/cmp-spell])
+
 (fn config []
   (let [cmp (require :cmp)
         lspkind (require :lspkind)
@@ -52,16 +63,4 @@
                                :select false}
                 :experimental {:ghost_text false :native_menu false}})))
 
-{1 :hrsh7th/nvim-cmp
- :dependencies [:hrsh7th/cmp-buffer
-                :onsails/lspkind-nvim
-                :hrsh7th/cmp-nvim-lsp
-                :hrsh7th/cmp-cmdline
-                :petertriho/cmp-git
-                :L3MON4D3/LuaSnip
-                :rafamadriz/friendly-snippets
-                :hrsh7th/cmp-path
-                :saadparwaiz1/cmp_luasnip
-                :f3fora/cmp-spell]
- :event :InsertEnter
- : config}
+{1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}

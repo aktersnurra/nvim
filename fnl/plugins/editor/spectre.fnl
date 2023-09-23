@@ -78,10 +78,9 @@
              :is_open_target_win true
              :is_insert_mode false})
 
-{1 :windwp/nvim-spectre
- :event :BufReadPost
- : init
- :keys [{1 :<leader>rn 2 :<cmd>ReplaceInBuf<cr> :desc "Replace in Buffer"}
+(local keys
+       [{1 :<leader>rn 2 :<cmd>ReplaceInBuf<cr> :desc "Replace in Buffer"}
         {1 :<leader>re 2 :<cmd>Replace<cr> :desc :Replace}
-        {1 :<leader>ri 2 :<cmd>ReplaceWord<cr> :desc "Replace Word"}]
- : opts}
+        {1 :<leader>ri 2 :<cmd>ReplaceWord<cr> :desc "Replace Word"}])
+
+{1 :windwp/nvim-spectre :event :BufReadPost : init : keys : opts}

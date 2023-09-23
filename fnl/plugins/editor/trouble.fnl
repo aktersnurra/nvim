@@ -1,5 +1,9 @@
 ;; Pretty diagnostics.
 
+(local keys [{1 :<leader>jt
+              2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
+              :desc :Trouble}])
+
 (local opts {:position :bottom
              ; position of the list can be: bottom, top, left, right
              :height 10
@@ -70,9 +74,4 @@
              ;; for the given modes, automatically jump if there is only a single result
              :use_diagnostic_signs true})
 
-{1 :folke/trouble.nvim
- :cmd [:TroubleToggle :Trouble]
- : opts
- :keys [{1 :<leader>jt
-         2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
-         :desc :Trouble}]}
+{1 :folke/trouble.nvim :cmd [:TroubleToggle :Trouble] : opts : keys}
