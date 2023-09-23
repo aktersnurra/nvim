@@ -9,6 +9,11 @@
               :mode :n
               :desc "Add DB connection"}])
 
+(fn init []
+  (set vim.g.db_ui_use_nerd_fonts 1)
+  (set vim.g.db_ui_winwidth 40)
+  (set vim.g.db_ui_notification_width 39))
+
 {1 :kristijanhusak/vim-dadbod-ui
  :dependencies [{1 :tpope/vim-dadbod :lazy true}
                 {1 :tpope/vim-dotenv :lazy true}
@@ -16,8 +21,4 @@
                  :ft [:sql :plsql]
                  :lazy true}]
  : keys
- ; :event :VeryLazy
- :init (fn []
-         (set vim.g.db_ui_use_nerd_fonts 1)
-         (set vim.g.db_ui_winwidth 40)
-         (set vim.g.db_ui_notification_width 39))}
+ : init}
