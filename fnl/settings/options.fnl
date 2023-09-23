@@ -1,6 +1,6 @@
 ;; Sets options in neovim
 
-(fn apply-opts [opts]
+(fn setup [opts]
   (each [k v (pairs opts)]
     (tset vim.opt k v)))
 
@@ -89,7 +89,7 @@
 (vim.opt.whichwrap:append "<,>,[,],h,l")
 (vim.opt.shortmess:append {:C true})
 
-(apply-opts opts)
+(setup opts)
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader " ")
 (set vim.g.markdown_recommended_style 0)
