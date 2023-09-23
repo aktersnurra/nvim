@@ -21,7 +21,7 @@
                   "                 .....                  "
                   "                   .                    "])
 
-(fn setup []
+(fn config []
   (let [alpha (require :alpha)]
     (let [dashboard (require :alpha.themes.dashboard)]
       (set dashboard.section.header.val ascii-art)
@@ -30,9 +30,12 @@
                               ":Telescope find_files theme=dropdown<CR>")
             (dashboard.button :g (.. (. icons :search-text) "  Find text")
                               ":Telescope live_grep theme=dropdown<CR>")
-            (dashboard.button :p (.. (. icons :search-project) "  Find project")
+            (dashboard.button :p
+                              (.. (. icons :search-project) "  Find project")
                               ":Telescope projects theme=dropdown<CR>")
-            (dashboard.button :r (.. (. icons :recent-files) "  Recently used files")
+            (dashboard.button :r
+                              (.. (. icons :recent-files)
+                                  "  Recently used files")
                               ":Telescope oldfiles theme=dropdown<CR>")
             (dashboard.button :t (.. (. icons :cog) "  Configuration")
                               ":e ~/.config/nvim/init.lua <CR>")
@@ -43,7 +46,4 @@
       (set dashboard.opts.opts.noautocmd true)
       (alpha.setup dashboard.opts))))
 
-{1 :goolord/alpha-nvim
- :event :VimEnter
- :config (fn []
-           (setup))}
+{1 :goolord/alpha-nvim :event :VimEnter : config}

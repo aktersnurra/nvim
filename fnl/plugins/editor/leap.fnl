@@ -1,6 +1,6 @@
 ;; Leap through text.
 
-(fn setup []
+(fn config []
   (let [leap (require :leap)]
     (leap.setup {})
     (leap.set_default_keymaps)))
@@ -13,5 +13,4 @@
                        :multiline true
                        :opts {}}}
  :event :BufReadPost
- :config (fn []
-           (setup))}
+ : config}

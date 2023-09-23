@@ -4,7 +4,7 @@
                    :automatic_installation true
                    :automatic_setup false})
 
-(fn setup []
+(fn config []
   (let [null-ls (require :null-ls)
         mason-null-ls (require :mason-null-ls)]
     (let [formatting null-ls.builtins.formatting
@@ -40,5 +40,4 @@
                 :jayp0521/mason-null-ls.nvim
                 :nvim-lua/plenary.nvim]
  :event :BufReadPost
- :config (fn []
-           (setup))}
+ : config}

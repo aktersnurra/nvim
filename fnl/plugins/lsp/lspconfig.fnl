@@ -4,8 +4,7 @@
   (vim.api.nvim_create_autocmd :LspAttach
                                {:callback (fn [args]
                                             (let [keymaps (require :plugins.lsp.keymaps)
-                                                  buffer (. args :buf)
-                                                  ]
+                                                  buffer (. args :buf)]
                                               (keymaps.on-attach buffer)))}))
 
 (fn capabilities []
@@ -15,7 +14,7 @@
 (fn mason-opts [servers]
   {:ensure_installed (vim.tbl_keys servers) :automatic_installation true})
 
-(fn setup []
+(fn config []
   (let [diagnostics (require :plugins.lsp.diagnostics)
         lspconfig (require :lspconfig)
         lspconfig-win (require :lspconfig.ui.windows)
@@ -40,5 +39,4 @@
                 :williamboman/mason-lspconfig.nvim
                 :b0o/SchemaStore.nvim
                 :hrsh7th/cmp-nvim-lsp]
- :config (fn []
-           (setup))}
+ : config}

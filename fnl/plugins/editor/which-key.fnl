@@ -37,15 +37,11 @@
                :<leader>o {:name :+orgmode}
                :<leader>r {:name :+replace}
                :<leader>s {:name :+session}
-               :<leader>w {:name :+worktree}
-               })
+               :<leader>w {:name :+worktree}})
 
-(fn setup []
+(fn config []
   (let [which-key (require :which-key)]
     (which-key.setup opts)
     (which-key.register groups)))
 
-{1 :folke/which-key.nvim
- :event :VeryLazy
- :config (fn []
-           (setup))}
+{1 :folke/which-key.nvim :event :VeryLazy : config}

@@ -1,6 +1,6 @@
 ;; Configuration for completion plugin.
 
-(fn setup []
+(fn config []
   (let [cmp (require :cmp)
         lspkind (require :lspkind)
         luasnip (require :luasnip)
@@ -64,5 +64,4 @@
                 :saadparwaiz1/cmp_luasnip
                 :f3fora/cmp-spell]
  :event :InsertEnter
- :config (fn []
-           (setup))}
+ : config}

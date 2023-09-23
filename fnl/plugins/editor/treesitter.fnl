@@ -75,7 +75,7 @@
                              :goto_next {"]i" "@conditional.outer"}
                              :goto_previous {"[i" "@conditional.outer"}}}})
 
-(fn setup []
+(fn config []
   (let [treesitter (require :nvim-treesitter.configs)]
     (treesitter.setup opts)))
 
@@ -83,5 +83,4 @@
  :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects}]
  :build ":TSUpdate"
  :event :VeryLazy
- :config (fn []
-           (setup))}
+ : config}
