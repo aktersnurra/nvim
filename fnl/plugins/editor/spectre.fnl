@@ -1,5 +1,32 @@
 ;; Find and replace.
 
+(local user-cmds [[:Replace
+                   (lambda []
+                     (let [spectre (require :spectre)]
+                       (spectre.open)))
+                   {:nargs 0}]
+                  [:ReplaceWord
+                   (lambda []
+                     (let [spectre (require :spectre)]
+                       (spectre.open_visual {:select_word true})))
+                   {:nargs 0}]
+                  [:ReplaceInBuf
+                   (lambda []
+                     (let [spectre (require :spectre)]
+                       (spectre.open_file_search)))
+                   {:nargs 0}]])
+
+(local auto-cmds
+       [[:FileType
+         {:pattern [:spectre_panel]
+          :command "nnoremap <silent> <buffer> q :close<CR>"}]
+        [:FileType {:pattern [:spectre_panel] :command "setlocal spell!"}]])
+
+(fn init []
+  (let [cmds (require :util.cmds)]
+    (cmds.create-user-cmds user-cmds)
+    (cmds.create-auto-cmds auto-cmds)))
+
 (local opts {:color_devicons true
              :highlight {:ui :String :search :DiffChange :replace :DiffDelete}
              :mapping {:toggle_line {:map :t
@@ -53,6 +80,7 @@
 
 {1 :windwp/nvim-spectre
  :event :BufReadPost
+ : init
  :keys [{1 :<leader>rn 2 :<cmd>ReplaceInBuf<cr> :desc "Replace in Buffer"}
         {1 :<leader>re 2 :<cmd>Replace<cr> :desc :Replace}
         {1 :<leader>ri 2 :<cmd>ReplaceWord<cr> :desc "Replace Word"}]

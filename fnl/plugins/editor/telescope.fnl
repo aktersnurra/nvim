@@ -6,6 +6,22 @@
   (each [_ extension (ipairs extensions)]
     (telescope.load_extension extension)))
 
+(fn telescope-builtin [builtin opts]
+  (let [telescope (require :telescope.builtin)
+        themes (require :telescope.themes)
+        theme (. opts :theme)]
+    ((. telescope builtin) ((. themes theme) opts))))
+
+(local user-cmds [[:FindFiles
+              (lambda []
+                (telescope-builtin :find_files
+                                   {:theme :get_dropdown :previewer false}))
+              {:nargs 0}]])
+
+(fn init []
+  (let [cmds (require :util.cmds)]
+    (cmds.create-user-cmds user-cmds)))
+
 (local keys [{1 :mf 2 :<cmd>FindFiles<cr> :desc "Find Files"}
              {1 :mg
               2 "<cmd>Telescope live_grep theme=dropdown<cr>"
@@ -60,7 +76,7 @@
               2 "<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
               :desc "Document Symbols"}])
 
-(fn setup []
+(fn config []
   (let [telescope (require :telescope)
         actions (require :telescope.actions)
         icons (require :plugins.icons)]
@@ -140,8 +156,8 @@
 
 {1 :nvim-telescope/telescope.nvim
  :cmd :Telescope
- :config (fn []
-           (setup))
+ : init
+ : config
  :dependencies [:nvim-lua/popup.nvim
                 :nvim-telescope/telescope-frecency.nvim
                 {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}

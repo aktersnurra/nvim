@@ -1,7 +1,28 @@
 ;; Session manager.
 
+(local user-cmds [[:RestoreSession
+                   (lambda []
+                     (let [persistence (require :persistence)]
+                       (persistence.load)))
+                   {:nargs 0}]
+                  [:RestoreLastSession
+                   (lambda []
+                     (let [persistence (require :persistence)]
+                       (persistence.load {:last true})))
+                   {:nargs 0}]
+                  [:IgnoreSession
+                   (lambda []
+                     (let [persistence (require :persistence)]
+                       (persistence.stop)))
+                   {:nargs 0}]])
+
+(fn init []
+  (let [cmds (require :util.cmds)]
+    (cmds.create-user-cmds user-cmds)))
+
 {1 :folke/persistence.nvim
  :event :VeryLazy
+ : init
  :keys [{1 :<leader>sn 2 :<cmd>RestoreSession<cr> :desc "Restore session"}
         {1 :<leader>se
          2 :<cmd>RestoreLastSession<cr>

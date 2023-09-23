@@ -8,5 +8,4 @@
                               :pattern :VeryLazy
                               :callback (lambda []
                                           (require :settings.autocmds)
-                                          (require :settings.keymaps)
-                                          (require :settings.usercmds))})
+                                          (require :settings.keymaps))})

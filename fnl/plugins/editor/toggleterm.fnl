@@ -1,6 +1,26 @@
 ;; Terminal inside nvim.
 
+(local auto-cmds [[:TermOpen
+                   {:pattern "term://*toggleterm#*"
+                    :callback (fn []
+                                (vim.keymap.set :t :<C-h> "<Cmd>wincmd h<CR>"
+                                                {})
+                                (vim.keymap.set :t :<C-j> "<Cmd>wincmd j<CR>"
+                                                {})
+                                (vim.keymap.set :t :<C-k> "<Cmd>wincmd k<CR>"
+                                                {})
+                                (vim.keymap.set :t :<C-l> "<Cmd>wincmd l<CR>"
+                                                {}))}]
+                  [:TermOpen
+                   {:pattern ["term://*toggleterm#*"]
+                    :command "setlocal spell!"}]])
+
+(fn init []
+  (let [cmds (require :util.cmds)]
+    (cmds.create-auto-cmds auto-cmds)))
+
 {1 :akinsho/toggleterm.nvim
  :cmd :ToggleTerm
+ : init
  :keys [{1 :<leader>t 2 :<cmd>ToggleTerm<cr> :desc :Terminal}]
  :opts {:size 24 :shade_terminals false}}
