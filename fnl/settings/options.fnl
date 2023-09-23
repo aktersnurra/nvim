@@ -1,9 +1,5 @@
 ;; Sets options in neovim
 
-(fn setup [opts]
-  (each [k v (pairs opts)]
-    (tset vim.opt k v)))
-
 (local spellfile (.. (os.getenv :XDG_CONFIG_HOME) :/nvim/spell/en.utf-8.add))
 
 (local opts {;; creates a backup file
@@ -85,11 +81,13 @@
              :guifont "monospace:h17"
              :splitkeep :screen})
 
+(each [k v (pairs opts)]
+  (tset vim.opt k v))
+
 ;; Move to new line when reaching the beginning or end.
 (vim.opt.whichwrap:append "<,>,[,],h,l")
 (vim.opt.shortmess:append {:C true})
 
-(setup opts)
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader " ")
 (set vim.g.markdown_recommended_style 0)
