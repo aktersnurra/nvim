@@ -1,12 +1,37 @@
 ;; Harpoon files for navigation.
 
+(local user-cmds [[:HarpoonAdd
+                   (lambda []
+                     (let [harpoon (require :harpoon.mark)]
+                       (harpoon.add_file)))
+                   {:nargs 0}]
+                  [:HarpoonNext
+                   (lambda []
+                     (let [harpoon (require :harpoon.ui)]
+                       (harpoon.nav_next)))
+                   {:nargs 0}]
+                  [:HarpoonPrev
+                   (lambda []
+                     (let [harpoon (require :harpoon.ui)]
+                       (harpoon.nav_prev)))
+                   {:nargs 0}]
+                  [:HarpoonUI
+                   (lambda []
+                     (let [harpoon (require :harpoon.ui)]
+                       (harpoon.toggle_quick_menu)))
+                   {:nargs 0}]])
+
 (fn telescope-ext [ext fun opts]
   (let [telescope (require :telescope)
         themes (require :telescope.themes)
         theme (. opts :theme)]
     ((. (. (. telescope :extensions) ext) fun) ((. themes theme) opts))))
 
-(fn setup []
+(fn init []
+  (let [cmds (require :util.cmds)]
+    (cmds.create-user-cmds user-cmds)))
+
+(fn config []
   (vim.keymap.set :n :<tab>
                   (fn []
                     (telescope-ext :harpoon :marks
@@ -22,9 +47,9 @@
 
 {1 :ThePrimeagen/harpoon
  :event :BufReadPost
+ : init
  :keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
         {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
         {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
         {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}]
- :config (fn []
-           (setup))}
+ : config}
