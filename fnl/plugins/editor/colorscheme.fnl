@@ -2,9 +2,9 @@
 
 (local opts {:styles {:type {:bold true} :lsp {:underline false}}})
 
-(lambda config [_ opts]
+(fn config []
   (let [plugin (require :no-clown-fiesta)]
     (plugin.setup opts)
     (plugin.load)))
 
-{1 :aktersnurra/no-clown-fiesta.nvim : opts : config}
+{1 :aktersnurra/no-clown-fiesta.nvim : config}
