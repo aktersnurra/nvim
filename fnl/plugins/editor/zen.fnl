@@ -10,6 +10,6 @@
                        :tmux {:enabled true}
                        :twilight {:enabled true}}})
 
-(local keys [{1 :<leader>/ 2 :<cmd>ZenMode<cr> :desc "Zen Mode"}])
+(local keys [{1 :gy 2 :<cmd>ZenMode<cr> :desc "Zen Mode"}])
 
 {1 :folke/zen-mode.nvim :cmd :ZenMode : keys : opts}
