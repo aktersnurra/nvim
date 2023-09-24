@@ -21,6 +21,8 @@
        [[:FileType
          {:pattern :org
           :callback (fn []
+                      (vim.cmd "setlocal nofoldenable")
+                      (tset vim.opt_local :foldlevel 99)
                       (tset vim.opt_local :conceallevel 2)
                       (tset vim.opt_local :concealcursor :nc))}]])
 
@@ -41,9 +43,8 @@
              :org_agenda_templates templates})
 
 (fn config []
-  (let [orgmode (require :orgmode)
-        cmds (require :util.cmds)]
+  (let [orgmode (require :orgmode)]
     (orgmode.setup_ts_grammar)
     (orgmode.setup opts)))
 
-{1 :nvim-orgmode/orgmode : config : init :event :BufReadPost : keys}
+{1 :nvim-orgmode/orgmode : config : init :event :VeryLazy : keys}
