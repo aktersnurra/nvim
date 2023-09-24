@@ -5,7 +5,6 @@
 
 (fn create-auto-cmds [auto-cmds]
   (each [_ auto-cmd (ipairs auto-cmds)]
-    ; (print (vim.inspect auto-cmd))
     (match auto-cmd
       [event opts] (vim.api.nvim_create_autocmd event opts))))
 
