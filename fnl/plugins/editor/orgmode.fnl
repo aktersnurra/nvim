@@ -2,6 +2,9 @@
 
 (local keys [{1 :ga 2 :<cmd>OrgAgendaPrompt<cr> :desc "Open agenda prompt"}
              {1 :gc 2 :<cmd>OrgCapturePrompt<cr> :desc "Open capture prompt"}
+             {1 :go
+              2 ":Telescope find_files theme=dropdown cwd=~/.local/share/org<CR>"
+              :desc "Find org file"}
              {1 :gm
               2 "<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
               :desc "Search headings"}])
