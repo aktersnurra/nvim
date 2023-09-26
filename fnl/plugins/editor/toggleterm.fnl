@@ -23,4 +23,4 @@
   (let [cmds (require :util.cmds)]
     (cmds.create-auto-cmds auto-cmds)))
 
-{1 :akinsho/toggleterm.nvim :cmd :ToggleTerm : init : keys : opts}
+{1 :akinsho/toggleterm.nvim :version "*" :cmd :ToggleTerm : init : keys : opts}
