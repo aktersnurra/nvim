@@ -1,6 +1,9 @@
 ;; Autocommands for nvim.
 
-(local auto-cmds [[:TextYankPost
+(local auto-cmds [[:FileType
+                   {:pattern [:qf :help :man :lspinfo]
+                    :command "nnoremap <silent> <buffer> q :close<CR>"}]
+                  [:TextYankPost
                    {:callback (lambda []
                                 (vim.highlight.on_yank {:higroup :Visual
                                                         :timeout 200}))}]
