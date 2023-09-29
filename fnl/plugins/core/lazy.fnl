@@ -3,6 +3,8 @@
 (local icons (require :plugins.icons))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
+             :debug false
+             :defaults {:lazy false}
              :performance {:cache {:enabled true}
                            :rtp {:disabled_plugins [:gzip
                                                     :matchit
