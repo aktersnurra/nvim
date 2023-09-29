@@ -80,7 +80,7 @@
     (treesitter.setup opts)))
 
 {1 :nvim-treesitter/nvim-treesitter
- :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects}]
+ :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects :lazy true}]
  :build ":TSUpdate"
- :event :VeryLazy
+ :event [:BufReadPost :BufNewFile]
  : config}
