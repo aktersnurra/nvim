@@ -41,3 +41,6 @@ Kalman
 cursorline
 haskell
 Multimodal
+convolving
+Gaussians
+Kurtosis
