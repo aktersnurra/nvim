@@ -26,6 +26,11 @@
                           :follow_current_file true
                           :hijack_netrw_behavior :open_default
                           :use_libuv_file_watcher true}
+             :icon {:folder_closed ""
+                    :folder_open ""
+                    :folder_empty ""
+                    :default "*"
+                    :highlight :NeoTreeFileIcon}
              :window {:position :float
                       :popup {:position {:col "50%" :row :10}}
                       :mappings {:<space> :none
