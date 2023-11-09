@@ -34,8 +34,7 @@
                                                                               :c])
                                                      :<C-e> (cmp.mapping {:i (cmp.mapping.abort)
                                                                           :c (cmp.mapping.close)})
-                                                     :<tab> (cmp.mapping.confirm {:select true})
-                                                     :<CR> (cmp.mapping.confirm {:select true})})
+                                                     :<tab> (cmp.mapping.confirm {:select true})})
                 :sources [{:name :nvim_lsp}
                           {:name :nvim_lua}
                           {:name :luasnip}
