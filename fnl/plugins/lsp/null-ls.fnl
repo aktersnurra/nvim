@@ -35,7 +35,7 @@
                                 formatting.terraform_fmt]}))
     (mason-null-ls.setup mason-opts)))
 
-{1 :jose-elias-alvarez/null-ls.nvim
+{1 :nvimtools/none-ls.nvim
  :dependencies [:mason.nvim
                 :jayp0521/mason-null-ls.nvim
                 :nvim-lua/plenary.nvim]
