@@ -40,6 +40,7 @@
                           {:name :luasnip}
                           {:name :spell}
                           {:name :orgmode}
+                          {:name :neorg}
                           {:name :buffer :keyword_length 4}
                           {:name :path :keyword_length 6}
                           {:name :vim-dadbod-completion}

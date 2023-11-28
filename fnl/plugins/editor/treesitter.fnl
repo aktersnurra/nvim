@@ -15,6 +15,7 @@
                            :lua
                            :make
                            :markdown
+                           :norg
                            :ocaml
                            :org
                            :python
