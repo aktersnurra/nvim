@@ -46,8 +46,15 @@
              :org_agenda_templates templates})
 
 (fn config []
-  (let [orgmode (require :orgmode)]
+  (let [orgmode (require :orgmode)
+        bullets (require :org-bullets)]
     (orgmode.setup_ts_grammar)
-    (orgmode.setup opts)))
+    (orgmode.setup opts)
+    (bullets.setup {:concealcursor true})))
 
-{1 :nvim-orgmode/orgmode : config : init :event :VeryLazy : keys}
+{1 :nvim-orgmode/orgmode
+ :dependencies :akinsho/org-bullets.nvim
+ :ft :org
+ : config
+ : init
+ : keys}
