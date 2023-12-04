@@ -12,9 +12,8 @@
     (conform.setup {:formatters {:fnlfmt {:command :fnlfmt
                                           :args [:--fix :$FILENAME]
                                           :stdin false}}
-                    :formatters_by_ft {:* [:codespell
-                                           :trim_whitespace
-                                           :trim_newlines]
+                    :formatters_by_ft {:* [:codespell]
+                                       :_ [:trim_whitespace :trim_newlines]
                                        :css [:stylelint]
                                        :fennel [:fnlfmt]
                                        :haskell [:fourmolu]
