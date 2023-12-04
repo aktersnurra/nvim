@@ -20,10 +20,6 @@
          :<leader>a
          "<cmd>lua vim.lsp.buf.code_action()<cr>"
          {:desc "Code Action"}]
-        [:n
-         :<leader>e
-         "<cmd>lua vim.lsp.buf.format { async = true }<cr>"
-         {:desc :Format}]
         [:v
          :<leader>e
          "<cmd>lua vim.lsp.buf.format { async = true }<cr>"

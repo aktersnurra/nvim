@@ -18,8 +18,7 @@
   (let [clients (vim.lsp.buf_get_clients)
         client_names []]
     (each [_ client (pairs clients)]
-      (if (not= client.name :null-ls)
-          (table.insert client_names client.name)))
+      (table.insert client_names client.name))
     (if (> (length client_names) 0)
         (table.concat client_names ", ")
         "")))
