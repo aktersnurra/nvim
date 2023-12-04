@@ -17,6 +17,7 @@
                              :python [:ruff]
                              :lua [:selene]
                              :commit [:commitlint]
+                             :git [:gitlint]
                              :docker [:hadolint]
                              :haskell [:hlint]
                              :json [:jsonlint]
