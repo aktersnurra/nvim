@@ -22,8 +22,6 @@
                            :runtime {:version :LuaJIT
                                      :path (vim.split package.path ";")}}}}
  :taplo {}
- :terraformls {}
  :texlab {}
- :tflint {}
  :yamlls {}
  :zk {}}
