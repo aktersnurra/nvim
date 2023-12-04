@@ -10,17 +10,17 @@
 
 (fn config []
   (let [lint (require :lint)]
-    (set lint.linters_by_ft {:zsh [:zsh]
-                             :* [:codespell :write_good]
+    (set lint.linters_by_ft {:* [:codespell :write_good]
+                             :dockerfile [:hadolint]
                              :fennel [:fennel]
-                             :yaml [:yamllint]
-                             :python [:ruff]
-                             :lua [:selene]
-                             :gitcommit [:gitlint]
-                             :docker [:hadolint]
+                             :gitcommit [:gitlint :codespell]
                              :haskell [:hlint]
                              :json [:jsonlint]
+                             :lua [:selene]
+                             :python [:ruff]
                              :sh [:shellcheck]
-                             :sql [:sqlfluff]})))
+                             :sql [:sqlfluff]
+                             :yaml [:yamllint]
+                             :zsh [:zsh]})))
 
 {1 :mfussenegger/nvim-lint : init : config :event [:BufReadPost :BufNewFile]}
