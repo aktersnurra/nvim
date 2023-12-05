@@ -1,12 +1,16 @@
 ;; Linting
 
+(lambda callback []
+  (let [lint (require :lint)]
+    (lint.try_lint)))
+
 (fn init []
-  (let [lint-augroup (vim.api.nvim_create_augroup :lint {:clear true})
-        lint (require :lint)]
-    (vim.api.nvim_create_autocmd [:BufEnter :BufWritePost :InsertLeave]
-                                 {:group lint-augroup
-                                  :callback (lambda []
-                                              (lint.try_lint))})))
+  (let [lint-augroup (vim.api.nvim_create_augroup :lint {:clear true})]
+    (vim.api.nvim_create_autocmd [:BufEnter
+                                  :BufWritePost
+                                  :InsertLeave
+                                  :TextChangedI]
+                                 {:group lint-augroup : callback})))
 
 (fn config []
   (let [lint (require :lint)]
