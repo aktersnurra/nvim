@@ -24,8 +24,8 @@
                  [:x :J ":move '>+1<CR>gv-gv" {}]
                  [:x :K ":move '<-2<CR>gv-gv" {}]
                  ;; Move text up and down
-                 [:v :<m-j> ":m .+1<CR>==" {}]
-                 [:v :<m-k> ":m .-2<CR>==" {}]
+                 [:v :<c-n> ":m .+1<CR>==" {}]
+                 [:v :<c-e> ":m .-2<CR>==" {}]
                  [:v :p "\"_dP" {}]
                  ;; Splits
                  [:n :<m-s> :<cmd>split<CR> {}]
@@ -37,7 +37,7 @@
                  [:n :<c-d> :<c-d>zz {}]
                  [:n :<c-u> :<c-u>zz {}]
                  ;; Remove highlighted search
-                 [:n :<m-n> :<cmd>nohlsearch<CR> {}]
+                 [:n :<c-m> :<cmd>nohlsearch<CR> {}]
                  ;; Close window
                  [:n :Q "<cmd>:q<CR>" {}]
                  ;; Force refresh
