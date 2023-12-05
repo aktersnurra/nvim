@@ -15,7 +15,7 @@
                                 :css [:stylelint]
                                 :fennel [:fnlfmt]
                                 :haskell [:fourmolu]
-                                :html [:djlint]
+                                :html [:prettierd]
                                 :json [:jq]
                                 :lua [:stylua]
                                 :markdown [:prettierd]
