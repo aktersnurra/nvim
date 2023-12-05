@@ -23,5 +23,4 @@
                                      :path (vim.split package.path ";")}}}}
  :taplo {}
  :texlab {}
- :yamlls {}
- :zk {}}
+ :yamlls {}}
