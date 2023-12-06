@@ -23,4 +23,5 @@
                                      :path (vim.split package.path ";")}}}}
  :taplo {}
  :texlab {}
+ :vale_ls {:filetypes [:markdown :text :org]}
  :yamlls {}}
