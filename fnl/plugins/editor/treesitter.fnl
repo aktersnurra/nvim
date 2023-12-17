@@ -5,9 +5,7 @@
        {:ensure_installed [:bash
                            :c
                            :dockerfile
-                           :erlang
                            :fennel
-                           :go
                            :haskell
                            :hcl
                            :html
@@ -15,7 +13,6 @@
                            :lua
                            :make
                            :markdown
-                           :norg
                            :ocaml
                            :org
                            :python
