@@ -1,11 +1,5 @@
 ;; File explorer that lets you edit your filesystem.
 
-(local user-cmds [[:Oil
-                   (lambda []
-                     (let [oil (require :oil)]
-                       (oil.open)))
-                   {:nargs 0}]])
-
 (local opts {:keymaps {:g? :actions.show_help
                        :<CR> :actions.select
                        :<C-s> :actions.select_vsplit
@@ -21,12 +15,11 @@
                        :gs :actions.change_sort
                        :gx :actions.open_external
                        :g. :actions.toggle_hidden
-                       "g\\\\" :actions.toggle_trash}})
+                       "g\\\\" :actions.toggle_trash}
+             :float {:padding 1 :max_width 64 :max_height 32}})
 
-(local keys [{1 "-" 2 :<cmd>Oil<cr> :desc "Open parent directory"}])
+(local keys [{1 "-"
+              2 "<cmd>lua require(\"oil\").open_float()<cr>"
+              :desc "Open parent directory"}])
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-user-cmds user-cmds)))
-
-{1 :stevearc/oil.nvim : init : opts : keys}
+{1 :stevearc/oil.nvim : opts : keys}
