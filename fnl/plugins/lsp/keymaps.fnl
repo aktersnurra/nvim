@@ -17,11 +17,11 @@
         [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
         [:n :ge "<cmd>lua vim.lsp.buf.rename()<cr>" {:desc :Rename}]
         [:n
-         :<leader>a
+         :<leader>la
          "<cmd>lua vim.lsp.buf.code_action()<cr>"
          {:desc "Code Action"}]
         [:n
-         :<leader>i
+         :<leader>ll
          "<cmd>lua vim.lsp.codelens.run()<cr>"
          {:desc "Code Lens"}]
         [:n :<leader>li :<cmd>LspInfo<cr> {:desc "Lsp Info"}]])
