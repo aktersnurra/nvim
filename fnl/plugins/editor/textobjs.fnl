@@ -1,4 +1,4 @@
-;; Various text objects
+;; Various text objects.
 
 {1 :chrisgrieser/nvim-various-textobjs
  :event :BufReadPost
