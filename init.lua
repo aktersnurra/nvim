@@ -25,5 +25,4 @@ require("hotpot").setup {
     },
   },
 }
-require "settings"
 require "aktersnurra"

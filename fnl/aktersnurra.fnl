@@ -1,6 +1,15 @@
 ;; Load plugins with lazy.
 
-(local icons (require :icons))
+(local plugins (let [plugins []
+                     path (.. (vim.fn.stdpath :config) :/fnl/plugins)]
+                 (each [fname (vim.fs.dir path)]
+                   (let [fname (fname:match "^(.*)%.fnl$")]
+                     (if (and (not= fname nil) (not= fname :icons))
+                         (table.insert plugins (require (.. :plugins. fname))))))
+                 (table.insert plugins (require :plugins.lsp))
+                 plugins))
+
+(local icons (require :settings.icons))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
@@ -34,7 +43,10 @@
                                  (.. (. icons :star) " ")
                                  (.. (. icons :line) " ")]}}})
 
-(let [lazy (require :lazy)
-      plugins (require :plugins)]
-  (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
-  (lazy.setup plugins opts))
+(fn init []
+  (require :settings)
+  (let [lazy (require :lazy)]
+    (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
+    (lazy.setup plugins opts)))
+
+(init)
