@@ -1,6 +1,6 @@
 ;; Mason manages external tooling, e.g. lsp, formatters, and linters.
 
-(local icons (require :plugins.icons))
+(local icons (require :icons))
 
 (local opts {:ui {:border :single
                   :icons {:package_installed (.. (. icons :checkmark) " ")

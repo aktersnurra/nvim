@@ -1,6 +1,6 @@
-;; Lazy opts.
+;; Load plugins with lazy.
 
-(local icons (require :plugins.icons))
+(local icons (require :icons))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
@@ -34,9 +34,8 @@
                                  (.. (. icons :star) " ")
                                  (.. (. icons :line) " ")]}}})
 
-(fn setup [plugins]
-  (let [lazy (require :lazy)]
-    (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
-    (lazy.setup plugins opts)))
-
-{: setup}
+(let [lazy (require :lazy)]
+  (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
+  (lazy.setup {:spec [{:import :plugins}
+                      {:import :plugins.lsp.lspconfig}
+                      {:import :plugins.lsp.mason}]} opts))

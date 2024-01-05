@@ -2,6 +2,12 @@
 
 (local keys [{1 :<leader>jt
               2 "<cmd>TroubleToggle workspace_diagnostics<cr>"
+              :desc :Trouble}
+             {1 "[e"
+              2 "<cmd>lua require(\"trouble\").previous({skip_groups = true, jump = true});<cr>"
+              :desc :Trouble}
+             {1 "[n"
+              2 "<cmd>lua require(\"trouble\").next({skip_groups = true, jump = true});<cr>"
               :desc :Trouble}])
 
 (local opts {:position :bottom

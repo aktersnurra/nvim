@@ -1,6 +1,6 @@
 ;; Handlers for the requests and responses from and to the lsp server.
 
-(local icons (require :plugins.icons))
+(local icons (require :icons))
 
 (local signs [{:name :DiagnosticSignError :text (. icons :error)}
               {:name :DiagnosticSignWarn :text (. icons :warn)}

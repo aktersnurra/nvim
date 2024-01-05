@@ -1,6 +1,6 @@
 ;; Which-key provides a pop-up menu for some key mappings.
 
-(local icons (require :plugins.icons))
+(local icons (require :icons))
 
 (local opts {:plugins {:marks true
                        :registers true
