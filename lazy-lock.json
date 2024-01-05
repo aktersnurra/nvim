@@ -34,7 +34,6 @@
   "minibar.nvim": { "branch": "master", "commit": "353ca4efaf7fff1566bb02e0d7cb51133c41f660" },
   "neogit": { "branch": "master", "commit": "93bf00cd5db1e88ea0ca9105e83f7e97896a7cd2" },
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "ecf3e186d336e03b5ce7ed4e8f7f72ad983947df" },
-  "nvim-autopairs": { "branch": "master", "commit": "9fd41181693dd4106b3e414a822bb6569924de81" },
   "nvim-bqf": { "branch": "main", "commit": "bdc2a4e5bb670b3c0e33ada9c0eec636d93a0748" },
   "nvim-bufdel": { "branch": "main", "commit": "523d58e94e7212fff3e05c247b962dc8f93bcfde" },
   "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
