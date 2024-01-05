@@ -80,5 +80,5 @@
 {1 :nvim-treesitter/nvim-treesitter
  :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects :lazy true}]
  :build ":TSUpdate"
- :event [:BufReadPost :BufNewFile]
+ :event [:VeryLazy]
  : config}
