@@ -41,7 +41,7 @@
               :mode [:o :x]
               :desc "GitSigns Select Hunk"}])
 
-(local icons (require :icons))
+(local icons (require :settings.icons))
 
 (local signs {:add {:text (. icons :git-add)}
               :change {:text (. icons :git-add)}

@@ -16,11 +16,11 @@
                    {:command :checktime}]
                   [[:InsertLeave :WinEnter]
                    {:callback (lambda []
-                                (let [cursorline (require :util.cursorline)]
+                                (let [cursorline (require :settings.cursorline)]
                                   cursorline.show))}]
                   [[:InsertEnter :WinLeave]
                    {:callback (lambda []
-                                (let [cursorline (require :util.cursorline)]
+                                (let [cursorline (require :settings.cursorline)]
                                   cursorline.hide))}]])
 
 (let [cmds (require :util.cmds)]

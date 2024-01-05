@@ -1,6 +1,6 @@
 ;; Statusbar.
 
-(local icons (require :icons))
+(local icons (require :settings.icons))
 
 (local disable [:neogitstatus
                 :netrw

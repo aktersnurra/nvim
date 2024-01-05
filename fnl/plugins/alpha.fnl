@@ -1,6 +1,6 @@
 ;; A customizable greeter.
 
-(local icons (require :icons))
+(local icons (require :settings.icons))
 
 (local ascii-art ["     ##############..... ############## "
                   "   ##############......##############   "

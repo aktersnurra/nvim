@@ -108,7 +108,7 @@
 (fn config []
   (let [telescope (require :telescope)
         actions (require :telescope.actions)
-        icons (require :icons)]
+        icons (require :settings.icons)]
     (telescope.setup {:defaults {:prompt_prefix (.. " " (. icons :telescope)
                                                     " ")
                                  :selection_caret (.. (. icons :caret) " ")
