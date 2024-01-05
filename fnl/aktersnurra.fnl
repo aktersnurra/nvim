@@ -34,8 +34,7 @@
                                  (.. (. icons :star) " ")
                                  (.. (. icons :line) " ")]}}})
 
-(let [lazy (require :lazy)]
+(let [lazy (require :lazy)
+      plugins (require :plugins)]
   (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
-  (lazy.setup {:spec [{:import :plugins}
-                      {:import :plugins.lsp.lspconfig}
-                      {:import :plugins.lsp.mason}]} opts))
+  (lazy.setup plugins opts))
