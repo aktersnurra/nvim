@@ -19,20 +19,20 @@
       (tset opts :capabilities (capabilities))
       (config.setup opts))))
 
-(fn opts []
-  (let [servers (require :plugins.lsp.servers)]
-    {:ensure_installed (vim.tbl_keys servers)
-     :automatic_installation true
-     :handlers [handlers]}))
+(fn setup-mason-lspconfig []
+  (let [mason-lspconfig (require :mason-lspconfig)
+        servers (require :plugins.lsp.servers)]
+    (mason-lspconfig.setup {:ensure_installed (vim.tbl_keys servers)
+                            :automatic_installation true
+                            :handlers [handlers]})))
 
 (fn config []
   (on-attach)
   (let [diagnostics (require :plugins.lsp.diagnostics)
-        ui (require :lspconfig.ui.windows)
-        mason-lspconfig (require :mason-lspconfig)]
+        ui (require :lspconfig.ui.windows)]
     (diagnostics.setup)
     (set ui.default_options.border :single)
-    (mason-lspconfig.setup (opts))))
+    (setup-mason-lspconfig)))
 
 {1 :neovim/nvim-lspconfig
  :event :BufReadPost
