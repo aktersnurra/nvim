@@ -8,7 +8,8 @@
  :html {}
  :jsonls {:init_options {:providerFormatter false}
           :settings {:json {:schemas (let [schemastore (require :schemastore)]
-                                       (schemastore.json.schemas))}}
+                                       (schemastore.json.schemas))
+                            :validate {:enable true}}}
           :setup {:commands {:Format [(fn []
                                         (vim.lsp.buf.range_formatting [] [0 0]
                                                                       [(vim.fn.line "$"
@@ -24,4 +25,6 @@
  :taplo {}
  :texlab {}
  :vale_ls {:filetypes [:markdown :text :org]}
- :yamlls {}}
+ :yamlls {:settings {:yaml {:schemastore {:enable false :url ""}
+                            :schemas (let [schemastore (require :schemastore)]
+                                       (schemastore.yaml.schemas))}}}}
