@@ -20,6 +20,7 @@
                            :sql
                            :toml
                            :vim
+                           :vimdoc
                            :yaml]
         :sync_install false
         :ignore_install [""]
