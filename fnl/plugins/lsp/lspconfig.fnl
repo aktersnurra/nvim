@@ -1,4 +1,4 @@
-;; Setup of lsps.
+;; Configuration for lsp clients.
 
 (fn on-attach []
   (vim.api.nvim_create_autocmd :LspAttach

@@ -1,4 +1,5 @@
-;; Mason lspconfig setup
+;; A bridge plugin between mason and lspconfig, handles installation of lsp and 
+;; setup hooks for client configurations.
 
 (fn capabilities []
   (let [cmp-lsp (require :cmp_nvim_lsp)]
