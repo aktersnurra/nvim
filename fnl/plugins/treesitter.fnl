@@ -4,6 +4,7 @@
 (local opts
        {:ensure_installed [:bash
                            :c
+                           :comment
                            :dockerfile
                            :fennel
                            :haskell
