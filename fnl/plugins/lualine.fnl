@@ -71,7 +71,7 @@
                        :always_divide_middle true
                        :globalstatus true}
              :sections {:lualine_a [:mode]
-                        :lualine_b [branch diff]
+                        :lualine_b [:filename branch diff]
                         :lualine_c {}
                         :lualine_x [lsp-progress language-server diagnostics]
                         :lualine_y [filetype]
