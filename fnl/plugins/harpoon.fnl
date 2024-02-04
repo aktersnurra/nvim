@@ -40,9 +40,6 @@
                                     :initial_mode :normal
                                     :prompt_title :Harpoon}))
                   {})
-  (vim.keymap.set :n :<s-tab>
-                  "<cmd>Telescope buffers theme=dropdown previewer=false initial_mode=normal<cr>"
-                  {})
   {:menu {:width (- (vim.api.nvim_win_get_width 0) 4)}})
 
 (local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
