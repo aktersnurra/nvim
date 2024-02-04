@@ -109,8 +109,8 @@
   (let [telescope (require :telescope)
         actions (require :telescope.actions)
         icons (require :settings.icons)]
-    (telescope.setup {:defaults {:prompt_prefix (.. " " (. icons :telescope)
-                                                    " ")
+    (telescope.setup {:defaults {:prompt_prefix (.. "  " (. icons :telescope)
+                                                    "  ")
                                  :selection_caret (.. (. icons :caret) " ")
                                  :path_display [:smart]
                                  :color_devicons false
