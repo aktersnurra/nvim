@@ -26,10 +26,7 @@
 (fn setup []
   (configure-signs)
   (vim.diagnostic.config config)
-  (set vim.lsp.handlers.textDocument/hover
-       (vim.lsp.with {:border :rounded :width 60}))
-  (set vim.lsp.handlers.textDocument/signatureHelp
-       (vim.lsp.with vim.lsp.handlers.signature_help
-                     {:border :rounded :width 60})))
+  (set vim.lsp.handlers.textDocument/hover false)
+  (set vim.lsp.handlers.textDocument/signatureHelp false))
 
 {: setup}

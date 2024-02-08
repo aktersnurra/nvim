@@ -61,6 +61,14 @@
                                                   "│"]}}
                 :confirm_opts {:behavior cmp.ConfirmBehavior.Replace
                                :select false}
-                :experimental {:ghost_text false :native_menu false}})))
+                :experimental {:ghost_text false :native_menu false}})
+    (cmp.setup.cmdline "/"
+                       {:mapping (cmp.mapping.preset.cmdline)
+                        :sources [{:name :buffer}]})
+    (cmp.setup.cmdline ":"
+                       {:mapping (cmp.mapping.preset.cmdline)
+                        :sources [{:name :path}
+                                  {:name :cmdline
+                                   :option {:ignore_cmds [:Man "!"]}}]})))
 
 {1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}
