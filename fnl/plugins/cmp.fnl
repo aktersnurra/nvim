@@ -58,7 +58,8 @@
                                                   "╯"
                                                   "─"
                                                   "╰"
-                                                  "│"]}}
+                                                  "│"]}
+                         :completion {:scrollbar false}}
                 :confirm_opts {:behavior cmp.ConfirmBehavior.Replace
                                :select false}
                 :experimental {:ghost_text false :native_menu false}})
