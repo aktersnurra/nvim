@@ -16,6 +16,8 @@
  :right-arrow ""
  :small-right-arrow ""
  :guillemet "»"
+ :up :
+ :down :
  :close ""
  :git-add "|"
  :git-delete "_"
