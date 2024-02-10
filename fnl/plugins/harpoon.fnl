@@ -47,4 +47,9 @@
              {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
              {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}])
 
-{1 :ThePrimeagen/harpoon :event :BufReadPost : init : keys : config}
+{1 :ThePrimeagen/harpoon
+ :branch :harpoon2
+ :event :BufReadPost
+ : init
+ : keys
+ : config}
