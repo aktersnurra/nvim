@@ -2,7 +2,7 @@
 
 (local keys [{1 :<leader>t 2 :<cmd>ToggleTerm<cr> :desc :Terminal}])
 
-(local opts {:size 24 :shade_terminals false})
+(local opts {:size 32 :shade_terminals false})
 
 (local auto-cmds [[:TermOpen
                    {:pattern "term://*toggleterm#*"
