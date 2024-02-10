@@ -6,7 +6,7 @@
        {:cmdline {:enabled true
                   :view :cmdline_popup
                   :format {:cmdline {:pattern "^:"
-                                     :icon (.. (. icons :caret) " ")
+                                     :icon (. icons :caret)
                                      :lang :vim}
                            :search_down {:view :cmdline
                                          :icon (.. (. icons :search-text) " "
