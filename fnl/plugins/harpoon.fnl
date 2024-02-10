@@ -2,23 +2,23 @@
 
 (local user-cmds [[:HarpoonAdd
                    (lambda []
-                     (let [harpoon (require :harpoon.mark)]
-                       (harpoon.add_file)))
+                     (let [harpoon (require :harpoon)]
+                       (: (harpoon:list) :append)))
                    {:nargs 0}]
                   [:HarpoonNext
                    (lambda []
-                     (let [harpoon (require :harpoon.ui)]
-                       (harpoon.nav_next)))
+                     (let [harpoon (require :harpoon)]
+                       (: (harpoon:list) :next)))
                    {:nargs 0}]
                   [:HarpoonPrev
                    (lambda []
-                     (let [harpoon (require :harpoon.ui)]
-                       (harpoon.nav_prev)))
+                     (let [harpoon (require :harpoon)]
+                       (: (harpoon:list) :prev)))
                    {:nargs 0}]
                   [:HarpoonUI
                    (lambda []
-                     (let [harpoon (require :harpoon.ui)]
-                       (harpoon.toggle_quick_menu)))
+                     (let [harpoon (require :harpoon)]
+                       (harpoon.ui:toggle_quick_menu (harpoon:list))))
                    {:nargs 0}]])
 
 (fn telescope-ext [ext fun opts]
