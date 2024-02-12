@@ -31,8 +31,8 @@
                  [:n :<m-s> :<cmd>split<CR> {}]
                  [:n :<m-t> :<cmd>vsplit<CR> {}]
                  ;; Buf navigation
-                 [:n :<m-left> :<cmd>bprev<CR> {}]
-                 [:n :<m-right> :<cmd>bnext<CR> {}]
+                 [:n :<c-n> :<cmd>bprev<CR> {}]
+                 [:n :<c-e> :<cmd>bnext<CR> {}]
                  ;; Jump half a page and centralize the view
                  [:n :<c-d> :<c-d>zz {}]
                  [:n :<c-u> :<c-u>zz {}]
