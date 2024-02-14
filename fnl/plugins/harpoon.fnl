@@ -5,16 +5,6 @@
                      (let [harpoon (require :harpoon)]
                        (: (harpoon:list) :append)))
                    {:nargs 0}]
-                  [:HarpoonNext
-                   (lambda []
-                     (let [harpoon (require :harpoon)]
-                       (: (harpoon:list) :next)))
-                   {:nargs 0}]
-                  [:HarpoonPrev
-                   (lambda []
-                     (let [harpoon (require :harpoon)]
-                       (: (harpoon:list) :prev)))
-                   {:nargs 0}]
                   [:HarpoonUI
                    (lambda []
                      (let [harpoon (require :harpoon)]
@@ -26,6 +16,10 @@
         themes (require :telescope.themes)
         theme (. opts :theme)]
     ((. (. (. telescope :extensions) ext) fun) ((. themes theme) opts))))
+
+(lambda select [nr]
+  (let [harpoon (require :harpoon)]
+    (: (harpoon:list) :select nr)))
 
 (fn init []
   (let [cmds (require :util.cmds)]
@@ -44,8 +38,22 @@
 
 (local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
              {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
-             {1 :ms 2 :<cmd>HarpoonPrev<cr> :desc "Harpoon Prev"}
-             {1 :mt 2 :<cmd>HarpoonNext<cr> :desc "Harpoon Next"}])
+             {1 :ms
+              2 (fn []
+                  (select 1))
+              :desc "First Harpoon"}
+             {1 :mt
+              2 (fn []
+                  (select 2))
+              :desc "Second Harpoon"}
+             {1 :mn
+              2 (fn []
+                  (select 3))
+              :desc "Third Harpoon"}
+             {1 :me
+              2 (fn []
+                  (select 4))
+              :desc "Fourth Harpoon"}])
 
 {1 :ThePrimeagen/harpoon
  :branch :harpoon2
