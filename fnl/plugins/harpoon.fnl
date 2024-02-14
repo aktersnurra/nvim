@@ -40,8 +40,4 @@
                   (select 4))
               :desc "Fourth Harpoon"}])
 
-{1 :ThePrimeagen/harpoon
- :branch :harpoon2
- :event :BufReadPost
- : init
- : keys}
+{1 :ThePrimeagen/harpoon :branch :harpoon2 :event :BufReadPost : init : keys}
