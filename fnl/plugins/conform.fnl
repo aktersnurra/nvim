@@ -20,7 +20,7 @@
                                 :lua [:stylua]
                                 :markdown [:prettierd]
                                 :ocaml [:ocamlformat]
-                                :python [:ruff_format]
+                                :python [:ruff_format :ruff_fix]
                                 :rust [:rustfmt]
                                 :sh [:shfmt :shellharden]
                                 :sql [:pg_format :sqlfluff]
