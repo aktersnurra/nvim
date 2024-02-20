@@ -1,5 +1,7 @@
 ;; Orgmode for nvim.
 
+(local icons (require :settings.icons))
+
 (local keys [{1 :ga 2 :<cmd>OrgAgendaPrompt<cr> :desc "Open agenda prompt"}
              {1 :gc 2 :<cmd>OrgCapturePrompt<cr> :desc "Open capture prompt"}
              {1 :go
@@ -43,6 +45,8 @@
        {:org_agenda_files ["~/.local/share/org/**/*"]
         :org_hide_emphasis_markers true
         :org_agenda_start_on_weekday false
+        :org_startup_indented true
+        :org_log_into_drawer :LOGBOOK
         :org_default_notes_file "~/.local/share/org/refile.org"
         :org_agenda_templates templates
         :mappings {:org {:org_cycle :<c-e> :org_global_cycle :<s-e>}}})
@@ -52,11 +56,21 @@
         bullets (require :org-bullets)]
     (orgmode.setup_ts_grammar)
     (orgmode.setup opts)
-    (bullets.setup {:concealcursor true})))
+    (bullets.setup {:concealcursor true
+                    :symbols {:list (. icons :line)
+                              :headlines [(. icons :orb)
+                                          (. icons :filled-orb)
+                                          (. icons :pentagon)
+                                          (. icons :filled-pentagon)]
+                              :checkboxes {:half [(. icons :line)
+                                                  "@org.checkbox.halfchecked"]
+                                           :done [(. icons :checkmark)
+                                                  "@org.checkbox.checked"]
+                                           :todo [" " "@org.checkbox.checked"]}}})))
 
 {1 :nvim-orgmode/orgmode
  :dependencies :akinsho/org-bullets.nvim
- :ft :org
+ :ft [:org :orgagenda]
  : config
  : init
  : keys}
