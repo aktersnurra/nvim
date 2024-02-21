@@ -81,6 +81,7 @@
 
 {1 :nvim-treesitter/nvim-treesitter
  :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects :lazy true}]
+ :commit :6bd108a6f10aa01b854c3c673b6d9d61662a8c93
  :build ":TSUpdate"
  :event [:VeryLazy]
  : config}
