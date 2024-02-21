@@ -7,4 +7,4 @@
     (plugin.setup opts)
     (plugin.load)))
 
-{1 :aktersnurra/no-clown-fiesta.nvim : config}
+{1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config}
