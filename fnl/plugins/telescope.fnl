@@ -27,7 +27,7 @@
                      :nvim-lua/plenary.nvim
                      :nvim-telescope/telescope-fzf-native.nvim
                      :nvim-telescope/telescope-frecency.nvim
-                     :joaomsa/telescope-orgmode.nvim])
+                     :lyz-code/telescope-orgmode.nvim])
 
 (local extensions [:fzf :frecency :orgmode :projects :git_worktree :harpoon])
 
