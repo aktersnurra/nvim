@@ -16,11 +16,11 @@
          {:desc :Diagnostics}]
         [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
         [:n
-         :<leader>la
+         :gh
          "<cmd>lua vim.lsp.buf.code_action()<cr>"
          {:desc "Code Action"}]
         [:n
-         :<leader>ll
+         :gb
          "<cmd>lua vim.lsp.codelens.run()<cr>"
          {:desc "Code Lens"}]
         [:n :<leader>li :<cmd>LspInfo<cr> {:desc "Lsp Info"}]])
