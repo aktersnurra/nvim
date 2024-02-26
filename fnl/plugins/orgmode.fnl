@@ -50,12 +50,11 @@
         (tset options-by-label item.label item)))
     (vim.ui.select options {:prompt data.prompt}
                    (fn [choice]
-                     ;; FIX: this code block
-                     (when (not choice)
-                       (lua "return "))
-                     (local option (. options-by-label choice))
-                     (when option.action
-                       (option.action))))))
+                     (if choice
+                         (do
+                           (local option (. options-by-label choice))
+                           (when option.action
+                             (option.action))))))))
 
 (local opts
        {:org_agenda_files ["~/.local/share/org/**/*"]
