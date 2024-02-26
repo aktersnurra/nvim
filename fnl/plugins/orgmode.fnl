@@ -41,6 +41,22 @@
         :m {:description :Meeting :template "* Meeting %?"}
         :n {:description :Note :template "* NOTE %? :NOTE:\n %u\n"}})
 
+(lambda handler [data]
+  (let [options {}
+        options-by-label {}]
+    (each [_ item (ipairs data.items)]
+      (when (and item.key (not= (item.label:lower) :quit))
+        (table.insert options item.label)
+        (tset options-by-label item.label item)))
+    (vim.ui.select options {:prompt data.prompt}
+                   (fn [choice]
+                     ;; FIX: this code block
+                     (when (not choice)
+                       (lua "return "))
+                     (local option (. options-by-label choice))
+                     (when option.action
+                       (option.action))))))
+
 (local opts
        {:org_agenda_files ["~/.local/share/org/**/*"]
         :org_hide_emphasis_markers true
@@ -49,6 +65,7 @@
         :org_log_into_drawer :LOGBOOK
         :org_default_notes_file "~/.local/share/org/refile.org"
         :org_agenda_templates templates
+        :ui {:menu {: handler}}
         :mappings {:org {:org_cycle :<c-e> :org_global_cycle :<s-e>}}})
 
 (fn config []
