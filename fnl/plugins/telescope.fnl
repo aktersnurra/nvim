@@ -27,16 +27,9 @@
                      :nvim-lua/plenary.nvim
                      :nvim-telescope/telescope-fzf-native.nvim
                      :nvim-telescope/telescope-frecency.nvim
-                     :nvim-telescope/telescope-ui-select.nvim
                      :lyz-code/telescope-orgmode.nvim])
 
-(local extensions [:fzf
-                   :frecency
-                   :orgmode
-                   :projects
-                   :git_worktree
-                   :harpoon
-                   :ui-select])
+(local extensions [:fzf :frecency :orgmode :projects :git_worktree :harpoon])
 
 (fn load-extensions [telescope]
   (each [_ extension (ipairs extensions)]
@@ -187,9 +180,7 @@
                       :extensions {:fzf {:fuzzy true
                                          :override_generic_sorter true
                                          :override_file_sorter true
-                                         :case_mode :smart_case}
-                                   :ui-select (let [themes (require :telescope.themes)]
-                                                (themes.get_dropdown))}})
+                                         :case_mode :smart_case}}})
     (load-extensions telescope)))
 
 {1 :nvim-telescope/telescope.nvim

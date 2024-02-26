@@ -1,3 +1,6 @@
 ;; UI for inputs
 
-{1 :stevearc/dressing.nvim :event :BufReadPost}
+(local opts {:input {:enabled false}
+             :select {:backend [:nui :telescope :builtin]}})
+
+{1 :stevearc/dressing.nvim :event :BufReadPost : opts}
