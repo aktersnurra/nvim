@@ -15,14 +15,9 @@
          "<cmd>lua vim.diagnostic.open_float()<CR>"
          {:desc :Diagnostics}]
         [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
-        [:n
-         :gh
-         "<cmd>lua vim.lsp.buf.code_action()<cr>"
-         {:desc "Code Action"}]
-        [:n
-         :gb
-         "<cmd>lua vim.lsp.codelens.run()<cr>"
-         {:desc "Code Lens"}]
+        [:n :gh "<cmd>lua vim.lsp.buf.code_action()<cr>" {:desc "Code Action"}]
+        [:n :gb "<cmd>lua vim.lsp.codelens.run()<cr>" {:desc "Code Lens"}]
+        [:n :K "<cmd>lua vim.lsp.hover()<cr>" {:desc "Hover documentation"}]
         [:n :<leader>li :<cmd>LspInfo<cr> {:desc "Lsp Info"}]])
 
 (fn on-attach [buffer]
