@@ -36,8 +36,6 @@
                  ;; Jump half a page and centralize the view
                  [:n :<c-d> :<c-d>zz {}]
                  [:n :<c-u> :<c-u>zz {}]
-                 ;; Remove highlighted search
-                 [:n :<c-m> :<cmd>nohlsearch<CR> {}]
                  ;; Close window
                  [:n :Q "<cmd>:q<CR>" {}]
                  ;; Force refresh
