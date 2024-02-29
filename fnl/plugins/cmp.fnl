@@ -21,20 +21,20 @@
     (cmp.setup {:snippet {:expand (fn [args]
                                     (luasnip.lsp_expand args.body))}
                 :completion {:completopt "menu,menuone,noinsert"}
-                :mapping (cmp.mapping.preset.insert {:<C-k> (cmp.mapping.select_prev_item)
-                                                     :<C-j> (cmp.mapping.select_next_item)
-                                                     :<C-b> (cmp.mapping (cmp.mapping.scroll_docs -1)
+                :mapping (cmp.mapping.preset.insert {:<c-k> (cmp.mapping.select_prev_item)
+                                                     :<c-j> (cmp.mapping.select_next_item)
+                                                     :<c-b> (cmp.mapping (cmp.mapping.scroll_docs -1)
                                                                          [:i
                                                                           :c])
-                                                     :<C-f> (cmp.mapping (cmp.mapping.scroll_docs 1)
+                                                     :<c-f> (cmp.mapping (cmp.mapping.scroll_docs 1)
                                                                          [:i
                                                                           :c])
-                                                     :<C-space> (cmp.mapping (cmp.mapping.complete)
+                                                     :<c-space> (cmp.mapping (cmp.mapping.complete)
                                                                              [:i
                                                                               :c])
-                                                     :<C-e> (cmp.mapping {:i (cmp.mapping.abort)
+                                                     :<c-e> (cmp.mapping {:i (cmp.mapping.abort)
                                                                           :c (cmp.mapping.close)})
-                                                     :<tab> (cmp.mapping.confirm {:select true})})
+                                                     :<c-y> (cmp.mapping.confirm {:select true})})
                 :sources [{:name :nvim_lsp}
                           {:name :nvim_lua}
                           {:name :luasnip}
