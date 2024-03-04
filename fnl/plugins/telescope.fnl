@@ -92,18 +92,9 @@
              {1 :<leader>ft
               2 "<cmd>Telescope live_grep theme=dropdown<cr>"
               :desc "Find Text"}
-             {1 :<leader>js
-              2 "<cmd>Telescope diagnostics theme=dropdown<cr>"
-              :desc "Telescope Diagnostics"}
              {1 :<leader>gc
               2 "<cmd>Telescope git_commits theme=dropdown<cr>"
-              :desc "Checkout Commit"}
-             {1 :<leader>lS
-              2 "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"
-              :desc "Workspace Symbols"}
-             {1 :<leader>n
-              2 "<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
-              :desc "Document Symbols"}])
+              :desc "Checkout Commit"}])
 
 (fn config []
   (let [telescope (require :telescope)
