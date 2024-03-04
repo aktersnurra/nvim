@@ -38,6 +38,8 @@
                  [:n :<c-u> :<c-u>zz {}]
                  ;; Close window
                  [:n :Q "<cmd>:q<CR>" {}]
+                 ;; Remove highlighted search
+                 [:n :<c-m> :<cmd>nohlsearch<CR> {}]
                  ;; Force refresh
                  [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]])
 
