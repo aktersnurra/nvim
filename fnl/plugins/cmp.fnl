@@ -35,13 +35,16 @@
                                                      :<c-e> (cmp.mapping {:i (cmp.mapping.abort)
                                                                           :c (cmp.mapping.close)})
                                                      :<c-y> (cmp.mapping.confirm {:select true})})
-                :sources [{:name :nvim_lsp}
+                :sources [{:name :nvim_lsp
+                           :group_index 1
+                           :keyword_length 3
+                           :max_item_count 32}
+                          {:name :buffer :group_index 2}
+                          {:name :spell :group_index 3}
                           {:name :nvim_lua}
                           {:name :luasnip}
-                          {:name :spell}
                           {:name :orgmode}
                           {:name :neorg}
-                          {:name :buffer :keyword_length 4}
                           {:name :path :keyword_length 6}
                           {:name :vim-dadbod-completion}
                           {:name :git}]
@@ -62,6 +65,10 @@
                          :completion {:scrollbar false}}
                 :confirm_opts {:behavior cmp.ConfirmBehavior.Replace
                                :select false}
+                :performance {:debounce 200
+                              :throttle 250
+                              :fetching_timeout 80
+                              :max_view_entries 16}
                 :experimental {:ghost_text false :native_menu false}})
     (cmp.setup.cmdline "/"
                        {:mapping (cmp.mapping.preset.cmdline)
