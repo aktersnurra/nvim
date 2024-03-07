@@ -82,7 +82,7 @@
                                  :lualine_x {}
                                  :lualine_y {}
                                  :lualine_z [:location :progress]}
-             :extensions []})
+             :extensions [:oil :mason]})
 
 (local dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress])
 
