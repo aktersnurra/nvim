@@ -22,4 +22,4 @@
               2 "<cmd>lua require(\"oil\").open_float()<cr>"
               :desc "Open parent directory"}])
 
-{1 :stevearc/oil.nvim : opts : keys}
+{1 :stevearc/oil.nvim : opts : keys :lazy false}
