@@ -19,7 +19,7 @@
          "<cmd>lua vim.diagnostic.open_float()<CR>"
          {:desc :Diagnostics}]
         [:n
-         :gu
+         :gS
          "<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
          {:desc "Document Symbols"}]
         [:n
