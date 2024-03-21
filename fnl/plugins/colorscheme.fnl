@@ -1,6 +1,8 @@
 ;; Load neovim colorscheme.
 
-(local opts {:styles {:type {:bold true} :lsp {:underline false}}})
+(local opts {:styles {:type {:bold true}
+                      :lsp {:underline false}
+                      :match_paren {:underline true}}})
 
 (fn config []
   (let [plugin (require :no-clown-fiesta)]
