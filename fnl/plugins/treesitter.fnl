@@ -7,9 +7,12 @@
                            :comment
                            :dockerfile
                            :fennel
+                           :graphql
                            :haskell
                            :hcl
                            :html
+                           :http
+                           :json
                            :latex
                            :lua
                            :make
@@ -22,6 +25,7 @@
                            :toml
                            :vim
                            :vimdoc
+                           :xml
                            :yaml]
         :sync_install false
         :ignore_install [""]
