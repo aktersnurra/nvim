@@ -5,7 +5,7 @@
 (local user-cmds [[:HarpoonAdd
                    (lambda []
                      (let [harpoon (require :harpoon)]
-                       (: (harpoon:list) :append)))
+                       (: (harpoon:list) :add)))
                    {:nargs 0}]
                   [:HarpoonUI
                    (lambda []
