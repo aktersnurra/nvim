@@ -8,7 +8,7 @@
               :desc "Git Conflict Refresh"}])
 
 {1 :akinsho/git-conflict.nvim
- :event :BufReadPre
+ :event :VeryLazy
  :version "*"
  :config true
  : keys}
