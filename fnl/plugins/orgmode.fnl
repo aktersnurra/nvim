@@ -70,7 +70,6 @@
 (fn config []
   (let [orgmode (require :orgmode)
         bullets (require :org-bullets)]
-    (orgmode.setup_ts_grammar)
     (orgmode.setup opts)
     (bullets.setup {:concealcursor true
                     :symbols {:list (. icons :line)
