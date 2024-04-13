@@ -77,7 +77,12 @@
                              :goto_previous_end {"[M" "@function.outer"
                                                  "[]" "@class.outer"}
                              :goto_next {"]i" "@conditional.outer"}
-                             :goto_previous {"[i" "@conditional.outer"}}}})
+                             :goto_previous {"[i" "@conditional.outer"}}
+                      :lsp_interop {:enable true
+                                    :border :single
+                                    :floating_preview_opts {}
+                                    :peek_definition_code {:<leader>df "@function.outer"
+                                                           :<leader>dF "@class.outer"}}}})
 
 (fn config []
   (let [treesitter (require :nvim-treesitter.configs)]
