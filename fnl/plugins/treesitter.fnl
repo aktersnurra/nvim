@@ -81,8 +81,8 @@
                       :lsp_interop {:enable true
                                     :border :single
                                     :floating_preview_opts {}
-                                    :peek_definition_code {:<leader>df "@function.outer"
-                                                           :<leader>dF "@class.outer"}}}})
+                                    :peek_definition_code {:md "@function.outer"
+                                                           :mD "@class.outer"}}}})
 
 (fn config []
   (let [treesitter (require :nvim-treesitter.configs)]
