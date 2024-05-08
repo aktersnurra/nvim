@@ -1,6 +1,6 @@
 # nvim
 
-My neovim rice in fennel.
+My neovim rice.
 
 # Dependencies
 
