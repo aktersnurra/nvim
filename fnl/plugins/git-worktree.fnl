@@ -9,4 +9,4 @@
               :mode :n
               :desc "Create a worktree"}])
 
-{1 :ThePrimeagen/git-worktree.nvim : keys}
+{1 :aktersnurra/git-worktree.nvim : keys}
