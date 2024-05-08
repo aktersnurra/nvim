@@ -6,8 +6,9 @@
                       :options {:signcolumn :no
                                 :number false
                                 :relativenumber false}}
-             :plugins {:gitsigns {:enabled false}
-                       :tmux {:enabled true}
+             :plugins {:options {:laststatus 0}
+                       :gitsigns {:enabled false}
+                       :tmux {:enabled false}
                        :twilight {:enabled true}}})
 
 (local keys [{1 :gy 2 :<cmd>ZenMode<cr> :desc "Zen Mode"}])
