@@ -23,6 +23,7 @@
                                                     :tutor
                                                     :zipPlugin]}}
              :ui {:border :single
+                  :backdrop 100
                   :icons {:cmd (.. (. icons :cmd) "  ")
                           :config (.. (. icons :cog) " ")
                           :event (.. (. icons :lightning) " ")
