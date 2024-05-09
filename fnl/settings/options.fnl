@@ -84,6 +84,8 @@
 (each [k v (pairs opts)]
   (tset vim.opt k v))
 
+(vim.opt.jumpoptions:append :stack)
+
 ;; Move to new line when reaching the beginning or end.
 (vim.opt.whichwrap:append "<,>,[,],h,l")
 (vim.opt.shortmess:append {:C true})

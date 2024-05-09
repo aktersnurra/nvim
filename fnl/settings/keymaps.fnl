@@ -41,7 +41,9 @@
                  ;; Remove highlighted search
                  [:n :<c-m> :<cmd>nohlsearch<CR> {}]
                  ;; Force refresh
-                 [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]])
+                 [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]
+                 ;; Remap jump next
+                 [:n :<c-m> :<c-i> {}]])
 
 (each [_ mapping (ipairs mappings)]
   (match mapping
