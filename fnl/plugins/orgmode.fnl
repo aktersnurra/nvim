@@ -56,7 +56,7 @@
                            (when option.action
                              (option.action))))))))
 
-(local opts
+(local org-opts
        {:org_agenda_files ["~/.local/share/org/**/*"]
         :org_hide_emphasis_markers true
         :org_agenda_start_on_weekday false
@@ -67,24 +67,31 @@
         :ui {:menu {: handler}}
         :mappings {:org {:org_cycle :<c-e> :org_global_cycle :<s-e>}}})
 
+(local bullets-opts
+       {:concealcursor true
+        :symbols {:list (. icons :line)
+                  :headlines [(. icons :orb)
+                              (. icons :filled-orb)
+                              (. icons :pentagon)
+                              (. icons :filled-pentagon)]
+                  :checkboxes {:half [(. icons :line)
+                                      "@org.checkbox.halfchecked"]
+                               :done [(. icons :checkmark)
+                                      "@org.checkbox.checked"]
+                               :todo [" " "@org.checkbox.checked"]}}})
+
+(local roam-opts {:directory "~/.local/share/org"})
+
 (fn config []
   (let [orgmode (require :orgmode)
+        roam (require :org-roam)
         bullets (require :org-bullets)]
-    (orgmode.setup opts)
-    (bullets.setup {:concealcursor true
-                    :symbols {:list (. icons :line)
-                              :headlines [(. icons :orb)
-                                          (. icons :filled-orb)
-                                          (. icons :pentagon)
-                                          (. icons :filled-pentagon)]
-                              :checkboxes {:half [(. icons :line)
-                                                  "@org.checkbox.halfchecked"]
-                                           :done [(. icons :checkmark)
-                                                  "@org.checkbox.checked"]
-                                           :todo [" " "@org.checkbox.checked"]}}})))
+    (orgmode.setup org-opts)
+    (roam.setup roam-opts)
+    (bullets.setup bullets-opts)))
 
 {1 :nvim-orgmode/orgmode
- :dependencies :akinsho/org-bullets.nvim
+ :dependencies [:akinsho/org-bullets.nvim :chipsenkbeil/org-roam.nvim]
  :ft [:org :orgagenda]
  : config
  : init

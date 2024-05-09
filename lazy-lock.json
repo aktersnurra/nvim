@@ -50,6 +50,7 @@
   "nvim-window-picker": { "branch": "main", "commit": "2c8200c5cbcdaac01dfe2c049997a1ca178506d8" },
   "oil.nvim": { "branch": "master", "commit": "010b44a79d497c697686e2727049d3dd215bbbd6" },
   "org-bullets.nvim": { "branch": "main", "commit": "3623e86e0fa6d07f45042f7207fc333c014bf167" },
+  "org-roam.nvim": { "branch": "main", "commit": "8b542cf4544c91621cc2aa6ad4ed6bffe07e14e2" },
   "orgmode": { "branch": "master", "commit": "cda615fa7c8607bfb7aaf7d2c9424dd5969f2625" },
   "persistence.nvim": { "branch": "main", "commit": "4982499c1636eac254b72923ab826ee7827b3084" },
   "plenary.nvim": { "branch": "master", "commit": "08e301982b9a057110ede7a735dd1b5285eb341f" },
