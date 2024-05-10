@@ -29,7 +29,8 @@
                       (tset vim.opt_local :foldenable false)
                       (tset vim.opt_local :foldlevelstart 0)
                       (tset vim.opt_local :foldlevel 0)
-                      (tset vim.opt_local :conceallevel 2))}]])
+                      (tset vim.opt_local :conceallevel 2)
+                      (tset vim.opt.local :concealcursor :nc))}]])
 
 (fn init []
   (let [cmds (require :util.cmds)]
