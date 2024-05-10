@@ -2,7 +2,7 @@
 
 (local opts {:window {:backdrop 1
                       :height 1
-                      :width 120
+                      :width 128
                       :options {:signcolumn :no
                                 :number false
                                 :relativenumber false}}
