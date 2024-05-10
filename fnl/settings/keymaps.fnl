@@ -39,7 +39,7 @@
                  ;; Close window
                  [:n :Q "<cmd>:q<CR>" {}]
                  ;; Remove highlighted search
-                 [:n :<c-m> :<cmd>nohlsearch<CR> {}]
+                 [:n :<m-h> :<cmd>nohlsearch<CR> {}]
                  ;; Force refresh
                  [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]
                  ;; Remap jump next
