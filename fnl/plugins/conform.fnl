@@ -16,6 +16,7 @@
                                 :fennel [:fnlfmt]
                                 :haskell [:fourmolu]
                                 :html [:prettierd]
+                                :http [:jq]
                                 :json [:jq]
                                 :lua [:stylua]
                                 :markdown [:prettierd]
