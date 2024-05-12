@@ -85,7 +85,6 @@
     (bullets.setup bullets-opts)))
 
 {1 :nvim-orgmode/orgmode
- :event :VeryLazy
  :dependencies [:akinsho/org-bullets.nvim :chipsenkbeil/org-roam.nvim]
  :ft [:org :orgagenda]
  : config
