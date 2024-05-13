@@ -1,6 +1,6 @@
 local function ensure(user, plugin)
   local path = vim.fn.stdpath "data" .. "/lazy/" .. plugin
-  if not vim.loop.fs_stat(path) then
+  if not vim.uv.fs_stat(path) then
     vim.notify("Downloading " .. plugin .. "...", vim.log.levels.INFO)
     vim.fn.system {
       "git",
