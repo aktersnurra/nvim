@@ -74,7 +74,7 @@
             :template "#+category: %^{type}\n#+filetags: %^{tags}\n#+date: %u\n\n* %?"
             :target "%<%Y%m%d%H%M%S>-%[slug].org"}})
 
-(local roam-opts {:directory "~/.local/share/org" :templates roam-templates})
+(local roam-opts {:directory "~/.local/share/org/roam" :templates roam-templates})
 
 (fn config []
   (let [orgmode (require :orgmode)
