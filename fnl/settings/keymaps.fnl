@@ -11,10 +11,10 @@
                  [:n :<C-k> :<C-w>k {}]
                  [:n :<C-l> :<C-w>l {}]
                  ;; Resize with arrows
-                 [:n :<C-Up> ":resize -2<CR>" {}]
-                 [:n :<C-Down> ":resize +2<CR>" {}]
-                 [:n :<C-Left> ":vertical resize -2<CR>" {}]
-                 [:n :<C-Right> ":vertical resize +2<CR>" {}]
+                 [:n :<m-f> "<c-w>+" {}]
+                 [:n :<m-p> "<c-w>-" {}]
+                 [:n "<m-,>" "<c-w>5<" {}]
+                 [:n "<m-.>" "<c-w>5>" {}]
                  ;; Visual ;;
                  ;; Stay in indent mode
                  [:v "<" :<gv {}]
