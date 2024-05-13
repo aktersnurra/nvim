@@ -79,7 +79,9 @@
              :spelllang [:en_us]
              ;; the font used in graphical neovim applications
              :guifont "monospace:h17"
-             :splitkeep :screen})
+             :splitkeep :screen
+             :inccommand :split
+             :shada ["'10" :<0 :s10 :h]})
 
 (each [k v (pairs opts)]
   (tset vim.opt k v))
