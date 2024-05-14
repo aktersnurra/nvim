@@ -1,3 +1,2 @@
-/lua
-/plugin
-wget*
+.styles
+.vale.ini
