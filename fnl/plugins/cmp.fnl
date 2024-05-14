@@ -1,15 +1,13 @@
 ;; Configuration for completion plugin.
 
-(local dependencies [:hrsh7th/cmp-buffer
-                     :onsails/lspkind-nvim
-                     :hrsh7th/cmp-nvim-lsp
+(local dependencies [:L3MON4D3/LuaSnip
+                     :f3fora/cmp-spell
+                     :hrsh7th/cmp-buffer
                      :hrsh7th/cmp-cmdline
-                     :petertriho/cmp-git
-                     :L3MON4D3/LuaSnip
-                     :rafamadriz/friendly-snippets
                      :hrsh7th/cmp-path
-                     :saadparwaiz1/cmp_luasnip
-                     :f3fora/cmp-spell])
+                     :onsails/lspkind.nvim
+                     :rafamadriz/friendly-snippets
+                     :saadparwaiz1/cmp_luasnip])
 
 (fn config []
   (let [cmp (require :cmp)
@@ -21,20 +19,12 @@
     (cmp.setup {:snippet {:expand (fn [args]
                                     (luasnip.lsp_expand args.body))}
                 :completion {:completopt "menu,menuone,noinsert"}
-                :mapping (cmp.mapping.preset.insert {:<c-k> (cmp.mapping.select_prev_item)
-                                                     :<c-j> (cmp.mapping.select_next_item)
-                                                     :<c-b> (cmp.mapping (cmp.mapping.scroll_docs -1)
-                                                                         [:i
-                                                                          :c])
-                                                     :<c-f> (cmp.mapping (cmp.mapping.scroll_docs 1)
-                                                                         [:i
-                                                                          :c])
-                                                     :<c-space> (cmp.mapping (cmp.mapping.complete)
-                                                                             [:i
-                                                                              :c])
-                                                     :<c-e> (cmp.mapping {:i (cmp.mapping.abort)
-                                                                          :c (cmp.mapping.close)})
-                                                     :<c-y> (cmp.mapping.confirm {:select true})})
+                :mapping (cmp.mapping.preset.insert {:<c-k> (cmp.mapping.select_prev_item {:behavior cmp.SelectBehavior.Insert})
+                                                     :<c-j> (cmp.mapping.select_next_item {:behavior cmp.SelectBehavior.Insert})
+                                                     :<c-y> (cmp.mapping (cmp.mapping.confirm {:behavior cmp.SelectBehavior.Insert
+                                                                                               :select true}
+                                                                                              [:i
+                                                                                               :c]))})
                 :sources [{:name :nvim_lsp
                            :group_index 1
                            :keyword_length 3
@@ -43,33 +33,20 @@
                           {:name :spell :group_index 3}
                           {:name :nvim_lua}
                           {:name :luasnip}
-                          {:name :orgmode}
-                          {:name :neorg}
-                          {:name :path :keyword_length 6}
-                          {:name :vim-dadbod-completion}
-                          {:name :git}]
-                :formatting {:format (lspkind.cmp_format {:with_text true
-                                                          :menu {:buffer ""
-                                                                 :nvim_lsp ""
-                                                                 :nvim_lua ""
-                                                                 :path ""
-                                                                 :luasnip ""}})}
-                :window {:documentation {:border ["╭"
-                                                  "─"
-                                                  "╮"
-                                                  "│"
-                                                  "╯"
-                                                  "─"
-                                                  "╰"
-                                                  "│"]}
-                         :completion {:scrollbar false}}
-                :confirm_opts {:behavior cmp.ConfirmBehavior.Replace
-                               :select false}
+                          {:name :path :keyword_length 6}]
                 :performance {:debounce 200
                               :throttle 250
                               :fetching_timeout 80
-                              :max_view_entries 16}
-                :experimental {:ghost_text false :native_menu false}})
+                              :max_view_entries 16}})
+    (cmp.setup.filetype [:org :orgagenda]
+                        {:sources [{:name :orgmode :group_index 1}
+                                   {:name :buffer :group_index 2}
+                                   {:name :spell :group_index 3}]})
+    (cmp.setup.filetype [:sql]
+                        {:sources [{:name :vim-dadbod-completion
+                                    :group_index 1}
+                                   {:name :buffer :group_index 2}
+                                   {:name :spell :group_index 3}]})
     (cmp.setup.cmdline "/"
                        {:mapping (cmp.mapping.preset.cmdline)
                         :sources [{:name :buffer}]})
