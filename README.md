@@ -22,3 +22,12 @@ neovim = nightly
 
 1. Create a `.vale.ini` file in the project
 2. Run `vale sync` with the vale located in `mason/packages/vale`
+
+## Clear lua Cache
+
+```fnl
+(let [cache-api (require :hotpot.api.cache)]
+  (cache-api.clear-cache))
+```
+
+Select and run `:Fnl`
