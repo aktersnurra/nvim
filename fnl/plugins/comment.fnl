@@ -1,21 +1,21 @@
 ;; Language aware commenting.
 
 (local opts {:toggler {;; Line-comment toggle keymap
-                       :line :mpc
+                       :line :mcc
                        ;; Block-comment toggle keymap
                        :block :mbc}
              ;; LHS of operator-pending mappings in NORMAL and VISUAL mode
              :opleader {;; Line-comment keymap
-                        :line :mp
+                        :line :mc
                         ;; Block-comment keymap
                         :block :mb}
              ;; LHS of extra mappings
              :extra {;; Add comment on the line above
-                     :above :mpO
+                     :above :mcO
                      ;; Add comment on the line below
-                     :below :mpo
+                     :below :mco
                      ;; Add comment at the end of line
-                     :eol :mpA}})
+                     :eol :mcA}})
 
 (local user-cmds [[:CommentNormal
                    (lambda []
