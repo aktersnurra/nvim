@@ -12,15 +12,15 @@
 (fn config []
   (let [cmp (require :cmp)
         lspkind (require :lspkind)
-        luasnip (require :luasnip)
         luasnip-vscode (require :luasnip.loaders.from_vscode)]
     (luasnip-vscode.lazy_load)
     (lspkind.init)
-    (cmp.setup {:snippet {:expand (fn [args]
-                                    (luasnip.lsp_expand args.body))}
+    (cmp.setup {:snippet {:expand (lambda [args]
+                                    (let [luasnip (require :luasnip)]
+                                      (luasnip.lsp_expand args.body)))}
                 :completion {:completopt "menu,menuone,noinsert"}
-                :mapping (cmp.mapping.preset.insert {:<c-k> (cmp.mapping.select_prev_item {:behavior cmp.SelectBehavior.Insert})
-                                                     :<c-j> (cmp.mapping.select_next_item {:behavior cmp.SelectBehavior.Insert})
+                :mapping (cmp.mapping.preset.insert {:<c-n> (cmp.mapping.select_prev_item {:behavior cmp.SelectBehavior.Insert})
+                                                     :<c-e> (cmp.mapping.select_next_item {:behavior cmp.SelectBehavior.Insert})
                                                      :<c-y> (cmp.mapping (cmp.mapping.confirm {:behavior cmp.SelectBehavior.Insert
                                                                                                :select true}
                                                                                               [:i
@@ -54,6 +54,19 @@
                        {:mapping (cmp.mapping.preset.cmdline)
                         :sources [{:name :path}
                                   {:name :cmdline
-                                   :option {:ignore_cmds [:Man "!"]}}]})))
+                                   :option {:ignore_cmds [:Man "!"]}}]})
+    (let [luasnip (require :luasnip)]
+      (luasnip.config.set_config {:history false
+                                  :updateevents "TextChanged,TextChangedI"})
+      (vim.keymap.set [:i :s] :<c-k>
+                      (lambda []
+                        (when (luasnip.expand_or_jumpable)
+                          (luasnip.expand_or_jump)))
+                      {:silent true})
+      (vim.keymap.set [:i :s] :<c-j>
+                      (lambda []
+                        (when (luasnip.jumpable -1)
+                          (luasnip.jump -1))
+                        {:silent true})))))
 
 {1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}
