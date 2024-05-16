@@ -25,9 +25,9 @@
           (enable win)
           (disable win)))))
 
-(fn config []
-  (vim.keymap.set :n :<leader>v (fn []
-                                  (toggle))
-                  {:noremap true :desc "Toggle Venn Diagram"}))
+(local keys [{1 :<leader>v
+              2 (fn []
+                  (toggle))
+              :desc "Toggle Venn Diagram"}])
 
-{1 :jbyuki/venn.nvim : config}
+{1 :jbyuki/venn.nvim : keys}
