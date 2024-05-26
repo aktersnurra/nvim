@@ -19,7 +19,7 @@
              :float {:padding 1 :max_width 64 :max_height 32}})
 
 (local keys [{1 "-"
-              2 "<cmd>lua require(\"oil\").open_float()<cr>"
+              2 "<cmd>lua require(\"oil\").open()<cr>"
               :desc "Open parent directory"}])
 
 {1 :stevearc/oil.nvim : opts : keys :lazy false}
