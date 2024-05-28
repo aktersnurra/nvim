@@ -86,4 +86,4 @@
 
 (local dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress])
 
-{1 :nvim-lualine/lualine.nvim :event :BufReadPost : opts : dependencies}
+{1 :nvim-lualine/lualine.nvim :event [:BufReadPost :BufNewFile] : opts : dependencies}

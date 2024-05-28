@@ -1,5 +1,5 @@
 ;; Various text objects.
 
 {1 :chrisgrieser/nvim-various-textobjs
- :event :BufReadPost
+ :event [:BufReadPost :BufNewFile]
  :opts {:useDefaultKeymaps true}}

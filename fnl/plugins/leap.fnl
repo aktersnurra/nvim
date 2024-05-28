@@ -1,13 +1,13 @@
 ;; Leap through text.
 
 (local dependencies [{1 :ggandor/flit.nvim
-                      :event :BufReadPost
+                      :event [:BufReadPost :BufNewFile]
                       :opts {:keys {:f :f :F :F :t :t :T :T}
                              :labeled_modes :v
                              :multiline true
                              :opts {}}}
                      {1 :ggandor/leap-spooky.nvim
-                      :event :BufReadPost
+                      :event [:BufReadPost :BufNewFile]
                       :opts {;; Additional text objects, to be merged with the default ones.
                              ;; E.g.: {'iq', 'aq'}
                              :extra_text_objects nil
@@ -34,4 +34,4 @@
     (leap.setup {})
     (leap.set_default_keymaps)))
 
-{1 :ggandor/leap.nvim : dependencies :event :BufReadPost : config}
+{1 :ggandor/leap.nvim : dependencies :event [:BufReadPost :BufNewFile] : config}

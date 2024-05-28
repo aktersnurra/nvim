@@ -16,4 +16,4 @@
     (vim.keymap.set :n :<C-s> (fn []
                                 (pick-window)) {})))
 
-{1 :s1n7ax/nvim-window-picker :event :BufReadPost :version :2.0.0 : config}
+{1 :s1n7ax/nvim-window-picker :event [:BufReadPost :BufNewFile] :version :2.0.0 : config}
