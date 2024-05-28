@@ -83,4 +83,4 @@
         {1 :<leader>re 2 :<cmd>Replace<cr> :desc :Replace}
         {1 :<leader>ri 2 :<cmd>ReplaceWord<cr> :desc "Replace Word"}])
 
-{1 :windwp/nvim-spectre :event :BufReadPost : init : keys : opts}
+{1 :windwp/nvim-spectre :event [:BufReadPost :BufNewFile] : init : keys : opts}
