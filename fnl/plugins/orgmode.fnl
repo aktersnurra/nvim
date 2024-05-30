@@ -60,9 +60,13 @@
        {:concealcursor true
         :symbols {:list (. icons :line)
                   :headlines [(. icons :orb)
-                              (. icons :filled-orb)
+                              (. icons :orb-filled)
                               (. icons :pentagon)
-                              (. icons :filled-pentagon)]
+                              (. icons :pentagon-filled)
+                              (. icons :hexagon)
+                              (. icons :hexagon-filled)
+                              (. icons :octagon)
+                              (. icons :octagon-filled)]
                   :checkboxes {:half [(. icons :line)
                                       "@org.checkbox.halfchecked"]
                                :done [(. icons :checkmark)
