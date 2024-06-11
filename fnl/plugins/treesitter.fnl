@@ -18,7 +18,6 @@
                            :make
                            :markdown
                            :ocaml
-                           :org
                            :python
                            :rust
                            :sql
