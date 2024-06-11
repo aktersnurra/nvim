@@ -18,6 +18,14 @@ neovim = nightly
     └── settings            # Neovim settings.
 ```
 
+## Treesitter 
+
+Install treesitter cli with if treesitter seems broken:
+
+```sh
+cargo install tree-sitter-cli
+```
+
 ## Vale
 
 1. Create a `.vale.ini` file in the project
