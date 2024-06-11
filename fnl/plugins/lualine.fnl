@@ -15,10 +15,12 @@
 (local ignore [:help :packer :spectre_panel :TelescopePrompt])
 
 (fn active-clients []
-  (let [clients (vim.lsp.buf_get_clients)
+  (let [clients (vim.lsp.get_clients)
+        buf_num (vim.api.nvim_buf_get_number 0)
         client_names []]
     (each [_ client (pairs clients)]
-      (table.insert client_names client.name))
+      (when (. (. client :attached_buffers) buf_num)
+        (table.insert client_names client.name)))
     (if (> (length client_names) 0)
         (table.concat client_names ", ")
         "")))
@@ -32,30 +34,20 @@
                     :symbols {:error (.. (. icons :error) " ")
                               :warn (.. (. icons :warn) " ")}
                     :colored false
-                    :disabled_buftypes [:nvim-tree]
                     :padding 0
                     :update_in_insert false
                     :always_visible true})
 
-(local diff {1 :diff
-             :colored false
-             :disabled_buftypes [:nvim-tree]
-             :cond hide-in-width})
+(local diff {1 :diff :colored false :cond hide-in-width})
 
-(local branch {1 "b:gitsigns_head"
-               :icon (. icons :git)
-               :disabled_buftypes [:nvim-tree]
-               :cond hide-in-width})
+(local branch {1 "b:gitsigns_head" :icon (. icons :git) :cond hide-in-width})
 
 (local filetype {1 :filetype
                  :icon_only true
-                 :disabled_buftypes [:nvim-tree]
                  :colored false
                  :cond hide-in-width})
 
-(local language-server {1 active-clients
-                        :disabled_buftypes [:nvim-tree]
-                        :cond hide-in-width})
+(local language-server {1 active-clients :cond hide-in-width})
 
 (local lsp-progress
        {1 :lsp_progress
@@ -84,6 +76,9 @@
                                  :lualine_z [:location :progress]}
              :extensions [:oil :mason]})
 
-(local dependencies [:nvim-tree/nvim-web-devicons :arkav/lualine-lsp-progress])
+(local dependencies [:arkav/lualine-lsp-progress])
 
-{1 :nvim-lualine/lualine.nvim :event [:BufReadPost :BufNewFile] : opts : dependencies}
+{1 :nvim-lualine/lualine.nvim
+ :event [:BufReadPost :BufNewFile]
+ : opts
+ : dependencies}
