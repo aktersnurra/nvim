@@ -10,7 +10,8 @@
                   "<cmd>Telescope rest select_env theme=dropdown<cr>"
                   "Select env"]])
 
-{1 :rest-nvim/rest.nvim
+{1 :aktersnurra/rest.nvim
+ :branch :fix/getregtype
  :ft :http
  :dependencies [{1 :vhyrro/luarocks.nvim :priority 1000 :config true}]
  :config (lambda []
