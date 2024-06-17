@@ -39,7 +39,7 @@
              ;; set term gui colors (most terminals support this)
              :termguicolors true
              ;; time to wait for a mapped sequence to complete (in milliseconds)
-             :timeoutlen 300
+             :timeoutlen 1000
              ;; enable persistent undo
              :undofile true
              ;; faster completion (4000ms default)
