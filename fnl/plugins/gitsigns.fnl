@@ -71,7 +71,6 @@
                               :style :minimal
                               :relative :cursor
                               :row 0
-                              :col 1}
-             :yadm {:enable false}})
+                              :col 1}})
 
 {1 :lewis6991/gitsigns.nvim :event [:BufReadPre :BufNewFile] : opts : keys}
