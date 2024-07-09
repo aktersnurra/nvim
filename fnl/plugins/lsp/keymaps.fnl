@@ -19,10 +19,6 @@
          "<cmd>lua vim.diagnostic.open_float()<CR>"
          {:desc :Diagnostics}]
         [:n
-         :gS
-         "<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
-         {:desc "Document Symbols"}]
-        [:n
          :gj
          "<cmd>Telescope diagnostics theme=dropdown<cr>"
          {:desc "Telescope Diagnostics"}]
@@ -34,7 +30,11 @@
          :gE
          "<cmd>Telescope lsp_type_definitions theme=dropdown<cr>"
          {:desc "Workspace Symbols"}]
-        [:n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
+        [:n :gm "<cmd>lua vim.lsp.buf.signature_help()<CR>" {:desc :Signature}]
+        [:n
+         :gM
+         "<cmd>Telescope lsp_document_symbols theme=dropdown<cr>"
+         {:desc "Document Symbols"}]
         [:n :gh "<cmd>lua vim.lsp.buf.code_action()<cr>" {:desc "Code Action"}]
         [:n :gb "<cmd>lua vim.lsp.codelens.run()<cr>" {:desc "Code Lens"}]
         [:n :K "<cmd>lua vim.lsp.hover()<cr>" {:desc "Hover documentation"}]
