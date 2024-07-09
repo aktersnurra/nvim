@@ -14,6 +14,7 @@
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
              :defaults {:lazy false}
+             :dev {:path (.. (vim.fn.expand :$HOME) :/projects)}
              :performance {:cache {:enabled true}
                            :rtp {:disabled_plugins [:gzip
                                                     :matchit
