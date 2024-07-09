@@ -1,33 +1,34 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
 
-(local dependencies [:nvim-lua/popup.nvim
-                     :nvim-telescope/telescope-frecency.nvim
-                     {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
-                     :tami5/sqlite.lua
-                     {1 :ahmedkhalf/project.nvim
-                      :event :VeryLazy
-                      :opts {:active true
-                             :on_config_done nil
-                             :manual_mode false
-                             :detection_methods [:patterns]
-                             :patterns [:git
-                                        :_darcs
-                                        :.hg
-                                        :.bzr
-                                        :.svn
-                                        :Makefile
-                                        :package.json]
-                             :show_hidden false
-                             :silent_chdir true
-                             :ignore_lsp {}
-                             :datapath (vim.fn.stdpath :data)}
-                      :config (lambda [_ opts]
-                                (let [project (require :project_nvim)]
-                                  (project.setup opts)))}
-                     :nvim-lua/plenary.nvim
-                     :nvim-telescope/telescope-fzf-native.nvim
-                     :nvim-telescope/telescope-frecency.nvim
-                     :lyz-code/telescope-orgmode.nvim])
+(local dependencies
+       [:nvim-lua/popup.nvim
+        :nvim-telescope/telescope-frecency.nvim
+        {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
+        :tami5/sqlite.lua
+        {1 :ahmedkhalf/project.nvim
+         :event :VeryLazy
+         :opts {:active true
+                :on_config_done nil
+                :manual_mode false
+                :detection_methods [:patterns]
+                :patterns [:git
+                           :_darcs
+                           :.hg
+                           :.bzr
+                           :.svn
+                           :Makefile
+                           :package.json]
+                :show_hidden false
+                :silent_chdir true
+                :ignore_lsp {}
+                :datapath (vim.fn.stdpath :data)}
+         :config (lambda [_ opts]
+                   (let [project (require :project_nvim)]
+                     (project.setup opts)))}
+        :nvim-lua/plenary.nvim
+        :nvim-telescope/telescope-fzf-native.nvim
+        :nvim-telescope/telescope-frecency.nvim
+        {1 :lyz-code/telescope-orgmode.nvim :version :1.1.0}])
 
 (local extensions [:fzf
                    :frecency
