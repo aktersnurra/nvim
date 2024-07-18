@@ -13,13 +13,13 @@
                                  :z true
                                  :g true}}
              :icons {:breadcrumb (. icons :guillemet)
-                     :separator (.. (. icons :small-right-arrow) " ")
+                     :separator (.. (. icons :small-arrow-right) " ")
                      :group "+"
                      :colors false
-                     :keys {:Up (.. (. icons :up-arrow) " ")
-                            :Down (.. (. icons :down-arrow) " ")
-                            :Left (.. (. icons :left-arrow) " ")
-                            :Right (.. (. icons :right-arrow) " ")
+                     :keys {:Up (.. (. icons :arrow-up) " ")
+                            :Down (.. (. icons :arrow-down) " ")
+                            :Left (.. (. icons :arrow-left) " ")
+                            :Right (.. (. icons :arrow-right) " ")
                             :C (.. (. icons :up-caret) " ")
                             :M (.. (. icons :meta) " ")
                             :D (.. (. icons :openbased) " ")

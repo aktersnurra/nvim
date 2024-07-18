@@ -41,7 +41,7 @@
                           :start (.. (. icons :play) " ")
                           :task (.. (. icons :checkmark) "  ")
                           :list [(.. (. icons :orb-filled) " ")
-                                 (.. (. icons :right-arrow) " ")
+                                 (.. (. icons :arrow-right) " ")
                                  (.. (. icons :star) " ")
                                  (.. (. icons :line) " ")]}}})
 
