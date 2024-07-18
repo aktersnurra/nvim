@@ -1,6 +1,10 @@
 ;; Icons.
 
 {
+ :arrow-down "󰁅"
+ :arrow-left "󰁍"
+ :arrow-right ""
+ :arrow-up ""
  :bs "󰭜"
  :caret ">"
  :checkmark ""
@@ -11,7 +15,6 @@
  :conflict ""
  :cr "󰌑"
  :document ""
- :down-arrow "󰁅"
  :down :
  :error ""
  :esc "󱊷"
@@ -29,7 +32,6 @@
  :import ""
  :info ""
  :keyboard ""
- :left-arrow "󰁍"
  :lightning ""
  :line "‒"
  :meta "◆"
@@ -45,22 +47,20 @@
  :pentagon-filled "󰜁"
  :play ""
  :recent-files "󱋢"
- :right-arrow ""
  :search-files "󰱽"
  :search-project "󰺅"
  :search-text "󱎸"
  :shift "󰘶"
  :sleep "󰒲"
- :small-right-arrow ""
+ :small-arrow-right ""
  :space ""
  :staged ""
  :star ""
  :tab "󰌒"
  :telescope ""
  :unstaged ""
- :up-caret "󰅃"
- :up-arrow ""
  :up :
+ :up-caret "󰅃"
  :vim ""
  :warn ""
 }

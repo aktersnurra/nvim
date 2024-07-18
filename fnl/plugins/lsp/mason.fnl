@@ -4,7 +4,7 @@
 
 (local opts {:ui {:border :single
                   :icons {:package_installed (.. (. icons :checkmark) " ")
-                          :package_pending (.. (. icons :right-arrow) " ")
+                          :package_pending (.. (. icons :arrow-right) " ")
                           :package_uninstalled (.. (. icons :close) " ")}}
              :max_concurrent_installers 10})
 
