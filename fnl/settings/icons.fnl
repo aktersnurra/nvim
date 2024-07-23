@@ -14,6 +14,8 @@
  :cog ""
  :conflict ""
  :cr "󰌑"
+ :diamond "◇"
+ :diamond-filled "◆"
  :document ""
  :down :
  :error ""
