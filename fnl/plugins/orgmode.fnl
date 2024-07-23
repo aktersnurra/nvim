@@ -61,6 +61,8 @@
         :symbols {:list (. icons :line)
                   :headlines [(. icons :orb)
                               (. icons :orb-filled)
+                              (. icons :diamond)
+                              (. icons :diamond-filled)
                               (. icons :pentagon)
                               (. icons :pentagon-filled)
                               (. icons :hexagon)
