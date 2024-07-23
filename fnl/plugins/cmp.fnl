@@ -32,7 +32,7 @@
                           {:name :buffer :group_index 2}
                           {:name :spell :group_index 3}
                           {:name :nvim_lua}
-                          {:name :luasnip}
+                          {:name :luasnip :group_index 1 :keyword_length 1}
                           {:name :path :keyword_length 6}]
                 :performance {:debounce 200
                               :throttle 250
@@ -41,11 +41,17 @@
     (cmp.setup.filetype [:org :orgagenda]
                         {:sources [{:name :orgmode :group_index 1}
                                    {:name :buffer :group_index 2}
+                                   {:name :luasnip
+                                    :group_index 1
+                                    :keyword_length 1}
                                    {:name :spell :group_index 3}]})
     (cmp.setup.filetype [:sql]
                         {:sources [{:name :vim-dadbod-completion
                                     :group_index 1}
                                    {:name :buffer :group_index 2}
+                                   {:name :luasnip
+                                    :group_index 1
+                                    :keyword_length 1}
                                    {:name :spell :group_index 3}]})
     (cmp.setup.cmdline "/"
                        {:mapping (cmp.mapping.preset.cmdline)
@@ -58,6 +64,7 @@
     (let [luasnip (require :luasnip)]
       (luasnip.config.set_config {:history false
                                   :updateevents "TextChanged,TextChangedI"})
+      (luasnip.add_snippets :org [(luasnip.parser.parse_snippet :be "#+begin_src $1\n$2\n#+end_src")])
       (vim.keymap.set [:i :s] :<c-k>
                       (lambda []
                         (when (luasnip.expand_or_jumpable)
@@ -67,6 +74,11 @@
                       (lambda []
                         (when (luasnip.jumpable -1)
                           (luasnip.jump -1))
-                        {:silent true})))))
+                        {:silent true}))
+      (vim.keymap.set [:i] :<c-l>
+                      (lambda []
+                        (when (luasnip.choice_active)
+                          (luasnip.change_choice 1)))
+                      {:silent true}))))
 
 {1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}
