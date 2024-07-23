@@ -61,24 +61,31 @@
                         :sources [{:name :path}
                                   {:name :cmdline
                                    :option {:ignore_cmds [:Man "!"]}}]})
-    (let [luasnip (require :luasnip)]
-      (luasnip.config.set_config {:history false
-                                  :updateevents "TextChanged,TextChangedI"})
-      (luasnip.add_snippets :org [(luasnip.parser.parse_snippet :be "#+begin_src $1\n$2\n#+end_src")])
+    (let [ls (require :luasnip)
+          fmt (require :luasnip.extras.fmt)]
+      (ls.config.set_config {:history false
+                             :updateevents "TextChanged,TextChangedI"})
+      (let [s ls.s
+            i ls.insert_node
+            fmt fmt.fmt]
+        (ls.add_snippets :org
+                         [(s :be
+                             (fmt "#+begin_src {}\n{}\n#+end_src"
+                                      [(i 1) (i 2)]))]))
       (vim.keymap.set [:i :s] :<c-k>
                       (lambda []
-                        (when (luasnip.expand_or_jumpable)
-                          (luasnip.expand_or_jump)))
+                        (when (ls.expand_or_jumpable)
+                          (ls.expand_or_jump)))
                       {:silent true})
       (vim.keymap.set [:i :s] :<c-j>
                       (lambda []
-                        (when (luasnip.jumpable -1)
-                          (luasnip.jump -1))
+                        (when (ls.jumpable -1)
+                          (ls.jump -1))
                         {:silent true}))
       (vim.keymap.set [:i] :<c-l>
                       (lambda []
-                        (when (luasnip.choice_active)
-                          (luasnip.change_choice 1)))
+                        (when (ls.choice_active)
+                          (ls.change_choice 1)))
                       {:silent true}))))
 
 {1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}

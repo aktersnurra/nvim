@@ -39,3 +39,9 @@ cargo install tree-sitter-cli
 ```
 
 Select and run `:Fnl`
+
+# Snippets
+
+## Todo
+
+-[ ] add snippets in a separate folder
