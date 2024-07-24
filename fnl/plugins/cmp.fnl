@@ -6,14 +6,11 @@
                      :hrsh7th/cmp-cmdline
                      :hrsh7th/cmp-path
                      :onsails/lspkind.nvim
-                     :rafamadriz/friendly-snippets
                      :saadparwaiz1/cmp_luasnip])
 
 (fn config []
   (let [cmp (require :cmp)
-        lspkind (require :lspkind)
-        luasnip-vscode (require :luasnip.loaders.from_vscode)]
-    (luasnip-vscode.lazy_load)
+        lspkind (require :lspkind)]
     (lspkind.init)
     (cmp.setup {:snippet {:expand (lambda [args]
                                     (let [luasnip (require :luasnip)]
@@ -60,32 +57,6 @@
                        {:mapping (cmp.mapping.preset.cmdline)
                         :sources [{:name :path}
                                   {:name :cmdline
-                                   :option {:ignore_cmds [:Man "!"]}}]})
-    (let [ls (require :luasnip)
-          fmt (require :luasnip.extras.fmt)]
-      (ls.config.set_config {:history false
-                             :updateevents "TextChanged,TextChangedI"})
-      (let [s ls.s
-            i ls.insert_node
-            fmt fmt.fmt]
-        (ls.add_snippets :org
-                         [(s :be
-                             (fmt "#+begin_src {}\n{}\n#+end_src"
-                                      [(i 1) (i 2)]))]))
-      (vim.keymap.set [:i :s] :<c-k>
-                      (lambda []
-                        (when (ls.expand_or_jumpable)
-                          (ls.expand_or_jump)))
-                      {:silent true})
-      (vim.keymap.set [:i :s] :<c-j>
-                      (lambda []
-                        (when (ls.jumpable -1)
-                          (ls.jump -1))
-                        {:silent true}))
-      (vim.keymap.set [:i] :<c-l>
-                      (lambda []
-                        (when (ls.choice_active)
-                          (ls.change_choice 1)))
-                      {:silent true}))))
+                                   :option {:ignore_cmds [:Man "!"]}}]})))
 
 {1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}
