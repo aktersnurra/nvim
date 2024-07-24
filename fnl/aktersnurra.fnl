@@ -7,6 +7,7 @@
                      (if (not= fname nil)
                          (table.insert plugins (require (.. :plugins. fname))))))
                  (table.insert plugins (require :plugins.lsp))
+                 (table.insert plugins (require :plugins.snippets))
                  plugins))
 
 (local icons (require :settings.icons))
