@@ -3,8 +3,10 @@
 (local dependencies [:rafamadriz/friendly-snippets])
 
 (fn add-snippets []
-  (let [org (require :plugins.snippets.org)]
-    (org.add-snippets)))
+  (let [org (require :plugins.snippets.org)
+        workflow (require :plugins.snippets.workflow)]
+    (org.add-snippets)
+    (workflow.add-snippets)))
 
 (fn config []
   (let [ls (require :luasnip)
