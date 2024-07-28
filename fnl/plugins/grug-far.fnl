@@ -5,7 +5,7 @@
           :command "nnoremap <silent> <buffer> q :close<CR>"}]
         [:FileType {:pattern [:grug-far] :command "setlocal spell!"}]])
 
-(fn replace [?cword ?file]
+(λ replace [?cword ?file]
   (let [grug (require :grug-far)]
     (var opts {:prefills {}})
     (when ?cword
@@ -14,31 +14,31 @@
       (set opts.prefills.flags ?file))
     (grug.grug_far opts)))
 
-(fn visual-replace []
+(λ visual-replace []
   (let [grug (require :grug-far)]
     (grug.with_visual_selection {:prefills {:flags (vim.fn.expand "%")}})))
 
-(fn config []
-  (let [cmds (require :util.cmds)
+(λ config []
+  (let [{: create-auto-cmds} (require :util.cmds)
         grug (require :grug-far)]
-    (cmds.create-auto-cmds auto-cmds)
+    (create-auto-cmds auto-cmds)
     (grug.setup)))
 
 (local keys [{1 :<m-r> 2 :<cmd>GrugFar<cr> :desc "Find and Replace"}
              {1 :<m-w>
-              2 (fn []
+              2 (λ []
                   (replace (vim.fn.expand :<cword>)))
               :desc "Find and replace word under cursor"}
              {1 :<m-x>
-              2 (fn []
+              2 (λ []
                   (replace nil (vim.fn.expand "%")))
               :desc "Find and replace in file"}
              {1 :<m-a>
-              2 (fn []
+              2 (λ []
                   (replace (vim.fn.expand :<cword>) (vim.fn.expand "%")))
               :desc "Find and replace cword in file"}
              {1 :<m-r>
-              2 (fn []
+              2 (λ []
                   (visual-replace))
               :desc "Find and Replace"
               :mode [:v]}])

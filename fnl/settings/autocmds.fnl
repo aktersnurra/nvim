@@ -23,5 +23,5 @@
                                 (let [cursorline (require :settings.cursorline)]
                                   cursorline.hide))}]])
 
-(let [cmds (require :util.cmds)]
-  (cmds.create-auto-cmds auto-cmds))
+(let [{: create-auto-cmds} (require :util.cmds)]
+  (create-auto-cmds auto-cmds))

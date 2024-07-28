@@ -24,9 +24,9 @@
                        (persistence.stop)))
                    {:nargs 0}]])
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-user-cmds user-cmds)))
+(λ init []
+  (let [{: create-user-cmds} (require :util.cmds)]
+    (create-user-cmds user-cmds)))
 
 (local opts {:options [:buffers :curdir :tabpages :winsize :help]})
 

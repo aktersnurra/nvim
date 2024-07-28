@@ -10,7 +10,7 @@
           :settings {:json {:schemas (let [schemastore (require :schemastore)]
                                        (schemastore.json.schemas))
                             :validate {:enable true}}}
-          :setup {:commands {:Format [(fn []
+          :setup {:commands {:Format [(λ []
                                         (vim.lsp.buf.range_formatting [] [0 0]
                                                                       [(vim.fn.line "$"
                                                                                     0)]))]}}}

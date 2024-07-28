@@ -21,7 +21,7 @@
                   "                 .....                  "
                   "                   .                    "])
 
-(fn config []
+(λ config []
   (let [alpha (require :alpha)]
     (let [dashboard (require :alpha.themes.dashboard)]
       (set dashboard.section.header.val ascii-art)

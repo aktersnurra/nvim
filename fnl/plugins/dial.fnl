@@ -1,19 +1,19 @@
 ;; Better incrementation/decrementation.
 
 (local keys [{1 :<C-a>
-              2 (fn []
+              2 (λ []
                   (let [dial (require :dial.map)]
                     (dial.inc_normal)))
               :expr true
               :desc :Increment}
              {1 :<C-x>
-              2 (fn []
+              2 (λ []
                   (let [dial (require :dial.map)]
                     (dial.dec_normal)))
               :expr true
               :desc :Decrement}])
 
-(fn config []
+(λ config []
   (let [cfg (require :dial.config)
         augend (require :dial.augend)]
     (cfg.augends:register_group {:default [augend.integer.alias.decimal

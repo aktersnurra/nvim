@@ -2,20 +2,20 @@
 
 (local ignored [:neo-tree])
 
-(fn filetype []
+(λ filetype []
   vim.bo.filetype)
 
-(fn ignore []
+(λ ignore []
   (vim.tbl_contains ignored (filetype)))
 
-(fn show []
+(λ show []
   (let [(ok cl) (pcall vim.api.nvim_win_get_var 0 :auto-cursorline)]
     (if (and ok cl)
         (do
           (set vim.wo.cursorline true)
           (vim.api.nvim_win_del_var 0 :auto-cursorline)))))
 
-(fn hide []
+(λ hide []
   (if (not= (ignore) true)
       (do
         (let [cl vim.wo.cursorline]

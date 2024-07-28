@@ -49,7 +49,7 @@
                 9 {1 :<leader>s :group :+session}
                 10 {1 :<leader>w :group :+worktree}}])
 
-(fn config []
+(λ config []
   (let [which-key (require :which-key)]
     (which-key.setup opts)
     (which-key.add groups)))

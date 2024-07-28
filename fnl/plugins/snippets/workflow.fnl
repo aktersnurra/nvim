@@ -1,4 +1,4 @@
-(fn workflow-snippets []
+(λ workflow-snippets []
   (let [ls (require :luasnip)
         fmt (require :luasnip.extras.fmt)]
     (let [s ls.s
@@ -33,7 +33,7 @@ substep \"{}\" =
                                      "
                    [(i 1) (i 2) (i 3) (i 4) (i 5)]))])))
 
-(fn add-snippets []
+(λ add-snippets []
   (let [ls (require :luasnip)
         snippets (workflow-snippets)]
     (ls.add_snippets :org snippets)

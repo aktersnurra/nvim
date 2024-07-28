@@ -14,7 +14,7 @@
 
 (local ignore [:help :packer :spectre_panel :TelescopePrompt])
 
-(fn active-clients []
+(λ active-clients []
   (let [clients (vim.lsp.get_clients)
         buf_num (vim.api.nvim_buf_get_number 0)
         client_names []]
@@ -25,7 +25,7 @@
         (table.concat client_names ", ")
         "")))
 
-(fn hide-in-width []
+(λ hide-in-width []
   (> (vim.fn.winwidth 0) 80))
 
 (local diagnostics {1 :diagnostics

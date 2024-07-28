@@ -1,6 +1,6 @@
 ;; Snippets for org files.
 
-(fn add-snippets []
+(λ add-snippets []
   (let [ls (require :luasnip)
         fmt (require :luasnip.extras.fmt)]
     (let [s ls.s

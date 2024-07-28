@@ -7,7 +7,7 @@
               {:name :DiagnosticSignHint :text (. icons :hint)}
               {:name :DiagnosticSignInfo :text (. icons :info)}])
 
-(fn configure-signs []
+(λ configure-signs []
   (each [_ sign (ipairs signs)]
     (vim.fn.sign_define sign.name {:texthl sign.name :text sign.text :numhl ""})))
 
@@ -23,7 +23,7 @@
                        :header ""
                        :prefix ""}})
 
-(fn setup []
+(λ setup []
   (configure-signs)
   (vim.diagnostic.config config)
   (set vim.lsp.handlers.textDocument/hover false)

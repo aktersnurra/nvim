@@ -38,11 +38,11 @@
                    :harpoon
                    :rest])
 
-(fn load-extensions [telescope]
+(λ load-extensions [telescope]
   (each [_ extension (ipairs extensions)]
     (telescope.load_extension extension)))
 
-(fn telescope-builtin [builtin opts]
+(λ telescope-builtin [builtin opts]
   (let [telescope (require :telescope.builtin)
         themes (require :telescope.themes)
         theme (. opts :theme)]
@@ -54,9 +54,9 @@
                                         {:theme :get_dropdown :previewer false}))
                    {:nargs 0}]])
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-user-cmds user-cmds)))
+(λ init []
+  (let [{: create-user-cmds} (require :util.cmds)]
+    (create-user-cmds user-cmds)))
 
 (local keys [{1 :mf 2 :<cmd>FindFiles<cr> :desc "Find Files"}
              {1 :mg
@@ -103,7 +103,7 @@
               2 "<cmd>Telescope git_commits theme=dropdown<cr>"
               :desc "Checkout Commit"}])
 
-(fn config []
+(λ config []
   (let [telescope (require :telescope)
         actions (require :telescope.actions)
         icons (require :settings.icons)]

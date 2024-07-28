@@ -17,27 +17,31 @@
   (let [harpoon (require :harpoon)]
     (: (harpoon:list) :select nr)))
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-user-cmds user-cmds)))
+(λ init []
+  (let [{: create-user-cmds} (require :util.cmds)]
+    (create-user-cmds user-cmds)))
 
 (local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
              {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}
              {1 :ms
-              2 (fn []
+              2 (λ []
                   (select 1))
               :desc "First Harpoon"}
              {1 :mt
-              2 (fn []
+              2 (λ []
                   (select 2))
               :desc "Second Harpoon"}
              {1 :mn
-              2 (fn []
+              2 (λ []
                   (select 3))
               :desc "Third Harpoon"}
              {1 :me
-              2 (fn []
+              2 (λ []
                   (select 4))
               :desc "Fourth Harpoon"}])
 
-{1 :ThePrimeagen/harpoon :branch :harpoon2 :event [:BufReadPost :BufNewFile] : init : keys}
+{1 :ThePrimeagen/harpoon
+ :branch :harpoon2
+ :event [:BufReadPost :BufNewFile]
+ : init
+ : keys}

@@ -1,6 +1,6 @@
 ;; Formatting
 
-(fn init []
+(λ init []
   (vim.keymap.set [:n :v] :<leader>e
                   (lambda []
                     (let [conform (require :conform)]

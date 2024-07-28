@@ -40,7 +40,7 @@
         [:n :K "<cmd>lua vim.lsp.hover()<cr>" {:desc "Hover documentation"}]
         [:n :<leader>li :<cmd>LspInfo<cr> {:desc "Lsp Info"}]])
 
-(fn on-attach [buffer]
+(λ on-attach [buffer]
   (let [opts {:noremap true :silent true : buffer}]
     (each [_ mapping (ipairs mappings)]
       (match mapping

@@ -26,7 +26,7 @@
           (disable win)))))
 
 (local keys [{1 :<leader>v
-              2 (fn []
+              2 (λ []
                   (toggle))
               :desc "Toggle Venn Diagram"}])
 

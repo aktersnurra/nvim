@@ -4,7 +4,7 @@
                       :lsp {:underline false}
                       :match_paren {:underline true}}})
 
-(fn config []
+(λ config []
   (let [plugin (require :no-clown-fiesta)]
     (plugin.setup opts)
     (plugin.load)))

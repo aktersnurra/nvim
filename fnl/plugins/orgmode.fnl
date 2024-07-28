@@ -29,17 +29,17 @@
 (local auto-cmds
        [[:FileType
          {:pattern :org
-          :callback (fn []
+          :callback (λ []
                       (tset vim.opt_local :foldenable false)
                       (tset vim.opt_local :foldlevelstart 0)
                       (tset vim.opt_local :foldlevel 0)
                       (tset vim.opt_local :concealcursor :nc)
                       (tset vim.opt_local :conceallevel 2))}]])
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-user-cmds user-cmds)
-    (cmds.create-auto-cmds auto-cmds)))
+(λ init []
+  (let [{: create-auto-cmds : create-user-cmds} (require :util.cmds)]
+    (create-user-cmds user-cmds)
+    (create-auto-cmds auto-cmds)))
 
 (local templates
        {:t {:description :Todo :template "* TODO %?\n %u\n DEADLINE: %T\n"}
@@ -77,12 +77,17 @@
 
 (local roam-templates
        {:n {:description :node
-            :template "#+category: %^{type}\n#+filetags: %^{tags}\n#+date: %u\n\n* %?"
+            :template "#+category: %^{type}
+#+filetags: %^{tags}
+#+date: %u
+
+* %?"
             :target "%<%Y%m%d%H%M%S>-%[slug].org"}})
 
-(local roam-opts {:directory "~/.local/share/org/roam" :templates roam-templates})
+(local roam-opts {:directory "~/.local/share/org/roam"
+                  :templates roam-templates})
 
-(fn config []
+(λ config []
   (let [orgmode (require :orgmode)
         roam (require :org-roam)
         bullets (require :org-bullets)]

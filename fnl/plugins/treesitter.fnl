@@ -83,7 +83,7 @@
                                     :peek_definition_code {:md "@function.outer"
                                                            :mD "@class.outer"}}}})
 
-(fn config []
+(λ config []
   (let [treesitter (require :nvim-treesitter.configs)]
     (treesitter.setup opts)))
 

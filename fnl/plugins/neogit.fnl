@@ -11,9 +11,9 @@
                               :NeogitCommitView]
                     :command "setlocal spell!"}]])
 
-(fn init []
-  (let [cmds (require :util.cmds)]
-    (cmds.create-auto-cmds auto-cmds)))
+(λ init []
+  (let [{: create-auto-cmds} (require :util.cmds)]
+    (create-auto-cmds auto-cmds)))
 
 (local opts {:integrations {:diffview true :telescope true}})
 

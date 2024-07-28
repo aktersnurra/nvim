@@ -29,7 +29,7 @@
                              ;; if the unnamed register is in use.
                              :paste_on_remote_yank false}}])
 
-(fn config []
+(λ config []
   (let [leap (require :leap)]
     (leap.setup {})
     (leap.create_default_mappings)

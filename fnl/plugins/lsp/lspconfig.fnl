@@ -1,13 +1,13 @@
 ;; Configuration for lsp clients.
 
-(fn on-attach []
+(λ on-attach []
   (vim.api.nvim_create_autocmd :LspAttach
-                               {:callback (fn [args]
-                                            (let [keymaps (require :plugins.lsp.keymaps)
+                               {:callback (λ [args]
+                                            (let [{: on-attach} (require :plugins.lsp.keymaps)
                                                   buffer (. args :buf)]
-                                              (keymaps.on-attach buffer)))}))
+                                              (on-attach buffer)))}))
 
-(fn config []
+(λ config []
   (on-attach)
   (let [diagnostics (require :plugins.lsp.diagnostics)
         mason-lspconfig (require :plugins.lsp.mason-lspconfig)

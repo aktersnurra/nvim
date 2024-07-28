@@ -15,7 +15,7 @@
               :mode :n
               :desc "Add DB connection"}])
 
-(fn init []
+(λ init []
   (set vim.g.db_ui_use_nerd_fonts 1)
   (set vim.g.db_ui_winwidth 40)
   (set vim.g.db_ui_notification_width 39))

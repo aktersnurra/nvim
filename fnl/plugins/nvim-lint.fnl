@@ -4,7 +4,7 @@
   (let [lint (require :lint)]
     (lint.try_lint)))
 
-(fn init []
+(λ init []
   (let [lint-augroup (vim.api.nvim_create_augroup :lint {:clear true})]
     (vim.api.nvim_create_autocmd [:BufEnter
                                   :BufWritePost
@@ -12,7 +12,7 @@
                                   :TextChangedI]
                                  {:group lint-augroup : callback})))
 
-(fn config []
+(λ config []
   (let [lint (require :lint)]
     (set lint.linters_by_ft {:* [:codespell :write_good]
                              :dockerfile [:hadolint]

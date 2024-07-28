@@ -8,7 +8,7 @@
                      :onsails/lspkind.nvim
                      :saadparwaiz1/cmp_luasnip])
 
-(fn config []
+(λ config []
   (let [cmp (require :cmp)
         lspkind (require :lspkind)]
     (lspkind.init)
