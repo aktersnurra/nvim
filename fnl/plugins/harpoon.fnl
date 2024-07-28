@@ -3,17 +3,17 @@
 (local opts {:ui_max_width 64 :title " ⇁  "})
 
 (local user-cmds [[:HarpoonAdd
-                   (lambda []
+                   (λ []
                      (let [harpoon (require :harpoon)]
                        (: (harpoon:list) :add)))
                    {:nargs 0}]
                   [:HarpoonUI
-                   (lambda []
+                   (λ []
                      (let [harpoon (require :harpoon)]
                        (harpoon.ui:toggle_quick_menu (harpoon:list) opts)))
                    {:nargs 0}]])
 
-(lambda select [nr]
+(λ select [nr]
   (let [harpoon (require :harpoon)]
     (: (harpoon:list) :select nr)))
 

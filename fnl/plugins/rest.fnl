@@ -14,6 +14,6 @@
  :branch :fix/getregtype
  :ft :http
  :dependencies [{1 :vhyrro/luarocks.nvim :priority 1000 :config true}]
- :config (lambda []
+ :config (λ []
            (let [rest-nvim (require :rest-nvim)]
              (rest-nvim.setup {: keybinds})))}

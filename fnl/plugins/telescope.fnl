@@ -22,7 +22,7 @@
                 :silent_chdir true
                 :ignore_lsp {}
                 :datapath (vim.fn.stdpath :data)}
-         :config (lambda [_ opts]
+         :config (λ [_ opts]
                    (let [project (require :project_nvim)]
                      (project.setup opts)))}
         :nvim-lua/plenary.nvim
@@ -49,7 +49,7 @@
     ((. telescope builtin) ((. themes theme) opts))))
 
 (local user-cmds [[:FindFiles
-                   (lambda []
+                   (λ []
                      (telescope-builtin :find_files
                                         {:theme :get_dropdown :previewer false}))
                    {:nargs 0}]])

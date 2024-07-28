@@ -1,6 +1,6 @@
 ;; Linting
 
-(lambda callback []
+(λ callback []
   (let [lint (require :lint)]
     (lint.try_lint)))
 

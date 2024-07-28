@@ -16,12 +16,12 @@
               :desc "Search headings"}])
 
 (local user-cmds [[:OrgAgendaPrompt
-                   (lambda []
+                   (λ []
                      (let [orgmode (require :orgmode)]
                        (orgmode.action :agenda.prompt)))
                    {:nargs 0}]
                   [:OrgCapturePrompt
-                   (lambda []
+                   (λ []
                      (let [orgmode (require :orgmode)]
                        (orgmode.action :capture.prompt)))
                    {:nargs 0}]])

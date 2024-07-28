@@ -4,7 +4,7 @@
                    {:pattern [:qf :help :man :lspinfo]
                     :command "nnoremap <silent> <buffer> q :close<CR>"}]
                   [:TextYankPost
-                   {:callback (lambda []
+                   {:callback (λ []
                                 (vim.highlight.on_yank {:higroup :Visual
                                                         :timeout 200}))}]
                   [:BufWinEnter {:command "setlocal formatoptions-=cro"}]
@@ -15,11 +15,11 @@
                   [[:FocusGained :BufEnter :CursorHold :CursorHoldI]
                    {:command :checktime}]
                   [[:InsertLeave :WinEnter]
-                   {:callback (lambda []
+                   {:callback (λ []
                                 (let [cursorline (require :settings.cursorline)]
                                   cursorline.show))}]
                   [[:InsertEnter :WinLeave]
-                   {:callback (lambda []
+                   {:callback (λ []
                                 (let [cursorline (require :settings.cursorline)]
                                   cursorline.hide))}]])
 

@@ -12,7 +12,7 @@
   (let [cmp (require :cmp)
         lspkind (require :lspkind)]
     (lspkind.init)
-    (cmp.setup {:snippet {:expand (lambda [args]
+    (cmp.setup {:snippet {:expand (λ [args]
                                     (let [luasnip (require :luasnip)]
                                       (luasnip.lsp_expand args.body)))}
                 :completion {:completopt "menu,menuone,noinsert"}

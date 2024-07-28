@@ -6,6 +6,6 @@
                              {:group (vim.api.nvim_create_augroup :Lazy
                                                                   {:clear true})
                               :pattern :VeryLazy
-                              :callback (lambda []
+                              :callback (λ []
                                           (require :settings.autocmds)
                                           (require :settings.keymaps))})

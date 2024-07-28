@@ -9,17 +9,17 @@
               :desc "Ignore current session"}])
 
 (local user-cmds [[:RestoreSession
-                   (lambda []
+                   (λ []
                      (let [persistence (require :persistence)]
                        (persistence.load)))
                    {:nargs 0}]
                   [:RestoreLastSession
-                   (lambda []
+                   (λ []
                      (let [persistence (require :persistence)]
                        (persistence.load {:last true})))
                    {:nargs 0}]
                   [:IgnoreSession
-                   (lambda []
+                   (λ []
                      (let [persistence (require :persistence)]
                        (persistence.stop)))
                    {:nargs 0}]])

@@ -1,6 +1,6 @@
 ;; Draw ASCII diagrams in Neovim
 
-(lambda enable [win]
+(λ enable [win]
   (tset (. vim.w win) :venn_enabled true)
   (set vim.wo.virtualedit :all)
   (vim.api.nvim_buf_set_keymap 0 :n :J "<c-v>j:VBox<cr>" {:noremap true})
@@ -9,7 +9,7 @@
   (vim.api.nvim_buf_set_keymap 0 :n :H "<c-v>h:VBox<cr>" {:noremap true})
   (vim.api.nvim_buf_set_keymap 0 :v :f ":VBox<cr>" {:noremap true}))
 
-(lambda disable [win]
+(λ disable [win]
   (set vim.wo.virtualedit "")
   (vim.api.nvim_buf_del_keymap 0 :n :J)
   (vim.api.nvim_buf_del_keymap 0 :n :K)
@@ -18,7 +18,7 @@
   (vim.api.nvim_buf_del_keymap 0 :v :f)
   (tset (. vim.w win) :venn_enabled nil))
 
-(lambda toggle []
+(λ toggle []
   (let [win (vim.api.nvim_get_current_win)]
     (let [enabled (vim.inspect (. (. vim.w win) :venn_enabled))]
       (if (= enabled :nil)

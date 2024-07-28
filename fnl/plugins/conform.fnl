@@ -2,7 +2,7 @@
 
 (λ init []
   (vim.keymap.set [:n :v] :<leader>e
-                  (lambda []
+                  (λ []
                     (let [conform (require :conform)]
                       (conform.format {:lsp_fallback true :async true})))
                   {:desc :Format}))

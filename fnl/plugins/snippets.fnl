@@ -16,16 +16,16 @@
     (ls.config.set_config {:history false
                            :updateevents "TextChanged,TextChangedI"})
     (vim.keymap.set [:i :s] :<c-u>
-                    (lambda []
+                    (λ []
                       (when (ls.expand_or_jumpable)
                         (ls.expand_or_jump))) {:silent true})
     (vim.keymap.set [:i :s] :<c-l>
-                    (lambda []
+                    (λ []
                       (when (ls.jumpable -1)
                         (ls.jump -1))
                       {:silent true}))
     (vim.keymap.set [:i] :<c-j>
-                    (lambda []
+                    (λ []
                       (when (ls.choice_active)
                         (ls.change_choice 1)))
                     {:silent true})))
