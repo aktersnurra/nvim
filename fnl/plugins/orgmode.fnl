@@ -61,14 +61,11 @@
         :symbols {:list (. icons :line)
                   :headlines [(. icons :orb)
                               (. icons :orb-filled)
+                              (. icons :square)
+                              (. icons :square-filled)
                               (. icons :diamond)
                               (. icons :diamond-filled)
-                              (. icons :pentagon)
-                              (. icons :pentagon-filled)
-                              (. icons :hexagon)
-                              (. icons :hexagon-filled)
-                              (. icons :octagon)
-                              (. icons :octagon-filled)]
+                              (. icons :triangle)]
                   :checkboxes {:half [(. icons :line)
                                       "@org.checkbox.halfchecked"]
                                :done [(. icons :checkmark)

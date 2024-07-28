@@ -28,7 +28,7 @@
                             :Esc (.. (. icons :esc) " ")
                             :NL (.. (. icons :cr) " ")
                             :BS (.. (. icons :bs) " ")
-                            :Space (.. (. icons :space) " ")
+                            :Space "  "
                             :Tab (.. (. icons :tab) " ")}}
              :layout {:height {:min 4 :max 25}
                       :width {:min 20 :max 50}
