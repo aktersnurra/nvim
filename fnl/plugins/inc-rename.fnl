@@ -2,6 +2,6 @@
 
 {1 :smjonas/inc-rename.nvim
  : keys
- :config (fn []
+ :config (λ []
            (let [inc-rename (require :inc_rename)]
              (inc-rename.setup)))}
