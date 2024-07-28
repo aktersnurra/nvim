@@ -6,13 +6,13 @@
   (let [snippets (require (.. :plugins.snippets. name))]
     (snippets.add-snippets)))
 
-(local {: load-and-apply} (require :util.load))
+(local {: apply-to-files} (require :util.load))
 
 (λ config []
   (let [ls (require :luasnip)
         luasnip-vscode (require :luasnip.loaders.from_vscode)]
     (luasnip-vscode.lazy_load)
-    (load-and-apply :/fnl/plugins/snippets add-snippets)
+    (apply-to-files :/fnl/plugins/snippets add-snippets)
     (ls.config.set_config {:history false
                            :updateevents "TextChanged,TextChangedI"})
     (vim.keymap.set [:i :s] :<c-u>
