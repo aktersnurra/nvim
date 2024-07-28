@@ -5,11 +5,7 @@
 
 (local icons (require :settings.icons))
 
-(local {: load-and-apply} (require :util.load))
-
-(local plugins (let [tbl {}]
-                 (load-and-apply :/fnl/plugins (partial load-plugin tbl))
-                 tbl))
+(local {: apply-to-files} (require :util.load))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
@@ -47,7 +43,9 @@
 
 (λ init []
   (require :settings)
-  (let [lazy (require :lazy)]
+  (let [lazy (require :lazy)
+        plugins {}]
+    (apply-to-files :/fnl/plugins (partial load-plugin plugins))
     (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
     (lazy.setup plugins opts)))
 
