@@ -1,16 +1,15 @@
 ;; Load plugins with lazy.
 
-(local plugins (let [plugins []
-                     path (.. (vim.fn.stdpath :config) :/fnl/plugins)]
-                 (each [fname (vim.fs.dir path)]
-                   (let [fname (fname:match "^(.*)%.fnl$")]
-                     (if (not= fname nil)
-                         (table.insert plugins (require (.. :plugins. fname))))))
-                 (table.insert plugins (require :plugins.lsp))
-                 (table.insert plugins (require :plugins.snippets))
-                 plugins))
+(λ load-plugin [tbl name]
+  (table.insert tbl (require (.. :plugins. name))))
 
 (local icons (require :settings.icons))
+
+(local {: load-and-apply} (require :util.load))
+
+(local plugins (let [tbl {}]
+                 (load-and-apply :/fnl/plugins (partial load-plugin tbl))
+                 tbl))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
