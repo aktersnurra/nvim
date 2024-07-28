@@ -2,29 +2,29 @@
 
 (local dependencies [:rafamadriz/friendly-snippets])
 
-(fn add-snippets []
-  (let [org (require :plugins.snippets.org)
-        workflow (require :plugins.snippets.workflow)]
-    (org.add-snippets)
-    (workflow.add-snippets)))
+(λ add-snippets [name]
+  (let [snippets (require (.. :plugins.snippets. name))]
+    (snippets.add-snippets)))
 
-(fn config []
+(local {: load-and-apply} (require :util.load))
+
+(λ config []
   (let [ls (require :luasnip)
         luasnip-vscode (require :luasnip.loaders.from_vscode)]
     (luasnip-vscode.lazy_load)
-    (add-snippets)
+    (load-and-apply :/fnl/plugins/snippets add-snippets)
     (ls.config.set_config {:history false
                            :updateevents "TextChanged,TextChangedI"})
-    (vim.keymap.set [:i :s] :<c-k>
+    (vim.keymap.set [:i :s] :<c-u>
                     (lambda []
                       (when (ls.expand_or_jumpable)
                         (ls.expand_or_jump))) {:silent true})
-    (vim.keymap.set [:i :s] :<c-j>
+    (vim.keymap.set [:i :s] :<c-l>
                     (lambda []
                       (when (ls.jumpable -1)
                         (ls.jump -1))
                       {:silent true}))
-    (vim.keymap.set [:i] :<c-l>
+    (vim.keymap.set [:i] :<c-j>
                     (lambda []
                       (when (ls.choice_active)
                         (ls.change_choice 1)))
