@@ -45,7 +45,7 @@
                                  (.. (. icons :star) " ")
                                  (.. (. icons :line) " ")]}}})
 
-(fn init []
+(λ init []
   (require :settings)
   (let [lazy (require :lazy)]
     (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
