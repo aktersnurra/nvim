@@ -59,13 +59,13 @@
 (local bullets-opts
        {:concealcursor true
         :symbols {:list (. icons :line)
-                  :headlines [(. icons :orb)
-                              (. icons :orb-filled)
-                              (. icons :square)
-                              (. icons :square-filled)
-                              (. icons :diamond)
-                              (. icons :diamond-filled)
-                              (. icons :triangle)]
+                  :headlines [(. icons :1)
+                              (. icons :2)
+                              (. icons :3)
+                              (. icons :4)
+                              (. icons :5)
+                              (. icons :6)
+                              (. icons :7)]
                   :checkboxes {:half [(. icons :line)
                                       "@org.checkbox.halfchecked"]
                                :done [(. icons :checkmark)
