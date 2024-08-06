@@ -28,7 +28,7 @@
         :nvim-lua/plenary.nvim
         :nvim-telescope/telescope-fzf-native.nvim
         :nvim-telescope/telescope-frecency.nvim
-        {1 :lyz-code/telescope-orgmode.nvim :version :1.1.0}])
+        {1 :nvim-orgmode/telescope-orgmode.nvim}])
 
 (local extensions [:fzf
                    :frecency
