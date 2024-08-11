@@ -4,6 +4,7 @@
  :clangd {}
  :cssls {}
  :dockerls {}
+ :elixirls {}
  :hls {}
  :html {}
  :jsonls {:init_options {:providerFormatter false}

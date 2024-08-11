@@ -6,6 +6,7 @@
                            :c
                            :comment
                            :dockerfile
+                           :elixir
                            :fennel
                            :graphql
                            :haskell

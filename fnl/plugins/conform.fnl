@@ -13,6 +13,7 @@
              :formatters_by_ft {:* [:codespell]
                                 :_ [:trim_whitespace :trim_newlines]
                                 :css [:stylelint]
+                                :elixir [:mix]
                                 :fennel [:fnlfmt]
                                 :haskell [:fourmolu]
                                 :html [:prettierd]
