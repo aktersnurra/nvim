@@ -95,6 +95,7 @@
 {1 :nvim-orgmode/orgmode
  :dependencies [:akinsho/org-bullets.nvim :chipsenkbeil/org-roam.nvim]
  :ft [:org :orgagenda]
+ :event :VeryLazy
  : config
  : init
  : keys}
