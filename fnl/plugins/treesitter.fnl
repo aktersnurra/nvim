@@ -7,6 +7,7 @@
                            :comment
                            :dockerfile
                            :elixir
+                           :erlang
                            :fennel
                            :graphql
                            :haskell
