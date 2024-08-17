@@ -1,3 +1,3 @@
 ;; Transpiler for fnl.
 
-{1 :rktjmp/hotpot.nvim}
+{1 :rktjmp/hotpot.nvim :branch :main}
