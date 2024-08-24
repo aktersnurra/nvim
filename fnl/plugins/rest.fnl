@@ -1,19 +1,18 @@
 ;; Http client.
 
-(local keybinds [[:<localleader>rr
-                  "<cmd>Rest run<cr>"
-                  "Run request under the cursor"]
-                 [:<localleader>rs
-                  "<cmd>Rest run last<cr>"
-                  "Re-run last request"]
-                 [:<localleader>rt
-                  "<cmd>Telescope rest select_env theme=dropdown<cr>"
-                  "Select env"]])
+(local keys [{1 :<leader>rr
+              2 "<cmd>Rest run<cr>"
+              :desc "Run request under the cursor"}
+             {1 :<localleader>rs
+              2 "<cmd>Rest run last<cr>"
+              :desc "Re-run last request"}
+             {1 :<localleader>rt
+              2 "<cmd>Telescope rest select_env theme=dropdown<cr>"
+              :desc "Select env"}])
 
 {1 :aktersnurra/rest.nvim
- :branch :fix/getregtype
  :ft :http
- :dependencies [{1 :vhyrro/luarocks.nvim :priority 1000 :config true}]
- :config (λ []
-           (let [rest-nvim (require :rest-nvim)]
-             (rest-nvim.setup {: keybinds})))}
+ : keys
+ :dev true
+ :dependencies [{1 :vhyrro/luarocks.nvim :priority 1000 :config true}
+                {1 :j-hui/fidget.nvim}]}
