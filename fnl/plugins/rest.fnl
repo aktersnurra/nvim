@@ -10,9 +10,8 @@
               2 "<cmd>Telescope rest select_env theme=dropdown<cr>"
               :desc "Select env"}])
 
-{1 :aktersnurra/rest.nvim
+{1 :rest-nvim/rest.nvim
  :ft :http
  : keys
- :dev true
  :dependencies [{1 :vhyrro/luarocks.nvim :priority 1000 :config true}
                 {1 :j-hui/fidget.nvim}]}
