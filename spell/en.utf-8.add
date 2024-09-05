@@ -76,3 +76,6 @@ composable
 lexically
 polymorphism
 structs
+Sigils
+sigil
+charlist
