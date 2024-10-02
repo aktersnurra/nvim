@@ -12,8 +12,7 @@
                   [:FileType
                    {:pattern [:gitcommit :markdown] :command "setlocal wrap"}]
                   [:VimResized {:command "tabdo wincmd ="}]
-                  [[:FocusGained :BufEnter]
-                   {:command :checktime}]
+                  [[:FocusGained :BufEnter] {:command :checktime}]
                   [[:InsertLeave :WinEnter]
                    {:callback (λ []
                                 (let [cursorline (require :settings.cursorline)]
