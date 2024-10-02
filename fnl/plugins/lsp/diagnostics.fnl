@@ -2,17 +2,13 @@
 
 (local icons (require :settings.icons))
 
-(local signs [{:name :DiagnosticSignError :text (. icons :error)}
-              {:name :DiagnosticSignWarn :text (. icons :warn)}
-              {:name :DiagnosticSignHint :text (. icons :hint)}
-              {:name :DiagnosticSignInfo :text (. icons :info)}])
-
-(λ configure-signs []
-  (each [_ sign (ipairs signs)]
-    (vim.fn.sign_define sign.name {:texthl sign.name :text sign.text :numhl ""})))
+(local signs {vim.diagnostic.severity.ERROR (. icons :error)
+              vim.diagnostic.severity.WARN (. icons :warn)
+              vim.diagnostic.severity.INFO (. icons :info)
+              vim.diagnostic.severity.HINT (. icons :hint)})
 
 (local config {:virtual_text false
-               :signs {:active signs}
+               :signs {:text signs}
                :update_in_insert false
                :underline true
                :severity_sort true
@@ -24,7 +20,6 @@
                        :prefix ""}})
 
 (λ setup []
-  (configure-signs)
   (vim.diagnostic.config config)
   (set vim.lsp.handlers.textDocument/hover false)
   (set vim.lsp.handlers.textDocument/signatureHelp false))
