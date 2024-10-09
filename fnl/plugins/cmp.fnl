@@ -59,4 +59,8 @@
                                   {:name :cmdline
                                    :option {:ignore_cmds [:Man "!"]}}]})))
 
-{1 :hrsh7th/nvim-cmp : dependencies :event :InsertEnter : config}
+{1 :iguanacucumber/magazine.nvim
+ :name :nvim-cmp
+ : dependencies
+ :event :InsertEnter
+ : config}
