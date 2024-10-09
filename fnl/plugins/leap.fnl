@@ -6,6 +6,7 @@
                              :labeled_modes :v
                              :multiline true
                              :opts {}}}
+                     {1 :tpope/vim-repeat :event [:BufReadPost :BufNewFile]}
                      {1 :ggandor/leap-spooky.nvim
                       :event [:BufReadPost :BufNewFile]
                       :opts {;; Additional text objects, to be merged with the default ones.
