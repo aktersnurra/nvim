@@ -31,8 +31,8 @@
                           {:name :nvim_lua}
                           {:name :luasnip :group_index 1 :keyword_length 1}
                           {:name :path :keyword_length 6}]
-                :performance {:debounce 200
-                              :throttle 250
+                :performance {:debounce 60
+                              :throttle 50
                               :fetching_timeout 80
                               :max_view_entries 16}})
     (cmp.setup.filetype [:org :orgagenda]
