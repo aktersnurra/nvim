@@ -34,7 +34,7 @@
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "6fda94cc0748a57e7057ce1e68ae4a3480ff4b78" },
   "nvim-bqf": { "branch": "main", "commit": "1b24dc6050c34e8cd377b6b4cd6abe40509e0187" },
   "nvim-bufdel": { "branch": "main", "commit": "523d58e94e7212fff3e05c247b962dc8f93bcfde" },
-  "nvim-cmp": { "branch": "main", "commit": "c8ac0332ae94c11b1d82b4ac86a497b2af3381fa" },
+  "nvim-cmp": { "branch": "main", "commit": "11493a55b6233e90a3b58d4061579ef4d4539ce0" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
   "nvim-lint": { "branch": "master", "commit": "f707b3ae50417067fa63fdfe179b0bff6b380da1" },
   "nvim-lspconfig": { "branch": "master", "commit": "d141895d1d9f41048fff201d62a2d6e96d299e32" },
