@@ -1,7 +1,7 @@
 ;; Load neovim colorscheme.
 
 (local opts {:styles {:type {:bold true}
-                      :lsp {:underline false}
+                      :lsp {:underline true}
                       :match_paren {:underline true}}})
 
 (λ config []
@@ -9,4 +9,4 @@
     (plugin.setup opts)
     (plugin.load)))
 
-{1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config}
+{1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config :dev true}
