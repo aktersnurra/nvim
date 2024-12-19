@@ -51,7 +51,7 @@
 (local user-cmds [[:FindFiles
                    (λ []
                      (telescope-builtin :find_files
-                                        {:theme :get_dropdown :previewer false}))
+                                        {:theme :get_ivy :previewer false}))
                    {:nargs 0}]])
 
 (λ init []
@@ -60,47 +60,47 @@
 
 (local keys [{1 :mf 2 :<cmd>FindFiles<cr> :desc "Find Files"}
              {1 :mg
-              2 "<cmd>Telescope live_grep theme=dropdown<cr>"
+              2 "<cmd>Telescope live_grep theme=ivy<cr>"
               :desc "Find Text"}
              {1 :<tab>
-              2 "<cmd>Telescope buffers theme=dropdown previewer=true initial_mode=normal<cr>"
+              2 "<cmd>Telescope buffers theme=ivy previewer=true initial_mode=normal<cr>"
               :desc "Switch Buffer"}
              {1 :<leader>fC
-              2 "<cmd>Telescope commands theme=dropdown<cr>"
+              2 "<cmd>Telescope commands theme=ivy<cr>"
               :desc :Commands}
              {1 :<leader>fH
               2 "<cmd>Telescope highlights<cr>"
               :desc :Highlights}
              {1 :<leader>fR
-              2 "<cmd>Telescope registers theme=dropdown<cr>"
+              2 "<cmd>Telescope registers theme=ivy<cr>"
               :desc :Registers}
              {1 :<leader>fS
-              2 "<cmd>Telescope grep_string theme=dropdown<cr>"
+              2 "<cmd>Telescope grep_string theme=ivy<cr>"
               :desc "Find String"}
              {1 :<leader>gb
-              2 "<cmd>Telescope git_branches theme=dropdown<cr>"
+              2 "<cmd>Telescope git_branches theme=ivy<cr>"
               :desc "Checkout Branch"}
              {1 :<leader>ff 2 :<cmd>FindFiles<cr> :desc "Find files"}
              {1 :<leader>fh
-              2 "<cmd>Telescope help_tags theme=dropdown<cr>"
+              2 "<cmd>Telescope help_tags theme=ivy<cr>"
               :desc :Help}
              {1 :<leader>fk
-              2 "<cmd>Telescope keymaps theme=dropdown<cr>"
+              2 "<cmd>Telescope keymaps theme=ivy<cr>"
               :desc :Keymaps}
              {1 :<leader>fl
-              2 "<cmd>Telescope resume theme=dropdown<cr>"
+              2 "<cmd>Telescope resume theme=ivy<cr>"
               :desc "Last Search"}
              {1 :<leader>fp
-              2 "<cmd>Telescope projects theme=dropdown<cr>"
+              2 "<cmd>Telescope projects theme=ivy<cr>"
               :desc "Find Project"}
              {1 :<leader>fr
-              2 "<cmd>Telescope oldfiles theme=dropdown<cr>"
+              2 "<cmd>Telescope oldfiles theme=ivy<cr>"
               :desc "Recent File"}
              {1 :<leader>ft
-              2 "<cmd>Telescope live_grep theme=dropdown<cr>"
+              2 "<cmd>Telescope live_grep theme=ivy<cr>"
               :desc "Find Text"}
              {1 :<leader>gc
-              2 "<cmd>Telescope git_commits theme=dropdown<cr>"
+              2 "<cmd>Telescope git_commits theme=ivy<cr>"
               :desc "Checkout Commit"}])
 
 (λ config []
