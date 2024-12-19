@@ -2,4 +2,4 @@
 
 {1 :chrisgrieser/nvim-various-textobjs
  :event [:BufReadPost :BufNewFile]
- :opts {:useDefaultKeymaps true}}
+ :opts {:keymaps {:useDefaults true}}}
