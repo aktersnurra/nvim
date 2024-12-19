@@ -21,5 +21,5 @@
  :dependencies [:mason.nvim
                 :williamboman/mason-lspconfig.nvim
                 :b0o/schemastore.nvim
-                :hrsh7th/cmp-nvim-lsp]
+                :saghen/blink.cmp]
  : config}

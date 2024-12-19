@@ -2,16 +2,16 @@
 ;; setup hooks for client configurations.
 
 (λ capabilities []
-  (let [cmp-lsp (require :cmp_nvim_lsp)]
-    (cmp-lsp.default_capabilities (vim.lsp.protocol.make_client_capabilities))))
+  (let [blink-cmp (require :blink.cmp)]
+    (blink-cmp.get_lsp_capabilities)))
 
 (λ handlers [server]
   (let [servers (require :plugins.lsp.servers)
-        lspconfig (require :lspconfig)]
-    (let [config (. lspconfig server)
-          opts (or (. servers server) {})]
-      (tset opts :capabilities (capabilities))
-      (config.setup opts))))
+        lspconfigs (require :lspconfig)]
+    (let [lspconfig (. lspconfigs server)
+          server-config (or (. servers server) {})]
+      (tset server-config :capabilities (capabilities))
+      (lspconfig.setup server-config))))
 
 (λ setup []
   (let [mason-lspconfig (require :mason-lspconfig)
