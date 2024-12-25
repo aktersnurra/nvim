@@ -42,27 +42,13 @@
   (each [_ extension (ipairs extensions)]
     (telescope.load_extension extension)))
 
-(λ telescope-builtin [builtin opts]
-  (let [telescope (require :telescope.builtin)
-        themes (require :telescope.themes)
-        theme (. opts :theme)]
-    ((. telescope builtin) ((. themes theme) opts))))
-
-(local user-cmds [[:FindFiles
-                   (λ []
-                     (telescope-builtin :find_files
-                                        {:theme :get_ivy :previewer false}))
-                   {:nargs 0}]])
-
-(λ init []
-  (let [{: create-user-cmds} (require :util.cmds)]
-    (create-user-cmds user-cmds)))
-
-(local keys [{1 :mf 2 :<cmd>FindFiles<cr> :desc "Find Files"}
+(local keys [{1 :mf
+              2 "<cmd>Telescope find_files theme=ivy previewer=false<cr>"
+              :desc "Find Files"}
              {1 :mg
-              2 "<cmd>Telescope live_grep theme=ivy<cr>"
+              2 "<cmd>Telescope live_grep theme=dropdown<cr>"
               :desc "Find Text"}
-             {1 :<tab>
+             {1 :mb
               2 "<cmd>Telescope buffers theme=ivy previewer=true initial_mode=normal<cr>"
               :desc "Switch Buffer"}
              {1 :<leader>fC
@@ -80,7 +66,9 @@
              {1 :<leader>gb
               2 "<cmd>Telescope git_branches theme=ivy<cr>"
               :desc "Checkout Branch"}
-             {1 :<leader>ff 2 :<cmd>FindFiles<cr> :desc "Find files"}
+             {1 :<leader>ff
+              2 "<cmd>Telescope find_files theme=ivy<cr>"
+              :desc "Find files"}
              {1 :<leader>fh
               2 "<cmd>Telescope help_tags theme=ivy<cr>"
               :desc :Help}
@@ -94,7 +82,7 @@
               2 "<cmd>Telescope projects theme=ivy<cr>"
               :desc "Find Project"}
              {1 :<leader>fr
-              2 "<cmd>Telescope oldfiles theme=ivy<cr>"
+              2 "<cmd>Telescope oldfiles theme=ivy previewer=false<cr>"
               :desc "Recent File"}
              {1 :<leader>ft
               2 "<cmd>Telescope live_grep theme=ivy<cr>"
@@ -105,7 +93,6 @@
 
 (λ config []
   (let [telescope (require :telescope)
-        actions (require :telescope.actions)
         icons (require :settings.icons)]
     (telescope.setup {:defaults {:prompt_prefix (.. "  " (. icons :telescope)
                                                     "  ")
@@ -120,61 +107,7 @@
                                                      :--line-number
                                                      :--column
                                                      :--smart-case
-                                                     :--hidden]
-                                 :mappings {:i {:<C-n> actions.cycle_history_next
-                                                :<C-p> actions.cycle_history_prev
-                                                :<C-j> actions.move_selection_next
-                                                :<C-k> actions.move_selection_previous
-                                                :<C-c> actions.close
-                                                :<Down> actions.move_selection_next
-                                                :<Up> actions.move_selection_previous
-                                                :<CR> actions.select_default
-                                                :<C-x> actions.select_horizontal
-                                                :<C-v> actions.select_vertical
-                                                :<C-t> actions.select_tab
-                                                :<C-u> actions.preview_scrolling_up
-                                                :<C-d> actions.preview_scrolling_down
-                                                :<PageUp> actions.results_scrolling_up
-                                                :<PageDown> actions.results_scrolling_down
-                                                :<Tab> (+ actions.toggle_selection
-                                                          actions.move_selection_worse)
-                                                :<S-Tab> (+ actions.toggle_selection
-                                                            actions.move_selection_better)
-                                                :<C-q> (+ actions.send_to_qflist
-                                                          actions.open_qflist)
-                                                :<M-q> (+ actions.send_selected_to_qflist
-                                                          actions.open_qflist)
-                                                :<C-l> actions.complete_tag
-                                                :<C-_> actions.which_key}
-                                            :n {:<esc> actions.close
-                                                :<CR> actions.select_default
-                                                :<C-x> actions.select_horizontal
-                                                :<C-v> actions.select_vertical
-                                                :<C-t> actions.select_tab
-                                                :<Tab> (+ actions.toggle_selection
-                                                          actions.move_selection_worse)
-                                                :<S-Tab> (+ actions.toggle_selection
-                                                            actions.move_selection_better)
-                                                :<C-q> (+ actions.send_to_qflist
-                                                          actions.open_qflist)
-                                                :<M-q> (+ actions.send_selected_to_qflist
-                                                          actions.open_qflist)
-                                                :j actions.move_selection_next
-                                                :k actions.move_selection_previous
-                                                :H actions.move_to_top
-                                                :M actions.move_to_middle
-                                                :L actions.move_to_bottom
-                                                :<Down> actions.move_selection_next
-                                                :<Up> actions.move_selection_previous
-                                                :gg actions.move_to_top
-                                                :G actions.move_to_bottom
-                                                :q actions.close
-                                                :<C-u> actions.preview_scrolling_up
-                                                :<C-d> actions.preview_scrolling_down
-                                                :<PageUp> actions.results_scrolling_up
-                                                :<PageDown> actions.results_scrolling_down
-                                                :dd actions.delete_buffer
-                                                :? actions.which_key}}}
+                                                     :--hidden]}
                       :extensions {:fzf {:fuzzy true
                                          :override_generic_sorter true
                                          :override_file_sorter true
@@ -183,7 +116,6 @@
 
 {1 :nvim-telescope/telescope.nvim
  :cmd :Telescope
- : init
  : config
  : dependencies
  : keys}
