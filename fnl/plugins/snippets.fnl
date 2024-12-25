@@ -13,7 +13,7 @@
         luasnip-vscode (require :luasnip.loaders.from_vscode)]
     (luasnip-vscode.lazy_load)
     (apply-to-files :/fnl/plugins/snippets add-snippets)
-    (ls.config.set_config {:history false
+    (ls.config.set_config {:history true
                            :updateevents "TextChanged,TextChangedI"})
     (vim.keymap.set [:i :s] :<c-u>
                     (λ []
