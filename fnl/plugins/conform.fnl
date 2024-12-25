@@ -25,7 +25,7 @@
                                 :python [:ruff_format :ruff_fix :ruff_organize_imports]
                                 :rust [:rustfmt]
                                 :sh [:shfmt :shellharden]
-                                :sql [:pg_format :sqlfluff]
+                                :sql [:pg_format]
                                 :toml [:taplo]
                                 :yaml [:yamlfmt]}})
 

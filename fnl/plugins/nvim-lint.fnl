@@ -23,7 +23,6 @@
                              :lua [:selene]
                              :python [:ruff]
                              :sh [:shellcheck]
-                             :sql [:sqlfluff]
                              :yaml [:yamllint]
                              :zsh [:zsh]})))
 
