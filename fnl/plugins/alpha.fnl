@@ -27,7 +27,7 @@
       (set dashboard.section.header.val ascii-art)
       (set dashboard.section.buttons.val
            [(dashboard.button :f (.. (. icons :search-files) "  Find file")
-                              ":Telescope find_files theme=ivy<CR>")
+                              ":Telescope find_files theme=ivy previewer=false<CR>")
             (dashboard.button :g (.. (. icons :search-text) "  Find text")
                               ":Telescope live_grep theme=ivy<CR>")
             (dashboard.button :p
@@ -36,7 +36,7 @@
             (dashboard.button :r
                               (.. (. icons :recent-files)
                                   "  Recently used files")
-                              ":Telescope oldfiles theme=ivy<CR>")
+                              ":Telescope oldfiles theme=ivy previewer=false<CR>")
             (dashboard.button :t (.. (. icons :cog) "  Configuration")
                               ":e ~/.config/nvim/init.lua <CR>")
             (dashboard.button :o (.. (. icons :org) "  Org")
