@@ -20,8 +20,6 @@
                        :prefix ""}})
 
 (λ setup []
-  (vim.diagnostic.config config)
-  (set vim.lsp.handlers.textDocument/hover false)
-  (set vim.lsp.handlers.textDocument/signatureHelp false))
+  (vim.diagnostic.config config))
 
 {: setup}
