@@ -5,16 +5,11 @@
 (local mappings [;;Remap space as leader key
                  ["" :<Space> :<Nop> {}]
                  ;; Normal ;;
-                 ;; Better window navigation
-                 [:n :<C-h> :<C-w>h {}]
-                 [:n :<C-j> :<C-w>j {}]
-                 [:n :<C-k> :<C-w>k {}]
-                 [:n :<C-l> :<C-w>l {}]
                  ;; Resize with arrows
-                 [:n :<m-f> "<c-w>+" {}]
-                 [:n :<m-p> "<c-w>-" {}]
-                 [:n "<m-,>" "<c-w>5<" {}]
-                 [:n "<m-.>" "<c-w>5>" {}]
+                 [:n :<m-f> :<c-w>+ {}]
+                 [:n :<m-p> :<c-w>- {}]
+                 [:n "<m-,>" :<c-w>5< {}]
+                 [:n :<m-.> :<c-w>5> {}]
                  ;; Visual ;;
                  ;; Stay in indent mode
                  [:v "<" :<gv {}]
@@ -36,14 +31,10 @@
                  ;; Jump half a page and centralize the view
                  [:n :<c-d> :<c-d>zz {}]
                  [:n :<c-u> :<c-u>zz {}]
-                 ;; Close window
-                 [:n :Q "<cmd>:q<CR>" {}]
                  ;; Remove highlighted search
                  [:n :<m-h> :<cmd>nohlsearch<CR> {}]
                  ;; Force refresh
-                 [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]
-                 ;; Remap jump next
-                 [:n :<c-m> :<c-i> {}]])
+                 [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]])
 
 (each [_ mapping (ipairs mappings)]
   (match mapping
