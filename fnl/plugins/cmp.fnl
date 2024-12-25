@@ -3,8 +3,9 @@
 (local opts {:keymap {:preset :default}
              :appearance {:use_nvim_cmp_as_default true
                           :nerd_font_variant :mono}
-             :completion {:menu {:scrollbar false}
-                          :documentation {:window {:scrollbar false}}}
+             :completion {:menu {:scrollbar false :border :none}
+                          :documentation {:window {:border :none
+                                                   :scrollbar false}}}
              :signature {:enabled false :window {:scrollbar false}}
              :sources {:default [:lsp :path :snippets :buffer :luasnip :dadbod]
                        :providers {:lsp {:name :LSP
@@ -12,15 +13,15 @@
                                          :fallbacks [:snippets
                                                      :luasnip
                                                      :buffer]
-                                         :score_offset 80}
+                                         :score_offset 96}
                                    :luasnip {:name :Luasnip
                                              :module :blink.cmp.sources.luasnip
                                              :min_keyword_length 2
                                              :fallbacks [:snippets]
-                                             :score_offset 85}
+                                             :score_offset 90}
                                    :dadbod {:name :Dadbod
                                             :module :vim_dadbod_completion.blink
-                                            :score_offset 80}}}
+                                            :score_offset 88}}}
              :snippets {:expand (λ [snippet]
                                   (let [luasnip (require :luasnip)]
                                     (luasnip.lsp_expand snippet)))
