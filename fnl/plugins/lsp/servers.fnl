@@ -26,6 +26,7 @@
  :taplo {}
  :texlab {}
  :vale_ls {:filetypes [:markdown :text :org]}
+ :sqls {}
  :yamlls {:settings {:yaml {:schemastore {:enable false :url ""}
                             :schemas (let [schemastore (require :schemastore)]
                                        (schemastore.yaml.schemas))}}}}
