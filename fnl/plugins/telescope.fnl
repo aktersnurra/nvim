@@ -43,7 +43,7 @@
     (telescope.load_extension extension)))
 
 (local keys [{1 :mf
-              2 "<cmd>Telescope find_files theme=ivy previewer=false<cr>"
+              2 "<cmd>Telescope find_files theme=ivy previewer=false disable_devicons=true<cr>"
               :desc "Find Files"}
              {1 :mg
               2 "<cmd>Telescope live_grep theme=dropdown<cr>"
@@ -99,7 +99,8 @@
                                  :selection_caret (.. (. icons :caret) " ")
                                  :path_display [:smart]
                                  :color_devicons false
-                                 :pickers {:find_files {:theme :dropdown}}
+                                 :pickers {:find_files {:theme :dropdown
+                                                        :disable_devicons true}}
                                  :vimgrep_arguments [:rg
                                                      :--color=never
                                                      :--no-heading
