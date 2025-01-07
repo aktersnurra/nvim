@@ -9,4 +9,4 @@
     (plugin.setup opts)
     (plugin.load)))
 
-{1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config :dev true}
+{1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config}

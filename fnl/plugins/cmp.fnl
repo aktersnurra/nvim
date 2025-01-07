@@ -1,7 +1,7 @@
 ;; Configuration for completion plugin.
 
 (local opts {:keymap {:preset :default}
-             :appearance {:use_nvim_cmp_as_default true
+             :appearance {:use_nvim_cmp_as_default false
                           :nerd_font_variant :mono}
              :completion {:menu {:scrollbar false :border :none}
                           :documentation {:window {:border :none
