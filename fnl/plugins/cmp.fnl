@@ -13,10 +13,13 @@
                                          :fallbacks [:snippets
                                                      :luasnip
                                                      :buffer]
-                                         :score_offset 96}
+                                         :score_offset 3}
+                                   :snippets {:name :Snippets
+                                            :module :blink.cmp.sources.snippets
+                                            :score_offset 4}
                                    :dadbod {:name :Dadbod
                                             :module :vim_dadbod_completion.blink
-                                            :score_offset 88}}}
+                                            :score_offset 2}}}
              :snippets {:preset :luasnip
                         :expand (λ [snippet]
                                   (let [luasnip (require :luasnip)]
