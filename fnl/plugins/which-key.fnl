@@ -38,10 +38,10 @@
              :disable {:filetypes [:netrw]}})
 
 (local groups [{:mode [:n :v]
-                1 {1 :<leader>d :group :+db}
+                1 {1 :<leader>d :group :+diff}
                 2 {1 :<leader>f :group :+find}
                 3 {1 :<leader>g :group :+git}
-                4 {1 :<leader>i :group :+diffview}
+                4 {1 :<leader>i :group :+db}
                 5 {1 :<leader>j :group :+diagnostics}
                 6 {1 :<leader>l :group :+lsp}
                 7 {1 :<leader>o :group :+orgmode}

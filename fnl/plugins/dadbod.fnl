@@ -6,11 +6,11 @@
                       :ft [:sql :plsql]
                       :lazy true}])
 
-(local keys [{1 :<leader>dn
+(local keys [{1 :<leader>in
               2 :<cmd>DBUIToggle<cr>
               :mode :n
               :desc "Toggle Dadbod UI"}
-             {1 :<leader>de
+             {1 :<leader>ie
               2 :<cmd>DBUIAddConnection<cr>
               :mode :n
               :desc "Add DB connection"}])
