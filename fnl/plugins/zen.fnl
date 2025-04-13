@@ -1,8 +1,8 @@
 ;; Zen mode.
 
-(local opts {:window {:backdrop 1
+(local opts {:window {:backdrop 0.98
                       :height 1
-                      :width 128
+                      :width 120
                       :options {:signcolumn :no
                                 :number false
                                 :relativenumber false}}
