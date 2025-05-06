@@ -17,6 +17,7 @@ end
 ensure("folke", "lazy.nvim")
 ensure("rktjmp", "hotpot.nvim")
 
+vim.loader.enable()
 require("hotpot").setup {
   provide_require_fennel = true,
   compiler = {
