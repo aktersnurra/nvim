@@ -30,13 +30,7 @@
         :nvim-telescope/telescope-frecency.nvim
         {1 :nvim-orgmode/telescope-orgmode.nvim}])
 
-(local extensions [:fzf
-                   :frecency
-                   :orgmode
-                   :projects
-                   :git_worktree
-                   :harpoon
-                   :rest])
+(local extensions [:fzf :frecency :orgmode :projects :git_worktree :harpoon])
 
 (λ load-extensions [telescope]
   (each [_ extension (ipairs extensions)]
