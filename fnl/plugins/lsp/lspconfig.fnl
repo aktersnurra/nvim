@@ -17,7 +17,7 @@
     (mason-lspconfig.setup)))
 
 {1 :neovim/nvim-lspconfig
- :event [:BufReadPost :BufNewFile]
+ :event :BufNew
  :dependencies [:mason.nvim
                 :williamboman/mason-lspconfig.nvim
                 :b0o/schemastore.nvim

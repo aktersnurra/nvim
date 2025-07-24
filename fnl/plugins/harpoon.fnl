@@ -42,6 +42,6 @@
 
 {1 :ThePrimeagen/harpoon
  :branch :harpoon2
- :event [:BufReadPost :BufNewFile]
+ :event :BufRead
  : init
  : keys}

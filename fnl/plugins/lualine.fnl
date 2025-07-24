@@ -79,6 +79,6 @@
 (local dependencies [:arkav/lualine-lsp-progress])
 
 {1 :nvim-lualine/lualine.nvim
- :event [:BufReadPost :BufNewFile]
+ :event :VeryLazy
  : opts
  : dependencies}

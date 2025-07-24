@@ -1,4 +1,4 @@
-;; Trim whitespaces on save.
+;; Select buffer
 
 (local opts {:other_win_hl_color "#171717"
              :fg_color "#E1E1E1"
@@ -16,4 +16,4 @@
     (vim.keymap.set :n :mw (λ []
                                 (pick-window)) {})))
 
-{1 :s1n7ax/nvim-window-picker :event [:BufReadPost :BufNewFile] :version :2.0.0 : config}
+{1 :s1n7ax/nvim-window-picker :event :VeryLazy :version :2.0.0 : config}

@@ -26,4 +26,4 @@
                              :yaml [:yamllint]
                              :zsh [:zsh]})))
 
-{1 :mfussenegger/nvim-lint : init : config :event [:BufReadPost :BufNewFile]}
+{1 :mfussenegger/nvim-lint : init : config :event :BufNew}

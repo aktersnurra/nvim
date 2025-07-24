@@ -1,14 +1,14 @@
 ;; Leap through text.
 
 (local dependencies [{1 :ggandor/flit.nvim
-                      :event [:BufReadPost :BufNewFile]
+                      :event :VimEnter
                       :opts {:keys {:f :f :F :F :t :t :T :T}
                              :labeled_modes :v
                              :multiline true
                              :opts {}}}
-                     {1 :tpope/vim-repeat :event [:BufReadPost :BufNewFile]}
+                     {1 :tpope/vim-repeat :event :VeryLazy}
                      {1 :ggandor/leap-spooky.nvim
-                      :event [:BufReadPost :BufNewFile]
+                      :event :VeryLazy
                       :opts {;; Additional text objects, to be merged with the default ones.
                              ;; E.g.: {'iq', 'aq'}
                              :extra_text_objects [:iq :aq]
@@ -38,5 +38,5 @@
 
 {1 :ggandor/leap.nvim
  : dependencies
- :event [:BufReadPost :BufNewFile]
+ :event :VeryLazy
  : config}

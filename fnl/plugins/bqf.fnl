@@ -24,4 +24,4 @@
                         :ptoggleauto :a
                         :ptogglemode :P}})
 
-{1 :kevinhwang91/nvim-bqf :event [:BufReadPost :BufNewFile] : opts}
+{1 :kevinhwang91/nvim-bqf :event :VeryLazy : opts}

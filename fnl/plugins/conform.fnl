@@ -29,4 +29,4 @@
                                 :toml [:taplo]
                                 :yaml [:yamlfmt]}})
 
-{1 :stevearc/conform.nvim : init : opts :event [:BufReadPost :BufNewFile]}
+{1 :stevearc/conform.nvim : init : opts :event :BufRead}
