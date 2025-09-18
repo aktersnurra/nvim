@@ -16,7 +16,6 @@
                                                                       [(vim.fn.line "$"
                                                                                     0)]))]}}}
  :ocamllsp {}
- :pyright {}
  :rust_analyzer {:settings {:rust-analyzer {:lens {:enable true}
                                             :checkOnSave {:command :clippy}}}}
  :lua_ls {:settings {:Lua {:completion {:callSnippet :Replace}
@@ -25,6 +24,7 @@
                                      :path (vim.split package.path ";")}}}}
  :taplo {}
  :texlab {}
+ :ty {}
  :vale_ls {:filetypes [:markdown :text :org]}
  :sqls {}
  :yamlls {:settings {:yaml {:schemastore {:enable false :url ""}
