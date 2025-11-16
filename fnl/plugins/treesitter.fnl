@@ -24,6 +24,7 @@
                            :rust
                            :sql
                            :toml
+                           :unison
                            :vim
                            :vimdoc
                            :xml

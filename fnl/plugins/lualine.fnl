@@ -55,7 +55,7 @@
         :timer {:progress_enddelay 500 :lsp_client_name_enddelay 500}})
 
 (local opts {:options {:icons_enabled true
-                       :theme :auto
+                       :theme :no-clown-fiesta
                        :component_separators ""
                        :section_separators {:left "" :right ""}
                        :disabled_filetypes disable
