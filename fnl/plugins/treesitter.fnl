@@ -20,6 +20,7 @@
                            :make
                            :markdown
                            :ocaml
+                           :ocaml_interface
                            :python
                            :rust
                            :sql
