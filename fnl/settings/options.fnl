@@ -81,6 +81,7 @@
              :guifont "monospace:h17"
              :splitkeep :screen
              :inccommand :split
+             :winborder :single
              :shada ["'10" :<0 :s10 :h]})
 
 (each [k v (pairs opts)]

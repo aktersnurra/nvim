@@ -2,9 +2,8 @@
 ;; setup hooks for client configurations.
 
 (local textDocument-handlers
-       {:textDocument/hover (vim.lsp.with vim.lsp.handlers.hover {:border :single})
-        :textDocument/signatureHelp (vim.lsp.with vim.lsp.handlers.signature_help
-                                                  {:border :single})})
+       {:textDocument/hover (vim.lsp.with vim.lsp.handlers.hover)
+        :textDocument/signatureHelp (vim.lsp.with vim.lsp.handlers.signature_help)})
 
 (λ capabilities []
   (let [blink-cmp (require :blink.cmp)]
