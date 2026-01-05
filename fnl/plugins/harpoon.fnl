@@ -1,6 +1,9 @@
 ;; Harpoon files for navigation.
 
-(local opts {:ui_max_width 64 :title " ⇁  "})
+(local opts
+       {:ui_max_width 64
+        :title " ⇁  "
+        :settings {:save_on_toggle true :sync_on_ui_close true}})
 
 (local user-cmds [[:HarpoonAdd
                    (λ []
@@ -40,8 +43,4 @@
                   (select 4))
               :desc "Fourth Harpoon"}])
 
-{1 :ThePrimeagen/harpoon
- :branch :harpoon2
- :event :BufRead
- : init
- : keys}
+{1 :ThePrimeagen/harpoon :branch :harpoon2 :event :BufRead : init : keys}
