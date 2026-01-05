@@ -6,7 +6,7 @@
                 :normal_cur :yss
                 :normal_line :yS
                 :normal_cur_line :ySS
-                :visual :gS
+                :visual :mS
                 :visual_line :gS
                 :delete :ds
                 :change :cs
@@ -16,4 +16,4 @@
   (let [surround (require :nvim-surround)]
     (surround.setup {: keymaps})))
 
-{1 :kylechui/nvim-surround :event :VeryLazy : config}
+{1 :kylechui/nvim-surround :version :^3.0.0 :event :VeryLazy : config}
