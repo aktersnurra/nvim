@@ -39,4 +39,7 @@
     (vim.keymap.set [:x :o] :X "<Plug>(leap-backward-till)")
     (vim.keymap.set [:n] :gs "<Plug>(leap-from-window)")))
 
-{1 :ggandor/leap.nvim : dependencies :event :VeryLazy : config}
+{:url "https://codeberg.org/andyg/leap.nvim"
+ : dependencies
+ :event :VeryLazy
+ : config}
