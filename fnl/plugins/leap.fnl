@@ -7,7 +7,7 @@
                              :multiline true
                              :opts {}}}
                      {1 :tpope/vim-repeat :event :VeryLazy}
-                     {1 :ggandor/leap-spooky.nvim
+                     {1 :aktersnurra/leap-spooky.nvim
                       :event :VeryLazy
                       :opts {;; Additional text objects, to be merged with the default ones.
                              ;; E.g.: {'iq', 'aq'}
