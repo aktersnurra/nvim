@@ -1,6 +1,7 @@
 ;; Load nvim settings
 
 (require :settings.options)
+(require :settings.terminal)
 
 (vim.api.nvim_create_autocmd :User
                              {:group (vim.api.nvim_create_augroup :Lazy
