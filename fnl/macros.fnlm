@@ -1,0 +1,36 @@
+;; Fennel macros for compile-time expansion.
+
+(fn autocmd [event opts]
+  `(vim.api.nvim_create_autocmd ,event ,opts))
+
+(fn autocmds [...]
+  (let [out `(do)]
+    (each [_ cmd (ipairs [...])]
+      (table.insert out (autocmd (. cmd 1) (. cmd 2))))
+    out))
+
+(fn user-cmd [name cmd opts]
+  `(vim.api.nvim_create_user_command ,name ,cmd ,opts))
+
+(fn user-cmds [...]
+  (let [out `(do)]
+    (each [_ cmd (ipairs [...])]
+      (table.insert out (user-cmd (. cmd 1) (. cmd 2) (. cmd 3))))
+    out))
+
+(fn keymap [mode lhs rhs opts]
+  `(vim.keymap.set ,mode ,lhs ,rhs ,opts))
+
+(fn keymaps [...]
+  (let [out `(do)]
+    (each [_ mapping (ipairs [...])]
+      (table.insert out (keymap (. mapping 1) (. mapping 2) (. mapping 3) (. mapping 4))))
+    out))
+
+(fn set-opts [opts]
+  (let [out `(do)]
+    (each [k v (pairs opts)]
+      (table.insert out `(tset vim.opt ,k ,v)))
+    out))
+
+{: autocmd : autocmds : user-cmd : user-cmds : keymap : keymaps : set-opts}
