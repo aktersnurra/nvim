@@ -40,6 +40,7 @@
     (vim.keymap.set [:n] :gs "<Plug>(leap-from-window)")))
 
 {:url "https://codeberg.org/andyg/leap.nvim"
+:name :leap.nvim
  : dependencies
  :event :VeryLazy
  : config}

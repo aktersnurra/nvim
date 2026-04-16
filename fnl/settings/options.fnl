@@ -43,7 +43,7 @@
              ;; enable persistent undo
              :undofile true
              ;; faster completion (4000ms default)
-             :updatetime 100
+             :updatetime 1000
              ;; if a file is being edited by another program (or was written
              ;; to file while editing with another program), it is not allowed
              ;; to be edited

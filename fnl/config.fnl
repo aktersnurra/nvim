@@ -7,12 +7,16 @@
 
 (local {: apply-to-files} (require :util.load))
 
+(local api (require :hotpot.api))
+(local context (assert (api.context (vim.fn.stdpath :config))))
+
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
              :defaults {:lazy false}
              :dev {:path (.. (vim.fn.expand :$HOME) :/projects)}
              :performance {:cache {:enabled true}
-                           :rtp {:disabled_plugins [:gzip
+                           :rtp {:paths [(context.locate :destination)]
+                                 :disabled_plugins [:gzip
                                                     :matchit
                                                     :netrwPlugin
                                                     :tarPlugin

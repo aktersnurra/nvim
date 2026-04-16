@@ -33,6 +33,8 @@
                  [:n :<c-u> :<c-u>zz {}]
                  ;; Remove highlighted search
                  [:n :<m-h> :<cmd>nohlsearch<CR> {}]
+                 ;; jump to eol in insert mode
+                 [:i :<c-e> :<c-o>$ {}]
                  ;; Force refresh
                  [:n :mj "<cmd>:e<CR>" {:desc :Refresh}]])
 
