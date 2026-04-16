@@ -1,28 +1,28 @@
 ;; Harpoon files for navigation.
 
+(import-macros {: user-cmds} :macros)
+
 (local opts
        {:ui_max_width 64
         :title " ⇁  "
         :settings {:save_on_toggle true :sync_on_ui_close true}})
-
-(local user-cmds [[:HarpoonAdd
-                   (λ []
-                     (let [harpoon (require :harpoon)]
-                       (: (harpoon:list) :add)))
-                   {:nargs 0}]
-                  [:HarpoonUI
-                   (λ []
-                     (let [harpoon (require :harpoon)]
-                       (harpoon.ui:toggle_quick_menu (harpoon:list) opts)))
-                   {:nargs 0}]])
 
 (λ select [nr]
   (let [harpoon (require :harpoon)]
     (: (harpoon:list) :select nr)))
 
 (λ init []
-  (let [{: create-user-cmds} (require :util.cmds)]
-    (create-user-cmds user-cmds)))
+  (user-cmds
+    [:HarpoonAdd
+     (λ []
+       (let [harpoon (require :harpoon)]
+         (: (harpoon:list) :add)))
+     {:nargs 0}]
+    [:HarpoonUI
+     (λ []
+       (let [harpoon (require :harpoon)]
+         (harpoon.ui:toggle_quick_menu (harpoon:list) opts)))
+     {:nargs 0}]))
 
 (local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
              {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}

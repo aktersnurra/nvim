@@ -1,11 +1,7 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
 
 (local dependencies
-       [:nvim-lua/popup.nvim
-        :nvim-telescope/telescope-frecency.nvim
-        {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}
-        :tami5/sqlite.lua
-        {1 :ahmedkhalf/project.nvim
+       [{1 :ahmedkhalf/project.nvim
          :event :VeryLazy
          :opts {:active true
                 :on_config_done nil
@@ -26,23 +22,15 @@
                    (let [project (require :project_nvim)]
                      (project.setup opts)))}
         :nvim-lua/plenary.nvim
-        :nvim-telescope/telescope-fzf-native.nvim
-        :nvim-telescope/telescope-frecency.nvim
         {1 :nvim-orgmode/telescope-orgmode.nvim}])
 
-(local extensions [:fzf :frecency :orgmode :projects :git_worktree :harpoon])
+(local extensions [:orgmode :projects :git_worktree :harpoon])
 
 (λ load-extensions [telescope]
   (each [_ extension (ipairs extensions)]
     (telescope.load_extension extension)))
 
-(local keys [{1 :mf
-              2 "<cmd>Telescope find_files theme=dropdown previewer=false disable_devicons=true<cr>"
-              :desc "Find Files"}
-             {1 :mg
-              2 "<cmd>Telescope live_grep theme=dropdown<cr>"
-              :desc "Find Text"}
-             {1 :mb
+(local keys [{1 :mb
               2 "<cmd>Telescope buffers theme=dropdown previewer=true initial_mode=normal<cr>"
               :desc "Switch Buffer"}
              {1 :<leader>fC
@@ -102,11 +90,7 @@
                                                      :--line-number
                                                      :--column
                                                      :--smart-case
-                                                     :--hidden]}
-                      :extensions {:fzf {:fuzzy true
-                                         :override_generic_sorter true
-                                         :override_file_sorter true
-                                         :case_mode :smart_case}}})
+                                                     :--hidden]}})
     (load-extensions telescope)))
 
 {1 :nvim-telescope/telescope.nvim

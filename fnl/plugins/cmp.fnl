@@ -20,18 +20,7 @@
                                    :dadbod {:name :Dadbod
                                             :module :vim_dadbod_completion.blink
                                             :score_offset 2}}}
-             :snippets {:preset :luasnip
-                        :expand (λ [snippet]
-                                  (let [luasnip (require :luasnip)]
-                                    (luasnip.lsp_expand snippet)))
-                        :active (fn [filter]
-                                  (let [luasnip (require :luasnip)]
-                                    (when (and filter filter.direction)
-                                      (luasnip.jumpable filter.direction))
-                                    (luasnip.in_snippet)))
-                        :jump (λ [direction]
-                                (let [luasnip (require :luasnip)]
-                                  (luasnip.jump direction)))}})
+             :snippets {:preset :luasnip}})
 
 (local dependencies [:rafamadriz/friendly-snippets
                      {1 :L3MON4D3/LuaSnip :version :v2.*}])

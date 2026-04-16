@@ -1,5 +1,7 @@
 ;; Orgmode for nvim.
 
+(import-macros {: autocmds : user-cmds} :macros)
+
 (local icons (require :settings.icons))
 
 (local keys [{1 :<leader>oa
@@ -15,31 +17,27 @@
               2 "<cmd>Telescope orgmode search_headings theme=dropdown<cr>"
               :desc "Search headings"}])
 
-(local user-cmds [[:OrgAgendaPrompt
-                   (λ []
-                     (let [orgmode (require :orgmode)]
-                       (orgmode.action :agenda.prompt)))
-                   {:nargs 0}]
-                  [:OrgCapturePrompt
-                   (λ []
-                     (let [orgmode (require :orgmode)]
-                       (orgmode.action :capture.prompt)))
-                   {:nargs 0}]])
-
-(local auto-cmds
-       [[:FileType
-         {:pattern :org
-          :callback (λ []
-                      (tset vim.opt_local :foldenable false)
-                      (tset vim.opt_local :foldlevelstart 0)
-                      (tset vim.opt_local :foldlevel 0)
-                      (tset vim.opt_local :concealcursor :nc)
-                      (tset vim.opt_local :conceallevel 2))}]])
-
 (λ init []
-  (let [{: create-auto-cmds : create-user-cmds} (require :util.cmds)]
-    (create-user-cmds user-cmds)
-    (create-auto-cmds auto-cmds)))
+  (user-cmds
+    [:OrgAgendaPrompt
+     (λ []
+       (let [orgmode (require :orgmode)]
+         (orgmode.action :agenda.prompt)))
+     {:nargs 0}]
+    [:OrgCapturePrompt
+     (λ []
+       (let [orgmode (require :orgmode)]
+         (orgmode.action :capture.prompt)))
+     {:nargs 0}])
+  (autocmds
+    [:FileType
+     {:pattern :org
+      :callback (λ []
+                  (tset vim.opt_local :foldenable false)
+                  (tset vim.opt_local :foldlevelstart 0)
+                  (tset vim.opt_local :foldlevel 0)
+                  (tset vim.opt_local :concealcursor :nc)
+                  (tset vim.opt_local :conceallevel 2))}]))
 
 (local templates
        {:t {:description :Todo :template "* TODO %?\n %u\n DEADLINE: %T\n"}

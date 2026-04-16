@@ -47,7 +47,8 @@
                 7 {1 :<leader>o :group :+orgmode}
                 8 {1 :<leader>r :group :+replace}
                 9 {1 :<leader>s :group :+session}
-                10 {1 :<leader>w :group :+worktree}}])
+                10 {1 :<leader>w :group :+worktree}}
+               {1 :<leader><BS> 2 "<cmd>bdelete<cr>" :desc "Close Buffer"}])
 
 (λ config []
   (let [which-key (require :which-key)]

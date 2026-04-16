@@ -1,12 +1,6 @@
 ;; Leap through text.
 
-(local dependencies [{1 :ggandor/flit.nvim
-                      :event :VimEnter
-                      :opts {:keys {:f :f :F :F :t :t :T :T}
-                             :labeled_modes :v
-                             :multiline true
-                             :opts {}}}
-                     {1 :tpope/vim-repeat :event :VeryLazy}
+(local dependencies [{1 :tpope/vim-repeat :event :VeryLazy}
                      {1 :aktersnurra/leap-spooky.nvim
                       :event :VeryLazy
                       :opts {;; Additional text objects, to be merged with the default ones.
@@ -32,7 +26,7 @@
 
 (λ config []
   (let [leap (require :leap)]
-    (leap.setup {})
+    (tset leap.opts.vim_opts "go.ignorecase" false)
     (vim.keymap.set [:n :x :o] :s "<Plug>(leap-forward)")
     (vim.keymap.set [:n :x :o] :S "<Plug>(leap-backward)")
     (vim.keymap.set [:x :o] :x "<Plug>(leap-forward-till)")
@@ -40,7 +34,6 @@
     (vim.keymap.set [:n] :gs "<Plug>(leap-from-window)")))
 
 {:url "https://codeberg.org/andyg/leap.nvim"
-:name :leap.nvim
  : dependencies
  :event :VeryLazy
  : config}

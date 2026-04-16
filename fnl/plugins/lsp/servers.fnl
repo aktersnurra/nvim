@@ -10,11 +10,7 @@
  :jsonls {:init_options {:providerFormatter false}
           :settings {:json {:schemas (let [schemastore (require :schemastore)]
                                        (schemastore.json.schemas))
-                            :validate {:enable true}}}
-          :setup {:commands {:Format [(λ []
-                                        (vim.lsp.buf.range_formatting [] [0 0]
-                                                                      [(vim.fn.line "$"
-                                                                                    0)]))]}}}
+                            :validate {:enable true}}}}
  :ocamllsp {}
  :rust_analyzer {:settings {:rust-analyzer {:lens {:enable true}
                                             :checkOnSave {:command :clippy}}}}

@@ -5,10 +5,9 @@
 
 (local icons (require :settings.icons))
 
-(local {: apply-to-files} (require :util.load))
-
-(local api (require :hotpot.api))
-(local context (assert (api.context (vim.fn.stdpath :config))))
+(local context
+       (let [api (require :hotpot.api)]
+         (assert (api.context (vim.fn.stdpath :config)))))
 
 (local opts {:install {:colorscheme [:no-clown-fiesta]}
              :debug false
@@ -49,7 +48,9 @@
   (require :settings)
   (let [lazy (require :lazy)
         plugins {}]
-    (apply-to-files :/fnl/plugins (partial load-plugin plugins))
+    (each [fname type (vim.fs.dir (.. (vim.fn.stdpath :config) :/fnl/plugins))]
+      (when (= type :file)
+        (load-plugin plugins (fname:match "^(.*)%.fnl$"))))
     (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
     (lazy.setup plugins opts)))
 

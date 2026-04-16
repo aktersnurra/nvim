@@ -1,9 +1,6 @@
 ;; Find and replace plugin.
-(local auto-cmds
-       [[:FileType
-         {:pattern [:grug-far]
-          :command "nnoremap <silent> <buffer> q :close<CR>"}]
-        [:FileType {:pattern [:grug-far] :command "setlocal spell!"}]])
+
+(import-macros {: autocmds} :macros)
 
 (λ replace [?cword ?file]
   (let [grug (require :grug-far)]
@@ -19,9 +16,12 @@
     (grug.with_visual_selection {:prefills {:paths (vim.fn.expand "%")}})))
 
 (λ config []
-  (let [{: create-auto-cmds} (require :util.cmds)
-        grug (require :grug-far)]
-    (create-auto-cmds auto-cmds)
+  (let [grug (require :grug-far)]
+    (autocmds
+      [:FileType
+       {:pattern [:grug-far]
+        :command "nnoremap <silent> <buffer> q :close<CR>"}]
+      [:FileType {:pattern [:grug-far] :command "setlocal spell!"}])
     (grug.setup)))
 
 (local keys [{1 :<m-w> 2 :<cmd>GrugFar<cr> :desc "Find and Replace"}

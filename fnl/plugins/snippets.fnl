@@ -6,13 +6,13 @@
   (let [snippets (require (.. :plugins.snippets. name))]
     (snippets.add-snippets)))
 
-(local {: apply-to-files} (require :util.load))
-
 (λ config []
   (let [ls (require :luasnip)
         luasnip-vscode (require :luasnip.loaders.from_vscode)]
     (luasnip-vscode.lazy_load)
-    (apply-to-files :/fnl/plugins/snippets add-snippets)
+    (each [fname type (vim.fs.dir (.. (vim.fn.stdpath :config) :/fnl/plugins/snippets))]
+      (when (= type :file)
+        (add-snippets (fname:match "^(.*)%.fnl$"))))
     (ls.config.set_config {:history true
                            :updateevents "TextChanged,TextChangedI"})
     (vim.keymap.set [:i :s] :<c-u>

@@ -15,7 +15,7 @@
                :float {:focusable false
                        :style :minimal
                        :border :single
-                       :source :always
+                       :source true
                        :header ""
                        :prefix ""}})
 
