@@ -1,4 +1,5 @@
 ;; Snippets functionality.
+(import-macros {: keymaps} :macros)
 
 (local dependencies [:rafamadriz/friendly-snippets])
 
@@ -16,19 +17,23 @@
         (add-snippets (fname:match "^(.*)%.fnl$"))))
     (ls.config.set_config {:history true
                            :updateevents "TextChanged,TextChangedI"})
-    (vim.keymap.set [:i :s] :<c-u>
-                    (λ []
-                      (when (ls.expand_or_jumpable)
-                        (ls.expand_or_jump))) {:silent true})
-    (vim.keymap.set [:i :s] :<c-l>
-                    (λ []
-                      (when (ls.jumpable -1)
-                        (ls.jump -1))
-                      {:silent true}))
-    (vim.keymap.set [:i] :<c-j>
-                    (λ []
-                      (when (ls.choice_active)
-                        (ls.change_choice 1)))
-                    {:silent true})))
+    (keymaps [[:i :s]
+              :<c-u>
+              (λ []
+                (when (ls.expand_or_jumpable)
+                  (ls.expand_or_jump)))
+              {:silent true}]
+             [[:i :s]
+              :<c-l>
+              (λ []
+                (when (ls.jumpable -1)
+                  (ls.jump -1)))
+              {:silent true}]
+             [[:i]
+              :<c-j>
+              (λ []
+                (when (ls.choice_active)
+                  (ls.change_choice 1)))
+              {:silent true}])))
 
 {1 :L3MON4D3/LuaSnip :event :InsertEnter : config : dependencies}

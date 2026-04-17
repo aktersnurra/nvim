@@ -1,4 +1,5 @@
 ;; Load plugins with lazy.
+(import-macros {: keymap} :macros)
 
 (λ load-plugin [tbl name]
   (table.insert tbl (require (.. :plugins. name))))
@@ -51,7 +52,7 @@
     (each [fname type (vim.fs.dir (.. (vim.fn.stdpath :config) :/fnl/plugins))]
       (when (= type :file)
         (load-plugin plugins (fname:match "^(.*)%.fnl$"))))
-    (vim.keymap.set :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
+    (keymap :n :<leader>y "<cmd>Lazy home<cr>" {:desc :Home})
     (lazy.setup plugins opts)))
 
 (init)

@@ -7,9 +7,9 @@
     (lint.try_lint)))
 
 (λ init []
-  (let [lint-augroup (vim.api.nvim_create_augroup :lint {:clear true})]
-    (autocmd [:BufEnter :BufWritePost :InsertLeave :TextChangedI]
-             {:group lint-augroup : callback})))
+  (autocmd [:BufEnter :BufWritePost :InsertLeave :TextChangedI]
+           {:group (vim.api.nvim_create_augroup :lint {:clear true})
+            : callback}))
 
 (λ config []
   (let [lint (require :lint)]

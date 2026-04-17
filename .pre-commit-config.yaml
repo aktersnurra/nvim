@@ -3,3 +3,11 @@ repos:
     rev: v0.11.3
     hooks:
       - id: stylua
+  - repo: local
+    hooks:
+      - id: fnlfmt
+        name: fnlfmt
+        entry: fnlfmt --fix
+        language: system
+        files: '\.fnl$'
+        exclude: '\.fnlm$'
