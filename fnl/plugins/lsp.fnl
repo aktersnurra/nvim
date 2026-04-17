@@ -1,10 +1,12 @@
 ;; LSP configuration.
 
+(import-macros {: autocmd} :macros)
+
 (λ config []
-  (vim.api.nvim_create_autocmd :LspAttach
-                               {:callback (λ [args]
-                                            (let [{: on-attach} (require :plugins.lsp.keymaps)]
-                                              (on-attach args.buf)))})
+  (autocmd :LspAttach
+           {:callback (λ [args]
+                        (let [{: on-attach} (require :plugins.lsp.keymaps)]
+                          (on-attach args.buf)))})
   (let [diagnostics (require :plugins.lsp.diagnostics)
         mason-lspconfig (require :plugins.lsp.mason-lspconfig)]
     (diagnostics.setup)
@@ -13,7 +15,7 @@
 (local icons (require :settings.icons))
 
 [{1 :neovim/nvim-lspconfig
-  :event :BufNew
+  :event [:BufReadPre :BufNewFile]
   :dependencies [:mason.nvim
                  :williamboman/mason-lspconfig.nvim
                  :b0o/schemastore.nvim

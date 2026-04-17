@@ -1,4 +1,5 @@
 ;; Select buffer
+(import-macros {: keymap} :macros)
 
 (local opts {:other_win_hl_color "#171717"
              :fg_color "#E1E1E1"
@@ -13,7 +14,7 @@
 (λ config []
   (let [window-picker (require :window-picker)]
     (window-picker.setup opts)
-    (vim.keymap.set :n :mw (λ []
-                             (pick-window)) {})))
+    (keymap :n :mw (λ []
+                     (pick-window)) {})))
 
 {1 :s1n7ax/nvim-window-picker :event :VeryLazy :version :2.0.0 : config}

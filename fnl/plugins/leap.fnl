@@ -1,4 +1,5 @@
 ;; Leap through text.
+(import-macros {: keymaps} :macros)
 
 (local dependencies [{1 :tpope/vim-repeat :event :VeryLazy}
                      {1 :aktersnurra/leap-spooky.nvim
@@ -27,11 +28,11 @@
 (λ config []
   (let [leap (require :leap)]
     (tset leap.opts.vim_opts :go.ignorecase false)
-    (vim.keymap.set [:n :x :o] :s "<Plug>(leap-forward)")
-    (vim.keymap.set [:n :x :o] :S "<Plug>(leap-backward)")
-    (vim.keymap.set [:x :o] :x "<Plug>(leap-forward-till)")
-    (vim.keymap.set [:x :o] :X "<Plug>(leap-backward-till)")
-    (vim.keymap.set [:n] :gs "<Plug>(leap-from-window)")))
+    (keymaps [[:n :x :o] :s "<Plug>(leap-forward)" {}]
+             [[:n :x :o] :S "<Plug>(leap-backward)" {}]
+             [[:x :o] :x "<Plug>(leap-forward-till)" {}]
+             [[:x :o] :X "<Plug>(leap-backward-till)" {}]
+             [[:n] :gs "<Plug>(leap-from-window)" {}])))
 
 {:url "https://codeberg.org/andyg/leap.nvim"
  : dependencies

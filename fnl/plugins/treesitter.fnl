@@ -1,6 +1,6 @@
 ;; Treesitter parser installation and built-in feature configuration.
 
-(import-macros {: autocmd : keymaps} :macros)
+(import-macros {: autocmd : ts-selects : ts-swaps : ts-moves} :macros)
 
 (local parsers [:bash
                 :c
@@ -32,151 +32,45 @@
                 :xml
                 :yaml])
 
+;; fnlfmt: skip
 (λ setup-textobjects []
   (let [textobjects (require :nvim-treesitter-textobjects)
         select (require :nvim-treesitter-textobjects.select)
         swap (require :nvim-treesitter-textobjects.swap)
         move (require :nvim-treesitter-textobjects.move)]
     (textobjects.setup {:select {:lookahead true
-                                 :selection_modes {"@parameter.outer" :v
+                                  :selection_modes {"@parameter.outer" :v
                                                    "@function.outer" :V
                                                    "@class.outer" :<c-v>}
                                  :include_surrounding_whitespace true}
                         :move {:set_jumps true}})
-    (keymaps [[:x :o]
-              :aa
-              (λ []
-                (select.select_textobject "@parameter.outer" :textobjects))
-              {}] [[:x :o]
-                                :ia
-                                (λ []
-                                  (select.select_textobject "@parameter.inner"
-                                                            :textobjects))
-                                {}]
-             [[:x :o]
-              :af
-              (λ []
-                (select.select_textobject "@function.outer" :textobjects))
-              {}] [[:x :o]
-                               :if
-                               (λ []
-                                 (select.select_textobject "@function.inner"
-                                                           :textobjects))
-                               {}]
-             [[:x :o]
-              :ii
-              (λ []
-                (select.select_textobject "@conditional.outer" :textobjects))
-              {}] [[:x :o]
-                               :ai
-                               (λ []
-                                 (select.select_textobject "@conditional.inner"
-                                                           :textobjects))
-                               {}]
-             [[:x :o]
-              :il
-              (λ []
-                (select.select_textobject "@loop.outer" :textobjects))
-              {}] [[:x :o]
-                               :al
-                               (λ []
-                                 (select.select_textobject "@loop.inner"
-                                                           :textobjects))
-                               {}]
-             [[:x :o]
-              :ac
-              (λ []
-                (select.select_textobject "@class.outer" :textobjects))
-              {}] [[:x :o]
-                               :at
-                               (λ []
-                                 (select.select_textobject "@comment.outer"
-                                                           :textobjects))
-                               {}]
-             [[:x :o]
-              :ic
-              (λ []
-                (select.select_textobject "@class.inner" :textobjects))
-              {}] [[:x :o]
-                               :as
-                               (λ []
-                                 (select.select_textobject "@local.scope"
-                                                           :locals))
-                               {}] ;; Swap
-             [:n
-              :<leader>a
-              (λ []
-                (swap.swap_next "@parameter.inner"))
-              {}] [:n
-                               :<leader>A
-                               (λ []
-                                 (swap.swap_previous "@parameter.inner"))
-                               {}] ;; Move
-             [[:n :x :o]
-              "]m"
-              (λ []
-                (move.goto_next_start "@function.outer" :textobjects))
-              {}] [[:n :x :o]
-                               "]]"
-                               (λ []
-                                 (move.goto_next_start "@class.outer"
-                                                       :textobjects))
-                               {}]
-             [[:n :x :o]
-              "]o"
-              (λ []
-                (move.goto_next_start ["@loop.inner" "@loop.outer"]
-                                      :textobjects))
-              {}] [[:n :x :o]
-                               "]s"
-                               (λ []
-                                 (move.goto_next_start "@local.scope" :locals))
-                               {}]
-             [[:n :x :o]
-              "]z"
-              (λ []
-                (move.goto_next_start "@fold" :folds))
-              {}] [[:n :x :o]
-                               "]M"
-                               (λ []
-                                 (move.goto_next_end "@function.outer"
-                                                     :textobjects))
-                               {}]
-             [[:n :x :o]
-              "]["
-              (λ []
-                (move.goto_next_end "@class.outer" :textobjects))
-              {}] [[:n :x :o]
-                               "[m"
-                               (λ []
-                                 (move.goto_previous_start "@function.outer"
-                                                           :textobjects))
-                               {}]
-             [[:n :x :o]
-              "[["
-              (λ []
-                (move.goto_previous_start "@class.outer" :textobjects))
-              {}] [[:n :x :o]
-                               "[M"
-                               (λ []
-                                 (move.goto_previous_end "@function.outer"
-                                                         :textobjects))
-                               {}]
-             [[:n :x :o]
-              "[]"
-              (λ []
-                (move.goto_previous_end "@class.outer" :textobjects))
-              {}] [[:n :x :o]
-                               "]i"
-                               (λ []
-                                 (move.goto_next "@conditional.outer"
-                                                 :textobjects))
-                               {}]
-             [[:n :x :o]
-              "[i"
-              (λ []
-                (move.goto_previous "@conditional.outer" :textobjects))
-              {}])))
+    (ts-selects [:aa "@parameter.outer"] [:ia "@parameter.inner"]
+                [:af "@function.outer"] [:if "@function.inner"]
+                [:ii "@conditional.outer"] [:ai "@conditional.inner"]
+                [:il "@loop.outer"] [:al "@loop.inner"] [:ac "@class.outer"]
+                [:at "@comment.outer"] [:ic "@class.inner"]
+                [:as "@local.scope" :locals]
+                [:ar "@return.outer"]
+                [:ir "@return.inner"]
+                [:a= "@assignment.outer"]
+                [:i= "@assignment.inner"])
+    (ts-swaps [:<leader>a swap.swap_next "@parameter.inner"]
+              [:<leader>A swap.swap_previous "@parameter.inner"])
+    (ts-moves ["]m" move.goto_next_start "@function.outer"]
+              ["]]" move.goto_next_start "@class.outer"]
+              ["]o" move.goto_next_start ["@loop.inner" "@loop.outer"]]
+              ["]s" move.goto_next_start "@local.scope" :locals]
+              ["]z" move.goto_next_start "@fold" :folds]
+              ["]M" move.goto_next_end "@function.outer"]
+              ["][" move.goto_next_end "@class.outer"]
+              ["[m" move.goto_previous_start "@function.outer"]
+              ["[[" move.goto_previous_start "@class.outer"]
+              ["[M" move.goto_previous_end "@function.outer"]
+              ["[]" move.goto_previous_end "@class.outer"]
+              ["]i" move.goto_next "@conditional.outer"]
+              ["[i" move.goto_previous "@conditional.outer"]
+              ["]a" move.goto_next_start "@parameter.outer"]
+              ["[a" move.goto_previous_start "@parameter.outer"])))
 
 (λ config []
   (let [treesitter (require :nvim-treesitter)]

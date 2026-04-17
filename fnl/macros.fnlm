@@ -33,4 +33,43 @@
       (table.insert out `(tset vim.opt ,k ,v)))
     out))
 
-{: autocmd : autocmds : user-cmd : user-cmds : keymap : keymaps : set-opts}
+(fn ts-selects [...]
+  "Generate treesitter select keymaps. Each entry: [key query ?group].
+   Modes are always [:x :o]. Assumes `select` is in scope."
+  (let [out `(do)]
+    (each [_ entry (ipairs [...])]
+      (let [key (. entry 1)
+            query (. entry 2)
+            group (or (. entry 3) :textobjects)]
+        (table.insert out
+          `(vim.keymap.set [:x :o] ,key
+             (λ [] (select.select_textobject ,query ,group)) {}))))
+    out))
+
+(fn ts-swaps [...]
+  "Generate treesitter swap keymaps. Each entry: [key method query].
+   Mode is always :n. method is a symbol like swap.swap_next."
+  (let [out `(do)]
+    (each [_ entry (ipairs [...])]
+      (let [key (. entry 1)
+            method (. entry 2)
+            query (. entry 3)]
+        (table.insert out
+          `(vim.keymap.set :n ,key (λ [] (,method ,query)) {}))))
+    out))
+
+(fn ts-moves [...]
+  "Generate treesitter move keymaps. Each entry: [key method query ?group].
+   Modes are always [:n :x :o]. method is a symbol like move.goto_next_start."
+  (let [out `(do)]
+    (each [_ entry (ipairs [...])]
+      (let [key (. entry 1)
+            method (. entry 2)
+            query (. entry 3)
+            group (or (. entry 4) :textobjects)]
+        (table.insert out
+          `(vim.keymap.set [:n :x :o] ,key (λ [] (,method ,query ,group)) {}))))
+    out))
+
+{: autocmd : autocmds : user-cmd : user-cmds : keymap : keymaps : set-opts
+ : ts-selects : ts-swaps : ts-moves}
