@@ -17,11 +17,10 @@
 
 (λ config []
   (let [grug (require :grug-far)]
-    (autocmds
-      [:FileType
-       {:pattern [:grug-far]
-        :command "nnoremap <silent> <buffer> q :close<CR>"}]
-      [:FileType {:pattern [:grug-far] :command "setlocal spell!"}])
+    (autocmds [:FileType
+               {:pattern [:grug-far]
+                :command "nnoremap <silent> <buffer> q :close<CR>"}]
+              [:FileType {:pattern [:grug-far] :command "setlocal spell!"}])
     (grug.setup)))
 
 (local keys [{1 :<m-w> 2 :<cmd>GrugFar<cr> :desc "Find and Replace"}

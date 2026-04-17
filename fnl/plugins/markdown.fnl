@@ -1,7 +1,5 @@
 ;; Markdown renderer plugin.
 
-{1 :MeanderingProgrammer/markdown.nvim
- :main :render-markdown
+{1 :MeanderingProgrammer/render-markdown.nvim
  :opts {}
- :name :render-markdown
- :dependencies [ :nvim-treesitter/nvim-treesitter :nvim-tree/nvim-web-devicons ]}
+ :dependencies [:nvim-treesitter/nvim-treesitter :nvim-tree/nvim-web-devicons]}

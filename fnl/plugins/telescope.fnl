@@ -1,30 +1,9 @@
 ;; Telescope a highly extendable fuzzy finder over lists.
 
 (local dependencies
-       [{1 :ahmedkhalf/project.nvim
-         :event :VeryLazy
-         :opts {:active true
-                :on_config_done nil
-                :manual_mode false
-                :detection_methods [:patterns]
-                :patterns [:git
-                           :_darcs
-                           :.hg
-                           :.bzr
-                           :.svn
-                           :Makefile
-                           :package.json]
-                :show_hidden false
-                :silent_chdir true
-                :ignore_lsp {}
-                :datapath (vim.fn.stdpath :data)}
-         :config (λ [_ opts]
-                   (let [project (require :project_nvim)]
-                     (project.setup opts)))}
-        :nvim-lua/plenary.nvim
-        {1 :nvim-orgmode/telescope-orgmode.nvim}])
+       [:nvim-lua/plenary.nvim {1 :nvim-orgmode/telescope-orgmode.nvim}])
 
-(local extensions [:orgmode :projects :git_worktree :harpoon])
+(local extensions [:orgmode :git_worktree :harpoon])
 
 (λ load-extensions [telescope]
   (each [_ extension (ipairs extensions)]
@@ -42,15 +21,9 @@
              {1 :<leader>fR
               2 "<cmd>Telescope registers theme=dropdown<cr>"
               :desc :Registers}
-             {1 :<leader>fS
-              2 "<cmd>Telescope grep_string theme=dropdown<cr>"
-              :desc "Find String"}
              {1 :<leader>gb
               2 "<cmd>Telescope git_branches theme=dropdown<cr>"
               :desc "Checkout Branch"}
-             {1 :<leader>ff
-              2 "<cmd>Telescope find_files theme=dropdown<cr>"
-              :desc "Find files"}
              {1 :<leader>fh
               2 "<cmd>Telescope help_tags theme=dropdown<cr>"
               :desc :Help}
@@ -60,15 +33,6 @@
              {1 :<leader>fl
               2 "<cmd>Telescope resume theme=dropdown<cr>"
               :desc "Last Search"}
-             {1 :<leader>fp
-              2 "<cmd>Telescope projects theme=dropdown<cr>"
-              :desc "Find Project"}
-             {1 :<leader>fr
-              2 "<cmd>Telescope oldfiles theme=dropdown previewer=false<cr>"
-              :desc "Recent File"}
-             {1 :<leader>ft
-              2 "<cmd>Telescope live_grep theme=dropdown<cr>"
-              :desc "Find Text"}
              {1 :<leader>gc
               2 "<cmd>Telescope git_commits theme=dropdown<cr>"
               :desc "Checkout Commit"}])

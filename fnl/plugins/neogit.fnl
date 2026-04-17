@@ -7,13 +7,12 @@
 (local keys [{1 :<leader>gm 2 :<cmd>Neogit<cr> :desc :Neogit}])
 
 (λ init []
-  (autocmds
-    [:FileType
-     {:pattern [:NeogitStatus
-                :NeogitCommitMessage
-                :NeogitNotification
-                :NeogitCommitView]
-      :command "setlocal spell!"}]))
+  (autocmds [:FileType
+             {:pattern [:NeogitStatus
+                        :NeogitCommitMessage
+                        :NeogitNotification
+                        :NeogitCommitView]
+              :command "setlocal spell!"}]))
 
 (local opts {:integrations {:diffview true :telescope true}})
 

@@ -37,18 +37,19 @@
              :show_help true
              :disable {:filetypes [:netrw]}})
 
-(local groups [{:mode [:n :v]
-                1 {1 :<leader>d :group :+diff}
-                2 {1 :<leader>f :group :+find}
-                3 {1 :<leader>g :group :+git}
-                4 {1 :<leader>i :group :+db}
-                5 {1 :<leader>j :group :+diagnostics}
-                6 {1 :<leader>l :group :+lsp}
-                7 {1 :<leader>o :group :+orgmode}
-                8 {1 :<leader>r :group :+replace}
-                9 {1 :<leader>s :group :+session}
-                10 {1 :<leader>w :group :+worktree}}
-               {1 :<leader><BS> 2 "<cmd>bdelete<cr>" :desc "Close Buffer"}])
+(local groups
+       [{:mode [:n :v]
+         1 {1 :<leader>d :group :+diff}
+         2 {1 :<leader>f :group :+find}
+         3 {1 :<leader>g :group :+git}
+         4 {1 :<leader>i :group :+db}
+         5 {1 :<leader>j :group :+diagnostics}
+         6 {1 :<leader>l :group :+lsp}
+         7 {1 :<leader>o :group :+orgmode}
+         8 {1 :<leader>r :group :+replace}
+         9 {1 :<leader>s :group :+session}
+         10 {1 :<leader>w :group :+worktree}}
+        {1 :<leader><BS> 2 :<cmd>bdelete<cr> :desc "Close Buffer"}])
 
 (λ config []
   (let [which-key (require :which-key)]

@@ -14,6 +14,6 @@
   (let [window-picker (require :window-picker)]
     (window-picker.setup opts)
     (vim.keymap.set :n :mw (λ []
-                                (pick-window)) {})))
+                             (pick-window)) {})))
 
 {1 :s1n7ax/nvim-window-picker :event :VeryLazy :version :2.0.0 : config}

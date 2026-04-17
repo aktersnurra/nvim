@@ -1,11 +1,13 @@
 ;; Formatting
 
+(import-macros {: keymap} :macros)
+
 (λ init []
-  (vim.keymap.set [:n :v] :<leader>e
-                  (λ []
-                    (let [conform (require :conform)]
-                      (conform.format {:lsp_fallback true :async true})))
-                  {:desc :Format}))
+  (keymap [:n :v] :<leader>e
+          (λ []
+            (let [conform (require :conform)]
+              (conform.format {:lsp_fallback true :async true})))
+          {:desc :Format}))
 
 (local opts {:formatters {:fnlfmt {:command :fnlfmt
                                    :args [:--fix :$FILENAME]
@@ -22,7 +24,9 @@
                                 :lua [:stylua]
                                 :markdown [:prettierd]
                                 :ocaml [:ocamlformat]
-                                :python [:ruff_format :ruff_fix :ruff_organize_imports]
+                                :python [:ruff_format
+                                         :ruff_fix
+                                         :ruff_organize_imports]
                                 :rust [:rustfmt]
                                 :sh [:shfmt :shellharden]
                                 :sql [:pg_format :sqlfmt]

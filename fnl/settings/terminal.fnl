@@ -1,3 +1,5 @@
+(import-macros {: keymap} :macros)
+
 (local state {:buf -1 :win -1})
 
 (fn hide-term []
@@ -10,7 +12,7 @@
     (if (not (vim.api.nvim_buf_is_valid state.buf))
         (do
           (set state.buf (vim.api.nvim_get_current_buf))
-          (vim.fn.termopen vim.o.shell)
+          (vim.cmd.terminal)
           (set vim.opt_local.number false)
           (set vim.opt_local.relativenumber false)
           (set vim.opt_local.signcolumn :no))
@@ -22,4 +24,4 @@
       (hide-term)
       (open-term)))
 
-(vim.keymap.set [:n :t] :<c-_> toggle-term {:desc "Toggle terminal"})
+(keymap [:n :t] :<c-_> toggle-term {:desc "Toggle terminal"})

@@ -18,26 +18,24 @@
               :desc "Search headings"}])
 
 (λ init []
-  (user-cmds
-    [:OrgAgendaPrompt
-     (λ []
-       (let [orgmode (require :orgmode)]
-         (orgmode.action :agenda.prompt)))
-     {:nargs 0}]
-    [:OrgCapturePrompt
-     (λ []
-       (let [orgmode (require :orgmode)]
-         (orgmode.action :capture.prompt)))
-     {:nargs 0}])
-  (autocmds
-    [:FileType
-     {:pattern :org
-      :callback (λ []
-                  (tset vim.opt_local :foldenable false)
-                  (tset vim.opt_local :foldlevelstart 0)
-                  (tset vim.opt_local :foldlevel 0)
-                  (tset vim.opt_local :concealcursor :nc)
-                  (tset vim.opt_local :conceallevel 2))}]))
+  (user-cmds [:OrgAgendaPrompt
+              (λ []
+                (let [orgmode (require :orgmode)]
+                  (orgmode.action :agenda.prompt)))
+              {:nargs 0}]
+             [:OrgCapturePrompt
+              (λ []
+                (let [orgmode (require :orgmode)]
+                  (orgmode.action :capture.prompt)))
+              {:nargs 0}])
+  (autocmds [:FileType
+             {:pattern :org
+              :callback (λ []
+                          (tset vim.opt_local :foldenable false)
+                          (tset vim.opt_local :foldlevelstart 0)
+                          (tset vim.opt_local :foldlevel 0)
+                          (tset vim.opt_local :concealcursor :nc)
+                          (tset vim.opt_local :conceallevel 2))}]))
 
 (local templates
        {:t {:description :Todo :template "* TODO %?\n %u\n DEADLINE: %T\n"}

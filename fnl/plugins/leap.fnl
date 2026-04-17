@@ -26,7 +26,7 @@
 
 (λ config []
   (let [leap (require :leap)]
-    (tset leap.opts.vim_opts "go.ignorecase" false)
+    (tset leap.opts.vim_opts :go.ignorecase false)
     (vim.keymap.set [:n :x :o] :s "<Plug>(leap-forward)")
     (vim.keymap.set [:n :x :o] :S "<Plug>(leap-backward)")
     (vim.keymap.set [:x :o] :x "<Plug>(leap-forward-till)")

@@ -20,8 +20,8 @@
                                      :path (vim.split package.path ";")}}}}
  :taplo {}
  :texlab {}
+ :basedpyright {:settings {:basedpyright {:analysis {:typeCheckingMode :standard}}}}
  :ty {}
- :vale_ls {:filetypes [:markdown :text :org]}
  :sqls {}
  :yamlls {:settings {:yaml {:schemastore {:enable false :url ""}
                             :schemas (let [schemastore (require :schemastore)]

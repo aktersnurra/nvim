@@ -12,17 +12,16 @@
     (: (harpoon:list) :select nr)))
 
 (λ init []
-  (user-cmds
-    [:HarpoonAdd
-     (λ []
-       (let [harpoon (require :harpoon)]
-         (: (harpoon:list) :add)))
-     {:nargs 0}]
-    [:HarpoonUI
-     (λ []
-       (let [harpoon (require :harpoon)]
-         (harpoon.ui:toggle_quick_menu (harpoon:list) opts)))
-     {:nargs 0}]))
+  (user-cmds [:HarpoonAdd
+              (λ []
+                (let [harpoon (require :harpoon)]
+                  (: (harpoon:list) :add)))
+              {:nargs 0}]
+             [:HarpoonUI
+              (λ []
+                (let [harpoon (require :harpoon)]
+                  (harpoon.ui:toggle_quick_menu (harpoon:list) opts)))
+              {:nargs 0}]))
 
 (local keys [{1 :ma 2 :<cmd>HarpoonAdd<cr> :desc :Harpoon}
              {1 :mr 2 :<cmd>HarpoonUI<cr> :desc "Harpoon UI"}

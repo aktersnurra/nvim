@@ -1,20 +1,19 @@
 ;; Linting
 
+(import-macros {: autocmd} :macros)
+
 (λ callback []
   (let [lint (require :lint)]
     (lint.try_lint)))
 
 (λ init []
   (let [lint-augroup (vim.api.nvim_create_augroup :lint {:clear true})]
-    (vim.api.nvim_create_autocmd [:BufEnter
-                                  :BufWritePost
-                                  :InsertLeave
-                                  :TextChangedI]
-                                 {:group lint-augroup : callback})))
+    (autocmd [:BufEnter :BufWritePost :InsertLeave :TextChangedI]
+             {:group lint-augroup : callback})))
 
 (λ config []
   (let [lint (require :lint)]
-    (set lint.linters_by_ft {:* [:codespell :write_good]
+    (set lint.linters_by_ft {:* [:codespell]
                              :dockerfile [:hadolint]
                              :fennel [:fennel]
                              :gitcommit [:gitlint :codespell]

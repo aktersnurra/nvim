@@ -1,98 +1,196 @@
-;; Treesitter is a tool for building syntax trees for source files.
-;; In the neovim context it helps with better coloring.
+;; Treesitter parser installation and built-in feature configuration.
 
-(local opts
-       {:ensure_installed [:bash
-                           :c
-                           :comment
-                           :dockerfile
-                           :elixir
-                           :erlang
-                           :fennel
-                           :graphql
-                           :haskell
-                           :hcl
-                           :html
-                           :http
-                           :json
-                           :latex
-                           :lua
-                           :make
-                           :markdown
-                           :ocaml
-                           :ocaml_interface
-                           :python
-                           :rust
-                           :sql
-                           :toml
-                           :unison
-                           :vim
-                           :vimdoc
-                           :xml
-                           :yaml]
-        :sync_install false
-        :ignore_install [""]
-        :autopairs {:enable true}
-        :highlight {:enable true :additional_vim_regex_highlighting [:org]}
-        :context_commentstring {:enable true :enable_autocmd false}
-        :indent {:enable true :disable [:yaml :python :css]}
-        :playground {:enable true}
-        :textobjects {:select {:enable true
-                               :lookahead true
-                               :keymaps {:aa "@parameter.outer"
-                                         :ia "@parameter.inner"
-                                         :af "@function.outer"
-                                         :if "@function.inner"
-                                         :ii "@conditional.outer"
-                                         :ai "@conditional.inner"
-                                         :il "@loop.outer"
-                                         :al "@loop.inner"
-                                         :ac "@class.outer"
-                                         :at "@comment.outer"
-                                         :ic {:query "@class.inner"
-                                              :desc "Select inner part of a class region"}
-                                         :as {:query "@scope"
-                                              :query_group :locals
-                                              :desc "Select language scope"}}
-                               :selection_modes {"@parameter.outer" :v
-                                                 "@function.outer" :V
-                                                 "@class.outer" :<c-v>}
-                               :include_surrounding_whitespace true}
-                      :swap {:enable true
-                             :swap_next {:<leader>a "@parameter.inner"}
-                             :swap_previous {:<leader>A "@parameter.inner"}}
-                      :move {:enable true
-                             :set_jumps true
-                             :goto_next_start {"]m" "@function.outer"
-                                               "]]" {:query "@class.outer"
-                                                     :desc "Next class start"}
-                                               "]o" "@loop.*"
-                                               "]s" {:query "@scope"
-                                                     :query_group :locals
-                                                     :desc "Next scope"}
-                                               "]z" {:query "@fold"
-                                                     :query_group :folds
-                                                     :desc "Next fold"}}
-                             :goto_next_end {"]M" "@function.outer"
-                                             "][" "@class.outer"}
-                             :goto_previous_start {"[m" "@function.outer"
-                                                   "[[" "@class.outer"}
-                             :goto_previous_end {"[M" "@function.outer"
-                                                 "[]" "@class.outer"}
-                             :goto_next {"]i" "@conditional.outer"}
-                             :goto_previous {"[i" "@conditional.outer"}}
-                      :lsp_interop {:enable true
-                                    :border :single
-                                    :floating_preview_opts {}
-                                    :peek_definition_code {:md "@function.outer"
-                                                           :mD "@class.outer"}}}})
+(import-macros {: autocmd : keymaps} :macros)
+
+(local parsers [:bash
+                :c
+                :comment
+                :dockerfile
+                :elixir
+                :erlang
+                :fennel
+                :graphql
+                :haskell
+                :hcl
+                :html
+                :http
+                :json
+                :latex
+                :lua
+                :make
+                :markdown
+                :markdown_inline
+                :ocaml
+                :ocaml_interface
+                :python
+                :rust
+                :sql
+                :toml
+                :unison
+                :vim
+                :vimdoc
+                :xml
+                :yaml])
+
+(λ setup-textobjects []
+  (let [textobjects (require :nvim-treesitter-textobjects)
+        select (require :nvim-treesitter-textobjects.select)
+        swap (require :nvim-treesitter-textobjects.swap)
+        move (require :nvim-treesitter-textobjects.move)]
+    (textobjects.setup {:select {:lookahead true
+                                 :selection_modes {"@parameter.outer" :v
+                                                   "@function.outer" :V
+                                                   "@class.outer" :<c-v>}
+                                 :include_surrounding_whitespace true}
+                        :move {:set_jumps true}})
+    (keymaps [[:x :o]
+              :aa
+              (λ []
+                (select.select_textobject "@parameter.outer" :textobjects))
+              {}] [[:x :o]
+                                :ia
+                                (λ []
+                                  (select.select_textobject "@parameter.inner"
+                                                            :textobjects))
+                                {}]
+             [[:x :o]
+              :af
+              (λ []
+                (select.select_textobject "@function.outer" :textobjects))
+              {}] [[:x :o]
+                               :if
+                               (λ []
+                                 (select.select_textobject "@function.inner"
+                                                           :textobjects))
+                               {}]
+             [[:x :o]
+              :ii
+              (λ []
+                (select.select_textobject "@conditional.outer" :textobjects))
+              {}] [[:x :o]
+                               :ai
+                               (λ []
+                                 (select.select_textobject "@conditional.inner"
+                                                           :textobjects))
+                               {}]
+             [[:x :o]
+              :il
+              (λ []
+                (select.select_textobject "@loop.outer" :textobjects))
+              {}] [[:x :o]
+                               :al
+                               (λ []
+                                 (select.select_textobject "@loop.inner"
+                                                           :textobjects))
+                               {}]
+             [[:x :o]
+              :ac
+              (λ []
+                (select.select_textobject "@class.outer" :textobjects))
+              {}] [[:x :o]
+                               :at
+                               (λ []
+                                 (select.select_textobject "@comment.outer"
+                                                           :textobjects))
+                               {}]
+             [[:x :o]
+              :ic
+              (λ []
+                (select.select_textobject "@class.inner" :textobjects))
+              {}] [[:x :o]
+                               :as
+                               (λ []
+                                 (select.select_textobject "@local.scope"
+                                                           :locals))
+                               {}] ;; Swap
+             [:n
+              :<leader>a
+              (λ []
+                (swap.swap_next "@parameter.inner"))
+              {}] [:n
+                               :<leader>A
+                               (λ []
+                                 (swap.swap_previous "@parameter.inner"))
+                               {}] ;; Move
+             [[:n :x :o]
+              "]m"
+              (λ []
+                (move.goto_next_start "@function.outer" :textobjects))
+              {}] [[:n :x :o]
+                               "]]"
+                               (λ []
+                                 (move.goto_next_start "@class.outer"
+                                                       :textobjects))
+                               {}]
+             [[:n :x :o]
+              "]o"
+              (λ []
+                (move.goto_next_start ["@loop.inner" "@loop.outer"]
+                                      :textobjects))
+              {}] [[:n :x :o]
+                               "]s"
+                               (λ []
+                                 (move.goto_next_start "@local.scope" :locals))
+                               {}]
+             [[:n :x :o]
+              "]z"
+              (λ []
+                (move.goto_next_start "@fold" :folds))
+              {}] [[:n :x :o]
+                               "]M"
+                               (λ []
+                                 (move.goto_next_end "@function.outer"
+                                                     :textobjects))
+                               {}]
+             [[:n :x :o]
+              "]["
+              (λ []
+                (move.goto_next_end "@class.outer" :textobjects))
+              {}] [[:n :x :o]
+                               "[m"
+                               (λ []
+                                 (move.goto_previous_start "@function.outer"
+                                                           :textobjects))
+                               {}]
+             [[:n :x :o]
+              "[["
+              (λ []
+                (move.goto_previous_start "@class.outer" :textobjects))
+              {}] [[:n :x :o]
+                               "[M"
+                               (λ []
+                                 (move.goto_previous_end "@function.outer"
+                                                         :textobjects))
+                               {}]
+             [[:n :x :o]
+              "[]"
+              (λ []
+                (move.goto_previous_end "@class.outer" :textobjects))
+              {}] [[:n :x :o]
+                               "]i"
+                               (λ []
+                                 (move.goto_next "@conditional.outer"
+                                                 :textobjects))
+                               {}]
+             [[:n :x :o]
+              "[i"
+              (λ []
+                (move.goto_previous "@conditional.outer" :textobjects))
+              {}])))
 
 (λ config []
-  (let [treesitter (require :nvim-treesitter.configs)]
-    (treesitter.setup opts)))
+  (let [treesitter (require :nvim-treesitter)]
+    (treesitter.install parsers))
+  (autocmd :FileType
+           {:callback (λ [args]
+                        (pcall vim.treesitter.start args.buf)
+                        (tset vim.bo args.buf :indentexpr
+                              "v:lua.require'nvim-treesitter'.indentexpr()"))})
+  (setup-textobjects))
 
 {1 :nvim-treesitter/nvim-treesitter
- :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects :lazy true}]
+ :branch :main
+ :dependencies [{1 :nvim-treesitter/nvim-treesitter-textobjects :branch :main}]
  :build ":TSUpdate"
  :event [:VeryLazy]
  : config}

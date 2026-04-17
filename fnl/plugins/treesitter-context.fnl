@@ -10,4 +10,6 @@
              :separator nil
              :zindex 20})
 
-{1 :nvim-treesitter/nvim-treesitter-context :event [:BufReadPre :BufNewFile] : opts}
+{1 :nvim-treesitter/nvim-treesitter-context
+ :event [:BufReadPre :BufNewFile]
+ : opts}

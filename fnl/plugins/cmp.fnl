@@ -15,8 +15,8 @@
                                                      :buffer]
                                          :score_offset 3}
                                    :snippets {:name :Snippets
-                                            :module :blink.cmp.sources.snippets
-                                            :score_offset 4}
+                                              :module :blink.cmp.sources.snippets
+                                              :score_offset 4}
                                    :dadbod {:name :Dadbod
                                             :module :vim_dadbod_completion.blink
                                             :score_offset 2}}}

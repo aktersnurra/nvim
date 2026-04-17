@@ -42,17 +42,7 @@
 
 (local branch {1 "b:gitsigns_head" :icon (. icons :git) :cond hide-in-width})
 
-(local filetype {1 :filetype
-                 :icon_only true
-                 :colored false
-                 :cond hide-in-width})
-
 (local language-server {1 active-clients :cond hide-in-width})
-
-(local lsp-progress
-       {1 :lsp_progress
-        :display_components [[:title :percentage :message]]
-        :timer {:progress_enddelay 500 :lsp_client_name_enddelay 500}})
 
 (local opts {:options {:icons_enabled true
                        :theme :no-clown-fiesta
@@ -65,8 +55,8 @@
              :sections {:lualine_a [:mode]
                         :lualine_b [:filename branch diff]
                         :lualine_c {}
-                        :lualine_x [lsp-progress language-server diagnostics]
-                        :lualine_y [filetype]
+                        :lualine_x [language-server diagnostics]
+                        :lualine_y {}
                         :lualine_z [:location :progress]}
              :inactive_sections {:lualine_a [:mode]
                                  :lualine_b {}
@@ -76,9 +66,4 @@
                                  :lualine_z [:location :progress]}
              :extensions [:oil :mason]})
 
-(local dependencies [:arkav/lualine-lsp-progress])
-
-{1 :nvim-lualine/lualine.nvim
- :event :VeryLazy
- : opts
- : dependencies}
+{1 :nvim-lualine/lualine.nvim :event :VeryLazy : opts}
